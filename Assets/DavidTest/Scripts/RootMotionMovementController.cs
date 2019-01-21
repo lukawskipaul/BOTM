@@ -19,21 +19,24 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //turning
-        Turn();
-        //jump
         Move();
-    }
-
-    private void Turn()
-    {
-        //adjusts the float value for "Turn" denoted in the attached Animator
-        anim.SetFloat("Turn", Input.GetAxis("Horizontal"));
+        Jump();
     }
 
     private void Move()
     {
-        //adjusts the float value for "Forward" denoted in the attached Animator
-        anim.SetFloat("Forward", Input.GetAxis("Vertical"));
+        //adjusts the float value for "MoveZ" denoted in the attached Animator
+        anim.SetFloat("MoveZ", Input.GetAxis("Vertical"));
+        //adjusts the float value for "MoveX" denoted in the attached Animator
+        anim.SetFloat("MoveX", Input.GetAxis("Horizontal"));
+    }
+
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            //Sets the Animator Trigger for "Jump"
+            anim.SetTrigger("Jump");
+        }
     }
 }
