@@ -20,8 +20,15 @@ public class RootMotionMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         //turning
+        Turn();
         //jump
         Move();
+    }
+
+    private void Turn()
+    {
+        //adjusts the float value for "Turn" denoted in the attached Animator
+        anim.SetFloat("Turn", Input.GetAxis("Horizontal"));
     }
 
     private void Move()
