@@ -15,6 +15,8 @@ public class RootMotionMovementController : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -25,10 +27,13 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Move()
     {
-        //adjusts the float value for "MoveZ" denoted in the attached Animator
+        //adjusts the float value for "MoveZ" denoted in the attached Animator based on Vertical input
         anim.SetFloat("MoveZ", Input.GetAxis("Vertical"));
-        //adjusts the float value for "MoveX" denoted in the attached Animator
+        //adjusts the float value for "MoveX" denoted in the attached Animator based on Horizontal input
         anim.SetFloat("MoveX", Input.GetAxis("Horizontal"));
+
+        //adjusts the float value for "Turn" denoted in the attached Animator based on Mouse movement
+        //anim.SetFloat("Turn", Input.GetAxis("Mouse X"));
     }
 
     private void Jump()
