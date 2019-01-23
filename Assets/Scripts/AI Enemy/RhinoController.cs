@@ -8,6 +8,9 @@ public class RhinoController : MonoBehaviour {
     private float RotYSpeed;
     private float ChargeForce;
     public Vector3 PlayerBoop = new Vector3(0,400,100);
+
+    public bool showSight = true;
+    public Color sightColor = Color.yellow;
     Rhino rhino;
 	// Use this for initialization
 	void Start () {
@@ -31,7 +34,13 @@ public class RhinoController : MonoBehaviour {
             playerRigidbody.AddForceAtPosition(new Vector3(0,500,200), playerRigidbody.gameObject.transform.position);
             Debug.Log(playerRigidbody);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        if (showSight)
+        {
+            Debug.DrawLine(this.transform.position, this.transform.forward * 100f, sightColor);
+        }
         
     }
-
 }
