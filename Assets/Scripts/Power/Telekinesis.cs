@@ -1,0 +1,160 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Telekinesis : MonoBehaviour
+{
+    Rigidbody objectRigidBody;
+    public GameObject levitatableObj;
+    bool isLiftingObject = false;
+
+    [SerializeField]
+    Transform levitateTransform;
+
+    [SerializeField]
+    float levitateFollowSpeed = 3f;
+
+    private void Update()
+    {
+        if (isLiftingObject == true)
+        {
+            LevitateObject(levitatableObj);
+        }
+    }
+
+    private void TelekinesisInputHandler()
+    {
+        if (Input.GetButtonDown("UseTele"))
+        {
+            UsePower(levitatableObj);
+        }
+    }
+
+    private void LevitateObject(GameObject objectToLevitate)
+    {
+        GetObjectRigidBody(objectToLevitate);
+        objectRigidBody.useGravity = false;
+        objectToLevitate.layer = 11;
+        objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
+        objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
+        objectRigidBody.angularVelocity = Vector3.zero;
+        Vector3 objectTransfrom = objectToLevitate.transform.position;
+        MoveLevitateObject(objectRigidBody, objectTransfrom);
+        Debug.Log("LevitatingObj");
+    }
+
+    private void GetObjectRigidBody(GameObject objToLevitate)
+    {
+        try
+        {
+            objectRigidBody = objToLevitate.GetComponent<Rigidbody>();
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("No rigidbody");
+            throw;
+        }
+    }
+
+    private void MoveLevitateObject(Rigidbody objToLevitate, Vector3 objTransform)
+    {
+        objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed * Time.deltaTime);
+        //objToLevitate.MovePosition(objTransform);
+        objToLevitate.transform.position = objTransform;
+    }
+
+    private void DropObject(GameObject objectToDrop)
+    {
+        try
+        {
+            objectRigidBody = objectToDrop.GetComponent<Rigidbody>();
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("No rigidbody");
+            throw;
+        }
+        objectToDrop.layer = 0;
+        isLiftingObject = false;
+        objectRigidBody.useGravity = true;
+    }
+
+    public void UsePower(GameObject objToLevitate)
+    {
+        if (objToLevitate != null)
+        {
+            if (objToLevitate.tag == "LevitatableObject")
+            {
+                if (isLiftingObject)
+                {
+                    DropObject(objToLevitate);
+                }
+                else if (!isLiftingObject)
+                {
+                    isLiftingObject = true;
+                }
+
+            }
+        }
+        else
+        {
+            Debug.Log("No levitatable object");
+        }
+
+    }
+
+    public void TelekinesisHandldeInput(GameObject objToLevitate)
+    {
+        if (objToLevitate != null)
+        {
+            if (objToLevitate.tag == "LevitatableObject")
+            {
+                if (isLiftingObject)
+                {
+                    DropObject(objToLevitate);
+                }
+                else if (!isLiftingObject)
+                {
+                    isLiftingObject = true;
+                }
+
+            }
+        }
+        else
+        {
+            Debug.Log("No levitatable object");
+        }
+    }
+
+    private void SetLevitatableObject(GameObject gameObject)
+    {
+        if (!isLiftingObject)
+        {
+            levitatableObj = gameObject;
+            Debug.Log(levitatableObj.name + " can be levitated.");
+        }
+
+    }
+
+    private void ResetLevitatableObj(GameObject gameObject)
+    {
+        if (isLiftingObject)
+        {
+            DropObject(levitatableObj);
+        }
+        levitatableObj = null;
+    }
+
+    private void OnEnable()
+    {
+        DetectObject.LevObjectDetected += SetLevitatableObject;
+        DetectObject.LevObjectExit += ResetLevitatableObj;
+    }
+
+    private void OnDisable()
+    {
+        DetectObject.LevObjectDetected -= SetLevitatableObject;
+        DetectObject.LevObjectExit += ResetLevitatableObj;
+    }
+}
