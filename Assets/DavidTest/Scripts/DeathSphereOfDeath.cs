@@ -11,6 +11,7 @@ public class DeathSphereOfDeath : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player Murdered");
+            playerRespawn = other.GetComponent<PlayerRespawnScript>();
             playerRespawn.RespawnPlayer();            
         }
     }

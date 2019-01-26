@@ -12,6 +12,11 @@ public class PlayerRespawnScript : MonoBehaviour
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void SetCurrentCheckpoint(CheckpointScript newCurrentCheckpoint)
     {
         if(currentCheckpoint != null)
