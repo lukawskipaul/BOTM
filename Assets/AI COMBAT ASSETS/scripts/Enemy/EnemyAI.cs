@@ -7,7 +7,28 @@ public class EnemyAI {
     
     public EnemyAI(int _health)
     {
+        Health = _health;
+    }
 
+    /// <summary>
+    /// Calculate how much Health the enemy has after taking damage 
+    /// </summary>
+    /// <param name="_damage">How much health to take away</param>
+    public void TakeDamage(int _damage)
+    {
+        Health -= _damage;
+        if (Health < 0)
+        {
+            Health = 0;
+        }
+    }
+    /// <summary>
+    /// Retrieves the amount of heath the enemy has
+    /// </summary>
+    /// <returns>The enemy's Health</returns>
+    public int GetHealth()
+    {
+        return Health;
     }
     /// <summary>
     /// Calculate the square distance between the Player and the Enemy
@@ -20,4 +41,5 @@ public class EnemyAI {
         Vector3 distVec = _player.transform.position - _enemy.transform.position;
         return distVec.sqrMagnitude;
     }
+
 }
