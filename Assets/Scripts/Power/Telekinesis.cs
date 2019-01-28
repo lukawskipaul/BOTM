@@ -17,11 +17,14 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
+
+        TelekinesisInputHandler();
         if (isLiftingObject == true)
         {
             LevitateObject(levitatableObj);
         }
     }
+
 
     private void TelekinesisInputHandler()
     {
@@ -60,8 +63,8 @@ public class Telekinesis : MonoBehaviour
     private void MoveLevitateObject(Rigidbody objToLevitate, Vector3 objTransform)
     {
         objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed * Time.deltaTime);
-        //objToLevitate.MovePosition(objTransform);
-        objToLevitate.transform.position = objTransform;
+        objToLevitate.MovePosition(objTransform);
+        //objToLevitate.transform.position = objTransform;
     }
 
     private void DropObject(GameObject objectToDrop)
@@ -88,7 +91,7 @@ public class Telekinesis : MonoBehaviour
             {
                 if (isLiftingObject)
                 {
-                    DropObject(objToLevitate);
+                    ResetLevitatableObj(objToLevitate);
                 }
                 else if (!isLiftingObject)
                 {
@@ -102,29 +105,6 @@ public class Telekinesis : MonoBehaviour
             Debug.Log("No levitatable object");
         }
 
-    }
-
-    public void TelekinesisHandldeInput(GameObject objToLevitate)
-    {
-        if (objToLevitate != null)
-        {
-            if (objToLevitate.tag == "LevitatableObject")
-            {
-                if (isLiftingObject)
-                {
-                    DropObject(objToLevitate);
-                }
-                else if (!isLiftingObject)
-                {
-                    isLiftingObject = true;
-                }
-
-            }
-        }
-        else
-        {
-            Debug.Log("No levitatable object");
-        }
     }
 
     private void SetLevitatableObject(GameObject gameObject)
@@ -139,10 +119,8 @@ public class Telekinesis : MonoBehaviour
 
     private void ResetLevitatableObj(GameObject gameObject)
     {
-        if (isLiftingObject)
-        {
-            DropObject(levitatableObj);
-        }
+
+        DropObject(levitatableObj);
         levitatableObj = null;
     }
 

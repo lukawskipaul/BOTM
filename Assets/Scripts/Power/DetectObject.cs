@@ -16,13 +16,9 @@ public class DetectObject : MonoBehaviour
 
     Vector3 detectVector;
 
-    private void Start()
-    {
-        detectVector = new Vector3(detectPoint.position.x, detectPoint.position.y, detectPoint.position.z);
-    }
-
     private void Update()
     {
+        detectVector = detectPoint.position;
         CastSphere();
     }
 
