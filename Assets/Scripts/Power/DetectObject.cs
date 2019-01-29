@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class DetectObject : MonoBehaviour
 {
-    // Events that are raised when an object is detected or object leaves detectionn area
+    // Event that is raised when an object is detected
     public static event Action<GameObject> LevObjectDetected;
-    public static event Action<GameObject> LevObjectExit;
 
     [SerializeField]
     Transform detectPoint;
@@ -22,13 +21,11 @@ public class DetectObject : MonoBehaviour
         CastSphere();
     }
 
-    //SpherecastToDetect
+    //Spherecast To detect objects We can use telekinesis on
     private void CastSphere()
     {
         Ray ray = new Ray(detectVector, transform.forward);
         RaycastHit hit;
-        //Gizmos.color = Color.yellow;
-        //Gizmos.DrawSphere(detectVector, detectRadius);
         if (Physics.SphereCast(ray, detectRadius, out hit, detectRange))
         {
             if (hit.collider.gameObject.tag == "LevitatableObject")
@@ -44,7 +41,7 @@ public class DetectObject : MonoBehaviour
         }
     }
 
-
+    // Publish Event
     private void OnLevObjectDetected(GameObject detObj)
     {
         if (LevObjectDetected != null)
@@ -53,11 +50,4 @@ public class DetectObject : MonoBehaviour
         }
     }
 
-    private void OnLevObjectExit(GameObject detObj)
-    {
-        if (LevObjectDetected != null)
-        {
-            LevObjectExit.Invoke(detObj);
-        }
-    }
 }

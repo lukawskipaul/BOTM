@@ -40,8 +40,8 @@ public class Telekinesis : MonoBehaviour
         objectRigidBody.useGravity = false;
         objectToLevitate.layer = 11;
         objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
-        objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
-        objectRigidBody.angularVelocity = Vector3.zero;
+        objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
+        objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         MoveLevitateObject(objectRigidBody, objectTransfrom);
         Debug.Log("LevitatingObj");
@@ -60,11 +60,11 @@ public class Telekinesis : MonoBehaviour
         }
     }
 
+    //This is what actually moves the object towards the levitate point
     private void MoveLevitateObject(Rigidbody objToLevitate, Vector3 objTransform)
     {
         objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed * Time.deltaTime);
         objToLevitate.MovePosition(objTransform);
-        //objToLevitate.transform.position = objTransform;
     }
 
     private void DropObject(GameObject objectToDrop)
@@ -124,15 +124,14 @@ public class Telekinesis : MonoBehaviour
         levitatableObj = null;
     }
 
+    //Subscribe to Event
     private void OnEnable()
     {
         DetectObject.LevObjectDetected += SetLevitatableObject;
-        DetectObject.LevObjectExit += ResetLevitatableObj;
     }
 
     private void OnDisable()
     {
         DetectObject.LevObjectDetected -= SetLevitatableObject;
-        DetectObject.LevObjectExit += ResetLevitatableObj;
     }
 }
