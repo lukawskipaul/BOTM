@@ -24,7 +24,7 @@ public class CrocEnemyMono : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("distanceFromPlayerSq",enemyStats.SquaredDistanceToPlayer(this.gameObject, player));
+        anim.SetFloat("distanceFromPlayerSq",enemyStats.SquaredDistanceToPlayer(this.gameObject, player));//[Square] Distance between the Player and Enemy
         if (showDebug)
         {
             Debug.Log("Square Distance: " + enemyStats.SquaredDistanceToPlayer(this.gameObject, player));
@@ -36,8 +36,6 @@ public class CrocEnemyMono : MonoBehaviour
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, player.transform.position, Color.cyan);
-
-           
         }
     }
 }

@@ -7,6 +7,10 @@ using UnityEngine;
 public class EnemyAttackHitbox : MonoBehaviour
 {
     public string playerTag = "Player";
+    /// <summary>
+    /// Trigger event which detects whether or not the hitbox collided with the player
+    /// </summary>
+    /// <param name="other">The Object that caused the activation of the trigger event</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == playerTag && this.GetComponent<Animator>().GetBool("isAttacking"))
