@@ -91,7 +91,8 @@ public class Telekinesis : MonoBehaviour
             {
                 if (isLiftingObject)
                 {
-                    ResetLevitatableObj(objToLevitate);
+                    DropObject(objToLevitate);
+                    levitatableObj = null;
                 }
                 else if (!isLiftingObject)
                 {
@@ -117,21 +118,24 @@ public class Telekinesis : MonoBehaviour
 
     }
 
-    private void ResetLevitatableObj(GameObject gameObject)
+    private void ResetLevitatableObj()
     {
-
-        DropObject(levitatableObj);
-        levitatableObj = null;
+        if (!isLiftingObject)
+        {
+            levitatableObj = null;
+        }
     }
 
     //Subscribe to Event
     private void OnEnable()
     {
         DetectObject.LevObjectDetected += SetLevitatableObject;
+        DetectObject.LevObjectGone += ResetLevitatableObj;
     }
 
     private void OnDisable()
     {
         DetectObject.LevObjectDetected -= SetLevitatableObject;
+        DetectObject.LevObjectGone -= ResetLevitatableObj;
     }
 }

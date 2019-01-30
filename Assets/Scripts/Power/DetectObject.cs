@@ -8,6 +8,8 @@ public class DetectObject : MonoBehaviour
     // Event that is raised when an object is detected
     public static event Action<GameObject> LevObjectDetected;
 
+    public static event Action LevObjectGone;
+
     [SerializeField]
     Transform detectPoint;
     [SerializeField]
@@ -38,6 +40,7 @@ public class DetectObject : MonoBehaviour
         else
         {
             Debug.Log("NoTeleObj");
+            OnLevObjectGone();
         }
     }
 
@@ -47,6 +50,14 @@ public class DetectObject : MonoBehaviour
         if (LevObjectDetected != null)
         {
             LevObjectDetected.Invoke(detObj);
+        }
+    }
+
+    private void OnLevObjectGone()
+    {
+        if (LevObjectGone != null)
+        {
+            LevObjectGone.Invoke();
         }
     }
 
