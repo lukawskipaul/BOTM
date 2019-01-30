@@ -11,9 +11,12 @@ public class Telekinesis : MonoBehaviour
 
     [SerializeField]
     Transform levitateTransform;
-
     [SerializeField]
     float levitateFollowSpeed = 3f;
+    [SerializeField]
+    float speed = 1f;
+    [SerializeField]
+    float gravityAdjust = -1.0f;
 
     private void Update()
     {
@@ -22,6 +25,10 @@ public class Telekinesis : MonoBehaviour
         if (isLiftingObject == true)
         {
             LevitateObject(levitatableObj);
+        }
+        if(isLiftingObject == true && Input.GetMouseButtonDown(1))
+        {
+            ThrowObject();
         }
     }
 
@@ -45,6 +52,14 @@ public class Telekinesis : MonoBehaviour
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         MoveLevitateObject(objectRigidBody, objectTransfrom);
         Debug.Log("LevitatingObj");
+    }
+
+    private void ThrowObject()
+    {
+            levitatableObj.GetComponent<Rigidbody>().useGravity = true;
+            levitatableObj.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+            Physics.gravity = new Vector3(0, gravityAdjust, 0);
+            levitatableObj = null;
     }
 
     private void GetObjectRigidBody(GameObject objToLevitate)
@@ -82,6 +97,7 @@ public class Telekinesis : MonoBehaviour
         isLiftingObject = false;
         objectRigidBody.useGravity = true;
     }
+
 
     public void UsePower(GameObject objToLevitate)
     {
