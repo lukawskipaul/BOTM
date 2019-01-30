@@ -7,7 +7,7 @@ public class DetectObject : MonoBehaviour
 {
     // Event that is raised when an object is detected
     public static event Action<GameObject> LevObjectDetected;
-
+    // Event that is rasied when an object is no longer in sight
     public static event Action LevObjectGone;
 
     [SerializeField]
@@ -44,7 +44,7 @@ public class DetectObject : MonoBehaviour
         }
     }
 
-    // Publish Event
+    // Publish Events
     private void OnLevObjectDetected(GameObject detObj)
     {
         if (LevObjectDetected != null)
