@@ -59,7 +59,6 @@ public class Telekinesis : MonoBehaviour
         objectRigidBody = levitatableObj.GetComponent<Rigidbody>();
         objectRigidBody.useGravity = true;
         objectRigidBody.AddForce(transform.forward * speed * 10);
-        //Physics.gravity = new Vector3(0, gravityAdjust, 0);
         isLiftingObject = false;
         levitatableObj = null;
     }
