@@ -26,7 +26,7 @@ public class Telekinesis : MonoBehaviour
         {
             LevitateObject(levitatableObj);
         }
-        if(isLiftingObject == true && Input.GetMouseButtonDown(1))
+        if(isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
             ThrowObject();
         }
@@ -56,10 +56,12 @@ public class Telekinesis : MonoBehaviour
 
     private void ThrowObject()
     {
-            levitatableObj.GetComponent<Rigidbody>().useGravity = true;
-            levitatableObj.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
-            Physics.gravity = new Vector3(0, gravityAdjust, 0);
-            levitatableObj = null;
+        objectRigidBody = levitatableObj.GetComponent<Rigidbody>();
+        objectRigidBody.useGravity = true;
+        objectRigidBody.AddForce(transform.forward * speed * 10);
+        //Physics.gravity = new Vector3(0, gravityAdjust, 0);
+        isLiftingObject = false;
+        levitatableObj = null;
     }
 
     private void GetObjectRigidBody(GameObject objToLevitate)
