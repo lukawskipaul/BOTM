@@ -13,13 +13,13 @@ public class CrocEnemyMono : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+	private NavMeshAgent agent;
     private CrocEnemy enemyStats;
+	
     private Animator anim;
+	public float detectionDistance = 6;
     public bool showDebug = true;
 
-    private NavMeshAgent nma;
-    public bool AttackRange;
-    
     public LayerMask ObstacleMask;
     
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class CrocEnemyMono : MonoBehaviour
     {
         enemyStats = new CrocEnemy(Health);
         anim = GetComponent<Animator>();
-        nma = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         ObstacleMask = ~ObstacleMask;
     }
 
@@ -38,36 +38,61 @@ public class CrocEnemyMono : MonoBehaviour
         if (showDebug)
         {
             Debug.Log("Square Distance: " + enemyStats.SquaredDistanceToPlayer(this.gameObject, player));
-            Debug.Log("Real Distance: " + Vector3.Distance(player.transform.position, this.gameObject.transform.position));
-            Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-        }
-
-        // Linecast checks if an obstacle is between the enemy and the player
-        // Player layer must be set to "Player" for cast to work
-        if (Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
-        {
-            Debug.Log("Linecast hit");
-        }
-        else
-        {
-            Debug.Log("Linecast no hit");
-        }
-
-        // If player is out of the enemy's attack range or there is an obstacle in the way, the enemy won't attack
-        if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (nma.stoppingDistance * nma.stoppingDistance) || Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
-        {
-            anim.SetBool("InAttackRange", false);
-        }
-        else
-        {
-            anim.SetBool("InAttackRange", true);
-        }
-        
+            
+			// Linecast checks if an obstacle is between the enemy and the player
+			// Player layer must be set to "Player" for cast to work
+			if (Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
+			{
+				Debug.Log("Linecast hit");
+			}
+			else
+			{
+				Debug.Log("Linecast no hit");
+			}
+            //Plays the Death Animation for Ai
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetTrigger("Die");
+            }
+		}
+		AttackRangeAnimExecution(); 
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    private void CalculateDetectionRange()
+    {
+        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2))
+        {
+            anim.SetBool("PlayerDetected", true);
+            if (showDebug) Debug.Log("Enemy Detected!");
+        }
+        else
+        {
+            anim.SetBool("PlayerDetected", false);
+            if (showDebug) Debug.Log("Enemy Lost!");
+        }
+
+    }
+    /// <summary>
+    /// If player is out of the enemy's attack range or there is an obstacle in the way, the enemy won't attack
+    /// </summary>
+    private void AttackRangeAnimExecution(){
+		if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) || Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
+		{
+			anim.SetBool("InAttackRange", false);
+		}
+		else
+		{
+			anim.SetBool("InAttackRange", true);
+		}
+	}
+	//Debug Tools to show in editor at all times if enabled
     void OnDrawGizmos()
     {
         if (showDebug)
         {
+            Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
             Debug.DrawLine(this.transform.position, player.transform.position, Color.cyan);
         }
     }
