@@ -15,8 +15,6 @@ public class Telekinesis : MonoBehaviour
     float levitateFollowSpeed = 3f;
     [SerializeField]
     float speed = 1f;
-    [SerializeField]
-    float gravityAdjust = -1.0f;
 
     private void Update()
     {
