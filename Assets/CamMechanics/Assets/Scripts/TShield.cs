@@ -12,7 +12,7 @@ public class TShield : MonoBehaviour
 
     void  Update()
     {
-        if (Input.GetKey("d"))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             Instantiate(Shield, Spawnpoint.position,Spawnpoint.rotation);
         }

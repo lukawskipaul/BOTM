@@ -4,24 +4,11 @@ using UnityEngine;
 
 public class LifeTime : MonoBehaviour
 {
-    [SerializeField]
-    private float lifeTime = 2f;
-
-
-    void Update()
+    private void Update()
     {
-        if (lifeTime > 0)
+        if (Input.GetKeyUp(KeyCode.T))
         {
-            lifeTime -= Time.deltaTime;
+            Destroy(this.gameObject);
         }
-        if (lifeTime <= 0)
-        {
-            Destruction();
-        }
-    }
-
-    void Destruction()
-    {
-        Destroy(this.gameObject);
     }
 }
