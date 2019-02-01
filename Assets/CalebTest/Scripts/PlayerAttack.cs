@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private Animator anim;
-    private DamageEnemy de;
+    private DamageEnemy swordAttack;
 
     private bool canAttack;
 
@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
         canAttack = true;
         
         anim = this.gameObject.GetComponent<Animator>();
-        de = this.gameObject.GetComponentInChildren<DamageEnemy>();
+        swordAttack = this.gameObject.GetComponentInChildren<DamageEnemy>();
     }
 
     private void Update()
@@ -49,12 +49,12 @@ public class PlayerAttack : MonoBehaviour
     /* Called during specific animation frame to start doing damage to hit enemies */
     public void StartDamageEvent()
     {
-        de.IsAttacking = true;
+        swordAttack.IsAttacking = true;
     }
 
     /* Called during specific animation frame to stop doing damage to hit enemies */
     public void EndDamageEvent()
     {
-        de.IsAttacking = false;
+        swordAttack.IsAttacking = false;
     }
 }
