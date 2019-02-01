@@ -23,7 +23,7 @@ public class DetectObject : MonoBehaviour
         CastSphere();
     }
 
-    //Spherecast To detect objects We can use telekinesis on
+    //Spherecast To detect objects We can use telekinesis on, then do a Raycast along the path between the detectVector and the levitation object to make sure it's clear
     private void CastSphere()
     {
         Ray ray = new Ray(detectVector, transform.forward);
@@ -32,8 +32,31 @@ public class DetectObject : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "LevitatableObject")
             {
-                OnLevObjectDetected(hit.collider.gameObject);
-                Debug.Log("TeleObjDetected");
+                bool pathToObjClear;
+                RaycastHit nonLevObjHit;
+                float distToLevObj = (hit.point - detectVector).magnitude;
+                if (Physics.Raycast(detectVector, hit.point - detectVector, out nonLevObjHit, distToLevObj))
+                {
+                    if (nonLevObjHit.collider.gameObject.tag != "LevitatableObject" && nonLevObjHit.collider.gameObject.tag != "Checkpoint")
+                    {
+                        Debug.Log("PathBlockedByNonLevObject");
+                        pathToObjClear = false;
+                    }
+                    else
+                    {
+                        pathToObjClear = true;
+                       
+                        Debug.Log("TeleObjDetected");
+                    }
+                }
+                else
+                {
+                    pathToObjClear = true;
+                }
+                if (pathToObjClear)
+                {
+                    OnLevObjectDetected(hit.collider.gameObject);
+                }
             }
             
         }
