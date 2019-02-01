@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+
+//This script goes on player
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
     private float attackDelay = 1.0f;
 
-    Animator anim;
+    private Animator anim;
 
     private bool canAttack;
     private bool waitActive;
@@ -17,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
         canAttack = true;
         waitActive = false;
         
-        anim = GetComponent<Animator>();
+        anim = this.gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -27,13 +30,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        /* Play attack animation when attack button is pressed */
         if (Input.GetButtonDown("Attack") && canAttack)
         {
             canAttack = false;
 
             anim.SetTrigger("Attack");
-            anim.SetBool("isAttacking", true);  //use a better way to check if is attacking
-            StartCoroutine(Wait(attackDelay));  //change to end of animation
+            anim.SetBool("isAttacking", true);  //TODO: use a better way to check if is attacking
+            StartCoroutine(Wait(attackDelay));
 
             canAttack = true;
         }
@@ -41,8 +45,11 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator Wait(float delay)
     {
+        /* Wait until end of attack animation to be able to attack again */
         waitActive = true;
-        yield return new WaitForSecondsRealtime(delay);
+
+        yield return new WaitForSecondsRealtime(delay); //TODO: change to end of animation
+
         anim.SetBool("isAttacking", false);
         waitActive = false;
     }

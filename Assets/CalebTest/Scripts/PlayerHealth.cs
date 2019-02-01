@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//This script goes on player
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
@@ -26,8 +27,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(float amount)
     {
+        /* Damages player by enemy attack amount */
         currentHealth -= amount;
 
+        /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
             //TODO: die
@@ -36,8 +39,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void HealPlayer(float amount)
     {
+        /* Heals player by pickup amount */
         currentHealth += amount;
 
+        /* Caps player health at 100% */
         if (currentHealth >= maxHealth)
         {
             currentHealth = maxHealth;
@@ -46,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHealthBar()
     {
+        /* Updates health bar with current health */
         healthBar.value = currentHealth / maxHealth;
     }
 }

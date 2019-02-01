@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//This script goes on enemy
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
@@ -27,8 +28,10 @@ public class EnemyHealth : MonoBehaviour
 
     public void DamageEnemy(float amount)
     {
+        /* Damages enemy by player attack amount */
         currentHealth -= amount;
 
+        /* Enemy dies when health reaches 0 */
         if (currentHealth <= 0)
         {
             Destroy(this.gameObject);
@@ -37,6 +40,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void UpdateHealthBar()
     {
+        /* Updates health bar with current health */
         healthBar.value = currentHealth / maxHealth;
     }
 }
