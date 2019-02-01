@@ -10,21 +10,24 @@ public class DamageEnemy : MonoBehaviour
 {
     [SerializeField]
     private float attackDamage = 25.0f;
-    //[SerializeField]
-    //private GameObject testEnemy;
 
-    private Animator anim;
+    private bool isAttacking;
+    public bool IsAttacking
+    {
+        set
+        {
+            isAttacking = value;
+        }
+    }
 
     private void Start()
     {
-        anim = this.gameObject.GetComponentInParent<Animator>();
+        isAttacking = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Hit: " + other.name);
-
-        bool isValidTarget = other.tag == "Enemy" && anim.GetBool("isAttacking") == true;
+        bool isValidTarget = other.tag == "Enemy" && isAttacking == true;
 
         /* Damages the enemy if the player is currently attacking */
         if (isValidTarget)
@@ -32,17 +35,4 @@ public class DamageEnemy : MonoBehaviour
             other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(attackDamage);
         }
     }
-
-    //void Update()
-    //{
-    //    //TestAttack();
-    //}
-
-    //void TestAttack()
-    //{
-    //    if (Input.GetButtonDown("Attack"))
-    //    {
-    //        testEnemy.GetComponent<EnemyHealth>().DamageEnemy(attackDamage);
-    //    }
-    //}
 }

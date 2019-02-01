@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
+
 //This script goes on weapon joint of enemy
 public class DamagePlayer : MonoBehaviour
 {

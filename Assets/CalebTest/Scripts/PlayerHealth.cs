@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
-    private float maxHealth = 100f;
+    private float maxHealth = 100.0f;
 
     private float currentHealth;
 

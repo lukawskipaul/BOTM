@@ -7,20 +7,17 @@ using UnityEngine;
 //This script goes on player
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField]
-    private float attackDelay = 1.0f;
-
     private Animator anim;
+    private DamageEnemy de;
 
     private bool canAttack;
-    private bool waitActive;
 
     private void Start()
     {
         canAttack = true;
-        waitActive = false;
         
         anim = this.gameObject.GetComponent<Animator>();
+        de = this.gameObject.GetComponentInChildren<DamageEnemy>();
     }
 
     private void Update()
@@ -33,24 +30,31 @@ public class PlayerAttack : MonoBehaviour
         /* Play attack animation when attack button is pressed */
         if (Input.GetButtonDown("Attack") && canAttack)
         {
-            canAttack = false;
-
             anim.SetTrigger("Attack");
-            anim.SetBool("isAttacking", true);  //TODO: use a better way to check if is attacking
-            StartCoroutine(Wait(attackDelay));
-
-            canAttack = true;
         }
     }
 
-    private IEnumerator Wait(float delay)
+    /* Called at start of attack animation to prevent being able to attack again */
+    public void StartAttackEvent()
     {
-        /* Wait until end of attack animation to be able to attack again */
-        waitActive = true;
+        canAttack = false;
+    }
 
-        yield return new WaitForSecondsRealtime(delay); //TODO: change to end of animation
+    /* Called at end of attack animation to allow being able to attack again */
+    public void EndAttackEvent()
+    {
+        canAttack = true;
+    }
 
-        anim.SetBool("isAttacking", false);
-        waitActive = false;
+    /* Called during specific animation frame to start doing damage to hit enemies */
+    public void StartDamageEvent()
+    {
+        de.IsAttacking = true;
+    }
+
+    /* Called during specific animation frame to stop doing damage to hit enemies */
+    public void EndDamageEvent()
+    {
+        de.IsAttacking = false;
     }
 }
