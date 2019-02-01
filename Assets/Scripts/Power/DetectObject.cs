@@ -28,6 +28,7 @@ public class DetectObject : MonoBehaviour
     {
         Ray ray = new Ray(detectVector, transform.forward);
         RaycastHit hit;
+        //Debug.DrawRay(detectPoint, transform.forward);  //added by brendan for 2019-2-1 demo
         if (Physics.SphereCast(ray, detectRadius, out hit, detectRange))
         {
             if (hit.collider.gameObject.tag == "LevitatableObject")

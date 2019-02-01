@@ -12,7 +12,7 @@ public class RhinoController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         RotYSpeed = Random.Range(10, 40);
-        ChargeForce = Random.Range(25, 60);
+        ChargeForce = Random.Range(500, 700);  //changed for demo by Brendan. Original values (25,60)
         enemyRigidbody = GetComponent<Rigidbody>();
         playerRigidbody = playerRigidbody.GetComponent<Rigidbody>();
 
