@@ -6,7 +6,7 @@ public class LifeTime : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.T))
+        if (Input.GetButtonUp("Shield"))
         {
             Destroy(this.gameObject);
         }
