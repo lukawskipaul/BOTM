@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            //TODO: die
+            GetComponent<PlayerRespawnScript>().RespawnPlayer();
         }
     }
 

@@ -10,12 +10,15 @@ public class EnemyHealth : MonoBehaviour
     private Slider healthBar;
     [SerializeField]
     private float maxHealth = 100.0f;
+
+    private Animator anim;
     
     private float currentHealth;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
 
         UpdateHealthBar();
     }
@@ -33,8 +36,14 @@ public class EnemyHealth : MonoBehaviour
         /* Enemy dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            anim.SetTrigger("Die");
+            GetComponent<CapsuleCollider>().enabled = false;
         }
+    }
+
+    private void DestroyEnemy()
+    {
+        Destroy(this.gameObject);
     }
 
     private void UpdateHealthBar()
