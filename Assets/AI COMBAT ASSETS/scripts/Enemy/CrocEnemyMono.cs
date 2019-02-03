@@ -55,7 +55,7 @@ public class CrocEnemyMono : MonoBehaviour
                 anim.SetTrigger("Die");
             }
 		}
-		AttackRangeAnimExecution(); 
+        AttackRangeAnimExecution(); 
     }
     /// <summary>
     /// 
