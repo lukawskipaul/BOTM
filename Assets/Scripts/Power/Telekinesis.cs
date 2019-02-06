@@ -12,14 +12,26 @@ public class Telekinesis : MonoBehaviour
     [SerializeField]
     Transform levitateTransform;
     [SerializeField]
+    float levDistance;
+    [SerializeField]
     float levitateFollowSpeed = 3f;
     [SerializeField]
     float speed = 1f;
+    [SerializeField]
+    float transfromMoveSpeed = 3f;
+
+    private float xInput;
+    private float yInput;
+    private float zInput;
+
+    private Vector3 levDirection;
+    private Vector3 centerPoint;
 
     private void Update()
     {
 
         TelekinesisInputHandler();
+        //LevitateTransformFollowCam();
         if (isLiftingObject == true)
         {
             LevitateObject(levitatableObj);
@@ -48,7 +60,7 @@ public class Telekinesis : MonoBehaviour
         objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
         objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
         Vector3 objectTransfrom = objectToLevitate.transform.position;
-        MoveLevitateObject(objectRigidBody, objectTransfrom);
+        MoveObjectToTransform(objectRigidBody, objectTransfrom);
         Debug.Log("LevitatingObj");
     }
 
@@ -75,10 +87,20 @@ public class Telekinesis : MonoBehaviour
     }
 
     //This is what actually moves the object towards the levitate point
-    private void MoveLevitateObject(Rigidbody objToLevitate, Vector3 objTransform)
+    private void MoveObjectToTransform(Rigidbody objToLevitate, Vector3 objTransform)
     {
         objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed * Time.deltaTime);
         objToLevitate.MovePosition(objTransform);
+    }
+
+    private void MoveLevitateTransform()
+    {
+        xInput = Input.GetAxis("Horizontal");
+        yInput = Input.GetAxis("Mouse Y");
+        zInput = Input.GetAxis("levZ");
+
+        levDirection = new Vector3(xInput, yInput, zInput);
+        levitateTransform.Translate(levDirection * transfromMoveSpeed * Time.deltaTime);
     }
 
     private void DropObject(GameObject objectToDrop)
@@ -140,6 +162,14 @@ public class Telekinesis : MonoBehaviour
             levitatableObj = null;
         }
     }
+
+    //Alternate
+    //private void LevitateTransformFollowCam()
+    //{
+    //    Camera cam = Camera.main;
+    //    centerPoint = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth / 2, cam.pixelHeight / 2, levDistance));
+    //    levitateTransform.position = centerPoint;
+    //}
 
     //Subscribe to Event
     private void OnEnable()
