@@ -90,7 +90,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: space
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -395,6 +395,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: t
+    altNegativeButton: 
+    altPositiveButton: joystick button 5
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Dodge
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: space
     altNegativeButton: 
     altPositiveButton: joystick button 5
     gravity: 1000

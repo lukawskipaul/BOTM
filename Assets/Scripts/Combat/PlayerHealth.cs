@@ -12,23 +12,31 @@ public class PlayerHealth : MonoBehaviour
     private float maxHealth = 100.0f;
 
     private float currentHealth;
+    private bool isInvulnerable;
 
-    void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
+        isInvulnerable = false;
+    }
 
+    private void Start()
+    {
         UpdateHealthBar();
     }
 
-    void Update()
+    private void Update()
     {
         UpdateHealthBar();
     }
 
     public void DamagePlayer(float amount)
     {
-        /* Damages player by enemy attack amount */
-        currentHealth -= amount;
+        /* Damages player by enemy attack amount if not during iframe */
+        if (!isInvulnerable)
+        {
+            currentHealth -= amount;
+        }
 
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
@@ -49,9 +57,21 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void UpdateHealthBar()
+    private void UpdateHealthBar()
     {
         /* Updates health bar with current health */
         healthBar.value = currentHealth / maxHealth;
+    }
+
+    /* Called at specific dodge animation frame to make player invulnerable */
+    private void MakeInvulnerable()
+    {
+        isInvulnerable = true;
+    }
+
+    /* Called at specific dodge animation frame to make player vulnerable */
+    private void MakeVulnerable()
+    {
+        isInvulnerable = false;
     }
 }

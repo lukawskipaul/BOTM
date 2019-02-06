@@ -62,7 +62,7 @@ public class DetectObject : MonoBehaviour
         }
         else
         {
-            Debug.Log("NoTeleObj");
+            //Debug.Log("NoTeleObj");
             OnLevObjectGone();
         }
     }

@@ -10,7 +10,11 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider))]
 public class RootMotionMovementController : MonoBehaviour
 {
+    [SerializeField]
+    private float dodgeDistance = 1500.0f;
+
     private Animator anim;
+    private Rigidbody rb;
 
     private void Awake()
     {
@@ -19,10 +23,16 @@ public class RootMotionMovementController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Start()
+    {
+        rb = this.gameObject.GetComponent<Rigidbody>();
+    }
+
     private void FixedUpdate()
     {
         Move();
-        Jump();
+        //Jump();
+        Dodge();
     }
 
     private void Move()
@@ -42,6 +52,19 @@ public class RootMotionMovementController : MonoBehaviour
         {
             //Sets the Animator Trigger for "Jump"
             anim.SetTrigger("Jump");
+        }
+    }
+
+    private void Dodge()
+    {
+        if (Input.GetButtonDown("Dodge") /*&& isOnGround*/)
+        {
+            anim.SetTrigger("Dodge");
+
+            rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * dodgeDistance, ForceMode.Impulse);
+
+            //have i-frames
         }
     }
 }
