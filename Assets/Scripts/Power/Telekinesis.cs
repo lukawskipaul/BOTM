@@ -5,36 +5,55 @@ using UnityEngine;
 
 public class Telekinesis : MonoBehaviour
 {
+
+    public static event Action TeleManualMovingObject;
+    public static event Action TeleStoppedManualMovingObject;
+
     Rigidbody objectRigidBody;
     public GameObject levitatableObj;
+    public GameObject player;
     bool isLiftingObject = false;
+    bool isManuallyMovingObj = false;
 
     [SerializeField]
     Transform levitateTransform;
-    [SerializeField]
-    float levDistance;
     [SerializeField]
     float levitateFollowSpeed = 3f;
     [SerializeField]
     float speed = 1f;
     [SerializeField]
     float transfromMoveSpeed = 3f;
+    [SerializeField]
+    float closeDistance;
 
+    private float baseLevitateFollowSpeed;
     private float xInput;
     private float yInput;
     private float zInput;
 
     private Vector3 levDirection;
     private Vector3 centerPoint;
+    private Vector3 startingPosition;
+
+    private void Start()
+    {
+        startingPosition = levitateTransform.localPosition;
+        baseLevitateFollowSpeed = levitateFollowSpeed;
+    }
 
     private void Update()
     {
 
         TelekinesisInputHandler();
         //LevitateTransformFollowCam();
-        if (isLiftingObject == true)
+        if (isLiftingObject && !isManuallyMovingObj)
         {
             LevitateObject(levitatableObj);
+        }
+        else if(isLiftingObject && isManuallyMovingObj)
+        {
+            LevitateObject(levitatableObj);
+            MoveLevitateTransform();
         }
         if(isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
@@ -49,6 +68,23 @@ public class Telekinesis : MonoBehaviour
         {
             UsePower(levitatableObj);
         }
+        if (Input.GetButtonDown("ManualTele"))
+        {
+            if (isLiftingObject)
+            {
+                if (isManuallyMovingObj)
+                {
+                    isManuallyMovingObj = false;
+                    ResetAfterManualMove();
+                    OnTeleStoppedManualMovingObject();
+                }
+                else
+                {
+                    isManuallyMovingObj = true;
+                    OnTeleManualMovingObject();
+                }
+            }
+        }
     }
 
     private void LevitateObject(GameObject objectToLevitate)
@@ -61,6 +97,7 @@ public class Telekinesis : MonoBehaviour
         objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         MoveObjectToTransform(objectRigidBody, objectTransfrom);
+        SetSpeed();
         Debug.Log("LevitatingObj");
     }
 
@@ -68,7 +105,7 @@ public class Telekinesis : MonoBehaviour
     {
         objectRigidBody = levitatableObj.GetComponent<Rigidbody>();
         objectRigidBody.useGravity = true;
-        objectRigidBody.AddForce(transform.forward * speed * 10);
+        objectRigidBody.AddForce(Camera.main.transform.forward * speed * 10);
         isLiftingObject = false;
         levitatableObj = null;
     }
@@ -95,12 +132,15 @@ public class Telekinesis : MonoBehaviour
 
     private void MoveLevitateTransform()
     {
-        xInput = Input.GetAxis("Horizontal");
+        xInput = Input.GetAxis("Mouse X");
         yInput = Input.GetAxis("Mouse Y");
-        zInput = Input.GetAxis("levZ");
+        zInput = Input.GetAxis("Vertical");
+
+        levitateTransform.SetParent(null);
 
         levDirection = new Vector3(xInput, yInput, zInput);
         levitateTransform.Translate(levDirection * transfromMoveSpeed * Time.deltaTime);
+
     }
 
     private void DropObject(GameObject objectToDrop)
@@ -145,6 +185,27 @@ public class Telekinesis : MonoBehaviour
 
     }
 
+    private void SetSpeed()
+    {
+        //if (Vector3.Distance(player.transform.position, levitatableObj.transform.position) <= closeDistance)
+        //{
+        //    levitateFollowSpeed *= 2;
+        //}
+        //else if (Vector3.Distance(player.transform.position, levitatableObj.transform.position) > closeDistance)
+        //{
+        //    levitateFollowSpeed = baseLevitateFollowSpeed;
+        //}
+        if (Input.GetButtonDown("Vertical"))
+        {
+            Debug.Log("pressing w");
+            levitateFollowSpeed = 15;
+        }
+        else
+        {
+            levitateFollowSpeed = baseLevitateFollowSpeed;
+        }
+    }
+
     private void SetLevitatableObject(GameObject gameObject)
     {
         if (!isLiftingObject)
@@ -163,13 +224,35 @@ public class Telekinesis : MonoBehaviour
         }
     }
 
-    //Alternate
+    private void ResetAfterManualMove()
+    {
+        levitateTransform.SetParent(Camera.main.gameObject.transform);
+        levitateTransform.localPosition = startingPosition;
+    }
+
+    //Alternate way to move object to center of screen
     //private void LevitateTransformFollowCam()
     //{
     //    Camera cam = Camera.main;
     //    centerPoint = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth / 2, cam.pixelHeight / 2, levDistance));
     //    levitateTransform.position = centerPoint;
     //}
+
+    private void OnTeleManualMovingObject()
+    {
+        if (TeleManualMovingObject != null)
+        {
+            TeleManualMovingObject.Invoke();
+        }
+    }
+
+    private void OnTeleStoppedManualMovingObject()
+    {
+        if (TeleStoppedManualMovingObject != null)
+        {
+            TeleStoppedManualMovingObject.Invoke();
+        }
+    }
 
     //Subscribe to Event
     private void OnEnable()

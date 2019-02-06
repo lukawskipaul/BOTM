@@ -11,6 +11,7 @@ using UnityEngine;
 public class RootMotionMovementController : MonoBehaviour
 {
     private Animator anim;
+    bool canMove = true;
 
     private void Awake()
     {
@@ -21,8 +22,12 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-        Jump();
+        if (canMove)
+        {
+            Move();
+            Jump();
+        }
+
     }
 
     private void Move()
@@ -43,5 +48,23 @@ public class RootMotionMovementController : MonoBehaviour
             //Sets the Animator Trigger for "Jump"
             anim.SetTrigger("Jump");
         }
+    }
+
+    private void SetCanMove()
+    {
+        if (canMove)
+        {
+            canMove = false;
+        }
+        else
+        {
+            canMove = true;
+        }
+    }
+
+    private void OnEnable()
+    {
+        Telekinesis.TeleManualMovingObject += SetCanMove;
+        Telekinesis.TeleStoppedManualMovingObject += SetCanMove;
     }
 }
