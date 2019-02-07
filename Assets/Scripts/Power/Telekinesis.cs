@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Telekinesis : MonoBehaviour
 {
@@ -16,13 +17,26 @@ public class Telekinesis : MonoBehaviour
     [SerializeField]
     float speed = 1f;
 
+    PostProcessVolume ppVolume;  //UI
+    ChromaticAberration chromaticAberration;     //UI
+
+    private void Start()
+    {
+        //UI
+        chromaticAberration = ScriptableObject.CreateInstance<ChromaticAberration>();
+        chromaticAberration.enabled.Override(true);
+        chromaticAberration.intensity.Override(1f);
+        ppVolume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, chromaticAberration);
+        //UI
+    }
+
     private void Update()
     {
-
         TelekinesisInputHandler();
         if (isLiftingObject == true)
         {
             LevitateObject(levitatableObj);
+
         }
         if(isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
@@ -50,6 +64,8 @@ public class Telekinesis : MonoBehaviour
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         MoveLevitateObject(objectRigidBody, objectTransfrom);
         Debug.Log("LevitatingObj");
+
+        chromaticAberration.intensity.value = 1f;   //UI
     }
 
     private void ThrowObject()
