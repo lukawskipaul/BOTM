@@ -13,11 +13,11 @@ public class DoorRailway : MonoBehaviour
     { 
         if (GetComponent<TriggerableObject>().isTriggered == true)
         {
-            Doorway();
+            Railway();
         }
        
     }
-    public void Doorway()
+    public void Railway()
     {
         if (transform.position != target[current].position)
         {
