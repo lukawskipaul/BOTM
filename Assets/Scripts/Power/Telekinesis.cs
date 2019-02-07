@@ -31,6 +31,8 @@ public class Telekinesis : MonoBehaviour
     private float yInput;
     private float zInput;
 
+    BoxCollider boxCollider;
+
     private Vector3 levDirection;
     private Vector3 centerPoint;
     private Vector3 startingPosition;
@@ -59,6 +61,8 @@ public class Telekinesis : MonoBehaviour
         {
             ThrowObject();
         }
+
+        
     }
 
 
@@ -76,12 +80,12 @@ public class Telekinesis : MonoBehaviour
                 {
                     isManuallyMovingObj = false;
                     ResetAfterManualMove();
-                    OnTeleStoppedManualMovingObject();
+                    //OnTeleStoppedManualMovingObject();
                 }
                 else
                 {
                     isManuallyMovingObj = true;
-                    OnTeleManualMovingObject();
+                    //OnTeleManualMovingObject();
                 }
             }
         }
@@ -91,7 +95,7 @@ public class Telekinesis : MonoBehaviour
     {
         GetObjectRigidBody(objectToLevitate);
         objectRigidBody.useGravity = false;
-        objectToLevitate.layer = 11;
+        objectToLevitate.layer = 10;
         objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
         objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
         objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
@@ -132,13 +136,15 @@ public class Telekinesis : MonoBehaviour
 
     private void MoveLevitateTransform()
     {
-        xInput = Input.GetAxis("Mouse X");
-        yInput = Input.GetAxis("Mouse Y");
-        zInput = Input.GetAxis("Vertical");
+        //xInput = Input.GetAxis("Mouse X");
+        //yInput = Input.GetAxis("Mouse Y");
+        zInput = Input.mouseScrollDelta.y * 2;
 
-        levitateTransform.SetParent(null);
+
+        //levitateTransform.SetParent(null);
 
         levDirection = new Vector3(xInput, yInput, zInput);
+        //levDirection = new Vector3(levitateTransform.position.x, levitateTransform.position.y, zInput);
         levitateTransform.Translate(levDirection * transfromMoveSpeed * Time.deltaTime);
 
     }
