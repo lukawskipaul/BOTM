@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Telekinesis : MonoBehaviour
-{
-
+{   
+    #region Variables
     public static event Action TeleManualMovingObject;
     public static event Action TeleStoppedManualMovingObject;
 
@@ -24,8 +24,6 @@ public class Telekinesis : MonoBehaviour
     float transfromMoveSpeed = 3f;
     [SerializeField]
     float telePushPullSpeed = 3f;
-    [SerializeField]
-    Vector3 testSpeed;
 
     private float baseLevitateFollowSpeed;
     private float xInput;
@@ -38,6 +36,7 @@ public class Telekinesis : MonoBehaviour
     private Vector3 centerPoint;
     private Vector3 startingPosition;
 
+    #endregion
     private void Start()
     {
         startingPosition = levitateTransform.localPosition;
@@ -116,7 +115,6 @@ public class Telekinesis : MonoBehaviour
     private void MoveObjectToTransform(Rigidbody objToLevitate, Vector3 objTransform)
     {
         objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed);
-        //objTransform = Vector3.SmoothDamp(objTransform, levitateTransform.position, ref testSpeed, Time.deltaTime);
         objToLevitate.MovePosition(objTransform);
     }
 
@@ -252,6 +250,7 @@ public class Telekinesis : MonoBehaviour
         }
     }
 
+    #region Event Subscribing
     //Subscribe to Event
     private void OnEnable()
     {
@@ -264,4 +263,5 @@ public class Telekinesis : MonoBehaviour
         DetectObject.LevObjectDetected -= SetLevitatableObject;
         DetectObject.LevObjectGone -= ResetLevitatableObj;
     }
+    #endregion
 }
