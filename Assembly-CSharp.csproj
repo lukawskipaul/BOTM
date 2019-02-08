@@ -60,28 +60,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AI COMBAT ASSETS\scripts\BossAttackHitbox.cs" />
-    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\CrocEnemy.cs" />
-    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\CrocEnemyMono.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\EmptyObj\BossEntranceDetect.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\Boss\BossAI.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\Boss\BossEnemy.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\Boss\BossEnemyMono.cs" />
     <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\EnemyAI.cs" />
-    <Compile Include="Assets\AI COMBAT ASSETS\scripts\MobAttackHitbox.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\Mob\CrocEnemy.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Enemy\Mob\CrocEnemyMono.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Hitbox\BossAttackHitbox.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Hitbox\MobAttackHitbox.cs" />
+    <Compile Include="Assets\AI COMBAT ASSETS\scripts\Utility\FieldOfView.cs" />
+    <Compile Include="Assets\Boss_Charge.cs" />
+    <Compile Include="Assets\Boss_Strafe.cs" />
     <Compile Include="Assets\DeathState.cs" />
     <Compile Include="Assets\EnemyChasePlayer.cs" />
     <Compile Include="Assets\LickWeaponState.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -285,13 +292,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/lavance.strickland/Desktop/BOTM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/Spidakid/Documents/ReposGit/BOTM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

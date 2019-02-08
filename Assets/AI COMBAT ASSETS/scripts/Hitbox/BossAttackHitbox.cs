@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BossAttackHitbox : MonoBehaviour
 {
-    public string playerTag = "Player";
-    public bool showDebug = true;
+    [SerializeField]
+    private string playerTag = "Player";
+    [SerializeField]
+    private bool showDebug = true;
     private Animator parentAnim;
     private void Start()
     {

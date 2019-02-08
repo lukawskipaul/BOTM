@@ -9,7 +9,7 @@ public class DeathState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
-        agent.isStopped = true;
+        agent.isStopped = true;//stops the agent from moving 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,7 +21,7 @@ public class DeathState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.gameObject.SetActive(false);
+        animator.gameObject.SetActive(false);//disables enemy gameobject
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

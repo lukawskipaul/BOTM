@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI {
     protected int Health;
@@ -9,7 +10,6 @@ public class EnemyAI {
     {
         Health = _health;
     }
-
     /// <summary>
     /// Calculate how much Health the enemy has after taking damage 
     /// </summary>

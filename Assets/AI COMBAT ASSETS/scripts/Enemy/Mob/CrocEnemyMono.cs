@@ -17,10 +17,12 @@ public class CrocEnemyMono : MonoBehaviour
     private CrocEnemy enemyStats;
 	
     private Animator anim;
-	public float detectionDistance = 6;
-    public bool showDebug = true;
-
-    public LayerMask ObstacleMask;
+    [SerializeField]
+	private float detectionDistance = 6;
+    [SerializeField]
+    private bool showDebug = true;
+    [SerializeField]
+    private LayerMask ObstacleMask;
     
     // Start is called before the first frame update
     void Start()
@@ -35,14 +37,15 @@ public class CrocEnemyMono : MonoBehaviour
     void Update()
     {
         anim.SetFloat("distanceFromPlayerSq",enemyStats.SquaredDistanceToPlayer(this.gameObject, player));//[Square] Distance between the Player and Enemy
-        CalculateDetectionRange();
+        
         if (showDebug)
         {
             Debug.Log("Square Distance: " + enemyStats.SquaredDistanceToPlayer(this.gameObject, player));
-            
-			// Linecast checks if an obstacle is between the enemy and the player
-			// Player layer must be set to "Player" for cast to work
-			if (Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
+
+            // Linecast checks if an obstacle is between the enemy and the player
+            // Player layer must be set to "Player" for cast to work
+            //This condition is to prevent the enemy from detecting player through walls
+            if (Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
 			{
 				Debug.Log("Linecast hit");
 			}
@@ -56,6 +59,7 @@ public class CrocEnemyMono : MonoBehaviour
                 anim.SetTrigger("Die");
             }
 		}
+        CalculateDetectionRange();
         AttackRangeAnimExecution(); 
     }
     /// <summary>
@@ -63,16 +67,12 @@ public class CrocEnemyMono : MonoBehaviour
     /// </summary>
     private void CalculateDetectionRange()
     {
-        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2))
+        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask) 
+            && !anim.GetBool("PlayerDetected"))
         {
-            anim.SetTrigger("PlayerDetected");
+            anim.SetBool("PlayerDetected",true);
             if (showDebug) Debug.Log("Enemy Detected!");
         }
-        //else
-        //{
-        //    anim.SetBool("PlayerDetected", false);
-        //    if (showDebug) Debug.Log("Enemy Lost!");
-        //}
 
     }
     /// <summary>

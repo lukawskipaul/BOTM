@@ -7,8 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class MobAttackHitbox : MonoBehaviour
 {
-    public string playerTag = "Player";
-    public bool showDebug = true;
+    [SerializeField]
+    private bool showDebug = true;
+    [SerializeField]
+    private string playerTag = "Player";
     private Animator parentAnim;
     private void Start()
     {
