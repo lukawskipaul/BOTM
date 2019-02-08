@@ -23,13 +23,24 @@ public class DetectObject : MonoBehaviour
         CastSphere();
     }
 
+
+    private void OnDrawGizmos()             ////// DEBUG GIZMOS
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(detectVector, detectRadius);
+    }
+
     //Spherecast To detect objects We can use telekinesis on, then do a Raycast along the path between the detectVector and the levitation object to make sure it's clear
     private void CastSphere()
     {
         Ray ray = new Ray(detectVector, transform.forward);
+
+        Debug.DrawRay(detectVector, transform.forward, Color.red);      ///////////DEBUG RAYCAST
+
         RaycastHit hit;
         if (Physics.SphereCast(ray, detectRadius, out hit, detectRange))
         {
+
             if (hit.collider.gameObject.tag == "LevitatableObject")
             {
                 bool pathToObjClear;
