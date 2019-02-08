@@ -32,11 +32,13 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
+
         TelekinesisInputHandler();
         if (isLiftingObject == true)
         {
             LevitateObject(levitatableObj);
 
+            chromaticAberration.intensity.value = 1f;   //UI
         }
         if(isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
@@ -65,7 +67,7 @@ public class Telekinesis : MonoBehaviour
         MoveLevitateObject(objectRigidBody, objectTransfrom);
         Debug.Log("LevitatingObj");
 
-        chromaticAberration.intensity.value = 1f;   //UI
+        
     }
 
     private void ThrowObject()
