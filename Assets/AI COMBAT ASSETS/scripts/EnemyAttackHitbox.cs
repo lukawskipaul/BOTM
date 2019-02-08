@@ -9,9 +9,11 @@ public class EnemyAttackHitbox : MonoBehaviour
 {
     public string playerTag = "Player";
     public bool showDebug = true;
+    private Animator parentAnim;
     private void Start()
     {
         this.GetComponent<Collider>().isTrigger = true;//Automatically set collider to a trigger
+        parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>
     /// Trigger event which detects whether the hitbox collided with the player
@@ -19,14 +21,14 @@ public class EnemyAttackHitbox : MonoBehaviour
     /// <param name="other">The Object that caused the activation of the trigger event</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == playerTag && this.GetComponentInParent<Animator>().GetBool("InAttackRange"))
+        if (other.tag == playerTag && parentAnim.GetBool("InAttackRange") && !parentAnim.GetBool("isLickingWeapon"))
         {
             //TODO: Add player losing Health Here
             if (showDebug)
             {
                 Debug.Log("Player Hit!");
             }
-            
+            parentAnim.SetBool("isLickingWeapon", true);
         }
     }
 }
