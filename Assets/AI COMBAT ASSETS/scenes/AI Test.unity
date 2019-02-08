@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  showDebug: 1
+  showDebug: 0
 --- !u!65 &644871326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ MonoBehaviour:
   Health: 10
   player: {fileID: 1054393088}
   detectionDistance: 6
-  showDebug: 1
+  showDebug: 0
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 512

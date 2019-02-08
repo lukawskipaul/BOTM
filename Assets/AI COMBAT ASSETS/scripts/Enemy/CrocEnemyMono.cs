@@ -35,6 +35,7 @@ public class CrocEnemyMono : MonoBehaviour
     void Update()
     {
         anim.SetFloat("distanceFromPlayerSq",enemyStats.SquaredDistanceToPlayer(this.gameObject, player));//[Square] Distance between the Player and Enemy
+        CalculateDetectionRange();
         if (showDebug)
         {
             Debug.Log("Square Distance: " + enemyStats.SquaredDistanceToPlayer(this.gameObject, player));
@@ -58,20 +59,20 @@ public class CrocEnemyMono : MonoBehaviour
         AttackRangeAnimExecution(); 
     }
     /// <summary>
-    /// 
+    /// Calculates whether the player is within the sight of the enemy
     /// </summary>
     private void CalculateDetectionRange()
     {
         if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2))
         {
-            anim.SetBool("PlayerDetected", true);
+            anim.SetTrigger("PlayerDetected");
             if (showDebug) Debug.Log("Enemy Detected!");
         }
-        else
-        {
-            anim.SetBool("PlayerDetected", false);
-            if (showDebug) Debug.Log("Enemy Lost!");
-        }
+        //else
+        //{
+        //    anim.SetBool("PlayerDetected", false);
+        //    if (showDebug) Debug.Log("Enemy Lost!");
+        //}
 
     }
     /// <summary>

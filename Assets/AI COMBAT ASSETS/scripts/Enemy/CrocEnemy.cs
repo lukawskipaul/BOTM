@@ -6,5 +6,6 @@ public class CrocEnemy : EnemyAI
 {
     public CrocEnemy(int _health) : base(_health)
     {
+
     }
 }
