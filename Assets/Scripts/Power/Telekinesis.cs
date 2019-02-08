@@ -43,7 +43,7 @@ public class Telekinesis : MonoBehaviour
     {
         GetObjectRigidBody(objectToLevitate);
         objectRigidBody.useGravity = false;
-        objectToLevitate.layer = 11;
+        objectToLevitate.layer = 10;
         objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
         objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
         objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
