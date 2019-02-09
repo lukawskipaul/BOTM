@@ -959,6 +959,7 @@ GameObject:
   - component: {fileID: 4124813799016778232}
   - component: {fileID: 4219007131172156072}
   - component: {fileID: 4085641432741755965}
+  - component: {fileID: 7794225243205025637}
   m_Layer: 9
   m_Name: xbotPlayer
   m_TagString: Player
@@ -1072,7 +1073,7 @@ MonoBehaviour:
   levitatableObj: {fileID: 0}
   levitateTransform: {fileID: 0}
   levitateFollowSpeed: 0.5
-  throwForce: 1
+  throwForce: 75
   transfromMoveSpeed: 3
   telePushPullSpeed: 6
 --- !u!114 &4865034237498885615
@@ -1089,7 +1090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectPoint: {fileID: 0}
   detectRadius: 2
-  detectRange: 6
+  detectRange: 8
 --- !u!114 &4124813799016778232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,6 +1131,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   maxHealth: 100
+--- !u!114 &7794225243205025637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316969358156154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bd8b9744c36cb4aa46fab41806f286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CM_ThirdPersonCamera: {fileID: 0}
+  CM_LockOnCamera: {fileID: 0}
 --- !u!1 &1323110928474458
 GameObject:
   m_ObjectHideFlags: 0
