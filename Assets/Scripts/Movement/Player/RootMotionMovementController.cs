@@ -10,9 +10,6 @@ using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider))]
 public class RootMotionMovementController : MonoBehaviour
 {
-    [SerializeField]
-    private int dodgeDistance;
-
     private Animator anim;
     private Rigidbody rb;
     private bool canMove = true;
@@ -57,7 +54,6 @@ public class RootMotionMovementController : MonoBehaviour
             anim.SetTrigger("Dodge");
 
             rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
-            rb.AddForce(transform.forward * dodgeDistance, ForceMode.Impulse);
 
             //have i-frames
         }
