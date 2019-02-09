@@ -207,6 +207,10 @@ public class Telekinesis : MonoBehaviour
         if (!isLiftingObject)
         {
             levitatableObj = gameObject;
+
+            //TEMPORARY FEEDBACK
+            levitatableObj.GetComponent<Renderer>().material.color = Color.green;
+
             Debug.Log(levitatableObj.name + " can be levitated.");
         }
 
@@ -214,6 +218,9 @@ public class Telekinesis : MonoBehaviour
 
     private void ResetLevitatableObj()
     {
+        //TEMPORARY FEEDBACK
+        levitatableObj.GetComponent<Renderer>().material.color = Color.white;
+
         if (!isLiftingObject)
         {
             levitatableObj = null;

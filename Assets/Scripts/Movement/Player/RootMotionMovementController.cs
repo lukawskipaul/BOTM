@@ -22,6 +22,14 @@ public class RootMotionMovementController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Update()
+    {
+        if (canMove)
+        {
+            Rotate();
+        }
+    }
+
     private void FixedUpdate()
     {
         if (canMove)
@@ -37,7 +45,10 @@ public class RootMotionMovementController : MonoBehaviour
         anim.SetFloat("MoveZ", Input.GetAxis("Vertical"));
         //adjusts the float value for "MoveX" denoted in the attached Animator based on Horizontal input
         anim.SetFloat("MoveX", Input.GetAxis("Horizontal"));
+    }
 
+    private void Rotate()
+    {
         if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
         {
             //look with Camera
