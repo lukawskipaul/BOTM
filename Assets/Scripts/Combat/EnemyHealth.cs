@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CapsuleCollider))]
 //This script goes on enemy
 public class EnemyHealth : MonoBehaviour
 {
@@ -39,11 +40,6 @@ public class EnemyHealth : MonoBehaviour
             anim.SetTrigger("Die");
             GetComponent<CapsuleCollider>().enabled = false;
         }
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(this.gameObject);
     }
 
     private void UpdateHealthBar()

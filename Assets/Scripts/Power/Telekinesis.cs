@@ -219,7 +219,10 @@ public class Telekinesis : MonoBehaviour
     private void ResetLevitatableObj()
     {
         //TEMPORARY FEEDBACK
-        levitatableObj.GetComponent<Renderer>().material.color = Color.white;
+        if (levitatableObj != null)
+        {
+            levitatableObj.GetComponent<Renderer>().material.color = Color.white;
+        }
 
         if (!isLiftingObject)
         {
