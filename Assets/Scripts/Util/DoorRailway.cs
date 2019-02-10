@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorRailway : MonoBehaviour
+public class DoorRailway : TriggerableObject
 {
     public Transform[] target;
     public float speed;
     private int current;
-    TriggerableObject Triggerable;
 
     void Update()
     { 

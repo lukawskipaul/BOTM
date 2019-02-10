@@ -11,7 +11,7 @@ public class Trigger : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Triggerable.isTriggered = true;
+            Triggerable.IsTriggered = true;
         }
     }
 }
