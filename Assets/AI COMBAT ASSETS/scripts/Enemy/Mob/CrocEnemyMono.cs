@@ -45,7 +45,7 @@ public class CrocEnemyMono : MonoBehaviour
             // Linecast checks if an obstacle is between the enemy and the player
             // Player layer must be set to "Player" for cast to work
             //This condition is to prevent the enemy from detecting player through walls
-            if (Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
+            if (Physics.Linecast(this.gameObject.transform.position, player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y,0), ObstacleMask))
 			{
 				Debug.Log("Linecast hit");
 			}
@@ -67,7 +67,8 @@ public class CrocEnemyMono : MonoBehaviour
     /// </summary>
     private void CalculateDetectionRange()
     {
-        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask) 
+        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && 
+            !Physics.Linecast(this.gameObject.transform.position, player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y,0), ObstacleMask) 
             && !anim.GetBool("PlayerDetected"))
         {
             anim.SetBool("PlayerDetected",true);
@@ -79,7 +80,9 @@ public class CrocEnemyMono : MonoBehaviour
     /// If player is out of the enemy's attack range or there is an obstacle in the way, the enemy won't attack
     /// </summary>
     private void AttackRangeAnimExecution(){
-		if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) || Physics.Linecast(this.gameObject.transform.position, player.transform.position, ObstacleMask))
+        if (showDebug) Debug.Log("Stopping Distance:" + agent.stoppingDistance * agent.stoppingDistance);
+		if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) ||
+            Physics.Linecast(this.gameObject.transform.position, player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y,0), ObstacleMask))
 		{
 			anim.SetBool("InAttackRange", false);
 		}
@@ -94,7 +97,7 @@ public class CrocEnemyMono : MonoBehaviour
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-            Debug.DrawLine(this.transform.position, player.transform.position, Color.cyan);
+            Debug.DrawLine(this.gameObject.transform.position, player.transform.position + new Vector3(0,player.GetComponent<Collider>().bounds.center.y,0), Color.cyan);
         }
     }
 
