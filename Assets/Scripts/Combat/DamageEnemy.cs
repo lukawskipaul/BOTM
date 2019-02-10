@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
 //This script goes on sword joint of player
 public class DamageEnemy : MonoBehaviour
 {
