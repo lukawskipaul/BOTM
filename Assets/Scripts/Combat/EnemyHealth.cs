@@ -9,11 +9,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
-    private float maxHealth = 100.0f;
+    private int maxHealth = 100;
 
     private Animator anim;
     
-    private float currentHealth;
+    private int currentHealth;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void DamageEnemy(float amount)
+    public void DamageEnemy(int amount)
     {
         /* Damages enemy by player attack amount */
         currentHealth -= amount;
