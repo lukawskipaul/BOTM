@@ -59,12 +59,12 @@ public class RootMotionMovementController : MonoBehaviour
     {
         if (Input.GetButtonDown("Dodge") /*&& isOnGround*/)
         {
+            /* Play dodge animation when dodge button is pressed */
             anim.SetTrigger("Dodge");
 
+            /* Add force in the direction the player is moving and slightly up */
             rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
-            rb.AddForce(transform.forward * dodgeDistance, ForceMode.Impulse);
-
-            //have i-frames
+            rb.AddForce(rb.velocity.normalized * dodgeDistance, ForceMode.Impulse);
         }
     }
 }
