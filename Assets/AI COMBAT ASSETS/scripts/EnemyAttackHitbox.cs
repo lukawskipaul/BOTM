@@ -11,7 +11,7 @@ public class MobAttackHitbox : MonoBehaviour
     [SerializeField]
     private string playerTag = "Player";
     [SerializeField]
-    private float attackDamage = 10.0f;
+    private int attackDamage = 10;
     [SerializeField]
     private bool showDebug = true;
 
