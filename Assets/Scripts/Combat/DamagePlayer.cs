@@ -9,7 +9,7 @@ using UnityEngine;
 public class DamagePlayer : MonoBehaviour
 {
     [SerializeField]
-    private float attackDamage = 10.0f;
+    private int attackDamage = 10;
 
     private void OnTriggerEnter(Collider other)
     {

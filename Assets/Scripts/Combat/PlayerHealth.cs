@@ -9,26 +9,34 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
-    private float maxHealth = 100.0f;
+    private int maxHealth = 100;
 
-    private float currentHealth;
+    private int currentHealth;
+    private bool isInvulnerable;
 
-    void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
-
-        UpdateHealthBar();
+        isInvulnerable = false;
     }
 
-    void Update()
+    private void Start()
     {
         UpdateHealthBar();
     }
 
-    public void DamagePlayer(float amount)
+    private void Update()
     {
-        /* Damages player by enemy attack amount */
-        currentHealth -= amount;
+        UpdateHealthBar();
+    }
+
+    public void DamagePlayer(int amount)
+    {
+        /* Damages player by enemy attack amount if not during iframe */
+        if (!isInvulnerable)
+        {
+            currentHealth -= amount;
+        }
 
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
@@ -37,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void HealPlayer(float amount)
+    public void HealPlayer(int amount)
     {
         /* Heals player by pickup amount */
         currentHealth += amount;
@@ -49,9 +57,21 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void UpdateHealthBar()
+    private void UpdateHealthBar()
     {
         /* Updates health bar with current health */
         healthBar.value = currentHealth / maxHealth;
+    }
+
+    /* Called at specific dodge animation frame to make player invulnerable */
+    private void MakeInvulnerable()
+    {
+        isInvulnerable = true;
+    }
+
+    /* Called at specific dodge animation frame to make player vulnerable */
+    private void MakeVulnerable()
+    {
+        isInvulnerable = false;
     }
 }
