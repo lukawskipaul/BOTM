@@ -54,6 +54,10 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float strafeTime = 1;
 
+    [Tooltip("The maximum distance that the boss character moves each time it jumps back")]
+    [SerializeField]
+    private float jumpBackDistance = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -110,6 +114,11 @@ public class BossAI : MonoBehaviour
     public float StrafeTime
     {
         get { return strafeTime; }
+    }
+
+    public float JumpBackDistance
+    {
+        get { return jumpBackDistance; }
     }
 
     /*// Update is called once per frame
