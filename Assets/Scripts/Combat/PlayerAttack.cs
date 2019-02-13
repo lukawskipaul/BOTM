@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         /* Play attack animation when attack button is pressed */
-        if (Input.GetButtonDown("Attack") && canAttack /*&& !isTelekinesing*/)
+        if (Input.GetButtonDown("Attack") && canAttack)
         {
             anim.SetTrigger("Attack");
         }
