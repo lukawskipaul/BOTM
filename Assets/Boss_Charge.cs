@@ -7,6 +7,7 @@ public class Boss_Charge : StateMachineBehaviour
 {
     GameObject boss;
     GameObject player;
+
     BossAI bossAI;
     NavMeshAgent bossNavMeshAgent;
 
@@ -22,10 +23,12 @@ public class Boss_Charge : StateMachineBehaviour
         boss = animator.gameObject;
         bossAI = boss.GetComponent<BossAI>();
         player = bossAI.Player;
+
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
 
         target = bossAI.Target; // used for debugging and visualization
                                 // comment out in release version of game
+
 
         // rotate boss to face player
         boss.transform.LookAt(player.transform);
@@ -38,6 +41,7 @@ public class Boss_Charge : StateMachineBehaviour
 
         // set boss destination
         targetPosition += boss.transform.position;
+
         bossNavMeshAgent.SetDestination(targetPosition);
 
         target.transform.position = targetPosition; // used for debugging and visualization
@@ -55,6 +59,7 @@ public class Boss_Charge : StateMachineBehaviour
     //    
     //}
 
+
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -62,6 +67,7 @@ public class Boss_Charge : StateMachineBehaviour
         bossNavMeshAgent.speed /= bossAI.ChargeSpeedScalar;
         bossNavMeshAgent.acceleration /= bossAI.ChargeAccelerationScalar;
         bossNavMeshAgent.angularSpeed /= bossAI.ChargeAngularSpeedScalar;
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

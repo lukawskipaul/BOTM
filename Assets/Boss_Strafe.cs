@@ -25,6 +25,7 @@ public class Boss_Strafe : StateMachineBehaviour
         boss = animator.gameObject;
         bossAI = boss.GetComponent<BossAI>();
         player = bossAI.Player;
+
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
 
         target = bossAI.Target; // used for debugging and visualization
@@ -36,9 +37,11 @@ public class Boss_Strafe : StateMachineBehaviour
         // The position of the player relative to the Boss
         // I.E. The boss' position is considered local (0,0) and the direction 
         // it's facing decides the orientation of the local x-axis and z-axis
+
         relativePosition = boss.transform.InverseTransformPoint(player.transform.position);
         Debug.Log("Player.x relative to Boss = " + relativePosition.x);
         Debug.Log("Player.z relative to Boss = " + relativePosition.z);
+
 
         target.transform.position = ClosestPoint(boss.transform.position, player.transform.position);
     }
@@ -47,14 +50,18 @@ public class Boss_Strafe : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // for debugging and testing strafing speed only
+
         {
             strafeSpeed = bossAI.StrafeSpeed;
             player.transform.LookAt(boss.transform);
+
         }//*/
 
         boss.transform.LookAt(player.transform);
 
+
         if (relativePosition.x >= 0)
+
         {
             target.transform.RotateAround(player.transform.position, Vector3.up, strafeSpeed * Time.deltaTime);
         }
@@ -88,12 +95,14 @@ public class Boss_Strafe : StateMachineBehaviour
     {
         float magnintudeBP = MagnitudeBossPlayer(bossPosition, playerPosition);
         float shortX, shortZ;
+
         
         Vector3 bossLocal = player.transform.InverseTransformPoint(bossPosition);
         Debug.Log("Boss local position = " + bossLocal);
 
         shortX = (strafeRadius * (bossLocal.x) / magnintudeBP);
         shortZ = (strafeRadius * (bossLocal.z) / magnintudeBP);
+
 
         //target.transform.position.y;
         return player.transform.TransformPoint(new Vector3(shortX, 0, shortZ));
