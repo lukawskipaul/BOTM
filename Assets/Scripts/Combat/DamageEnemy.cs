@@ -8,7 +8,7 @@ using UnityEngine;
 public class DamageEnemy : MonoBehaviour
 {
     [SerializeField]
-    private float attackDamage = 25.0f;
+    private int attackDamage = 25;
 
     private bool isAttacking;
     public bool IsAttacking

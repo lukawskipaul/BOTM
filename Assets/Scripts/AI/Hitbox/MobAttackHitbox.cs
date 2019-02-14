@@ -8,9 +8,11 @@ using UnityEngine;
 public class MobAttackHitbox : MonoBehaviour
 {
     [SerializeField]
-    private bool showDebug = true;
+    private int attackDamage = 10;
     [SerializeField]
     private string playerTag = "Player";
+    [SerializeField]
+    private bool showDebug = true;
     private Animator parentAnim;
     private void Start()
     {
@@ -25,11 +27,11 @@ public class MobAttackHitbox : MonoBehaviour
     {
         if (other.tag == playerTag && parentAnim.GetBool("InAttackRange") && !parentAnim.GetBool("isLickingWeapon"))
         {
-            //TODO: Add player losing Health Here
             if (showDebug)
             {
                 Debug.Log("Player Hit!");
             }
+            other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
             parentAnim.SetBool("isLickingWeapon", true);
         }
     }
