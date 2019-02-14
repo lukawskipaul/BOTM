@@ -5,12 +5,10 @@ using UnityEngine;
 /// Attach this script to the enemy hitbox that will deal damage to Player
 /// </summary>
 [RequireComponent(typeof(BoxCollider))]
-public class MobAttackHitbox : MonoBehaviour
+public class EnemyAttackHitbox : MonoBehaviour
 {
-    [SerializeField]
-    private bool showDebug = true;
-    [SerializeField]
-    private string playerTag = "Player";
+    public string playerTag = "Player";
+    public bool showDebug = true;
     private Animator parentAnim;
     private void Start()
     {
