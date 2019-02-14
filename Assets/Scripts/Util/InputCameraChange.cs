@@ -7,10 +7,14 @@ public class InputCameraChange : MonoBehaviour
 {
     [SerializeField] GameObject CM_LockOnCamera;
     [SerializeField] GameObject CM_LookAtTargetObject;
-    
+
+    GameObject LockOnTarget;
+    float DistToTarget;
 
     private Animator anim;
-    private bool lockOn;
+    public bool lockOn;
+    [SerializeField]
+    private float LockOnRange;
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +35,30 @@ public class InputCameraChange : MonoBehaviour
             {
                 //if not locked on, tell DetectObject we're looking for an enemy, so it will run DetectObject.CastSphere("Enemy"), which will look for an enemy and set the need to search as false when it's done
                 DetectObject.EnemySearchNeeded = true;
-                //TODO: Determine the best way to test for how far away the player is from the enemy, so that the lock on doesn't go an infinite distance.
-                //Notes:
-                //Continuously searching for an enemy with CastSphere the same way it looks for Levitatable Objects leads to a jerky camera and makes the lock on break when too close to the enemy.
-                //The enemy's sword blocks locking on, since it lacks a tag, so CastSphere isn't told to ignore it like it's told to ignore checkpoints.
-                //Moving the enemy sword to the IgnoreRaycast Layer makes the sword unable to hit the player.
-                //Giving the enemy's sword the Enemy tag means the player would be able to lock onto it.
             }
             else ResetLockOnTarget();
 
+        }
+        //if we're currently locked on, check if we're too far away, and if so, unlock the camera
+        if (lockOn)
+        {
+            DistToTarget = Vector3.Distance(LockOnTarget.transform.position, transform.position);
+            Cinemachine.CinemachineVirtualCamera CM_vcam = CM_LockOnCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
+            var transposer = CM_vcam.GetCinemachineComponent<Cinemachine.CinemachineTransposer>();
+            if (DistToTarget < LockOnRange / 2)
+            {
+                transposer.m_FollowOffset = new Vector3(.5f,2.5f,0);
+            }
+            else
+            {
+                transposer = CM_vcam.GetCinemachineComponent<Cinemachine.CinemachineTransposer>();
+                transposer.m_FollowOffset = new Vector3(1, 2.5f, 0);
+            }
+            if (DistToTarget > LockOnRange)
+            {
+                transposer.m_FollowOffset = new Vector3(0, 1.8f, 0);
+                ResetLockOnTarget();
+            }
         }
     }
 
@@ -64,11 +83,12 @@ public class InputCameraChange : MonoBehaviour
     {
         //we found our LockOn Target, set it as what to target in the cinemachine object
         Cinemachine.CinemachineTargetGroup CM_TargetGroup = CM_LookAtTargetObject.GetComponent<Cinemachine.CinemachineTargetGroup>();
-                CM_TargetGroup.m_Targets[1] = new Cinemachine.CinemachineTargetGroup.Target();
-                CM_TargetGroup.m_Targets[1].weight = 1;
-                CM_TargetGroup.m_Targets[1].radius = 1;
-                CM_TargetGroup.m_Targets[1].target = gameObject.transform;
-                LockCamera();
+        CM_TargetGroup.m_Targets[1] = new Cinemachine.CinemachineTargetGroup.Target();
+        CM_TargetGroup.m_Targets[1].weight = 1;
+        CM_TargetGroup.m_Targets[1].radius = 1;
+        CM_TargetGroup.m_Targets[1].target = gameObject.transform;
+        LockOnTarget = gameObject;
+        LockCamera();
         
     }
 

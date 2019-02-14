@@ -49,7 +49,7 @@ public class DetectObject : MonoBehaviour
                 float distToLevObj = (hit.point - detectVector).magnitude;
                 if (Physics.Raycast(detectVector, hit.point - detectVector, out nonTagObjHit, distToLevObj, IgnoredLayerMask))
                 {
-                    if (nonTagObjHit.collider.gameObject.tag != FindTag && nonTagObjHit.collider.gameObject.tag != "Checkpoint")
+                    if (nonTagObjHit.collider.gameObject.tag != FindTag && nonTagObjHit.collider.gameObject.tag != "Checkpoint" && nonTagObjHit.collider.gameObject.tag != "Untagged")
                     {
 
                         Debug.Log("PathBlockedByObject: " + nonTagObjHit.collider.gameObject);
