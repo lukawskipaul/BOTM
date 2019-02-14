@@ -14,9 +14,11 @@ public class MobAttackHitbox : MonoBehaviour
     [SerializeField]
     private bool showDebug = true;
     private Animator parentAnim;
+    public Collider collider { get; private set; }
     private void Start()
     {
-        this.GetComponent<Collider>().isTrigger = true;//Automatically set collider to a trigger
+        collider = this.GetComponent<Collider>();
+        collider.isTrigger = true;//Automatically set collider to a trigger
         parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>
@@ -32,7 +34,10 @@ public class MobAttackHitbox : MonoBehaviour
                 Debug.Log("Player Hit!");
             }
             other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
+            collider.enabled = false;
             parentAnim.SetBool("isLickingWeapon", true);
         }
     }
+    
+    
 }
