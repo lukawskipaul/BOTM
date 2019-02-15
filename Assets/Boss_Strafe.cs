@@ -67,10 +67,10 @@ public class Boss_Strafe : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -89,6 +89,7 @@ public class Boss_Strafe : StateMachineBehaviour
         float magnintudeBP = MagnitudeBossPlayer(bossPosition, playerPosition);
         float shortX, shortZ;
 
+        /*
         Vector3 playerLocal = player.transform.InverseTransformPoint(playerPosition);
         Debug.Log("Player local position = " + playerLocal);
         Vector3 bossLocal = player.transform.InverseTransformPoint(bossPosition);
@@ -96,6 +97,12 @@ public class Boss_Strafe : StateMachineBehaviour
 
         shortX = playerLocal.x + (strafeRadius * (bossLocal.x - playerLocal.x) / magnintudeBP);
         shortZ = playerLocal.z + (strafeRadius * (bossLocal.z - playerLocal.z) / magnintudeBP);
+        //*/
+
+        shortX = playerPosition.x + (strafeRadius * (bossPosition.x - playerPosition.x) / magnintudeBP);
+        shortZ = playerPosition.z + (strafeRadius * (bossPosition.z - playerPosition.z) / magnintudeBP);
+
+        return new Vector3(shortX, bossPosition.y, shortZ);
 
         //target.transform.position.y;
         return player.transform.TransformPoint(new Vector3(shortX, 0, shortZ));

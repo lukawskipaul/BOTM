@@ -53,6 +53,17 @@ public class Boss_JumpBack : StateMachineBehaviour
 
         // the boss continues to face the player as it jumps backwards
         bossNavMeshAgent.updateRotation = false;
+
+        // calculate jump back target position
+        jumpBackPosition = JumpBackTarget(boss.transform.position, player.transform.position, jumpBackDistance);
+        target.transform.position = jumpBackPosition;
+
+        // check if target is in unreachable location
+
+        // disable boss rotation
+        bossNavMeshAgent.updateRotation = false;
+
+        // set boss destination
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -64,7 +75,8 @@ public class Boss_JumpBack : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+        // reenable boss rotation
+        bossNavMeshAgent.updateRotation = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
@@ -79,7 +91,19 @@ public class Boss_JumpBack : StateMachineBehaviour
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
 
-    //
+    // This function calculates the target position the boss jumps back
+    private Vector3 JumpBackTarget(Vector3 bossPosition, Vector3 playerPosition, float jumpBackDistance)
+    {
+        float magnitudeBP = MagnitudeBossPlayer(bossPosition, playerPosition);
+        float targetX, targetZ;
+
+        targetX = bossPosition.x + ((bossPosition.x - playerPosition.x) / magnitudeBP * jumpBackDistance);
+        targetZ = bossPosition.z + ((bossPosition.z - playerPosition.z) / magnitudeBP * jumpBackDistance);
+
+        return new Vector3(targetX, bossPosition.y, targetZ);
+
+        return Vector3.zero;
+    }
 
     // This function calculates the magnitude of the distance between the boss
     // and player on the XZ plane
