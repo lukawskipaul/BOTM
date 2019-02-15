@@ -12,19 +12,12 @@ public class RootMotionMovementController : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody rb;
-
-    private bool canMove;
+    private bool canMove = true;
 
     private void Awake()
     {
-        canMove = true;
-    }
-
-    private void Start()
-    {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -42,8 +35,7 @@ public class RootMotionMovementController : MonoBehaviour
         if (canMove)
         {
             Move();
-            FreeLookDodge();
-            LockedOnDodge();
+            Dodge();
         }
     }
 
@@ -66,25 +58,15 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
-    private void FreeLookDodge()
+    private void Dodge()
     {
-        /* Play roll dodge animation when dodge button is pressed and is not locked on */
-        if (Input.GetButtonDown("Dodge"))    //checks for lock on in animator
+        if (Input.GetButtonDown("Dodge") /*&& isOnGround*/)
         {
-            anim.SetTrigger("FreeLookDodge");
+            anim.SetTrigger("Dodge");
 
             rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
-        }
-    }
 
-    private void LockedOnDodge()
-    {
-        /* Play hop dodge animation when dodge button is pressed and is locked on */
-        if (Input.GetButtonDown("Dodge"))     //checks for lock on in animator
-        {
-            anim.SetTrigger("LockedOnDodge");
-
-            rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
+            //have i-frames
         }
     }
 

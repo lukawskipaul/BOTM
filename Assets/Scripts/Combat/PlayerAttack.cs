@@ -12,13 +12,10 @@ public class PlayerAttack : MonoBehaviour
 
     private bool canAttack;
 
-    private void Awake()
-    {
-        canAttack = true;
-    }
-
     private void Start()
     {
+        canAttack = true;
+        
         anim = this.gameObject.GetComponent<Animator>();
         swordAttack = this.gameObject.GetComponentInChildren<DamageEnemy>();
     }
@@ -38,52 +35,28 @@ public class PlayerAttack : MonoBehaviour
     }
 
     /* Called at start of attack animation to prevent being able to attack again */
-    public void StartAttackAnimation()
+    public void StartAttackEvent()
     {
         canAttack = false;
     }
 
     /* Called at end of attack animation to allow being able to attack again */
-    public void EndAttackAnimation()
+    public void EndAttackEvent()
     {
         canAttack = true;
     }
 
     /* Called during specific animation frame to start doing damage to hit enemies */
-    public void StartDamageWindow()
+    public void StartDamageEvent()
     {
         swordAttack.IsAttacking = true;
-        Time.timeScale = 0.25f;
+        Time.timeScale = 0.2f;
     }
 
     /* Called during specific animation frame to stop doing damage to hit enemies */
-    public void EndDamageWindow()
+    public void EndDamageEvent()
     {
         swordAttack.IsAttacking = false;
-        Time.timeScale = 1.0f;
-    }
-
-    private void SetCanAttack()
-    {
-        if (canAttack)
-        {
-            canAttack = false;
-        }
-        else
-        {
-            canAttack = true;
-        }
-    }
-
-    private void OnEnable()
-    {
-        Telekinesis.TeleManualMovingObject += SetCanAttack;
-        Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
-    }
-
-    private void OnDisable()
-    {
-        Telekinesis.TeleManualMovingObject -= SetCanAttack;
-        Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
+        Time.timeScale = 1;
     }
 }

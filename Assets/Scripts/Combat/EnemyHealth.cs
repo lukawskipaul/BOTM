@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CapsuleCollider))]
-
 //This script goes on enemy
 public class EnemyHealth : MonoBehaviour
 {
