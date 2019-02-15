@@ -15,6 +15,7 @@ public class MobAttackHitbox : MonoBehaviour
     private bool showDebug = true;
     private Animator parentAnim;
     public Collider collider { get; private set; }
+
     private void Start()
     {
         collider = this.GetComponent<Collider>();
@@ -38,6 +39,4 @@ public class MobAttackHitbox : MonoBehaviour
             parentAnim.SetBool("isLickingWeapon", true);
         }
     }
-    
-    
 }
