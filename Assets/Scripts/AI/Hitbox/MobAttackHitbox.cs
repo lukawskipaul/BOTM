@@ -19,6 +19,7 @@ public class MobAttackHitbox : MonoBehaviour
     {
         collider = this.GetComponent<Collider>();
         collider.isTrigger = true;//Automatically set collider to a trigger
+        collider.enabled = false;
         parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>
@@ -35,7 +36,7 @@ public class MobAttackHitbox : MonoBehaviour
             }
             other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
             collider.enabled = false;
-            parentAnim.SetBool("isLickingWeapon", true);
+            parentAnim.SetBool("isLicking", true);
         }
     }
     
