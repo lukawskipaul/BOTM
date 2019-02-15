@@ -50,11 +50,13 @@ public class PlayerAttack : MonoBehaviour
     public void StartDamageEvent()
     {
         swordAttack.IsAttacking = true;
+        Time.timeScale = 0.2f;
     }
 
     /* Called during specific animation frame to stop doing damage to hit enemies */
     public void EndDamageEvent()
     {
         swordAttack.IsAttacking = false;
+        Time.timeScale = 1;
     }
 }

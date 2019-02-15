@@ -4,12 +4,11 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
-
 //This script goes on sword joint of player
 public class DamageEnemy : MonoBehaviour
 {
     [SerializeField]
-    private float attackDamage = 25.0f;
+    private int attackDamage = 25;
 
     private bool isAttacking;
     public bool IsAttacking

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CapsuleCollider))]
 //This script goes on enemy
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
-    private float maxHealth = 100.0f;
+    private int maxHealth = 100;
 
     private Animator anim;
     
-    private float currentHealth;
+    private int currentHealth;
 
     private void Start()
     {
@@ -28,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void DamageEnemy(float amount)
+    public void DamageEnemy(int amount)
     {
         /* Damages enemy by player attack amount */
         currentHealth -= amount;
@@ -39,11 +40,6 @@ public class EnemyHealth : MonoBehaviour
             anim.SetTrigger("Die");
             GetComponent<CapsuleCollider>().enabled = false;
         }
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(this.gameObject);
     }
 
     private void UpdateHealthBar()
