@@ -14,4 +14,8 @@ public class Trigger : MonoBehaviour
             Triggerable.IsTriggered = true;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        Triggerable.isTriggered = false;
+    }
 }

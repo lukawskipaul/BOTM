@@ -10,9 +10,12 @@ public class DoorRailway : TriggerableObject
 
     void Update()
     { 
-        if (GetComponent<TriggerableObject>().isTriggered == true)
+        if (GetComponent<TriggerableObject>().IsTriggered == true)
         {
             Railway();
+        }
+        if (GetComponent<TriggerableObject>().isTriggered == false)
+        {
         }
        
     }
