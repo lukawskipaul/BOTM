@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 403282009}
   - component: {fileID: 403282008}
   - component: {fileID: 403282007}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 544074693}
   - component: {fileID: 544074690}
   - component: {fileID: 544074694}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 1008213373}
   - component: {fileID: 1008213372}
   - component: {fileID: 1008213371}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,6 +919,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044212376}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1180562549
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1376817845}
+    m_Modifications:
+    - target: {fileID: 100000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_Name
+      value: Monster_ThunderJaw_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
 --- !u!1 &1359266587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1091,7 @@ GameObject:
   - component: {fileID: 1376817840}
   - component: {fileID: 1376817846}
   - component: {fileID: 1376817847}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1108,7 @@ Animator:
   m_GameObject: {fileID: 1376817839}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 725705383115cbc4090ccdd996717327, type: 2}
+  m_Controller: {fileID: 9100000, guid: a77db0f6d30b1ea40bbadaf9a59b6877, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1144,6 +1209,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 2126954644}
+  - {fileID: 1412815026}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1182,19 +1248,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376817839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e741599ce89baf4fa13680f281698c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ce1c20ab4062db4ab9f8b0d92b22af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 544074689}
   target: {fileID: 1654936684}
   bossNavMeshAgent: {fileID: 0}
-  chargeDistanceScalar: 1.5
-  speedScalar: 1
-  accelerationScalar: 1
-  angularSpeedScalar: 1
-  tempStopping: 0
+  chargeDistanceScalar: 1
+  chargeSpeedScalar: 1
+  chargeAccelerationScalar: 1
+  chargeAngularSpeedScalar: 1
+  chargeTempStopping: 1
   strafeRadius: 7
-  strafeSpeed: 40
+  strafeSpeed: 30
+  strafeTime: 1
+  jumpBackDistance: 1
+--- !u!4 &1412815026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859,
+    type: 3}
+  m_PrefabInstance: {fileID: 1180562549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434795964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1371,7 @@ GameObject:
   - component: {fileID: 1469960137}
   - component: {fileID: 1469960139}
   - component: {fileID: 1469960138}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: View Visualization Mesh Filter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1466,7 +1540,7 @@ GameObject:
   - component: {fileID: 1654936687}
   - component: {fileID: 1654936686}
   - component: {fileID: 1654936685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1631,7 @@ GameObject:
   - component: {fileID: 1667387131}
   - component: {fileID: 1667387130}
   - component: {fileID: 1667387129}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1648,7 +1722,7 @@ GameObject:
   - component: {fileID: 1786324137}
   - component: {fileID: 1786324136}
   - component: {fileID: 1786324135}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1955,7 +2029,7 @@ GameObject:
   - component: {fileID: 2126954644}
   - component: {fileID: 2126954642}
   - component: {fileID: 2126954643}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: View Visualization Mesh Filter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
