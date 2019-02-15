@@ -1182,19 +1182,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376817839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e741599ce89baf4fa13680f281698c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ce1c20ab4062db4ab9f8b0d92b22af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 544074689}
-  target: {fileID: 1654936684}
+  player: {fileID: 0}
+  target: {fileID: 0}
   bossNavMeshAgent: {fileID: 0}
-  chargeDistanceScalar: 1.5
-  speedScalar: 1
-  accelerationScalar: 1
-  angularSpeedScalar: 1
-  tempStopping: 0
-  strafeRadius: 7
-  strafeSpeed: 40
+  chargeDistanceScalar: 1
+  chargeSpeedScalar: 1
+  chargeAccelerationScalar: 1
+  chargeAngularSpeedScalar: 1
+  chargeTempStopping: 1
+  strafeRadius: 1
+  strafeSpeed: 1
+  strafeTime: 1
+  jumpBackDistance: 1
 --- !u!1 &1434795964
 GameObject:
   m_ObjectHideFlags: 0

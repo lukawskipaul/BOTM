@@ -7,21 +7,19 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class MobAttackHitbox : MonoBehaviour
 {
-    //Serialize Components
+    [SerializeField]
+    private int attackDamage = 10;
     [SerializeField]
     private string playerTag = "Player";
     [SerializeField]
-    private float attackDamage = 10.0f;
-    [SerializeField]
     private bool showDebug = true;
-
     private Animator parentAnim;
-    private Collider collider;
-
+    public Collider collider { get; private set; }
     private void Start()
     {
-        collider = this.GetComponent<Collider>();//Automatically set collider to a trigger
-        collider.isTrigger = true;
+        collider = this.GetComponent<Collider>();
+        collider.isTrigger = true;//Automatically set collider to a trigger
+        collider.enabled = false;
         parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>
@@ -32,19 +30,15 @@ public class MobAttackHitbox : MonoBehaviour
     {
         if (other.tag == playerTag && parentAnim.GetBool("InAttackRange") && !parentAnim.GetBool("isLickingWeapon"))
         {
-            //TODO: Add player losing Health Here
             if (showDebug)
             {
                 Debug.Log("Player Hit!");
             }
             other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
-            parentAnim.SetBool("isLickingWeapon",true);
             collider.enabled = false;
+            parentAnim.SetBool("isLickingWeapon", true);
         }
     }
-    //Encapsulate a reference to the collider this script is attach to(Enemy hit box)
-    public Collider GetCollider()
-    {
-        return collider;
-    }
+    
+    
 }

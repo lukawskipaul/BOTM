@@ -9,8 +9,6 @@ public class CrocEnemyMono : MonoBehaviour
 {
     //Hiding and showing in Inspector
     [SerializeField]
-    private int Health = 10;
-    [SerializeField]
     private GameObject player;
 
 	private NavMeshAgent agent;
@@ -18,16 +16,16 @@ public class CrocEnemyMono : MonoBehaviour
 	
     private Animator anim;
     [SerializeField]
-	private float detectionDistance = 6;
+	private float detectionDistance = 20;
     [SerializeField]
     private bool showDebug = true;
-    [SerializeField]
+    [SerializeField,Tooltip("Set to Player layer")]
     private LayerMask ObstacleMask;
     
     // Start is called before the first frame update
     void Start()
     {
-        enemyStats = new CrocEnemy(Health);
+        enemyStats = new CrocEnemy();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         ObstacleMask = ~ObstacleMask;
@@ -45,7 +43,7 @@ public class CrocEnemyMono : MonoBehaviour
             // Linecast checks if an obstacle is between the enemy and the player
             // Player layer must be set to "Player" for cast to work
             //This condition is to prevent the enemy from detecting player through walls
-            if (Physics.Linecast(this.gameObject.transform.position, player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y,0), ObstacleMask))
+            if (Physics.Linecast(this.transform.position + new Vector3(0, this.GetComponent<Collider>().bounds.center.y / 3, 0), player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y / 3, 0), ObstacleMask))
 			{
 				Debug.Log("Linecast hit");
 			}
@@ -67,8 +65,7 @@ public class CrocEnemyMono : MonoBehaviour
     /// </summary>
     private void CalculateDetectionRange()
     {
-        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && 
-            !Physics.Linecast(this.gameObject.transform.position, player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y,0), ObstacleMask) 
+        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(this.transform.position + new Vector3(0, this.GetComponent<Collider>().bounds.center.y / 3, 0), player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y / 3, 0), ObstacleMask) 
             && !anim.GetBool("PlayerDetected"))
         {
             anim.SetBool("PlayerDetected",true);
@@ -80,9 +77,8 @@ public class CrocEnemyMono : MonoBehaviour
     /// If player is out of the enemy's attack range or there is an obstacle in the way, the enemy won't attack
     /// </summary>
     private void AttackRangeAnimExecution(){
-        if (showDebug) Debug.Log("Stopping Distance:" + agent.stoppingDistance * agent.stoppingDistance);
-		if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) ||
-            Physics.Linecast(this.gameObject.transform.position, player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y,0), ObstacleMask))
+		if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) || 
+            Physics.Linecast(this.transform.position + new Vector3(0, this.GetComponent<Collider>().bounds.center.y / 3, 0), player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y / 3, 0), ObstacleMask))
 		{
 			anim.SetBool("InAttackRange", false);
 		}
@@ -97,7 +93,7 @@ public class CrocEnemyMono : MonoBehaviour
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-            Debug.DrawLine(this.gameObject.transform.position, player.transform.position + new Vector3(0,player.GetComponent<Collider>().bounds.center.y,0), Color.cyan);
+            Debug.DrawLine(this.transform.position + new Vector3(0,this.GetComponent<Collider>().bounds.center.y/3,0), player.transform.position + new Vector3(0,player.GetComponent<Collider>().bounds.center.y/3,0), Color.cyan);
         }
     }
 

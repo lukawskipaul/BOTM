@@ -26,7 +26,7 @@ public class BossEnemyMono : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossStats = new BossEnemy(Health);
+        bossStats = new BossEnemy();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         ObstacleMask = ~ObstacleMask;
