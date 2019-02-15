@@ -12,12 +12,21 @@ public class RootMotionMovementController : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody rb;
-    private bool canMove = true;
+
+    private bool canMove;
+    //private bool isOnGround;
 
     private void Awake()
     {
+        canMove = true;
+        //isOnGround = true;
+    }
+
+    private void Start()
+    {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -32,7 +41,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove /*&& isOnGround*/)
         {
             Move();
             FreeLookDodge();
@@ -59,10 +68,28 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
+    //void OnCollisionEnter(Collision other)
+    //{
+    //    /* Check if player is on the ground */
+    //    if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
+    //    {
+    //        isOnGround = true;
+    //    }
+    //}
+
+    //void OnCollisionExit(Collision other)
+    //{
+    //    /* Check if player is in mid-air */
+    //    if (other.gameObject.tag == "Ground")
+    //    {
+    //        isOnGround = false;
+    //    }
+    //}
+
     private void FreeLookDodge()
     {
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
-        if (Input.GetButtonDown("Dodge") /* TODO: && isOnGround*/)    //checks for lock on in animator
+        if (Input.GetButtonDown("Dodge"))    //checks for lock on in animator
         {
             anim.SetTrigger("FreeLookDodge");
 
@@ -73,7 +100,7 @@ public class RootMotionMovementController : MonoBehaviour
     private void LockedOnDodge()
     {
         /* Play hop dodge animation when dodge button is pressed and is locked on */
-        if (Input.GetButtonDown("Dodge") /* TODO: && isOnGround*/)     //checks for lock on in animator
+        if (Input.GetButtonDown("Dodge"))     //checks for lock on in animator
         {
             anim.SetTrigger("LockedOnDodge");
 
