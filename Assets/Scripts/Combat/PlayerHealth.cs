@@ -9,9 +9,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
-    private float maxHealth = 100.0f;
+    private int maxHealth = 100;
 
-    private float currentHealth;
+    private int currentHealth;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void DamagePlayer(float amount)
+    public void DamagePlayer(int amount)
     {
         /* Damages player by enemy attack amount */
         currentHealth -= amount;
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void HealPlayer(float amount)
+    public void HealPlayer(int amount)
     {
         /* Heals player by pickup amount */
         currentHealth += amount;
