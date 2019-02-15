@@ -52,10 +52,10 @@ public class CrocEnemyMono : MonoBehaviour
 				Debug.Log("Linecast no hit");
 			}
             //Plays the Death Animation for Ai
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetTrigger("Die");
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    anim.SetTrigger("Die");
+            //}
 		}
         CalculateDetectionRange();
         AttackRangeAnimExecution(); 
