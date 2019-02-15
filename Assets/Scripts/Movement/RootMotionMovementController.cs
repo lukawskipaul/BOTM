@@ -14,12 +14,12 @@ public class RootMotionMovementController : MonoBehaviour
     private Rigidbody rb;
 
     private bool canMove;
-    //private bool isOnGround;
+    private bool isOnGround;
 
     private void Awake()
     {
         canMove = true;
-        //isOnGround = true;
+        isOnGround = true;
     }
 
     private void Start()
@@ -41,7 +41,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove /*&& isOnGround*/)
+        if (canMove && isOnGround)
         {
             Move();
             FreeLookDodge();
@@ -68,23 +68,23 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
-    //void OnCollisionEnter(Collision other)
-    //{
-    //    /* Check if player is on the ground */
-    //    if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
-    //    {
-    //        isOnGround = true;
-    //    }
-    //}
+    void OnCollisionEnter(Collision other)
+    {
+        /* Check if player is on the ground */
+        if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
+        {
+            isOnGround = true;
+        }
+    }
 
-    //void OnCollisionExit(Collision other)
-    //{
-    //    /* Check if player is in mid-air */
-    //    if (other.gameObject.tag == "Ground")
-    //    {
-    //        isOnGround = false;
-    //    }
-    //}
+    void OnCollisionExit(Collision other)
+    {
+        /* Check if player is in mid-air */
+        if (other.gameObject.tag == "Ground")
+        {
+            isOnGround = false;
+        }
+    }
 
     private void FreeLookDodge()
     {
