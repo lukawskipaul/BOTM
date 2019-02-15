@@ -5,20 +5,14 @@ using UnityEngine;
 /// Attach this script to the enemy hitbox that will deal damage to Player
 /// </summary>
 [RequireComponent(typeof(BoxCollider))]
-public class MobAttackHitbox : MonoBehaviour
+public class EnemyAttackHitbox : MonoBehaviour
 {
-    [SerializeField]
-    private int attackDamage = 10;
-    [SerializeField]
-    private string playerTag = "Player";
-    [SerializeField]
-    private bool showDebug = true;
+    public string playerTag = "Player";
+    public bool showDebug = true;
     private Animator parentAnim;
-    public Collider collider { get; private set; }
     private void Start()
     {
-        collider = this.GetComponent<Collider>();
-        collider.isTrigger = true;//Automatically set collider to a trigger
+        this.GetComponent<Collider>().isTrigger = true;//Automatically set collider to a trigger
         parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>
@@ -29,15 +23,12 @@ public class MobAttackHitbox : MonoBehaviour
     {
         if (other.tag == playerTag && parentAnim.GetBool("InAttackRange") && !parentAnim.GetBool("isLickingWeapon"))
         {
+            //TODO: Add player losing Health Here
             if (showDebug)
             {
                 Debug.Log("Player Hit!");
             }
-            other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
-            collider.enabled = false;
             parentAnim.SetBool("isLickingWeapon", true);
         }
     }
-    
-    
 }
