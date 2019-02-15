@@ -14,12 +14,10 @@ public class RootMotionMovementController : MonoBehaviour
     private Rigidbody rb;
 
     private bool canMove;
-    private bool isOnGround;
 
     private void Awake()
     {
         canMove = true;
-        isOnGround = true;
     }
 
     private void Start()
@@ -41,7 +39,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove && isOnGround)
+        if (canMove)
         {
             Move();
             FreeLookDodge();
@@ -65,24 +63,6 @@ public class RootMotionMovementController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);
             //lock rotation to only the Y axis
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
-        }
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        /* Check if player is on the ground */
-        if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
-        {
-            isOnGround = true;
-        }
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        /* Check if player is in mid-air */
-        if (other.gameObject.tag == "Ground")
-        {
-            isOnGround = false;
         }
     }
 
