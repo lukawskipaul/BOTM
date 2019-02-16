@@ -14,9 +14,12 @@ public class MobAttackHitbox : MonoBehaviour
     [SerializeField]
     private bool showDebug = true;
     private Animator parentAnim;
+    public Collider collider { get; private set; }
     private void Start()
     {
-        this.GetComponent<Collider>().isTrigger = true;//Automatically set collider to a trigger
+        collider = this.GetComponent<Collider>();
+        collider.isTrigger = true;//Automatically set collider to a trigger
+        collider.enabled = false;//start with collider turned off <*efficient*>
         parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>
@@ -25,14 +28,17 @@ public class MobAttackHitbox : MonoBehaviour
     /// <param name="other">The Object that caused the activation of the trigger event</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == playerTag && parentAnim.GetBool("InAttackRange") && !parentAnim.GetBool("isLickingWeapon"))
+        if (other.tag == playerTag && parentAnim.GetBool("InAttackRange"))
         {
             if (showDebug)
             {
                 Debug.Log("Player Hit!");
             }
             other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
-            parentAnim.SetBool("isLickingWeapon", true);
+            collider.enabled = false;
+            parentAnim.SetBool("isLicking", true);
         }
     }
+    
+    
 }

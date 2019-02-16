@@ -20,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        healthBar.maxValue = maxHealth;
 
         UpdateHealthBar();
     }
@@ -38,13 +39,16 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             anim.SetTrigger("Die");
-            GetComponent<CapsuleCollider>().enabled = false;
+        }
+        else
+        {
+            anim.SetTrigger("Flinch");
         }
     }
 
     private void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = currentHealth / maxHealth;
+        healthBar.value = currentHealth;
     }
 }
