@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fa75c591062364eaabbed757e3b4d9, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 344f631891176143bf2681f6dcc28092
+    m_lastTime: -8586513216887596720
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: b51f7e28bfa4ea418cf5c544eeba0fa7
+    m_lastTime: -8586513216887995644
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 5a8f097f5cc9854287bd1d9b5530a435
+    m_lastTime: -8586513215333797400
+    List:
+    - name: Level1
+      guid: 19b2446dc1b2804f9b327c494ef4136d
+      id: 2678230382
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level1
+        ObjectType: 7
+      Path: Default Work Unit\Level1
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 164a4c1ec040e74682cd5252d962469d
+    m_lastTime: -8586513215333936761
+    List:
+    - name: Play_CaveAmbiance1
+      guid: 510c2ede051a374a94c02c116c0dd629
+      id: 934217562
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CaveAmbiance1
+        ObjectType: 3
+      Path: Default Work Unit\Play_CaveAmbiance1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 79e8b6069079954b9ba023e00388c12d
+    m_lastTime: -8586513216888633940
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: e750412bc076fe4b8598869bdedf6226
+    m_lastTime: -8586513216887636871
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 61dbc9d14a01ac4a9f9f8fd5d842e2b9
+    m_lastTime: -8586513216888315058
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 25cd57fb3f7ad04898a4395d19f13034
+    m_lastTime: -8586513216888274912
+    List: []
+  ExpandedItems:
+  - /BOTM_WwiseProject
+  - /BOTM_WwiseProject/Events
+  - /BOTM_WwiseProject/Events/Default Work Unit
+  - /BOTM_WwiseProject/SoundBanks
+  - /BOTM_WwiseProject/SoundBanks/Default Work Unit
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
