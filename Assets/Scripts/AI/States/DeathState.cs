@@ -9,7 +9,8 @@ public class DeathState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
-        agent.isStopped = true;//stops the agent from moving 
+        agent.isStopped = true;//stops the agent from moving
+        animator.GetComponent<Collider>(). enabled = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

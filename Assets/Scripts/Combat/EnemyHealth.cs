@@ -39,6 +39,10 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
         }
+        else
+        {
+            anim.SetTrigger("Flinch");
+        }
     }
 
     private void UpdateHealthBar()

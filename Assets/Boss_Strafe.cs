@@ -21,6 +21,10 @@ public class Boss_Strafe : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Set Animator Parameter 'isStrafing' to true
+        //*Needed for head rotation
+        animator.SetBool("isStrafing",true);
+
         // establish variables
         boss = animator.gameObject;
         bossAI = boss.GetComponent<BossAI>();
@@ -64,12 +68,16 @@ public class Boss_Strafe : StateMachineBehaviour
         }//*/
 
         bossNavMeshAgent.SetDestination(target.transform.position);
+
+       
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        //Set Animator Parameter 'isStrafing' to false
+        //*Needed for head rotation
+        animator.SetBool("isStrafing",false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
