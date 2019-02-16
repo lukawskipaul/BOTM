@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 52567355}
   m_Layer: 0
   m_Name: Rig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 124524026}
   m_Layer: 0
   m_Name: Cocodile_Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,7 +237,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: c9abf9f5b53e99347974cb7d24f7b0c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 137485509}
   m_Layer: 0
   m_Name: pasted__Rig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 217353492}
   m_Layer: 0
   m_Name: Toungue
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -558,7 +558,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: b2966b4454e847a4f9b988bf88c73a3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1174,7 +1174,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500282366}
-  m_LocalRotation: {x: 0.5487321, y: 0.8357512, z: 0.0051615094, w: 0.019655664}
+  m_LocalRotation: {x: 0.54873216, y: 0.83575124, z: 0.00516151, w: 0.019655665}
   m_LocalPosition: {x: 0.06549959, y: 0.037100997, z: 0.07925554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 808019485}
   m_Layer: 0
   m_Name: Mcquitle2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1699,7 +1699,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: 8fd7f152f44c84a40af14ce04a63c266, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1838,7 +1838,7 @@ GameObject:
   - component: {fileID: 902188636}
   m_Layer: 0
   m_Name: Eye_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2011,7 +2011,7 @@ GameObject:
   - component: {fileID: 989330212}
   m_Layer: 0
   m_Name: Eye_2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2047,7 +2047,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: bb35c23f97abdba4880a79fa8f0a6c22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2614,9 +2614,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1361013508}
   - component: {fileID: 1361013507}
+  - component: {fileID: 968638051}
+  - component: {fileID: 968638050}
+  - component: {fileID: 968638049}
+  - component: {fileID: 968638048}
+  - component: {fileID: 968638047}
   m_Layer: 0
-  m_Name: Monster_Crocodile_mob_v1
-  m_TagString: Untagged
+  m_Name: Katalan_Croc_V1
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2657,7 +2662,7 @@ Animator:
   m_GameObject: {fileID: 1361013506}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
-  m_Controller: {fileID: 9100000, guid: aa692705c0528b24ebf6e91cc73b99e3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1b2e0df6c2165e34e9692fece896323e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2666,6 +2671,90 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &968638051
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361013506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.71447754
+  m_Height: 2.1566799
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.0766464, z: 0.21447754}
+--- !u!54 &968638050
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361013506}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &968638049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361013506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5a5af16c451164a80cf43a10cd24e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 100
+--- !u!114 &968638048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361013506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ced82ba18482c4c81b26806721d8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  detectionDistance: 15
+  showDebug: 0
+  ObstacleMask:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!195 &968638047
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361013506}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: -0.09
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1366201376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,7 +2809,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370565016}
-  m_LocalRotation: {x: -0.1361931, y: 0.30444092, z: 0.6033324, w: 0.72440124}
+  m_LocalRotation: {x: -0.13619311, y: 0.30444095, z: 0.60333246, w: 0.7244013}
   m_LocalPosition: {x: -0.935156, y: -0.87050027, z: 0.0038657647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2741,7 +2830,7 @@ GameObject:
   - component: {fileID: 1384276900}
   m_Layer: 0
   m_Name: pasted__Net
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2777,7 +2866,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100004, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: 30a7ba6a8e5266e4ba0598e7ce7987dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2807,8 +2896,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.37267923, y: 0.9716805, z: 0.0016087294}
-    m_Extent: {x: 0.1931324, y: 0.20968485, z: 0.30414855}
+    m_Center: {x: 0.37267876, y: 0.9716805, z: 0.0016078949}
+    m_Extent: {x: 0.1931324, y: 0.20968485, z: 0.30414772}
   m_DirtyAABB: 0
 --- !u!183 &1384276900
 Cloth:
@@ -2963,7 +3052,7 @@ GameObject:
   - component: {fileID: 1384276901}
   m_Layer: 0
   m_Name: pasted__Loin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2999,7 +3088,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100004, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: 30a7ba6a8e5266e4ba0598e7ce7987dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3029,8 +3118,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.039812326, y: 0.759067, z: 0.37389952}
-    m_Extent: {x: 0.20652127, y: 0.36497563, z: 0.09529179}
+    m_Center: {x: -0.039812088, y: 0.759067, z: 0.37389946}
+    m_Extent: {x: 0.20652103, y: 0.36497563, z: 0.09529114}
   m_DirtyAABB: 0
 --- !u!183 &1384276901
 Cloth:
@@ -3654,7 +3743,7 @@ GameObject:
   - component: {fileID: 1670270332}
   m_Layer: 0
   m_Name: pasted__Leather_belt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3690,7 +3779,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100004, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: 30a7ba6a8e5266e4ba0598e7ce7987dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3857,7 +3946,7 @@ GameObject:
   - component: {fileID: 1762865048}
   m_Layer: 0
   m_Name: Bones
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3893,7 +3982,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 512e6a404d4972f478c9a38f47e84a7f, type: 3}
+  - {fileID: 2100000, guid: b2966b4454e847a4f9b988bf88c73a3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3935,9 +4024,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1773366865}
+  - component: {fileID: 1773366866}
+  - component: {fileID: 1773366867}
   m_Layer: 0
   m_Name: Weapon_rig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3956,6 +4047,34 @@ Transform:
   m_Father: {fileID: 1361013508}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1773366866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773366864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8631004, y: 0.47, z: 0.0625486}
+  m_Center: {x: -0.4315503, y: -0.0000032078256, z: 0.020515284}
+--- !u!114 &1773366867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773366864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac724d505421c949ba50f23cb3ee448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  playerTag: Player
+  showDebug: 1
 --- !u!1 &1797577003
 GameObject:
   m_ObjectHideFlags: 0
