@@ -54,7 +54,8 @@ public class CrocEnemyMono : MonoBehaviour
             //Plays the Death Animation for Ai
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                anim.SetTrigger("Die");
+                //anim.SetTrigger("Die");
+                anim.SetTrigger("Flinch");
             }
 		}
         CalculateDetectionRange();
