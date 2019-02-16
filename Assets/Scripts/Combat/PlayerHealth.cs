@@ -11,11 +11,15 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
 
+    private Animator anim;
+
     private int currentHealth;
 
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.maxValue = maxHealth;
+        anim = GetComponent<Animator>();
 
         UpdateHealthBar();
     }
@@ -33,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
+            //anim.SetTrigger("Die");
             GetComponent<PlayerRespawnScript>().RespawnPlayer();
         }
     }
@@ -52,6 +57,6 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = currentHealth / maxHealth;
+        healthBar.value = currentHealth;
     }
 }
