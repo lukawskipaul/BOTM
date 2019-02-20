@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorRailway : TriggerableObject
 {
     public Transform[] target;
+    public Transform[] target2;
     public float speed;
     private int current;
 
@@ -12,14 +13,15 @@ public class DoorRailway : TriggerableObject
     { 
         if (GetComponent<TriggerableObject>().IsTriggered == true)
         {
-            Railway();
+            RailwayOpen();
         }
         if (GetComponent<TriggerableObject>().isTriggered == false)
         {
+            RailwayClose();
         }
        
     }
-    public void Railway()
+    public void RailwayOpen()
     {
         if (transform.position != target[current].position)
         {
@@ -28,5 +30,14 @@ public class DoorRailway : TriggerableObject
         }
         else current = (current + 1) % target.Length;
     }
-    
+    public void RailwayClose()
+    {
+        if (transform.position != target2[current].position)
+        {
+            Vector3 pos = Vector3.MoveTowards(transform.position, target2[current].position, speed * Time.deltaTime);
+            GetComponent<Rigidbody>().MovePosition(pos);
+        }
+        else current = (current + 1) % target2.Length;
+    }
+
 }
