@@ -17,9 +17,13 @@ public class EnemyHealth : MonoBehaviour
     
     private int currentHealth;
 
-    private void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
+    }
+
+    private void Start()
+    {
         anim = GetComponent<Animator>();
 
         UpdateHealthBar();

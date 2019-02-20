@@ -4,11 +4,16 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
+
 //This script goes on sword joint of player
 public class DamageEnemy : MonoBehaviour
 {
     [SerializeField]
-    private int attackDamage = 25;
+    private int baseAttackDamage = 25;
+    [SerializeField]
+    private int combo1AttackDamage = 35;
+
+    private int currentAttackDamage;
 
     private bool isAttacking;
     public bool IsAttacking
@@ -19,9 +24,19 @@ public class DamageEnemy : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         isAttacking = false;
+    }
+
+    public void ChangeToBaseDamage()
+    {
+        currentAttackDamage = baseAttackDamage;
+    }
+
+    public void ChangeToCombo1Damage()
+    {
+        currentAttackDamage = combo1AttackDamage;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +46,7 @@ public class DamageEnemy : MonoBehaviour
         /* Damages the enemy if the player is currently attacking */
         if (isValidTarget)
         {
-            other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(attackDamage);
+            other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(currentAttackDamage);
         }
     }
 }
