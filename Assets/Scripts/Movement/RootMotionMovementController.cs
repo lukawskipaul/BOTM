@@ -4,20 +4,24 @@ using UnityEngine;
 
 //prevents this script from being attached to more than one GameObject in a scene
 [DisallowMultipleComponent]
+
 //GameObjects with this script require components below, a component will be added if one does not exist
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
+
 public class RootMotionMovementController : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody rb;
 
     private bool canMove;
+    private bool isOnGround;
 
     private void Awake()
     {
         canMove = true;
+        isOnGround = true;
     }
 
     private void Start()
@@ -31,7 +35,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove)
+        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
         {
             Rotate();
         }
@@ -85,6 +89,24 @@ public class RootMotionMovementController : MonoBehaviour
             anim.SetTrigger("LockedOnDodge");
 
             rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        /* Check if player is on the ground */
+        if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
+        {
+            isOnGround = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        /* Check if player is in mid-air */
+        if (other.gameObject.tag == "Ground")
+        {
+            isOnGround = false;
         }
     }
 
