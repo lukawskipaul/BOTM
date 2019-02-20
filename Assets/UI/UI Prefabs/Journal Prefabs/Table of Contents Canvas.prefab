@@ -1399,8 +1399,8 @@ RectTransform:
   - {fileID: 1367617867655627441}
   - {fileID: 6407240443712188898}
   - {fileID: 6407240444067060944}
-  - {fileID: 8751867795601978122}
-  - {fileID: 524998880145382425}
+  - {fileID: 5741008045276993483}
+  - {fileID: 7333692516005378818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1593,7 +1593,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 10, y: -2}
   m_UseGraphicAlpha: 1
---- !u!1001 &3264784261318994261
+--- !u!1001 &5747013357124161102
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1603,7 +1603,7 @@ PrefabInstance:
     - target: {fileID: 788382250729142821, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_Name
-      value: TurnPageButton (1)
+      value: TurnPageButtonLeft
       objectReference: {fileID: 0}
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
@@ -1668,7 +1668,7 @@ PrefabInstance:
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 450
+      value: 450.00003
       objectReference: {fileID: 0}
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
@@ -1713,32 +1713,27 @@ PrefabInstance:
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3588111
+      value: 1.3483146
       objectReference: {fileID: 0}
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3588111
+      value: 1.3483146
       objectReference: {fileID: 0}
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3588111
-      objectReference: {fileID: 0}
-    - target: {fileID: 1285546903598187584, guid: 9a56a1d4e73259c499a5cfb7c334d735,
-        type: 3}
-      propertyPath: m_Transition
-      value: 3
+      value: 1.3483146
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a56a1d4e73259c499a5cfb7c334d735, type: 3}
---- !u!224 &524998880145382425 stripped
+--- !u!224 &7333692516005378818 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
     type: 3}
-  m_PrefabInstance: {fileID: 3264784261318994261}
+  m_PrefabInstance: {fileID: 5747013357124161102}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6013182001693460038
+--- !u!1001 &7326182494592197255
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1748,7 +1743,7 @@ PrefabInstance:
     - target: {fileID: 788382250729142821, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_Name
-      value: TurnPageButton
+      value: TurnPageButtonRight
       objectReference: {fileID: 0}
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
@@ -1858,28 +1853,23 @@ PrefabInstance:
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3588111
+      value: 1.3483146
       objectReference: {fileID: 0}
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3588111
+      value: 1.3483146
       objectReference: {fileID: 0}
     - target: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3588111
-      objectReference: {fileID: 0}
-    - target: {fileID: 1285546903598187584, guid: 9a56a1d4e73259c499a5cfb7c334d735,
-        type: 3}
-      propertyPath: m_Transition
-      value: 3
+      value: 1.3483146
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a56a1d4e73259c499a5cfb7c334d735, type: 3}
---- !u!224 &8751867795601978122 stripped
+--- !u!224 &5741008045276993483 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3028666694332544332, guid: 9a56a1d4e73259c499a5cfb7c334d735,
     type: 3}
-  m_PrefabInstance: {fileID: 6013182001693460038}
+  m_PrefabInstance: {fileID: 7326182494592197255}
   m_PrefabAsset: {fileID: 0}
