@@ -14,6 +14,11 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
+        static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
+        static const AkUniqueID PLAY_ROCKSLIDE1 = 3618693649U;
+        static const AkUniqueID PLAY_ROOM1AMBIANCEDEMO = 1605460501U;
+        static const AkUniqueID PLAY_STATIC1 = 2385860965U;
+        static const AkUniqueID PLAY_WATERDRIPPING = 1308308546U;
     } // namespace EVENTS
 
     namespace BANKS

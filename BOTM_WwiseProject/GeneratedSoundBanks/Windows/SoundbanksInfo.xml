@@ -22,11 +22,36 @@
 			<Path>Level1.bnk</Path>
 			<IncludedEvents>
 				<Event Id="934217562" Name="Play_CaveAmbiance1" ObjectPath="\Events\Default Work Unit\Play_CaveAmbiance1"/>
+				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower"/>
+				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1"/>
+				<Event Id="1605460501" Name="Play_Room1AmbianceDemo" ObjectPath="\Events\Default Work Unit\Play_Room1AmbianceDemo"/>
+				<Event Id="2385860965" Name="Play_Static1" ObjectPath="\Events\Default Work Unit\Play_Static1"/>
+				<Event Id="1308308546" Name="Play_WaterDripping" ObjectPath="\Events\Default Work Unit\Play_WaterDripping"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="167009388" Language="SFX">
+					<ShortName>Room1AmbianceDemo.wav</ShortName>
+					<Path>SFX\Room1AmbianceDemo_8956FC97.wem</Path>
+				</File>
+				<File Id="288346796" Language="SFX">
+					<ShortName>WaterDripping.wav</ShortName>
+					<Path>SFX\WaterDripping_56D34C19.wem</Path>
+				</File>
+				<File Id="292896405" Language="SFX">
+					<ShortName>Static.wav</ShortName>
+					<Path>SFX\Static_56D34C19.wem</Path>
+				</File>
 				<File Id="340536415" Language="SFX">
 					<ShortName>CaveAmbiance1.wav</ShortName>
 					<Path>SFX\CaveAmbiance1_56D34C19.wem</Path>
+				</File>
+				<File Id="685822108" Language="SFX">
+					<ShortName>MetalDoorSlamCloseNoPower.wav</ShortName>
+					<Path>SFX\MetalDoorSlamCloseNoPower_56D34C19.wem</Path>
+				</File>
+				<File Id="759940777" Language="SFX">
+					<ShortName>Rockslide1(Initial).wav</ShortName>
+					<Path>SFX\Rockslide1(Initial)_56D34C19.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
