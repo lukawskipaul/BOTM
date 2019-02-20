@@ -18,6 +18,12 @@ public class Boss_JumpBack : StateMachineBehaviour
     // as it jumps back
     Vector3 jumpBackPosition;
 
+    float lookRotationSpeed;
+
+    LayerMask obstacleMask;
+
+    Quaternion lookAtPlayer;
+
     GameObject target;  // used for debugging and visualization
                         // comment out in release version of game
 
@@ -33,11 +39,13 @@ public class Boss_JumpBack : StateMachineBehaviour
         bossAI = boss.GetComponent<BossAI>();
         player = bossAI.Player;
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
-
-
+        jumpBackDistance = bossAI.JumpBackDistance;
+        lookRotationSpeed = bossAI.LookRotationSpeed;
+        obstacleMask = bossAI.ObstacleMask;
 
         // used for debugging
         // comment out on release version of game
+        
         //  -   -   -
         target = bossAI.Target;
 
@@ -45,31 +53,53 @@ public class Boss_JumpBack : StateMachineBehaviour
         Debug.Log("Player.x relative to Boss = " + bossRelativePosition.x);
         Debug.Log("Player.z relative to Boss = " + bossRelativePosition.z);
         //  -   -   -
-        //*
+        //*/
 
         // make sure that the boss is facing the player
-        // - code here -
-        // slerp???
-
-        // the boss continues to face the player as it jumps backwards
-        bossNavMeshAgent.updateRotation = false;
+        lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
 
         // calculate jump back target position
         jumpBackPosition = JumpBackTarget(boss.transform.position, player.transform.position, jumpBackDistance);
-        target.transform.position = jumpBackPosition;
+        target.transform.position.Set(jumpBackPosition.x, target.transform.position.y, jumpBackPosition.z);
+
+        RaycastHit hitInfo;
+        if (Physics.Linecast(boss.transform.position, jumpBackPosition, out hitInfo, obstacleMask))
+        {
+            Debug.Log("Path blocked");
+            Debug.Log(hitInfo.distance);
+            Debug.Log(hitInfo.point);
+            target.transform.position.Set(hitInfo.point.x, target.transform.position.y, hitInfo.point.z);
+        }
+        else
+        {
+            Debug.Log("Path free");
+        }
 
         // check if target is in unreachable location
-
-        // disable boss rotation
-        bossNavMeshAgent.updateRotation = false;
+        // Navmesh should be able to handle this,
+        // but leave comment here in case
 
         // set boss destination
+        //bossNavMeshAgent.updatePosition = false;
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.99f)
+        {
+            boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, lookAtPlayer, lookRotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            bossNavMeshAgent.updateRotation = false;
+
+            bossNavMeshAgent.SetDestination(jumpBackPosition);
+        }
+
+        //Debug.Log(Quaternion.Dot(boss.transform.rotation, lookAtPlayer));
+        //Debug.Log(bossNavMeshAgent.updatePosition);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -100,9 +130,16 @@ public class Boss_JumpBack : StateMachineBehaviour
         targetX = bossPosition.x + ((bossPosition.x - playerPosition.x) / magnitudeBP * jumpBackDistance);
         targetZ = bossPosition.z + ((bossPosition.z - playerPosition.z) / magnitudeBP * jumpBackDistance);
 
-        return new Vector3(targetX, bossPosition.y, targetZ);
+        /*
+        Debug.Log("JumpBackDistance = " + jumpBackDistance);
+        Debug.Log("MagnitudeBP = " + magnitudeBP);
+        Debug.Log("Boss.x = " + bossPosition.x);
+        Debug.Log("Boss.z = " + bossPosition.z);
+        Debug.Log("Target.x = " + targetX);
+        Debug.Log("Target.z = " + targetZ);
+        //*/
 
-        return Vector3.zero;
+        return new Vector3(targetX, bossPosition.y, targetZ);
     }
 
     // This function calculates the magnitude of the distance between the boss
