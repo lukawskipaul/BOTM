@@ -14,6 +14,8 @@ public class Telekinesis : MonoBehaviour
     bool isLiftingObject = false;
 
     [SerializeField]
+    GameObject player;
+    [SerializeField]
     Transform levitateTransform;
     [SerializeField]
     float throwForce = 1f;
@@ -25,6 +27,10 @@ public class Telekinesis : MonoBehaviour
     float maxSpeed = 1f;
     [SerializeField]
     float smoothtime = 1f;
+    [SerializeField]
+    float maxDistance = 20f;
+    [SerializeField]
+    float minDistance = 1f;
 
     private float baseLevitateFollowSpeed;
     private float xInput;
@@ -34,11 +40,16 @@ public class Telekinesis : MonoBehaviour
     BoxCollider boxCollider;
 
     private Vector3 levDirection;
-    private Vector3 centerPoint;
+    private Vector3 startingTransform;
 
     private Vector3 velocity = Vector3.zero;
 
     #endregion
+
+    private void Start()
+    {
+        startingTransform = levitateTransform.localPosition;
+    }
 
     private void Update()
     {
@@ -81,6 +92,7 @@ public class Telekinesis : MonoBehaviour
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         MoveLevitateTransform();
         MoveObjectToTransform(objectRigidBody, objectTransfrom);
+        CheckDistance();
         Debug.Log("LevitatingObj");
     }
 
@@ -90,6 +102,7 @@ public class Telekinesis : MonoBehaviour
         objectRigidBody.useGravity = true;
         objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
         isLiftingObject = false;
+        levitatableObj.tag = "ThrownObj";
         levitatableObj = null;
     }
 
@@ -140,8 +153,20 @@ public class Telekinesis : MonoBehaviour
         objectToDrop.layer = 0;
         isLiftingObject = false;
         objectRigidBody.useGravity = true;
+        levitateTransform.localPosition = startingTransform;
     }
 
+    private void CheckDistance()
+    {
+        if (Vector3.Distance(levitatableObj.transform.position, player.transform.position) <= minDistance)
+        {
+            DropObject(levitatableObj);
+        }
+        if (Vector3.Distance(levitatableObj.transform.position, player.transform.position) >= maxDistance)
+        {
+            DropObject(levitatableObj);
+        }
+    }
 
     public void UsePower(GameObject objToLevitate)
     {
