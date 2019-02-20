@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_ : MonoBehaviour
+public class Door_Break : MonoBehaviour
 {
-    public MonoBehaviour AgentScript;
+    
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "TeleObjects")
         {
-            AgentScript.enabled = true;
+            GameObject.Destroy(gameObject);
         }
     }
 }
