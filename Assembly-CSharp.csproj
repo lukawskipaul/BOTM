@@ -128,6 +128,8 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
     <Compile Include="Assets\DeathState.cs" />
     <Compile Include="Assets\LastKnownPosition.cs" />
+    <Compile Include="Assets\Scripts\AI\Enemy\BossFloorTrigger.cs" />
+    <Compile Include="Assets\Scripts\AI\Enemy\BossHeadTurn.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\CrocEnemy.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\AI\States\EnemyChasePlayer.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="Assets\Scripts\Util\VectorUtil.cs" />
     <Compile Include="Assets\SetNewWayPoint.cs" />
     <Compile Include="Assets\Shoot.cs" />
+    <Compile Include="Assets\StartPhase.cs" />
     <Compile Include="Assets\Strafe_Target.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\UI\UI Scripts\Menu Scripts\SceneLoad.cs" />
