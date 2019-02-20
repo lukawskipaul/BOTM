@@ -24,17 +24,12 @@ public class Boss_JumpBack : StateMachineBehaviour
 
     Quaternion lookAtPlayer;
 
-    //GameObject target;  // used for debugging and visualization
+    GameObject target;  // used for debugging and visualization
                         // comment out in release version of game
 
     // The position of the boss relative to the player
     // I.E. Player position is the origin of a local graph
     Vector3 bossRelativePosition;
-
-    // Checks if there is an obstacle blocking 
-    // the path behind the boss
-    bool pathBlocked;
-    RaycastHit hitInfo;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -52,8 +47,8 @@ public class Boss_JumpBack : StateMachineBehaviour
         // comment out on release version of game
         
         //  -   -   -
-        //target = bossAI.Target;
-        /*
+        target = bossAI.Target;
+
         bossRelativePosition = boss.transform.InverseTransformPoint(player.transform.position);
         Debug.Log("Player.x relative to Boss = " + bossRelativePosition.x);
         Debug.Log("Player.z relative to Boss = " + bossRelativePosition.z);
@@ -65,35 +60,38 @@ public class Boss_JumpBack : StateMachineBehaviour
 
         // calculate jump back target position
         jumpBackPosition = JumpBackTarget(boss.transform.position, player.transform.position, jumpBackDistance);
-        //target.transform.position.Set(jumpBackPosition.x, target.transform.position.y, jumpBackPosition.z);
+        target.transform.position.Set(jumpBackPosition.x, target.transform.position.y, jumpBackPosition.z);
 
-        // checks if there is an obstacle in the way of the boss jumping back
+        RaycastHit hitInfo;
         if (Physics.Linecast(boss.transform.position, jumpBackPosition, out hitInfo, obstacleMask))
         {
-            pathBlocked = true;
-
             Debug.Log("Path blocked");
-            Debug.Log("Distance from obstacle: " + hitInfo.distance);
-            Debug.Log("Obstacle location:" + hitInfo.point);
-            //target.transform.position.Set(hitInfo.point.x, target.transform.position.y, hitInfo.point.z);
+            Debug.Log(hitInfo.distance);
+            Debug.Log(hitInfo.point);
+            target.transform.position.Set(hitInfo.point.x, target.transform.position.y, hitInfo.point.z);
         }
         else
         {
-            pathBlocked = false;
-
             Debug.Log("Path free");
         }
+
+        // check if target is in unreachable location
+        // Navmesh should be able to handle this,
+        // but leave comment here in case
+
+        // set boss destination
+        //bossNavMeshAgent.updatePosition = false;
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // rotate to look at player and, if path is free, jump back
         if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.99f)
         {
             boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, lookAtPlayer, lookRotationSpeed * Time.deltaTime);
         }
-        else if (!pathBlocked)
+        else
         {
             bossNavMeshAgent.updateRotation = false;
 

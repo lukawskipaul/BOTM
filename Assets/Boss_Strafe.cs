@@ -16,10 +16,6 @@ public class Boss_Strafe : StateMachineBehaviour
     float strafeRadius;
     float strafeSpeed;
 
-    float lookRotationSpeed;
-    Quaternion lookAtPlayer;
-    bool lookingAtPlayer;
-
     Vector3 relativeX;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -30,7 +26,6 @@ public class Boss_Strafe : StateMachineBehaviour
         bossAI = boss.GetComponent<BossAI>();
         player = bossAI.Player;
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
-        lookRotationSpeed = bossAI.LookRotationSpeed;
 
         target = bossAI.Target; // used for debugging and visualization
                                 // deactivate target object in release version of game
@@ -38,21 +33,12 @@ public class Boss_Strafe : StateMachineBehaviour
         strafeRadius = bossAI.StrafeRadius;
         strafeSpeed = bossAI.StrafeSpeed;
 
-        lookingAtPlayer = false;
-
-        // rotate boss to face player
-        //lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
-
-        /*
         // The position of the player relative to the Boss
         // I.E. The boss' position is considered local (0,0) and the direction 
         // it's facing decides the orientation of the local x-axis and z-axis
         relativeX = boss.transform.InverseTransformPoint(player.transform.position);
-        
-        /*
         Debug.Log("Player.x relative to Boss = " + relativeX.x);
         Debug.Log("Player.z relative to Boss = " + relativeX.z);
-        //*/
 
         target.transform.position = ClosestPoint(boss.transform.position, player.transform.position);
     }
@@ -61,34 +47,21 @@ public class Boss_Strafe : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // for debugging and testing strafing speed only
-        /*{
+        {
             strafeSpeed = bossAI.StrafeSpeed;
             player.transform.LookAt(boss.transform);
         }//*/
 
-        //boss.transform.LookAt(player.transform);
+        boss.transform.LookAt(player.transform);
 
-        lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
-
-        if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.99f && !lookingAtPlayer)
+        if (relativeX.x >= 0)
         {
-            boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, lookAtPlayer, lookRotationSpeed * Time.deltaTime);
+            target.transform.RotateAround(player.transform.position, Vector3.up, strafeSpeed * Time.deltaTime);
         }
         else
         {
-            lookingAtPlayer = true;
-
-            boss.transform.LookAt(player.transform);
-
-            if (relativeX.x >= 0)
-            {
-                target.transform.RotateAround(player.transform.position, Vector3.up, strafeSpeed * Time.deltaTime);
-            }
-            else
-            {
-                target.transform.RotateAround(player.transform.position, Vector3.up, -strafeSpeed * Time.deltaTime);
-            }
-        }
+            target.transform.RotateAround(player.transform.position, Vector3.up, -strafeSpeed * Time.deltaTime);
+        }//*/
 
         bossNavMeshAgent.SetDestination(target.transform.position);
     }
@@ -130,6 +103,9 @@ public class Boss_Strafe : StateMachineBehaviour
         shortZ = playerPosition.z + (strafeRadius * (bossPosition.z - playerPosition.z) / magnintudeBP);
 
         return new Vector3(shortX, bossPosition.y, shortZ);
+
+        //target.transform.position.y;
+        return player.transform.TransformPoint(new Vector3(shortX, 0, shortZ));
     }
 
     private float MagnitudeBossPlayer (Vector3 bossPosition, Vector3 playerPosition)
