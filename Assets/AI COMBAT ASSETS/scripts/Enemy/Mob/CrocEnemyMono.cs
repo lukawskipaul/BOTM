@@ -18,7 +18,7 @@ public class CrocEnemyMono : MonoBehaviour
     [SerializeField]
 	private float detectionDistance = 20;
     [SerializeField]
-    private bool showDebug = true;
+    private bool showDebug = false;
     [SerializeField,Tooltip("Set to Player layer")]
     private LayerMask ObstacleMask;
     
@@ -55,6 +55,7 @@ public class CrocEnemyMono : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 anim.SetTrigger("Die");
+                anim.SetTrigger("Flinch");
             }
 		}
         CalculateDetectionRange();
