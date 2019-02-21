@@ -68,10 +68,6 @@
     <Compile Include="Assets\AI COMBAT ASSETS\scripts\Hitbox\MobAttackHitbox.cs" />
     <Compile Include="Assets\AI COMBAT ASSETS\scripts\Utility\FieldOfView.cs" />
     <Compile Include="Assets\AttackPlayer.cs" />
-    <Compile Include="Assets\Boss_Charge.cs" />
-    <Compile Include="Assets\Boss_JumpBack.cs" />
-    <Compile Include="Assets\Boss_Strafe.cs" />
-    <Compile Include="Assets\BossAI.cs" />
     <Compile Include="Assets\ChasePlayer.cs" />
     <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
     <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
@@ -128,10 +124,14 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
     <Compile Include="Assets\DeathState.cs" />
     <Compile Include="Assets\LastKnownPosition.cs" />
+    <Compile Include="Assets\Scripts\AI\Enemy\BossAI.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\BossFloorTrigger.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\BossHeadTurn.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\CrocEnemy.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\AI\States\Boss_Charge.cs" />
+    <Compile Include="Assets\Scripts\AI\States\Boss_JumpBack.cs" />
+    <Compile Include="Assets\Scripts\AI\States\Boss_Strafe.cs" />
     <Compile Include="Assets\Scripts\AI\States\EnemyChasePlayer.cs" />
     <Compile Include="Assets\Scripts\AI\States\LickWeaponState.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
