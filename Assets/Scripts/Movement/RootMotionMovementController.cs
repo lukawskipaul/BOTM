@@ -43,7 +43,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
         {
             Move();
             FreeLookDodge();
