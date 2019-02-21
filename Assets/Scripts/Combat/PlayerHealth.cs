@@ -9,13 +9,17 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
-    private float maxHealth = 100.0f;
+    private int maxHealth = 100;
 
-    private float currentHealth;
+    private Animator anim;
+
+    private int currentHealth;
 
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.maxValue = maxHealth;
+        anim = GetComponent<Animator>();
 
         UpdateHealthBar();
     }
@@ -25,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void DamagePlayer(float amount)
+    public void DamagePlayer(int amount)
     {
         /* Damages player by enemy attack amount */
         currentHealth -= amount;
@@ -33,11 +37,12 @@ public class PlayerHealth : MonoBehaviour
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
+            //anim.SetTrigger("Die");
             GetComponent<PlayerRespawnScript>().RespawnPlayer();
         }
     }
 
-    public void HealPlayer(float amount)
+    public void HealPlayer(int amount)
     {
         /* Heals player by pickup amount */
         currentHealth += amount;
@@ -52,6 +57,6 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = currentHealth / maxHealth;
+        healthBar.value = currentHealth;
     }
 }

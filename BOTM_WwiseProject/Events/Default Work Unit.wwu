@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" SchemaVersion="89">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_CaveAmbiance1" ID="{DE2E0C51-1A05-4A37-94C0-2C116C0DD629}">
+					<ChildrenList>
+						<Action Name="" ID="{24381076-BA68-42C4-9AC2-3A338A7E5FD1}" ShortID="58081026">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CaveAmbiance1" ID="{C61696FA-729E-4A31-89F1-BCC9E8416718}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Static1" ID="{91CF3084-5EC7-41A3-8FDC-61932F133C7F}">
+					<ChildrenList>
+						<Action Name="" ID="{50086454-A5A9-4B67-91D4-01DC68643BC0}" ShortID="367850505">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Static" ID="{13C9B0F4-580D-4942-8D7B-BFC1AD29EA81}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Rockslide1" ID="{04DEAF10-85CC-42BE-B832-FC0EB95FAF83}">
+					<ChildrenList>
+						<Action Name="" ID="{EF753003-C8E3-4429-BCC5-F3E7C8AF933B}" ShortID="320267958">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rockslide1(Initial)" ID="{F9908647-8119-4CBF-BDE0-9339300E5B4C}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_WaterDripping" ID="{4847EFE8-8D7B-44B0-B7FD-3FF65474952B}">
+					<ChildrenList>
+						<Action Name="" ID="{443E3584-0EBB-4E2A-8620-759596117E9E}" ShortID="30075617">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="WaterDripping" ID="{7A855E2E-E335-419C-8F56-D183FAA91130}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Room1AmbianceDemo" ID="{53A98C91-60D7-476B-ACE2-1887298164C0}">
+					<ChildrenList>
+						<Action Name="" ID="{A0ADC850-DB73-4DD9-A109-A870D9B95304}" ShortID="543058440">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Room1AmbianceDemo" ID="{F25793AD-C6E7-4118-ADDF-AA9D4151DD51}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MetalDoorSlamCloseNoPower" ID="{1A96DD9D-0E34-478E-A221-1F21C456A616}">
+					<ChildrenList>
+						<Action Name="" ID="{91CB5A0A-D152-4BD6-AD58-083504FD2E47}" ShortID="80777866">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MetalDoorSlamCloseNoPower" ID="{5E442E7A-94FE-4B93-ADA8-DFB0705AEF4E}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

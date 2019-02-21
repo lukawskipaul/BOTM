@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Telekinesis : MonoBehaviour
 {
+    #region Variables
+    public static event Action TeleManualMovingObject;
+    public static event Action TeleStoppedManualMovingObject;
+
     Rigidbody objectRigidBody;
     public GameObject levitatableObj;
     bool isLiftingObject = false;
@@ -12,22 +16,49 @@ public class Telekinesis : MonoBehaviour
     [SerializeField]
     Transform levitateTransform;
     [SerializeField]
-    float levitateFollowSpeed = 3f;
+    float throwForce = 1f;
     [SerializeField]
-    float speed = 1f;
+    float transfromMoveSpeed = 3f;
+    [SerializeField]
+    float telePushPullSpeed = 3f;
+    [SerializeField]
+    float maxSpeed = 1f;
+    [SerializeField]
+    float smoothtime = 1f;
+
+    private float baseLevitateFollowSpeed;
+    private float xInput;
+    private float yInput;
+    private float zInput;
+
+    BoxCollider boxCollider;
+
+    private Vector3 levDirection;
+    private Vector3 centerPoint;
+
+    private Vector3 velocity = Vector3.zero;
+
+    #endregion
 
     private void Update()
     {
 
         TelekinesisInputHandler();
-        if (isLiftingObject == true)
-        {
-            LevitateObject(levitatableObj);
-        }
-        if(isLiftingObject == true && Input.GetButtonDown("Throw"))
+        if (isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
             ThrowObject();
         }
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (isLiftingObject)
+        {
+            LevitateObject(levitatableObj);
+        }
+
     }
 
 
@@ -43,12 +74,13 @@ public class Telekinesis : MonoBehaviour
     {
         GetObjectRigidBody(objectToLevitate);
         objectRigidBody.useGravity = false;
-        objectToLevitate.layer = 11;
+        objectToLevitate.layer = 10;
         objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
         objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
         objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
         Vector3 objectTransfrom = objectToLevitate.transform.position;
-        MoveLevitateObject(objectRigidBody, objectTransfrom);
+        MoveLevitateTransform();
+        MoveObjectToTransform(objectRigidBody, objectTransfrom);
         Debug.Log("LevitatingObj");
     }
 
@@ -56,7 +88,7 @@ public class Telekinesis : MonoBehaviour
     {
         objectRigidBody = levitatableObj.GetComponent<Rigidbody>();
         objectRigidBody.useGravity = true;
-        objectRigidBody.AddForce(transform.forward * speed * 10);
+        objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
         isLiftingObject = false;
         levitatableObj = null;
     }
@@ -75,10 +107,23 @@ public class Telekinesis : MonoBehaviour
     }
 
     //This is what actually moves the object towards the levitate point
-    private void MoveLevitateObject(Rigidbody objToLevitate, Vector3 objTransform)
+    private void MoveObjectToTransform(Rigidbody objToLevitate, Vector3 objTransform)
     {
-        objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed * Time.deltaTime);
+        //objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed);
+        objTransform = Vector3.SmoothDamp(objTransform, levitateTransform.position, ref velocity, smoothtime, maxSpeed);
         objToLevitate.MovePosition(objTransform);
+    }
+
+    private void MoveLevitateTransform()
+    {
+        //xInput = Input.GetAxis("Mouse X");
+        //yInput = Input.GetAxis("Mouse Y");
+        zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+
+        levDirection = new Vector3(0, 0, zInput);
+        //levDirection = new Vector3(levitateTransform.position.x, levitateTransform.position.y, zInput);
+        levitateTransform.Translate(levDirection * transfromMoveSpeed * Time.deltaTime);
+
     }
 
     private void DropObject(GameObject objectToDrop)
@@ -128,6 +173,10 @@ public class Telekinesis : MonoBehaviour
         if (!isLiftingObject)
         {
             levitatableObj = gameObject;
+
+            //TEMPORARY FEEDBACK
+            levitatableObj.GetComponent<Renderer>().material.color = Color.green;
+
             Debug.Log(levitatableObj.name + " can be levitated.");
         }
 
@@ -135,12 +184,35 @@ public class Telekinesis : MonoBehaviour
 
     private void ResetLevitatableObj()
     {
+        //TEMPORARY FEEDBACK
+        if (levitatableObj != null)
+        {
+            levitatableObj.GetComponent<Renderer>().material.color = Color.white;
+        }
+
         if (!isLiftingObject)
         {
             levitatableObj = null;
         }
     }
 
+    private void OnTeleManualMovingObject()
+    {
+        if (TeleManualMovingObject != null)
+        {
+            TeleManualMovingObject.Invoke();
+        }
+    }
+
+    private void OnTeleStoppedManualMovingObject()
+    {
+        if (TeleStoppedManualMovingObject != null)
+        {
+            TeleStoppedManualMovingObject.Invoke();
+        }
+    }
+
+    #region Event Subscribing
     //Subscribe to Event
     private void OnEnable()
     {
@@ -153,4 +225,5 @@ public class Telekinesis : MonoBehaviour
         DetectObject.LevObjectDetected -= SetLevitatableObject;
         DetectObject.LevObjectGone -= ResetLevitatableObj;
     }
+    #endregion
 }
