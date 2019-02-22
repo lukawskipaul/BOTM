@@ -18,6 +18,9 @@ public class RootMotionMovementController : MonoBehaviour
     private bool canMove;
     private bool isOnGround;
 
+    private const string baseAttackAnimationName = "Attack Base";
+    private const string combo1AttackAnimationName = "Attack Combo 1";
+
     private void Awake()
     {
         canMove = true;
@@ -75,9 +78,18 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
         if (Input.GetButtonDown("Dodge"))    //checks for lock on in animator
         {
+            bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) || 
+                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);
+
+            /* Cancels possible combo attack queuing */
+            if (attackAnimationIsPlaying)
+            {
+                anim.ResetTrigger("Attack");
+            }
+
             anim.SetTrigger("FreeLookDodge");
 
-            rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
+            //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
     }
 
@@ -86,9 +98,18 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play hop dodge animation when dodge button is pressed and is locked on */
         if (Input.GetButtonDown("Dodge"))     //checks for lock on in animator
         {
+            bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) ||
+                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);
+
+            /* Cancels possible combo attack queuing */
+            if (attackAnimationIsPlaying)
+            {
+                anim.ResetTrigger("Attack");
+            }
+
             anim.SetTrigger("LockedOnDodge");
 
-            rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
+            //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
     }
 

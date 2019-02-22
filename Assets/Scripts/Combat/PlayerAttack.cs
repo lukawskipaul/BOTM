@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour
     private const string attackButtonName = "Attack";
     private const string baseAttackAnimationName = "Attack Base";
     private const string combo1AttackAnimationName = "Attack Combo 1";
+    private const string freeLookAnimationName = "Free Look Dodge";
+    private const string lockedOnAnimationName = "Locked On Dodge";
 
     private void Awake()
     {
@@ -37,8 +39,19 @@ public class PlayerAttack : MonoBehaviour
         /* Play attack animation when attack button is pressed */
         if (Input.GetButtonDown(attackButtonName) && canAttack)
         {
+            bool dodgeAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(freeLookAnimationName) ||
+                anim.GetCurrentAnimatorStateInfo(0).IsName(lockedOnAnimationName);
+
+            /* Cancels possible dodge queuing */
+            if (dodgeAnimationIsPlaying)
+            {
+                anim.ResetTrigger("FreeLookDodge");
+                anim.ResetTrigger("LockedOnLookDodge");
+            }
+
             anim.SetTrigger("Attack");
 
+            /* Changes damage value depending on whether base or combo animation is playing */
             if (anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName))
             {
                 swordAttack.ChangeToBaseDamage();
@@ -46,10 +59,6 @@ public class PlayerAttack : MonoBehaviour
             else if (anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName))
             {
                 swordAttack.ChangeToCombo1Damage();
-            }
-            else
-            {
-                Debug.Log("Not currently playing base attack or combo 1 attack animations.");
             }
         }
     }

@@ -29,11 +29,13 @@ public class DamageEnemy : MonoBehaviour
         isAttacking = false;
     }
 
+    /* Called in PlayerAttack to change damage to base amount */
     public void ChangeToBaseDamage()
     {
         currentAttackDamage = baseAttackDamage;
     }
 
+    /* Called in PlayerAttack to change damage to combo 1 amount */
     public void ChangeToCombo1Damage()
     {
         currentAttackDamage = combo1AttackDamage;
