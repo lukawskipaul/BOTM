@@ -83,6 +83,7 @@ public class Telekinesis : MonoBehaviour
 
     private void LevitateObject(GameObject objectToLevitate)
     {
+        OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
         objectRigidBody.useGravity = false;
         objectToLevitate.layer = 10;
@@ -115,6 +116,8 @@ public class Telekinesis : MonoBehaviour
         catch (System.Exception)
         {
             Debug.Log("No rigidbody");
+            isLiftingObject = false;
+            levitatableObj = null;
             throw;
         }
     }
@@ -131,7 +134,14 @@ public class Telekinesis : MonoBehaviour
     {
         //xInput = Input.GetAxis("Mouse X");
         //yInput = Input.GetAxis("Mouse Y");
+
+        
         zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+
+        if ((Vector3.Distance(levitatableObj.transform.position, player.transform.position) <= minDistance))
+        {
+            zInput = 0;
+        }
 
         levDirection = new Vector3(0, 0, zInput);
         //levDirection = new Vector3(levitateTransform.position.x, levitateTransform.position.y, zInput);
@@ -153,14 +163,19 @@ public class Telekinesis : MonoBehaviour
         objectToDrop.layer = 0;
         isLiftingObject = false;
         objectRigidBody.useGravity = true;
+        OnTeleStoppedManualMovingObject();
         levitateTransform.localPosition = startingTransform;
     }
 
     private void CheckDistance()
     {
+        //Vector3 pos = levitateTransform.position;
+        //pos.z = Mathf.Clamp(levitateTransform.position.z, 7, 25);
+        //levitateTransform.position = pos;
         if (Vector3.Distance(levitatableObj.transform.position, player.transform.position) <= minDistance)
         {
-            DropObject(levitatableObj);
+            objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
+            //levitateTransform.position = objectRigidBody.position;
         }
         if (Vector3.Distance(levitatableObj.transform.position, player.transform.position) >= maxDistance)
         {
