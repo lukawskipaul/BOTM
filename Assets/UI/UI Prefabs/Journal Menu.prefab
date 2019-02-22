@@ -74,72 +74,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!1 &1535020361859933664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1291483739960577067}
-  - component: {fileID: 1143848972082837674}
-  - component: {fileID: 1874061181786897800}
-  m_Layer: 0
-  m_Name: Journal Event System
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1291483739960577067
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535020361859933664}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -400.04565, y: -161.16399, z: -7.443762}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1176964362371776393}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1143848972082837674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535020361859933664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!114 &1874061181786897800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535020361859933664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!1 &1676352384113289896
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +913,6 @@ Transform:
   m_Children:
   - {fileID: 876946884462319462}
   - {fileID: 6693876803287682890}
-  - {fileID: 1291483739960577067}
   - {fileID: 1764989341670745942}
   - {fileID: 6133057340676077414}
   - {fileID: 8507580692500745235}
@@ -1256,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 7359243608332709503, guid: bc3d4fa4233f28e409b66fd97bfe1c14,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7359243608332709503, guid: bc3d4fa4233f28e409b66fd97bfe1c14,
         type: 3}
@@ -1386,7 +1319,7 @@ PrefabInstance:
     - target: {fileID: 7359243608332709503, guid: 287f0b80a46a69f44a9642b69cbd1b68,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7359243608332709503, guid: 287f0b80a46a69f44a9642b69cbd1b68,
         type: 3}
@@ -1511,7 +1444,7 @@ PrefabInstance:
     - target: {fileID: 6407240445624612331, guid: af7eff511b86a6b428d35613aed43c5b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6407240445624612331, guid: af7eff511b86a6b428d35613aed43c5b,
         type: 3}
@@ -1648,7 +1581,9 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6407240445624612320, guid: af7eff511b86a6b428d35613aed43c5b, type: 3}
+    - {fileID: 6407240445624612335, guid: af7eff511b86a6b428d35613aed43c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: af7eff511b86a6b428d35613aed43c5b, type: 3}
 --- !u!224 &3962966481510816409 stripped
 RectTransform:
@@ -1711,7 +1646,7 @@ PrefabInstance:
     - target: {fileID: 7359243608332709503, guid: 62a355ec0207cfa44bd334220e019014,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7359243608332709503, guid: 62a355ec0207cfa44bd334220e019014,
         type: 3}
