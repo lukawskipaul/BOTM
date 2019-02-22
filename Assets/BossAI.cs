@@ -21,6 +21,9 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private NavMeshAgent bossNavMeshAgent;
 
+    [SerializeField]
+    private LayerMask obstacleMask;
+
     [Tooltip("A scalar used to determine how far past a target point the boss charges")]
     [SerializeField]
     [Range(1, 2)]
@@ -54,18 +57,28 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float strafeTime = 1;
 
+    [Tooltip("The maximum distance that the boss character can jump back")]
+    [SerializeField]
+    private float jumpBackDistance = 1;
+
+    [Tooltip("A scalar controlling how fast the boss cahracter rotates to look at the player")]
+    [SerializeField]
+    private float lookRotationSpeed = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         bossNavMeshAgent = GetComponent<NavMeshAgent>();
+        obstacleMask = ~obstacleMask;
     }
+
+    // Getters/ Setters
     public NavMeshAgent BossNavMeshAgent
     {
         get { return bossNavMeshAgent; }
         set { bossNavMeshAgent = value; }
     }
-
-    // Getters/ Setters
+    
     public GameObject Player
     {
         get { return player; }
@@ -110,6 +123,21 @@ public class BossAI : MonoBehaviour
     public float StrafeTime
     {
         get { return strafeTime; }
+    }
+
+    public float JumpBackDistance
+    {
+        get { return jumpBackDistance; }
+    }
+
+    public float LookRotationSpeed
+    {
+        get { return lookRotationSpeed; }
+    }
+
+    public LayerMask ObstacleMask
+    {
+        get { return obstacleMask; }
     }
 
     /*// Update is called once per frame

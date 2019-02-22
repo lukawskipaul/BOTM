@@ -16,20 +16,21 @@ public class Boss_Strafe : StateMachineBehaviour
     float strafeRadius;
     float strafeSpeed;
 
+    float lookRotationSpeed;
+    Quaternion lookAtPlayer;
+    bool lookingAtPlayer;
+
     Vector3 relativeX;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Set Animator Parameter 'isStrafing' to true
-        //*Needed for head rotation
-        animator.SetBool("isStrafing",true);
-
         // establish variables
         boss = animator.gameObject;
         bossAI = boss.GetComponent<BossAI>();
         player = bossAI.Player;
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
+        lookRotationSpeed = bossAI.LookRotationSpeed;
 
         target = bossAI.Target; // used for debugging and visualization
                                 // deactivate target object in release version of game
@@ -37,12 +38,20 @@ public class Boss_Strafe : StateMachineBehaviour
         strafeRadius = bossAI.StrafeRadius;
         strafeSpeed = bossAI.StrafeSpeed;
 
+        lookingAtPlayer = false;
+
+        // rotate boss to face player
+        //lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
+
+        /*
+
         // The position of the player relative to the Boss
         // I.E. The boss' position is considered local (0,0) and the direction 
         // it's facing decides the orientation of the local x-axis and z-axis
         relativeX = boss.transform.InverseTransformPoint(player.transform.position);
         Debug.Log("Player.x relative to Boss = " + relativeX.x);
         Debug.Log("Player.z relative to Boss = " + relativeX.z);
+        //*/
 
         target.transform.position = ClosestPoint(boss.transform.position, player.transform.position);
     }
@@ -51,34 +60,40 @@ public class Boss_Strafe : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // for debugging and testing strafing speed only
-        {
+        /*{
             strafeSpeed = bossAI.StrafeSpeed;
             player.transform.LookAt(boss.transform);
         }//*/
 
-        boss.transform.LookAt(player.transform);
 
-        if (relativeX.x >= 0)
+        if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.99f && !lookingAtPlayer)
         {
-            target.transform.RotateAround(player.transform.position, Vector3.up, strafeSpeed * Time.deltaTime);
+            boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, lookAtPlayer, lookRotationSpeed * Time.deltaTime);
         }
         else
         {
-            target.transform.RotateAround(player.transform.position, Vector3.up, -strafeSpeed * Time.deltaTime);
+            lookingAtPlayer = true;
+
+            boss.transform.LookAt(player.transform);
+
+            if (relativeX.x >= 0)
+            {
+                target.transform.RotateAround(player.transform.position, Vector3.up, strafeSpeed * Time.deltaTime);
+            }
+            else
+            {
+                target.transform.RotateAround(player.transform.position, Vector3.up, -strafeSpeed * Time.deltaTime);
+            }
         }//*/
 
         bossNavMeshAgent.SetDestination(target.transform.position);
-
-       
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        //Set Animator Parameter 'isStrafing' to false
-        //*Needed for head rotation
-        animator.SetBool("isStrafing",false);
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -97,6 +112,7 @@ public class Boss_Strafe : StateMachineBehaviour
         float magnintudeBP = MagnitudeBossPlayer(bossPosition, playerPosition);
         float shortX, shortZ;
 
+        /*
         Vector3 playerLocal = player.transform.InverseTransformPoint(playerPosition);
         Debug.Log("Player local position = " + playerLocal);
         Vector3 bossLocal = player.transform.InverseTransformPoint(bossPosition);
@@ -104,9 +120,12 @@ public class Boss_Strafe : StateMachineBehaviour
 
         shortX = playerLocal.x + (strafeRadius * (bossLocal.x - playerLocal.x) / magnintudeBP);
         shortZ = playerLocal.z + (strafeRadius * (bossLocal.z - playerLocal.z) / magnintudeBP);
+        //*/
 
-        //target.transform.position.y;
-        return player.transform.TransformPoint(new Vector3(shortX, 0, shortZ));
+        shortX = playerPosition.x + (strafeRadius * (bossPosition.x - playerPosition.x) / magnintudeBP);
+        shortZ = playerPosition.z + (strafeRadius * (bossPosition.z - playerPosition.z) / magnintudeBP);
+
+        return new Vector3(shortX, bossPosition.y, shortZ);
     }
 
     private float MagnitudeBossPlayer (Vector3 bossPosition, Vector3 playerPosition)

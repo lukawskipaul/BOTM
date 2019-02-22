@@ -8,7 +8,6 @@ public class StartPhase : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetInteger("SleepChoice",(int)(Random.value * 10));
-        Debug.Log(animator.GetInteger("SleepChoice"));
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
