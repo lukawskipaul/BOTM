@@ -15,8 +15,6 @@ public class PlayerAttack : MonoBehaviour
     private const string attackButtonName = "Attack";
     private const string baseAttackAnimationName = "Attack Base";
     private const string combo1AttackAnimationName = "Attack Combo 1";
-    private const string freeLookAnimationName = "Free Look Dodge";
-    private const string lockedOnAnimationName = "Locked On Dodge";
 
     private void Awake()
     {
@@ -39,15 +37,9 @@ public class PlayerAttack : MonoBehaviour
         /* Play attack animation when attack button is pressed */
         if (Input.GetButtonDown(attackButtonName) && canAttack)
         {
-            bool dodgeAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(freeLookAnimationName) ||
-                anim.GetCurrentAnimatorStateInfo(0).IsName(lockedOnAnimationName);
-
             /* Cancels possible dodge queuing */
-            if (dodgeAnimationIsPlaying)
-            {
-                anim.ResetTrigger("FreeLookDodge");
-                anim.ResetTrigger("LockedOnLookDodge");
-            }
+            anim.ResetTrigger("FreeLookDodge");
+            anim.ResetTrigger("LockedOnLookDodge");
 
             anim.SetTrigger("Attack");
 
