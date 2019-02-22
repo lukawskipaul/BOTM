@@ -22,8 +22,13 @@ public class BossFloorTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             //Awake the boss when entering box
-            bossAnim.SetTrigger("WakeUp");
+            Debug.Log("isAwake = true");
+            bossAnim.SetBool("isAwake",true);
         }
+        
+    }
+    private void OnTriggerStay(Collider other)
+    {
         
     }
     private void OnTriggerExit(Collider other)

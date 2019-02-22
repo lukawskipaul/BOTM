@@ -41,19 +41,22 @@ public class Boss_Strafe : StateMachineBehaviour
         lookingAtPlayer = false;
 
         // rotate boss to face player
-        //lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
+        lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
 
         /*
 
         // The position of the player relative to the Boss
         // I.E. The boss' position is considered local (0,0) and the direction 
         // it's facing decides the orientation of the local x-axis and z-axis
-        relativeX = boss.transform.InverseTransformPoint(player.transform.position);
+        
         Debug.Log("Player.x relative to Boss = " + relativeX.x);
         Debug.Log("Player.z relative to Boss = " + relativeX.z);
         //*/
 
+        relativeX = boss.transform.InverseTransformPoint(player.transform.position);
+
         target.transform.position = ClosestPoint(boss.transform.position, player.transform.position);
+        target.transform.position.Set(target.transform.position.x, 2, target.transform.position.z);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -65,28 +68,36 @@ public class Boss_Strafe : StateMachineBehaviour
             player.transform.LookAt(boss.transform);
         }//*/
 
+        Debug.Log("lookingAtPlayer = " + lookingAtPlayer);
 
-        if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.99f && !lookingAtPlayer)
+        if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.90f && !lookingAtPlayer)
         {
             boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, lookAtPlayer, lookRotationSpeed * Time.deltaTime);
+            Debug.Log("Slerping");
+            Debug.Log("Current Dot:" + Quaternion.Dot(boss.transform.rotation, lookAtPlayer));
         }
         else
         {
             lookingAtPlayer = true;
+            Debug.Log("lookingAtPlayer = " + lookingAtPlayer);
 
             boss.transform.LookAt(player.transform);
 
             if (relativeX.x >= 0)
             {
-                target.transform.RotateAround(player.transform.position, Vector3.up, strafeSpeed * Time.deltaTime);
+                target.transform.RotateAround(player.transform.position, Vector3.up, -strafeSpeed * Time.deltaTime);
             }
             else
             {
-                target.transform.RotateAround(player.transform.position, Vector3.up, -strafeSpeed * Time.deltaTime);
+                target.transform.RotateAround(player.transform.position, Vector3.up, strafeSpeed * Time.deltaTime);
             }
+            target.transform.position.Set(target.transform.position.x, 2, target.transform.position.z);
         }//*/
 
         bossNavMeshAgent.SetDestination(target.transform.position);
+
+
+        Debug.Log("Destination Set\nUpdate Finished");
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
