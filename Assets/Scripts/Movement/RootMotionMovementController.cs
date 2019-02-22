@@ -16,6 +16,7 @@ public class RootMotionMovementController : MonoBehaviour
     private Rigidbody rb;
 
     private bool canMove;
+    private bool canDodge;
     private bool isOnGround;
 
     private const string baseAttackAnimationName = "Attack Base";
@@ -24,6 +25,7 @@ public class RootMotionMovementController : MonoBehaviour
     private void Awake()
     {
         canMove = true;
+        canDodge = true;
         isOnGround = true;
     }
 
@@ -49,8 +51,12 @@ public class RootMotionMovementController : MonoBehaviour
         if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
         {
             Move();
-            FreeLookDodge();
-            LockedOnDodge();
+
+            if (canDodge)
+            {
+                FreeLookDodge();
+                LockedOnDodge();
+            }
         }
     }
 
@@ -89,6 +95,8 @@ public class RootMotionMovementController : MonoBehaviour
 
             anim.SetTrigger("FreeLookDodge");
 
+            //StartCoroutine(DodgeCooldown());
+
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
     }
@@ -108,6 +116,8 @@ public class RootMotionMovementController : MonoBehaviour
             }
 
             anim.SetTrigger("LockedOnDodge");
+
+            //StartCoroutine(DodgeCooldown());
 
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
@@ -147,5 +157,14 @@ public class RootMotionMovementController : MonoBehaviour
     {
         Telekinesis.TeleManualMovingObject += SetCanMove;
         Telekinesis.TeleStoppedManualMovingObject += SetCanMove;
+    }
+
+    private IEnumerator DodgeCooldown()
+    {
+        canDodge = false;
+
+        yield return new WaitForSecondsRealtime(2.0f);
+
+        canDodge = true;
     }
 }

@@ -43,12 +43,15 @@ public class PlayerAttack : MonoBehaviour
 
             anim.SetTrigger("Attack");
 
+            bool baseAttackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName);
+            bool combo1AttackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);
+
             /* Changes damage value depending on whether base or combo animation is playing */
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName))
+            if (baseAttackAnimationIsPlaying)
             {
                 swordAttack.ChangeToBaseDamage();
             }
-            else if (anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName))
+            else if (combo1AttackAnimationIsPlaying)
             {
                 swordAttack.ChangeToCombo1Damage();
             }
