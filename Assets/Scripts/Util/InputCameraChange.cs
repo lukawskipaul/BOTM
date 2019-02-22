@@ -42,22 +42,42 @@ public class InputCameraChange : MonoBehaviour
         //if we're currently locked on, check if we're too far away, and if so, unlock the camera
         if (lockOn)
         {
-            DistToTarget = Vector3.Distance(LockOnTarget.transform.position, transform.position);
-            Cinemachine.CinemachineVirtualCamera CM_vcam = CM_LockOnCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
-            var transposer = CM_vcam.GetCinemachineComponent<Cinemachine.CinemachineTransposer>();
-            if (DistToTarget < LockOnRange / 2)
+            if (!LockOnTarget.activeInHierarchy)
             {
-                transposer.m_FollowOffset = new Vector3(.5f, 2.5f, 0);
-            }
-            else
-            {
-                transposer = CM_vcam.GetCinemachineComponent<Cinemachine.CinemachineTransposer>();
-                transposer.m_FollowOffset = new Vector3(1, 2.5f, 0);
-            }
-            if (DistToTarget > LockOnRange)
-            {
-                transposer.m_FollowOffset = new Vector3(0, 1.8f, 0);
                 ResetLockOnTarget();
+            }
+            else {
+                DistToTarget = Vector3.Distance(LockOnTarget.transform.position, transform.position);
+                Cinemachine.CinemachineVirtualCamera CM_vcam = CM_LockOnCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
+                var transposer = CM_vcam.GetCinemachineComponent<Cinemachine.CinemachineTransposer>();
+                Vector3 TargetVector = new Vector3(.5f, 2.5f, .5f);
+                if (Input.GetButtonDown("LockOnSwitch"))
+                {
+                    LockOnTarget.layer = LayerMask.NameToLayer("Ignore Raycast");
+                    DetectObject.EnemySearchNeeded = true;
+
+                }
+                if (DistToTarget < 1.5)
+                {
+                    TargetVector = new Vector3(.1f, 2f, 0.1f);
+                }
+
+                else if (DistToTarget < LockOnRange / 4)
+                {
+                    TargetVector = new Vector3(.25f, 2f, 0.1f);
+                }
+                else if (DistToTarget < LockOnRange / 2)
+                {
+                    TargetVector = new Vector3(.5f, 2.2f, 0.2f);
+                }
+
+                transposer.m_FollowOffset = Vector3.Lerp(transposer.m_FollowOffset, TargetVector, .25f);
+
+                if (DistToTarget > LockOnRange)
+                {
+                    transposer.m_FollowOffset = new Vector3(0, 1.8f, 0);
+                    ResetLockOnTarget();
+                }
             }
         }
     }
@@ -81,10 +101,17 @@ public class InputCameraChange : MonoBehaviour
 
     private void SetLockOnTarget(GameObject gameObject)
     {
+        if (LockOnTarget != null)
+        {
+            if(LockOnTarget.layer == 2)
+            {
+                LockOnTarget.layer = 0;
+            }
+        }
         //we found our LockOn Target, set it as what to target in the cinemachine object
         Cinemachine.CinemachineTargetGroup CM_TargetGroup = CM_LookAtTargetObject.GetComponent<Cinemachine.CinemachineTargetGroup>();
         CM_TargetGroup.m_Targets[1] = new Cinemachine.CinemachineTargetGroup.Target();
-        CM_TargetGroup.m_Targets[1].weight = 1;
+        CM_TargetGroup.m_Targets[1].weight = 2;
         CM_TargetGroup.m_Targets[1].radius = 1;
         CM_TargetGroup.m_Targets[1].target = gameObject.transform;
         LockOnTarget = gameObject;
@@ -94,12 +121,22 @@ public class InputCameraChange : MonoBehaviour
 
     private void ResetLockOnTarget()
     {
+        bool BreakLock = true;
         //remove the target from the cinemachine lock on list and unlocks the camera
-
-        Cinemachine.CinemachineTargetGroup CM_TargetGroup = CM_LookAtTargetObject.GetComponent<Cinemachine.CinemachineTargetGroup>();
-        CM_TargetGroup.m_Targets[1] = new Cinemachine.CinemachineTargetGroup.Target();
-        UnLockCamera();
-
+        if (LockOnTarget != null)
+        {
+            if (LockOnTarget.layer == 2)
+            {
+                LockOnTarget.layer = 0;
+                BreakLock = false;
+            }
+        }
+        if (BreakLock)
+        {
+            Cinemachine.CinemachineTargetGroup CM_TargetGroup = CM_LookAtTargetObject.GetComponent<Cinemachine.CinemachineTargetGroup>();
+            CM_TargetGroup.m_Targets[1] = new Cinemachine.CinemachineTargetGroup.Target();
+            UnLockCamera();
+        }
 
     }
 
