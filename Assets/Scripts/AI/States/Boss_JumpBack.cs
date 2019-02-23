@@ -30,7 +30,7 @@ public class Boss_JumpBack : StateMachineBehaviour
     // hitting as it jumps backwards
     LayerMask obstacleMask;
 
-    //GameObject target;    // Used for debugging and visualization
+    GameObject target;    // Used for debugging and visualization
     // Comment out in release version of game
 
     // The position of the boss relative to the player
@@ -58,7 +58,7 @@ public class Boss_JumpBack : StateMachineBehaviour
             // used for debugging
             // comment out on release version of game
             //  -   -   -
-            //target = bossAI.Target;
+            target = bossAI.Target;
 
             //bossRelativePosition = boss.transform.InverseTransformPoint(player.transform.position);
             //Debug.Log("Player.x relative to Boss = " + bossRelativePosition.x);
@@ -72,7 +72,7 @@ public class Boss_JumpBack : StateMachineBehaviour
 
         // calculate jump back target position
         jumpBackPosition = JumpBackTarget(boss.transform.position, player.transform.position, jumpBackDistance);
-        //target.transform.position.Set(jumpBackPosition.x, target.transform.position.y, jumpBackPosition.z);
+        target.transform.position = new Vector3(jumpBackPosition.x, 2.0f, jumpBackPosition.z);
 
         // checks if there is an obstacle in the way of the boss jumping back
         if (Physics.Linecast(boss.transform.position, jumpBackPosition, out hitInfo, obstacleMask))
@@ -114,6 +114,8 @@ public class Boss_JumpBack : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        // Reset Boss path
+        bossNavMeshAgent.SetDestination(player.transform.position);
         // Reenable boss rotation
         bossNavMeshAgent.updateRotation = true;
     }
