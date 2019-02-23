@@ -13,7 +13,7 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
-    [Tooltip("A target object used for visualization and debugging")]
+    [Tooltip("A target object used for visualization and debugging\nDeactivate or replace with empty object in release")]
     [SerializeField]
     private GameObject target;
 
