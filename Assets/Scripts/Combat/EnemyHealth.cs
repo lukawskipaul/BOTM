@@ -20,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        healthBar.maxValue = maxHealth;
 
         UpdateHealthBar();
     }
@@ -39,11 +40,15 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
         }
+        else
+        {
+            anim.SetTrigger("Flinch");
+        }
     }
 
     private void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = currentHealth / maxHealth;
+        healthBar.value = currentHealth;
     }
 }

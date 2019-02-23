@@ -81,10 +81,4 @@ public class RootMotionMovementController : MonoBehaviour
             canMove = true;
         }
     }
-
-    private void OnEnable()
-    {
-        Telekinesis.TeleManualMovingObject += SetCanMove;
-        Telekinesis.TeleStoppedManualMovingObject += SetCanMove;
-    }
 }
