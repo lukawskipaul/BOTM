@@ -85,16 +85,25 @@ public class Telekinesis : MonoBehaviour
     {
         OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
-        objectRigidBody.useGravity = false;
-        objectToLevitate.layer = 10;
-        objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
-        objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
-        objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
-        Vector3 objectTransfrom = objectToLevitate.transform.position;
-        MoveLevitateTransform();
-        MoveObjectToTransform(objectRigidBody, objectTransfrom);
-        CheckDistance();
-        Debug.Log("LevitatingObj");
+        if (objectRigidBody != null)
+        {
+            objectRigidBody.useGravity = false;
+            objectToLevitate.layer = 10;
+            objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
+            objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
+            objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
+            Vector3 objectTransfrom = objectToLevitate.transform.position;
+            MoveLevitateTransform();
+            MoveObjectToTransform(objectRigidBody, objectTransfrom);
+            CheckDistance();
+            Debug.Log("LevitatingObj");
+        }
+        else
+        {
+            isLiftingObject = false;
+            levitatableObj = null;
+            levitateTransform.localPosition = startingTransform;
+        }
     }
 
     private void ThrowObject()
@@ -118,7 +127,7 @@ public class Telekinesis : MonoBehaviour
             Debug.Log("No rigidbody");
             isLiftingObject = false;
             levitatableObj = null;
-            throw;
+            levitateTransform.localPosition = startingTransform;
         }
     }
 
@@ -158,7 +167,6 @@ public class Telekinesis : MonoBehaviour
         catch (System.Exception)
         {
             Debug.Log("No rigidbody");
-            throw;
         }
         objectToDrop.layer = 0;
         isLiftingObject = false;
