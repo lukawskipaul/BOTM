@@ -10,22 +10,28 @@ public class Boss_JumpBack : StateMachineBehaviour
     BossAI bossAI;
     NavMeshAgent bossNavMeshAgent;
 
-    // the maximum distance the boss moves
+    // The maximum distance the boss moves
     // as it jumps backwards
     float jumpBackDistance;
 
-    // the position the boss moves towards
+    // The position the boss moves towards
     // as it jumps back
     Vector3 jumpBackPosition;
 
+    // The speed the boss rotates
+    // to face the player
     float lookRotationSpeed;
 
-    LayerMask obstacleMask;
-
+    // The rotation angle the boss needs
+    // to turn to face the player
     Quaternion lookAtPlayer;
 
-    //GameObject target;  // used for debugging and visualization
-                        // comment out in release version of game
+    // The objects that the boss will avoid
+    // hitting as it jumps backwards
+    LayerMask obstacleMask;
+
+    //GameObject target;    // Used for debugging and visualization
+    // Comment out in release version of game
 
     // The position of the boss relative to the player
     // I.E. Player position is the origin of a local graph
@@ -48,17 +54,18 @@ public class Boss_JumpBack : StateMachineBehaviour
         lookRotationSpeed = bossAI.LookRotationSpeed;
         obstacleMask = bossAI.ObstacleMask;
 
-        // used for debugging
-        // comment out on release version of game
-        
-        //  -   -   -
-        //target = bossAI.Target;
+        {
+            // used for debugging
+            // comment out on release version of game
+            //  -   -   -
+            //target = bossAI.Target;
 
-        bossRelativePosition = boss.transform.InverseTransformPoint(player.transform.position);
-        Debug.Log("Player.x relative to Boss = " + bossRelativePosition.x);
-        Debug.Log("Player.z relative to Boss = " + bossRelativePosition.z);
-        //  -   -   -
-        //*/
+            //bossRelativePosition = boss.transform.InverseTransformPoint(player.transform.position);
+            //Debug.Log("Player.x relative to Boss = " + bossRelativePosition.x);
+            //Debug.Log("Player.z relative to Boss = " + bossRelativePosition.z);
+            //  -   -   -
+            //*/
+        }
 
         // make sure that the boss is facing the player
         lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
@@ -72,42 +79,42 @@ public class Boss_JumpBack : StateMachineBehaviour
         {
             pathBlocked = true;
 
-            Debug.Log("Path blocked");
-            Debug.Log("Distance from obstacle: " + hitInfo.distance);
-            Debug.Log("Obstacle location:" + hitInfo.point);
+            //Debug.Log("Path blocked");
+            //Debug.Log("Distance from obstacle: " + hitInfo.distance);
+            //Debug.Log("Obstacle location:" + hitInfo.point);
             //target.transform.position.Set(hitInfo.point.x, target.transform.position.y, hitInfo.point.z);
         }
         else
         {
             pathBlocked = false;
 
-            Debug.Log("Path free");
+            //Debug.Log("Path free");
         }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // rotate to look at player and, if path is free, jump back
+        // Rotate to look at player and, if path is free, jump back
         if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.99f)
         {
             boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, lookAtPlayer, lookRotationSpeed * Time.deltaTime);
         }
+        // If the path is blocked, the boss won't jump backwards
         else if (!pathBlocked)
         {
+            // Disable boss rotatation so that the boss remains looking at the player
             bossNavMeshAgent.updateRotation = false;
 
+            // The boss jumps backwards
             bossNavMeshAgent.SetDestination(jumpBackPosition);
         }
-
-        //Debug.Log(Quaternion.Dot(boss.transform.rotation, lookAtPlayer));
-        //Debug.Log(bossNavMeshAgent.updatePosition);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // reenable boss rotation
+        // Reenable boss rotation
         bossNavMeshAgent.updateRotation = true;
     }
 
@@ -132,14 +139,16 @@ public class Boss_JumpBack : StateMachineBehaviour
         targetX = bossPosition.x + ((bossPosition.x - playerPosition.x) / magnitudeBP * jumpBackDistance);
         targetZ = bossPosition.z + ((bossPosition.z - playerPosition.z) / magnitudeBP * jumpBackDistance);
 
-        /*
-        Debug.Log("JumpBackDistance = " + jumpBackDistance);
-        Debug.Log("MagnitudeBP = " + magnitudeBP);
-        Debug.Log("Boss.x = " + bossPosition.x);
-        Debug.Log("Boss.z = " + bossPosition.z);
-        Debug.Log("Target.x = " + targetX);
-        Debug.Log("Target.z = " + targetZ);
-        //*/
+        {
+            /*
+            Debug.Log("JumpBackDistance = " + jumpBackDistance);
+            Debug.Log("MagnitudeBP = " + magnitudeBP);
+            Debug.Log("Boss.x = " + bossPosition.x);
+            Debug.Log("Boss.z = " + bossPosition.z);
+            Debug.Log("Target.x = " + targetX);
+            Debug.Log("Target.z = " + targetZ);
+            //*/
+        }
 
         return new Vector3(targetX, bossPosition.y, targetZ);
     }
