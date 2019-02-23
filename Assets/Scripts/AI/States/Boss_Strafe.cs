@@ -105,6 +105,7 @@ public class Boss_Strafe : StateMachineBehaviour
             if (relativePosition.x >= 0)
             {
                 target.transform.RotateAround(new Vector3(player.transform.position.x, 5.0f, player.transform.position.z), Vector3.up, strafeSpeed * Time.deltaTime);
+
             }
             // If the player is to the left of the boss, the boss should strafe counterclockwise
             else

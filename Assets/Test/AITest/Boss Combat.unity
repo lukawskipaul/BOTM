@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -494,8 +494,8 @@ MonoBehaviour:
   chargeAngularSpeedScalar: 1
   chargeTempStopping: 1
   strafeRadius: 5.58
-  strafeSpeed: 1
-  strafeTime: 1
+  strafeSpeed: 5
+  strafeTime: 10
   jumpBackDistance: 20
   lookRotationSpeed: 1
 --- !u!195 &756093254
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 1801725223}
   - component: {fileID: 1801725222}
   - component: {fileID: 1801725225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TriggerBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1575,7 +1575,7 @@ PrefabInstance:
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.12
+      value: -7.43
       objectReference: {fileID: 0}
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}
@@ -1585,7 +1585,7 @@ PrefabInstance:
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.41
+      value: 20.16
       objectReference: {fileID: 0}
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}
