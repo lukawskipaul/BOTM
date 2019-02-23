@@ -12,6 +12,8 @@ using UnityEngine;
 
 public class RootMotionMovementController : MonoBehaviour
 {
+    #region Variables
+
     private Animator anim;
     private Rigidbody rb;
 
@@ -19,8 +21,14 @@ public class RootMotionMovementController : MonoBehaviour
     private bool canDodge;
     private bool isOnGround;
 
+    private const string dodgeButtonName = "Dodge";
     private const string baseAttackAnimationName = "Attack Base";
     private const string combo1AttackAnimationName = "Attack Combo 1";
+    private const string attackAnimationTriggerName = "Attack";
+    private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
+    private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
+
+    #endregion
 
     private void Awake()
     {
@@ -82,7 +90,7 @@ public class RootMotionMovementController : MonoBehaviour
     private void FreeLookDodge()
     {
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
-        if (Input.GetButtonDown("Dodge"))    //checks for lock on in animator
+        if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
             bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) || 
                 anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
@@ -90,10 +98,10 @@ public class RootMotionMovementController : MonoBehaviour
             /* Cancels possible combo attack queuing */
             if (attackAnimationIsPlaying)
             {
-                anim.ResetTrigger("Attack");
+                anim.ResetTrigger(attackAnimationTriggerName);
             }
 
-            anim.SetTrigger("FreeLookDodge");
+            anim.SetTrigger(freeLookDodgeAnimationTriggerName);
 
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
@@ -102,7 +110,7 @@ public class RootMotionMovementController : MonoBehaviour
     private void LockedOnDodge()
     {
         /* Play hop dodge animation when dodge button is pressed and is locked on */
-        if (Input.GetButtonDown("Dodge"))     //checks for lock on in animator
+        if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
         {
             bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) ||
                 anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
@@ -110,10 +118,10 @@ public class RootMotionMovementController : MonoBehaviour
             /* Cancels possible combo attack queuing */
             if (attackAnimationIsPlaying)
             {
-                anim.ResetTrigger("Attack");
+                anim.ResetTrigger(attackAnimationTriggerName);
             }
 
-            anim.SetTrigger("LockedOnDodge");
+            anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
 
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
@@ -155,13 +163,15 @@ public class RootMotionMovementController : MonoBehaviour
         Telekinesis.TeleStoppedManualMovingObject += SetCanMove;
     }
 
-    /* Called by animation event to start dodge cooldown */
+    #region Animation Events
+
+    /* Called at specific dodge animation frame to start dodge cooldown */
     public void StartDodgeCooldown()
     {
         StartCoroutine(DodgeCooldown());
     }
 
-    /* Starts a cooldown for the player's dodge ability */
+    /* Starts cooldown for the player's dodge ability */
     private IEnumerator DodgeCooldown()
     {
         canDodge = false;
@@ -170,4 +180,6 @@ public class RootMotionMovementController : MonoBehaviour
 
         canDodge = true;
     }
+
+    #endregion
 }

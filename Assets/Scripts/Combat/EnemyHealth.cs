@@ -8,6 +8,8 @@ using UnityEngine.UI;
 //This script goes on enemy
 public class EnemyHealth : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
@@ -17,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
     
     private int currentHealth;
 
+    #endregion
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -24,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = this.gameObject.GetComponent<Animator>();
 
         UpdateHealthBar();
     }

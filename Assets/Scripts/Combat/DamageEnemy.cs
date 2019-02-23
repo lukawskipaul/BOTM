@@ -8,6 +8,8 @@ using UnityEngine;
 //This script goes on sword joint of player
 public class DamageEnemy : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField]
     private int baseAttackDamage = 25;
     [SerializeField]
@@ -23,6 +25,8 @@ public class DamageEnemy : MonoBehaviour
             isAttacking = value;
         }
     }
+
+    #endregion
 
     private void Awake()
     {

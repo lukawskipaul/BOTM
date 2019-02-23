@@ -7,6 +7,8 @@ using System;
 //This script goes on player
 public class PlayerHealth : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
@@ -18,6 +20,8 @@ public class PlayerHealth : MonoBehaviour
     private bool isInvulnerable;
 
     public static event Action TakeDamage;
+
+    #endregion
 
     private void Awake()
     {
@@ -81,6 +85,8 @@ public class PlayerHealth : MonoBehaviour
         healthBar.value = currentHealth / maxHealth;
     }
 
+    #region Animation Events
+
     /* Called at specific dodge animation frame to make player invulnerable */
     public void MakeInvulnerable()
     {
@@ -92,4 +98,6 @@ public class PlayerHealth : MonoBehaviour
     {
         isInvulnerable = false;
     }
+
+    #endregion
 }

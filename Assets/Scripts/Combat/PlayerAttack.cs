@@ -7,14 +7,22 @@ using UnityEngine;
 //This script goes on player
 public class PlayerAttack : MonoBehaviour
 {
+    #region Variables
+
+    [SerializeField]
+    private int tkPullDamageAmount = 10;
+
     private Animator anim;
     private DamageEnemy swordAttack;
 
     private bool canAttack;
 
     private const string attackButtonName = "Attack";
+    private const string tkThrowButtonName = "Throw";
     private const string baseAttackAnimationName = "Attack Base";
     private const string combo1AttackAnimationName = "Attack Combo 1";
+
+    #endregion
 
     private void Awake()
     {
@@ -29,13 +37,17 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        Attack();
+        if (canAttack)
+        {
+            Attack();
+            //TKPull();
+        }
     }
 
     private void Attack()
     {
         /* Play attack animation when attack button is pressed */
-        if (Input.GetButtonDown(attackButtonName) && canAttack)
+        if (Input.GetButtonDown(attackButtonName))
         {
             /* Cancels possible dodge queuing */
             anim.ResetTrigger("FreeLookDodge");
@@ -58,6 +70,21 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    private void TKPull()
+    {
+        /* Play TK pull animation when push button is pressed */
+        if (Input.GetButtonDown(tkThrowButtonName))
+        {
+            //TODO: play animation
+            //TODO: change enemy location
+            //TODO: stun enemy?
+
+            //TODO: ENEMY.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
+
+            //TODO: ability cooldown
+        }
+    }
+
     /* Remember, changing name of animation event functions requires changing the function in the animation event! */
 
     /* Was originally intended to prevent attack queuing, but not helpful with combo system active */
@@ -72,20 +99,6 @@ public class PlayerAttack : MonoBehaviour
     //{
     //    canAttack = true;
     //}
-
-    /* Called during specific animation frame to start doing damage to hit enemies */
-    public void StartDamageWindow()
-    {
-        swordAttack.IsAttacking = true;
-        Time.timeScale = 0.5f;
-    }
-
-    /* Called during specific animation frame to stop doing damage to hit enemies */
-    public void EndDamageWindow()
-    {
-        swordAttack.IsAttacking = false;
-        Time.timeScale = 1.0f;
-    }
 
     /* Disables/enables attacking when carrying/dropping with telekenesis */
     private void SetCanAttack()
@@ -113,4 +126,22 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
     }
+
+    #region Animation Events
+
+    /* Called during specific attack animation frame to start doing damage to hit enemies */
+    public void StartDamageWindow()
+    {
+        swordAttack.IsAttacking = true;
+        Time.timeScale = 0.5f;
+    }
+
+    /* Called during specific attack animation frame to stop doing damage to hit enemies */
+    public void EndDamageWindow()
+    {
+        swordAttack.IsAttacking = false;
+        Time.timeScale = 1.0f;
+    }
+
+    #endregion
 }
