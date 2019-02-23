@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 //This script goes on player
 public class PlayerHealth : MonoBehaviour
@@ -11,8 +12,12 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
 
+    private PlayerRespawnScript respawn;
+
     private int currentHealth;
     private bool isInvulnerable;
+
+    public static event Action TakeDamage;
 
     private void Awake()
     {
@@ -22,6 +27,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
+
         UpdateHealthBar();
     }
 
@@ -36,12 +43,23 @@ public class PlayerHealth : MonoBehaviour
         if (!isInvulnerable)
         {
             currentHealth -= amount;
+
+            OnTakeDamage();
         }
 
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            GetComponent<PlayerRespawnScript>().RespawnPlayer();
+            respawn.RespawnPlayer();
+        }
+    }
+
+    private void OnTakeDamage()
+    {
+        /* Invokes TakeDamage event */
+        if (TakeDamage != null)
+        {
+            TakeDamage.Invoke();
         }
     }
 

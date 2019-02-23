@@ -87,6 +87,7 @@ public class PlayerAttack : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
+    /* Disables/enables attacking when carrying/dropping with telekenesis */
     private void SetCanAttack()
     {
         if (canAttack)
@@ -99,12 +100,14 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    /* Subscribe to events */
     private void OnEnable()
     {
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
     }
 
+    /* Unsubscribe from events */
     private void OnDisable()
     {
         Telekinesis.TeleManualMovingObject -= SetCanAttack;

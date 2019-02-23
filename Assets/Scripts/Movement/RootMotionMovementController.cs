@@ -85,7 +85,7 @@ public class RootMotionMovementController : MonoBehaviour
         if (Input.GetButtonDown("Dodge"))    //checks for lock on in animator
         {
             bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) || 
-                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);
+                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
 
             /* Cancels possible combo attack queuing */
             if (attackAnimationIsPlaying)
@@ -94,8 +94,6 @@ public class RootMotionMovementController : MonoBehaviour
             }
 
             anim.SetTrigger("FreeLookDodge");
-
-            //StartCoroutine(DodgeCooldown());
 
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
@@ -107,7 +105,7 @@ public class RootMotionMovementController : MonoBehaviour
         if (Input.GetButtonDown("Dodge"))     //checks for lock on in animator
         {
             bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) ||
-                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);
+                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
 
             /* Cancels possible combo attack queuing */
             if (attackAnimationIsPlaying)
@@ -117,15 +115,13 @@ public class RootMotionMovementController : MonoBehaviour
 
             anim.SetTrigger("LockedOnDodge");
 
-            //StartCoroutine(DodgeCooldown());
-
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        /* Check if player is on the ground */
+        /* Check if player is on a walkable surface */
         if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
         {
             isOnGround = true;
@@ -134,7 +130,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        /* Check if player is in mid-air */
+        /* Check if player is not on a walkable surface */
         if (other.gameObject.tag == "Ground")
         {
             isOnGround = false;
@@ -159,6 +155,13 @@ public class RootMotionMovementController : MonoBehaviour
         Telekinesis.TeleStoppedManualMovingObject += SetCanMove;
     }
 
+    /* Called by animation event to start dodge cooldown */
+    public void StartDodgeCooldown()
+    {
+        StartCoroutine(DodgeCooldown());
+    }
+
+    /* Starts a cooldown for the player's dodge ability */
     private IEnumerator DodgeCooldown()
     {
         canDodge = false;
