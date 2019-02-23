@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CapsuleCollider))]
-
 //This script goes on enemy
 public class EnemyHealth : MonoBehaviour
 {
@@ -24,11 +23,16 @@ public class EnemyHealth : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+<<<<<<< HEAD
     }
 
     private void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
+=======
+        anim = GetComponent<Animator>();
+        healthBar.maxValue = maxHealth;
+>>>>>>> Mechanics
 
         UpdateHealthBar();
     }
@@ -48,11 +52,15 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
         }
+        else
+        {
+            anim.SetTrigger("Flinch");
+        }
     }
 
     private void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = currentHealth / maxHealth;
+        healthBar.value = currentHealth;
     }
 }

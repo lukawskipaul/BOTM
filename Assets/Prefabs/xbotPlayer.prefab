@@ -1072,10 +1072,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levitatableObj: {fileID: 0}
   levitateTransform: {fileID: 0}
-  levitateFollowSpeed: 0.5
   throwForce: 75
   transfromMoveSpeed: 3
-  telePushPullSpeed: 6
+  telePushPullSpeed: 10
+  maxSpeed: 20
+  smoothtime: 0.2
 --- !u!114 &4865034237498885615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,6 +1145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CM_LockOnCamera: {fileID: 0}
+  CM_LookAtTargetObject: {fileID: 0}
+  lockOn: 0
+  LockOnRange: 0
 --- !u!1 &1323110928474458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,7 +2439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cea28acd1f6ec48946763827e28d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 25
+  attackDamage: 50
 --- !u!54 &5842698803019724662
 Rigidbody:
   m_ObjectHideFlags: 0

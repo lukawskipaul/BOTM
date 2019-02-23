@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool canAttack;
 
+<<<<<<< HEAD
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
     private const string baseAttackAnimationName = "Attack Base";
@@ -29,8 +30,12 @@ public class PlayerAttack : MonoBehaviour
         canAttack = true;
     }
 
+=======
+>>>>>>> Mechanics
     private void Start()
     {
+        canAttack = true;
+        
         anim = this.gameObject.GetComponent<Animator>();
         swordAttack = this.gameObject.GetComponentInChildren<DamageEnemy>();
     }
@@ -70,7 +75,12 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     private void TKPull()
+=======
+    /* Called at start of attack animation to prevent being able to attack again */
+    public void StartAttackEvent()
+>>>>>>> Mechanics
     {
         /* Play TK pull animation when push button is pressed */
         if (Input.GetButtonDown(tkThrowButtonName))
@@ -79,6 +89,7 @@ public class PlayerAttack : MonoBehaviour
             //TODO: change enemy location
             //TODO: stun enemy?
 
+<<<<<<< HEAD
             //TODO: ENEMY.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
 
             //TODO: ability cooldown
@@ -125,6 +136,26 @@ public class PlayerAttack : MonoBehaviour
     {
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
+=======
+    /* Called at end of attack animation to allow being able to attack again */
+    public void EndAttackEvent()
+    {
+        canAttack = true;
+    }
+
+    /* Called during specific animation frame to start doing damage to hit enemies */
+    public void StartDamageEvent()
+    {
+        swordAttack.IsAttacking = true;
+        Time.timeScale = 0.2f;
+    }
+
+    /* Called during specific animation frame to stop doing damage to hit enemies */
+    public void EndDamageEvent()
+    {
+        swordAttack.IsAttacking = false;
+        Time.timeScale = 1;
+>>>>>>> Mechanics
     }
 
     #region Animation Events

@@ -14,35 +14,46 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
 
+<<<<<<< HEAD
     private PlayerRespawnScript respawn;
+=======
+    private Animator anim;
+>>>>>>> Mechanics
 
     private int currentHealth;
-    private bool isInvulnerable;
 
+<<<<<<< HEAD
     public static event Action TakeDamage;
 
     #endregion
 
     private void Awake()
+=======
+    void Start()
+>>>>>>> Mechanics
     {
         currentHealth = maxHealth;
-        isInvulnerable = false;
-    }
+        healthBar.maxValue = maxHealth;
+        anim = GetComponent<Animator>();
 
+<<<<<<< HEAD
     private void Start()
     {
         respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
 
+=======
+>>>>>>> Mechanics
         UpdateHealthBar();
     }
 
-    private void Update()
+    void Update()
     {
         UpdateHealthBar();
     }
 
     public void DamagePlayer(int amount)
     {
+<<<<<<< HEAD
         /* Damages player by enemy attack amount if not during iframe */
         if (!isInvulnerable)
         {
@@ -50,10 +61,15 @@ public class PlayerHealth : MonoBehaviour
 
             OnTakeDamage();
         }
+=======
+        /* Damages player by enemy attack amount */
+        currentHealth -= amount;
+>>>>>>> Mechanics
 
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
+<<<<<<< HEAD
             respawn.RespawnPlayer();
         }
     }
@@ -64,6 +80,10 @@ public class PlayerHealth : MonoBehaviour
         if (TakeDamage != null)
         {
             TakeDamage.Invoke();
+=======
+            //anim.SetTrigger("Die");
+            GetComponent<PlayerRespawnScript>().RespawnPlayer();
+>>>>>>> Mechanics
         }
     }
 
@@ -79,9 +99,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void UpdateHealthBar()
+    void UpdateHealthBar()
     {
         /* Updates health bar with current health */
+<<<<<<< HEAD
         healthBar.value = currentHealth / maxHealth;
     }
 
@@ -97,6 +118,9 @@ public class PlayerHealth : MonoBehaviour
     public void MakeVulnerable()
     {
         isInvulnerable = false;
+=======
+        healthBar.value = currentHealth;
+>>>>>>> Mechanics
     }
 
     #endregion

@@ -16,6 +16,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private Animator anim;
     private Rigidbody rb;
+<<<<<<< HEAD
 
     private bool canMove;
     private bool canDodge;
@@ -39,9 +40,14 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Start()
     {
+=======
+    private bool canMove = true;
+
+    private void Awake()
+    {
+>>>>>>> Mechanics
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -59,12 +65,16 @@ public class RootMotionMovementController : MonoBehaviour
         if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
         {
             Move();
+<<<<<<< HEAD
 
             if (canDodge)
             {
                 FreeLookDodge();
                 LockedOnDodge();
             }
+=======
+            Dodge();
+>>>>>>> Mechanics
         }
     }
 
@@ -87,8 +97,9 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
-    private void FreeLookDodge()
+    private void Dodge()
     {
+<<<<<<< HEAD
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
         if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
@@ -142,6 +153,15 @@ public class RootMotionMovementController : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             isOnGround = false;
+=======
+        if (Input.GetButtonDown("Dodge") /*&& isOnGround*/)
+        {
+            anim.SetTrigger("Dodge");
+
+            rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
+
+            //have i-frames
+>>>>>>> Mechanics
         }
     }
 
@@ -156,6 +176,7 @@ public class RootMotionMovementController : MonoBehaviour
             canMove = true;
         }
     }
+<<<<<<< HEAD
 
     private void OnEnable()
     {
@@ -182,4 +203,6 @@ public class RootMotionMovementController : MonoBehaviour
     }
 
     #endregion
+=======
+>>>>>>> Mechanics
 }
