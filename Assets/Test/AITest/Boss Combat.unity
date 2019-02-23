@@ -498,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1462650776}
   target: {fileID: 497178619}
-  bossNavMeshAgent: {fileID: 0}
+  bossNavMeshAgent: {fileID: 756093254}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   strafeRadius: 5.58
   strafeSpeed: 1
   strafeTime: 1
-  jumpBackDistance: 1
+  jumpBackDistance: 8
   lookRotationSpeed: 1
 --- !u!195 &756093254
 NavMeshAgent:
@@ -526,9 +526,9 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 4
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2.69
   m_BaseOffset: 0
@@ -548,11 +548,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   player: {fileID: 1462650776}
-  startChargeDistance: 10
-  showDebug: 0
+  showDebug: 1
   ObstacleMask:
     serializedVersion: 2
-    m_Bits: 1079
+    m_Bits: 256
 --- !u!136 &756093258
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1582,10 +1581,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5503316216914408403, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.7
+      value: 29.12
       objectReference: {fileID: 0}
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}
@@ -1595,7 +1599,7 @@ PrefabInstance:
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.6
+      value: 10.41
       objectReference: {fileID: 0}
     - target: {fileID: 1949116272290329900, guid: 9d5468cd4d651e842a2ccd046fa2d8d5,
         type: 3}

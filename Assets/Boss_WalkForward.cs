@@ -20,6 +20,11 @@ public class Boss_WalkForward : StateMachineBehaviour
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
 
         bossNavMeshAgent.SetDestination(player.transform.position);
+        if (animator.GetFloat("distanceFromPlayerSq") < 500)
+        {
+            animator.SetInteger("AttackChoice",(int)(Random.value * 8));
+
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,10 +34,10 @@ public class Boss_WalkForward : StateMachineBehaviour
     //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        bossNavMeshAgent.ResetPath();
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
