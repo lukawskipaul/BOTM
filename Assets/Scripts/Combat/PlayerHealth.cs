@@ -2,43 +2,70 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
-//This script goes on player
+//This script goes on the player
 public class PlayerHealth : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
     private int maxHealth = 100;
 
-    private Animator anim;
+    private PlayerRespawnScript respawn;
 
     private int currentHealth;
+    private bool isInvulnerable;
 
-    void Start()
+    public static event Action TakeDamage;
+
+    #endregion
+
+    private void Awake()
     {
         currentHealth = maxHealth;
+        isInvulnerable = false;
+    }
+
+    private void Start()
+    {
+        respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
+
         healthBar.maxValue = maxHealth;
-        anim = GetComponent<Animator>();
 
         UpdateHealthBar();
     }
 
-    void Update()
+    private void Update()
     {
         UpdateHealthBar();
     }
 
     public void DamagePlayer(int amount)
     {
-        /* Damages player by enemy attack amount */
-        currentHealth -= amount;
+        /* Damages player by enemy attack amount if not during iframe */
+        if (!isInvulnerable)
+        {
+            currentHealth -= amount;
+
+            OnTakeDamage();
+        }
 
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            //anim.SetTrigger("Die");
-            GetComponent<PlayerRespawnScript>().RespawnPlayer();
+            respawn.RespawnPlayer();
+        }
+    }
+
+    private void OnTakeDamage()
+    {
+        /* Invokes TakeDamage event */
+        if (TakeDamage != null)
+        {
+            TakeDamage.Invoke();
         }
     }
 
@@ -59,4 +86,22 @@ public class PlayerHealth : MonoBehaviour
         /* Updates health bar with current health */
         healthBar.value = currentHealth;
     }
+
+    #region Animation Events
+
+    /* Remember, changing name of animation event functions requires changing the function in the animation event! */
+
+    /* Called at specific dodge animation frame to make player invulnerable */
+    public void MakeInvulnerable()
+    {
+        isInvulnerable = true;
+    }
+
+    /* Called at specific dodge animation frame to make player vulnerable */
+    public void MakeVulnerable()
+    {
+        isInvulnerable = false;
+    }
+
+    #endregion
 }

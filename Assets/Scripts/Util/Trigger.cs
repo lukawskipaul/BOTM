@@ -14,4 +14,11 @@ public class Trigger : MonoBehaviour
             Triggerable.IsTriggered = true;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            Triggerable.isTriggered = false;
+        }
+    }
 }
