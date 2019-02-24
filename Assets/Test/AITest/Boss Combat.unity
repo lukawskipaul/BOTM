@@ -992,6 +992,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 497178619}
+    - target: {fileID: 756093253, guid: 0c41c4d5e0905aa4c90197019a894f50, type: 3}
+      propertyPath: strafeSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 756093253, guid: 0c41c4d5e0905aa4c90197019a894f50, type: 3}
+      propertyPath: strafeStateDuration
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 756093257, guid: 0c41c4d5e0905aa4c90197019a894f50, type: 3}
       propertyPath: player
       value: 
@@ -1418,6 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 840586115}
+  playerTag: Player
 --- !u!65 &1801725223
 BoxCollider:
   m_ObjectHideFlags: 0

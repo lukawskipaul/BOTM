@@ -8,7 +8,7 @@ public class Boss_AttackLeap : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetInteger("EvasiveChoice",(int)Random.value * 3);//0-3
+        animator.SetInteger("EvasiveChoice",(int)Random.value * 4);//0-3
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
