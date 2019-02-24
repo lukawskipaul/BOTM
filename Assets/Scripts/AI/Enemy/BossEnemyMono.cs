@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class BossEnemyMono : MonoBehaviour
 {
     //Hiding and showing in Inspector
     [SerializeField]
+    private int Health = 100;
+    [SerializeField]
     private GameObject player;
-    [SerializeField]
-    private float detectionDistance = 20;
-    [SerializeField]
-    private bool showDebug = true;
-    [SerializeField, Tooltip("Set to Player layer")]
-    private LayerMask ObstacleMask;
 
     private NavMeshAgent agent;
-    private BossEnemy enemyStats;
+    private BossEnemy bossStats;
 
     private Animator anim;
-    
+    [SerializeField]
+    private bool showDebug = true;
+    [SerializeField,Tooltip("Layer must be set to 'Player' for cast to work(and Enemy if neccessary)")]
+    private LayerMask ObstacleMask;
+
     // Start is called before the first frame update
     void Start()
     {
-        enemyStats = new BossEnemy();
+        bossStats = new BossEnemy();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         ObstacleMask = ~ObstacleMask;
@@ -32,16 +33,15 @@ public class BossEnemyMono : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("distanceFromPlayerSq", enemyStats.SquaredDistanceToPlayer(this.gameObject, player));//[Square] Distance between the Player and Enemy
-        //Debug Utilities if enabled
+        anim.SetFloat("distanceFromPlayerSq", bossStats.SquaredDistanceToPlayer(this.gameObject, player));//[Square] Distance between the Player and Enemy
         if (showDebug)
         {
-            Debug.Log("Square Distance: " + enemyStats.SquaredDistanceToPlayer(this.gameObject, player));
+            //Debug.Log("Square Distance: " + bossStats.SquaredDistanceToPlayer(this.gameObject, player));
 
             // Linecast checks if an obstacle is between the enemy and the player
-            // Player layer must be set to "Player" for cast to work
-            //This condition is to prevent the enemy from detecting player through walls
-            if (Physics.Linecast(this.transform.position + new Vector3(0, this.GetComponent<Collider>().bounds.center.y / 3, 0), player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y / 3, 0), ObstacleMask))
+            // Player layer must be set to "Player" for cast to work(and Enemy if neccessary)
+            // This condition is to prevent the enemy from detecting player through walls
+            if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y / 2, player.transform.position.z), ObstacleMask))
             {
                 Debug.Log("Linecast hit");
             }
@@ -49,40 +49,29 @@ public class BossEnemyMono : MonoBehaviour
             {
                 Debug.Log("Linecast no hit");
             }
-            //Plays the Death Animation for Ai
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                //anim.SetTrigger("Die");
-            }
         }
-        AttackRangeAnimExecution();
+        ObstacleDetection();
     }
     /// <summary>
-    /// If player is out of the enemy's attack range or there is an obstacle in the way, the enemy won't attack
+    /// Detects if obstacles is between Player and Enemy
     /// </summary>
-    private void AttackRangeAnimExecution()
+    private void ObstacleDetection()
     {
-        if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) ||
-            Physics.Linecast(this.transform.position + new Vector3(0, this.GetComponent<Collider>().bounds.center.y / 3, 0), player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y / 3, 0), ObstacleMask))
+        if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y / 2, player.transform.position.z), ObstacleMask))
         {
-            anim.SetBool("isAttacking", false);
+            anim.SetBool("isLineOfObstacle", true);
         }
         else
         {
-            anim.SetBool("isAttacking", true);
+            anim.SetBool("isLineOfObstacle", false);
         }
     }
-    //Debug Tools to show in editor at all times if enabled
     void OnDrawGizmos()
     {
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-            Debug.DrawLine(this.transform.position + new Vector3(0, this.GetComponent<Collider>().bounds.center.y / 3, 0), player.transform.position + new Vector3(0, player.GetComponent<Collider>().bounds.center.y / 3, 0), Color.cyan);
+            Debug.DrawLine(new Vector3(this.transform.position.x,this.transform.position.y+0.5f,this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y /2, player.transform.position.z), Color.cyan); /*player.transform.position + new Vector3(0,this.player.GetComponent<Collider>().bounds.center.y * 2 / 3, 0)*/
         }
-    }
-    public GameObject Target()
-    {
-        return player;
     }
 }

@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class BossAttackHitbox : MonoBehaviour
 {
-
     [SerializeField]
     private string playerTag = "Player";
     [SerializeField]
     private bool showDebug = true;
     private Animator parentAnim;
-    public Collider collider { get; private set; }
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        collider = this.GetComponent<Collider>();
-        collider.isTrigger = true;//Automatically set collider to a trigger
-        collider.enabled = false;//start with collider turned off <*efficient*>
+        this.GetComponent<Collider>().isTrigger = true;//Automatically set collider to a trigger
         parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>
@@ -25,13 +20,13 @@ public class BossAttackHitbox : MonoBehaviour
     /// <param name="other">The Object that caused the activation of the trigger event</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == playerTag && parentAnim.GetBool("InAttackRange"))
+        if (other.tag == playerTag && parentAnim.GetBool("IsAttacking"))
         {
+            //TODO: Add player losing Health Here
             if (showDebug)
             {
                 Debug.Log("Player Hit!");
             }
-            collider.enabled = false;
         }
     }
 }
