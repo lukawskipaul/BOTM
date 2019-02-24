@@ -14,6 +14,8 @@ public class Telekinesis : MonoBehaviour
     bool isLiftingObject = false;
 
     [SerializeField]
+    GameObject player;
+    [SerializeField]
     Transform levitateTransform;
     [SerializeField]
     float throwForce = 1f;
@@ -25,6 +27,10 @@ public class Telekinesis : MonoBehaviour
     float maxSpeed = 1f;
     [SerializeField]
     float smoothtime = 1f;
+    [SerializeField]
+    float maxDistance = 20f;
+    [SerializeField]
+    float minDistance = 1f;
 
     private float baseLevitateFollowSpeed;
     private float xInput;
@@ -34,11 +40,16 @@ public class Telekinesis : MonoBehaviour
     BoxCollider boxCollider;
 
     private Vector3 levDirection;
-    private Vector3 centerPoint;
+    private Vector3 startingTransform;
 
     private Vector3 velocity = Vector3.zero;
 
     #endregion
+
+    private void Start()
+    {
+        startingTransform = levitateTransform.localPosition;
+    }
 
     private void Update()
     {
@@ -72,16 +83,27 @@ public class Telekinesis : MonoBehaviour
 
     private void LevitateObject(GameObject objectToLevitate)
     {
+        OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
-        objectRigidBody.useGravity = false;
-        objectToLevitate.layer = 10;
-        objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
-        objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
-        objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
-        Vector3 objectTransfrom = objectToLevitate.transform.position;
-        MoveLevitateTransform();
-        MoveObjectToTransform(objectRigidBody, objectTransfrom);
-        Debug.Log("LevitatingObj");
+        if (objectRigidBody != null)
+        {
+            objectRigidBody.useGravity = false;
+            objectToLevitate.layer = 10;
+            objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
+            objectRigidBody.velocity = Vector3.zero;        //Stops the object from 
+            objectRigidBody.angularVelocity = Vector3.zero; //moving once you let it go
+            Vector3 objectTransfrom = objectToLevitate.transform.position;
+            MoveLevitateTransform();
+            MoveObjectToTransform(objectRigidBody, objectTransfrom);
+            CheckDistance();
+            Debug.Log("LevitatingObj");
+        }
+        else
+        {
+            isLiftingObject = false;
+            levitatableObj = null;
+            levitateTransform.localPosition = startingTransform;
+        }
     }
 
     private void ThrowObject()
@@ -90,6 +112,7 @@ public class Telekinesis : MonoBehaviour
         objectRigidBody.useGravity = true;
         objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
         isLiftingObject = false;
+        levitatableObj.tag = "ThrownObj";
         levitatableObj = null;
     }
 
@@ -102,7 +125,9 @@ public class Telekinesis : MonoBehaviour
         catch (System.Exception)
         {
             Debug.Log("No rigidbody");
-            throw;
+            isLiftingObject = false;
+            levitatableObj = null;
+            levitateTransform.localPosition = startingTransform;
         }
     }
 
@@ -118,7 +143,14 @@ public class Telekinesis : MonoBehaviour
     {
         //xInput = Input.GetAxis("Mouse X");
         //yInput = Input.GetAxis("Mouse Y");
+
+        
         zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+
+        if ((Vector3.Distance(levitatableObj.transform.position, player.transform.position) <= minDistance))
+        {
+            zInput = 0;
+        }
 
         levDirection = new Vector3(0, 0, zInput);
         //levDirection = new Vector3(levitateTransform.position.x, levitateTransform.position.y, zInput);
@@ -135,13 +167,29 @@ public class Telekinesis : MonoBehaviour
         catch (System.Exception)
         {
             Debug.Log("No rigidbody");
-            throw;
         }
         objectToDrop.layer = 0;
         isLiftingObject = false;
         objectRigidBody.useGravity = true;
+        OnTeleStoppedManualMovingObject();
+        levitateTransform.localPosition = startingTransform;
     }
 
+    private void CheckDistance()
+    {
+        //Vector3 pos = levitateTransform.position;
+        //pos.z = Mathf.Clamp(levitateTransform.position.z, 7, 25);
+        //levitateTransform.position = pos;
+        if (Vector3.Distance(levitatableObj.transform.position, player.transform.position) <= minDistance)
+        {
+            objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
+            //levitateTransform.position = objectRigidBody.position;
+        }
+        if (Vector3.Distance(levitatableObj.transform.position, player.transform.position) >= maxDistance)
+        {
+            DropObject(levitatableObj);
+        }
+    }
 
     public void UsePower(GameObject objToLevitate)
     {

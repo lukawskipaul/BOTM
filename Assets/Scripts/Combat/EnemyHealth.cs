@@ -3,23 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//GameObjects with this script require the components below, a component will be added if one does not exist
 [RequireComponent(typeof(CapsuleCollider))]
-//This script goes on enemy
+
+//This script goes on the enemies
 public class EnemyHealth : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
     private int maxHealth = 100;
 
     private Animator anim;
-    
+
     private int currentHealth;
+
+    #endregion
+
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        anim = GetComponent<Animator>();
+        anim = this.gameObject.GetComponent<Animator>();
+
         healthBar.maxValue = maxHealth;
 
         UpdateHealthBar();
