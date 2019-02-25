@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Door_Break : MonoBehaviour
 {
-    
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "TeleObjects")
+        if (other.gameObject.tag == "TeleObjects" || other.gameObject.tag == "ThrownObj")
         {
             GameObject.Destroy(gameObject);
         }
