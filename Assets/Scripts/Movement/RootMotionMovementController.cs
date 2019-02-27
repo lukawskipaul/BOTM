@@ -158,18 +158,6 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        Telekinesis.TeleManualMovingObject += SetCanMove;
-        Telekinesis.TeleStoppedManualMovingObject += SetCanMove;
-    }
-
-    private void OnDisable()
-    {
-        Telekinesis.TeleManualMovingObject -= SetCanMove;
-        Telekinesis.TeleStoppedManualMovingObject -= SetCanMove;
-    }
-
     #region Animation Events
 
     /* Remember, changing name of animation event functions requires changing the function in the animation event! */
