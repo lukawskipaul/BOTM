@@ -20,8 +20,6 @@ public class PlayerAttack : MonoBehaviour
 
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
-    private const string baseAttackAnimationName = "Attack Base";
-    private const string combo1AttackAnimationName = "Attack Combo 1";
 
     #endregion
 
@@ -52,22 +50,9 @@ public class PlayerAttack : MonoBehaviour
         {
             /* Cancels possible dodge queuing */
             anim.ResetTrigger("FreeLookDodge");
-            anim.ResetTrigger("LockedOnLookDodge");
+            anim.ResetTrigger("LockedOnDodge");
 
             anim.SetTrigger("Attack");
-
-            bool baseAttackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName);
-            bool combo1AttackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);
-
-            /* Changes damage value depending on whether base or combo animation is playing */
-            if (baseAttackAnimationIsPlaying)
-            {
-                swordAttack.ChangeToBaseDamage();
-            }
-            else if (combo1AttackAnimationIsPlaying)
-            {
-                swordAttack.ChangeToCombo1Damage();
-            }
         }
     }
 
