@@ -22,6 +22,10 @@
 			<Path>Level1.bnk</Path>
 			<IncludedEvents>
 				<Event Id="934217562" Name="Play_CaveAmbiance1" ObjectPath="\Events\Default Work Unit\Play_CaveAmbiance1"/>
+				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1"/>
+				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1"/>
+				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1"/>
+				<Event Id="709837481" Name="Play_MetalDoorBreakdown1" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown1"/>
 				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower"/>
 				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1"/>
 				<Event Id="1605460501" Name="Play_Room1AmbianceDemo" ObjectPath="\Events\Default Work Unit\Play_Room1AmbianceDemo"/>
@@ -41,6 +45,10 @@
 					<ShortName>Static.wav</ShortName>
 					<Path>SFX\Static_56D34C19.wem</Path>
 				</File>
+				<File Id="308176242" Language="SFX">
+					<ShortName>CrocFlinch1.wav</ShortName>
+					<Path>SFX\CrocFlinch1_56D34C19.wem</Path>
+				</File>
 				<File Id="340536415" Language="SFX">
 					<ShortName>CaveAmbiance1.wav</ShortName>
 					<Path>SFX\CaveAmbiance1_56D34C19.wem</Path>
@@ -49,9 +57,21 @@
 					<ShortName>MetalDoorSlamCloseNoPower.wav</ShortName>
 					<Path>SFX\MetalDoorSlamCloseNoPower_56D34C19.wem</Path>
 				</File>
+				<File Id="690560153" Language="SFX">
+					<ShortName>CrocAggro1.wav</ShortName>
+					<Path>SFX\CrocAggro1_56D34C19.wem</Path>
+				</File>
+				<File Id="735080199" Language="SFX">
+					<ShortName>MetalDoorBreakdown1.wav</ShortName>
+					<Path>SFX\MetalDoorBreakdown1_56D34C19.wem</Path>
+				</File>
 				<File Id="759940777" Language="SFX">
 					<ShortName>Rockslide1(Initial).wav</ShortName>
 					<Path>SFX\Rockslide1(Initial)_56D34C19.wem</Path>
+				</File>
+				<File Id="1052687345" Language="SFX">
+					<ShortName>CrocDeath1.wav</ShortName>
+					<Path>SFX\CrocDeath1_56D34C19.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

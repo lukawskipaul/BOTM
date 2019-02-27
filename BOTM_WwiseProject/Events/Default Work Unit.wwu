@@ -87,6 +87,62 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MetalDoorBreakdown1" ID="{3493D402-0445-4ED4-878F-EBEFEFD17542}">
+					<ChildrenList>
+						<Action Name="" ID="{F8F14FB2-1C0A-4EB9-9451-6A85211C9D8C}" ShortID="607438114">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MetalDoorBreakdown1" ID="{FF3FBF1E-0B4C-46CD-A5DE-3ECAEDFED129}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CrocDeath1" ID="{E969A57C-DBBB-4A8C-AC0E-BC49C7B8F2EE}">
+					<ChildrenList>
+						<Action Name="" ID="{0E1F36BB-20D6-4044-AD19-804C9A2071A4}" ShortID="36906689">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocDeath1" ID="{AE7BD185-B6F9-461E-ADE9-AD3315028927}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CrocFlinch1" ID="{D198BA49-CB6F-44F7-B1A5-754E16E3B380}">
+					<ChildrenList>
+						<Action Name="" ID="{6682F0DC-87BA-4017-AEF7-9AEB4FD7D0D7}" ShortID="507793127">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocFlinch1" ID="{B245DC29-0940-40F2-93A4-AB57DB3FA7FA}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CrocAggro1" ID="{E4DC2C13-21F2-4F2F-9ECC-4B674AEBE803}">
+					<ChildrenList>
+						<Action Name="" ID="{104F86B4-6B12-48CE-A7F0-8C795D9D4AA7}" ShortID="827958845">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocAggro1" ID="{3F58CB2E-6C60-48EE-931B-5B7753E5AF5B}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

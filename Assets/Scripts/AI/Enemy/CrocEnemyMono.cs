@@ -71,6 +71,7 @@ public class CrocEnemyMono : MonoBehaviour
         {
             anim.SetBool("PlayerDetected",true);
             if (showDebug) Debug.Log("Enemy Detected!");
+            AkSoundEngine.PostEvent("Play_CrocAggro1", gameObject);
         }
 
     }
