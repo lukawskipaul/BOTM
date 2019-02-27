@@ -7,7 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class BossHeadHitbox : MonoBehaviour
 {
-    
+    [SerializeField, Tooltip("Headbutt Damage Output")]
+    private int headbuttDamage = 10;
+    [SerializeField, Tooltip("Bite Damage Output")]
+    private int biteDamage = 25;
     [SerializeField]
     private bool showDebug = true;
     private Animator parentAnim;//Get animator controller
@@ -29,7 +32,8 @@ public class BossHeadHitbox : MonoBehaviour
         {
             if (parentAnim.GetBool("isHeadbutting"))
             {
-                //TODO: Add player losing Health Here
+                //Headbutt Damage output towards Player
+                other.GetComponent<PlayerHealth>().DamagePlayer(headbuttDamage);
                 if (showDebug)
                 {
                     Debug.Log("HeadButt");
@@ -37,7 +41,8 @@ public class BossHeadHitbox : MonoBehaviour
             }
             if (parentAnim.GetBool("isBiting"))
             {
-                //TODO: Add player losing Health Here
+                //Bite Damage output towards Player
+                other.GetComponent<PlayerHealth>().DamagePlayer(biteDamage);
                 if (showDebug)
                 {
                     Debug.Log("Bite");

@@ -7,6 +7,10 @@ using UnityEngine;
 /// </summary>
 public class BossHandHitBox : MonoBehaviour
 {
+    [SerializeField,Tooltip("Claw Attack Damage Output")]
+    private int clawDamage = 15;
+    [SerializeField, Tooltip("Attack Leap Damage Output")]
+    private int attackLeapDamage = 20;
     [SerializeField]
     private bool showDebug = true;
     private Animator parentAnim;//Get animator controller
@@ -28,7 +32,8 @@ public class BossHandHitBox : MonoBehaviour
         {
             if (parentAnim.GetBool("isClawing"))
             {
-                //TODO: Add player losing Health Here
+                //Claw Damage output towards Player
+                other.GetComponent<PlayerHealth>().DamagePlayer(clawDamage);
                 if (showDebug)
                 {
                     Debug.Log("Claw");
@@ -36,7 +41,8 @@ public class BossHandHitBox : MonoBehaviour
             }
             if (parentAnim.GetBool("isLeapAttacking"))
             {
-                //TODO: Add player losing Health Here
+                ////Attack Leap Damage output towards Player
+                other.GetComponent<PlayerHealth>().DamagePlayer(attackLeapDamage);
                 if (showDebug)
                 {
                     Debug.Log("Leaping Attack");
