@@ -158,8 +158,6 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
-    
-
     #region Animation Events
 
     /* Remember, changing name of animation event functions requires changing the function in the animation event! */

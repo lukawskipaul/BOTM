@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="132">
+	<RootPaths>
+		<ProjectRoot>D:\BOTM\BOTM_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\BOTM\BOTM_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2678230382" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Level1</ObjectPath>
+			<ShortName>Level1</ShortName>
+			<Path>Level1.bnk</Path>
+			<IncludedEvents>
+				<Event Id="934217562" Name="Play_CaveAmbiance1" ObjectPath="\Events\Default Work Unit\Play_CaveAmbiance1"/>
+				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1" MaxAttenuation="0.000000"/>
+				<Event Id="2385860965" Name="Play_Static1" ObjectPath="\Events\Default Work Unit\Play_Static1"/>
+				<Event Id="1308308546" Name="Play_WaterDripping" ObjectPath="\Events\Default Work Unit\Play_WaterDripping"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="288346796" Language="SFX">
+					<ShortName>WaterDripping.wav</ShortName>
+					<Path>SFX\WaterDripping_56D34C19.wem</Path>
+				</File>
+				<File Id="292896405" Language="SFX">
+					<ShortName>Static.wav</ShortName>
+					<Path>SFX\Static_56D34C19.wem</Path>
+				</File>
+				<File Id="340536415" Language="SFX">
+					<ShortName>CaveAmbiance1.wav</ShortName>
+					<Path>SFX\CaveAmbiance1_56D34C19.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

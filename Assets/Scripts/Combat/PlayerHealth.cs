@@ -84,7 +84,7 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = currentHealth;
+        //healthBar.value = currentHealth;  //comment made by Brendan Wascher 2-23 
     }
 
     #region Animation Events
