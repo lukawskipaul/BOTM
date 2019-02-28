@@ -49,6 +49,7 @@ public class Boss_Charge : StateMachineBehaviour
         bossNavMeshAgent.speed *= bossAI.ChargeSpeedScalar;
         bossNavMeshAgent.acceleration *= bossAI.ChargeAccelerationScalar;
         bossNavMeshAgent.angularSpeed *= bossAI.ChargeAngularSpeedScalar;
+        bossNavMeshAgent.isStopped = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -72,6 +73,7 @@ public class Boss_Charge : StateMachineBehaviour
         bossNavMeshAgent.speed /= bossAI.ChargeSpeedScalar;
         bossNavMeshAgent.acceleration /= bossAI.ChargeAccelerationScalar;
         bossNavMeshAgent.angularSpeed /= bossAI.ChargeAngularSpeedScalar;
+        bossNavMeshAgent.isStopped = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

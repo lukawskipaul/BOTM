@@ -9,9 +9,12 @@ public class BossAttackHitbox : MonoBehaviour
     [SerializeField]
     private bool showDebug = true;
     private Animator parentAnim;
+    private Collider collider;
     private void Start()
     {
-        this.GetComponent<Collider>().isTrigger = true;//Automatically set collider to a trigger
+        collider = this.GetComponent<Collider>();
+        collider.isTrigger = true;//Automatically set collider to a trigger
+        collider.enabled = false;//Initially turn off collider
         parentAnim = this.GetComponentInParent<Animator>();
     }
     /// <summary>

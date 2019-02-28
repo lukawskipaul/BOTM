@@ -6,6 +6,9 @@ public class BossFloorTrigger : MonoBehaviour
 {
     [SerializeField]
     private GameObject boss;
+    [SerializeField]
+    private string playerTag = "Player";
+
     private Animator bossAnim;
     private Collider collider;
 
@@ -19,20 +22,16 @@ public class BossFloorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == playerTag)
         {
             //Awake the boss when entering box
             bossAnim.SetBool("isAwake",true);
         }
         
     }
-    private void OnTriggerStay(Collider other)
-    {
-        
-    }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == playerTag)
         {
             //Disable gameobject when leaving this triggerbox
             this.gameObject.SetActive(false);
