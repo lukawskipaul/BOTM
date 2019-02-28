@@ -10,7 +10,7 @@ public class BossRoomDoorTrigger : MonoBehaviour
     {
         if(other.tag == "LevitatableObject" || other.tag == "ThrownObj")
         {
-            if(other.gameObject.name == "Battery")
+            if(other.gameObject.name == "Battery&&")
             {
                 Destroy(other.gameObject);
                 TurnOnBattery();

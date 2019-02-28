@@ -13,6 +13,12 @@ public class TKObject : MonoBehaviour
             enemyAnim.SetTrigger("Stun");
             Destroy(this.gameObject);
         }
+        //added brendan wascher 2-28
+        else if(collision.gameObject.tag == "Breakable")
+        {
+            //Destroy(this.gameObject);
+        }
+        //end add
         else
         {
             if (this.gameObject.tag == "ThrownObj")
