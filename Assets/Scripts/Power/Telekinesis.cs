@@ -96,7 +96,6 @@ public class Telekinesis : MonoBehaviour
             MoveLevitateTransform();
             MoveObjectToTransform(objectRigidBody, objectTransfrom);
             CheckDistance();
-            Debug.Log("LevitatingObj");
         }
         else
         {
@@ -124,7 +123,6 @@ public class Telekinesis : MonoBehaviour
         }
         catch (System.Exception)
         {
-            Debug.Log("No rigidbody");
             isLiftingObject = false;
             levitatableObj = null;
             levitateTransform.localPosition = startingTransform;
@@ -166,7 +164,6 @@ public class Telekinesis : MonoBehaviour
         }
         catch (System.Exception)
         {
-            Debug.Log("No rigidbody");
         }
         objectToDrop.layer = 0;
         isLiftingObject = false;
@@ -209,11 +206,6 @@ public class Telekinesis : MonoBehaviour
 
             }
         }
-        else
-        {
-            Debug.Log("No levitatable object");
-        }
-
     }
 
     private void SetLevitatableObject(GameObject gameObject)
@@ -224,8 +216,6 @@ public class Telekinesis : MonoBehaviour
 
             //TEMPORARY FEEDBACK
             levitatableObj.GetComponent<Renderer>().material.color = Color.green;
-
-            Debug.Log(levitatableObj.name + " can be levitated.");
         }
 
     }
