@@ -10,6 +10,9 @@ public class Boss_Charge : StateMachineBehaviour
     BossAI bossAI;
     NavMeshAgent bossNavMeshAgent;
 
+    float lookRotationSpeed;
+    Quaternion lookAtPlayer;
+
     GameObject target;  // used for debugging and visualization
                         // comment out in release version of game
 
@@ -28,7 +31,7 @@ public class Boss_Charge : StateMachineBehaviour
                                 // comment out in release version of game
 
         // rotate boss to face player
-        boss.transform.LookAt(player.transform);
+        lookAtPlayer = Quaternion.LookRotation(player.transform.position - boss.transform.position);
 
         // calculate vector distance between boss and player
         targetPosition = player.transform.position - boss.transform.position;
@@ -36,9 +39,8 @@ public class Boss_Charge : StateMachineBehaviour
         // increase distance by charge distance scalar
         targetPosition *= bossAI.ChargeDistanceScalar;
 
-        // set boss destination
+        // calculate boss destination
         targetPosition += boss.transform.position;
-        bossNavMeshAgent.SetDestination(targetPosition);
 
         target.transform.position = targetPosition; // used for debugging and visualization
                                                     // comment out in release version of game
@@ -47,13 +49,22 @@ public class Boss_Charge : StateMachineBehaviour
         bossNavMeshAgent.speed *= bossAI.ChargeSpeedScalar;
         bossNavMeshAgent.acceleration *= bossAI.ChargeAccelerationScalar;
         bossNavMeshAgent.angularSpeed *= bossAI.ChargeAngularSpeedScalar;
+        bossNavMeshAgent.isStopped = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        // rotate boss to look at player, then charge
+        if (Quaternion.Dot(boss.transform.rotation, lookAtPlayer) < 0.99f)
+        {
+            boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, lookAtPlayer, lookRotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            bossNavMeshAgent.SetDestination(targetPosition);
+        }
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -62,6 +73,7 @@ public class Boss_Charge : StateMachineBehaviour
         bossNavMeshAgent.speed /= bossAI.ChargeSpeedScalar;
         bossNavMeshAgent.acceleration /= bossAI.ChargeAccelerationScalar;
         bossNavMeshAgent.angularSpeed /= bossAI.ChargeAngularSpeedScalar;
+        bossNavMeshAgent.isStopped = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

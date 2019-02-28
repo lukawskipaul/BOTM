@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyChasePlayer : StateMachineBehaviour
+public class Boss_AttackLeap : StateMachineBehaviour
 {
-    NavMeshAgent Agent;
-    CrocEnemyMono Enemy;
-    GameObject Target;
-    
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Agent = animator.gameObject.GetComponent<NavMeshAgent>();
-        Enemy = animator.gameObject.GetComponent<CrocEnemyMono>();
-        Target = Enemy.Target();
+        //Activate Hitbox On Boss' Hands
+        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = true;
+        animator.SetBool("isLeapAttacking", true);
+        //Select a random evasive action
+        animator.SetInteger("EvasiveChoice",(int)Random.value * 4);//0-3
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        Agent.SetDestination(Target.transform.position);
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-        
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //Deactivate Hitbox On Boss' Hands
+        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = false;
+        animator.SetBool("isLeapAttacking",false);
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

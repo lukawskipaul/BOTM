@@ -13,13 +13,16 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
-    [Tooltip("A target object used for visualization and debugging")]
+    [Tooltip("A target object used for visualization and debugging\nDeactivate or replace with empty object in release")]
     [SerializeField]
     private GameObject target;
 
     [Tooltip("The Nav Mesh Agent attached to the boss character")]
     [SerializeField]
     private NavMeshAgent bossNavMeshAgent;
+
+    [SerializeField]
+    private LayerMask obstacleMask;
 
     [Tooltip("A scalar used to determine how far past a target point the boss charges")]
     [SerializeField]
@@ -50,22 +53,34 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float strafeSpeed = 1;
 
-    [Tooltip("How long the boss character strafes in one direction before alternating (in seconds)")]
-    [SerializeField]
-    private float strafeTime = 1;
+    //[Tooltip("How long the boss character strafes in one direction before alternating (in seconds)")]
+    //[SerializeField]
+    //private float strafeTime = 1;
 
+    [Tooltip("The maximum distance that the boss character can jump back")]
+    [SerializeField]
+    private float jumpBackDistance = 1;
+
+    [Tooltip("A scalar controlling how fast the boss cahracter rotates to look at the player")]
+    [SerializeField]
+    private float lookRotationSpeed = 1;
+
+    [SerializeField,Tooltip("[Seconds]How long the strafing will last before the boss switches to a different state.")]
+    private float strafeStateDuration = 7;
     // Start is called before the first frame update
     void Start()
     {
         bossNavMeshAgent = GetComponent<NavMeshAgent>();
+        obstacleMask = ~obstacleMask;
     }
+
+    // Getters/ Setters
     public NavMeshAgent BossNavMeshAgent
     {
         get { return bossNavMeshAgent; }
         set { bossNavMeshAgent = value; }
     }
-
-    // Getters/ Setters
+    
     public GameObject Player
     {
         get { return player; }
@@ -107,11 +122,30 @@ public class BossAI : MonoBehaviour
         get { return strafeSpeed; }
     }
 
-    public float StrafeTime
+    //public float StrafeTime
+    //{
+    //    get { return strafeTime; }
+    //}
+
+    public float JumpBackDistance
     {
-        get { return strafeTime; }
+        get { return jumpBackDistance; }
     }
 
+    public float LookRotationSpeed
+    {
+        get { return lookRotationSpeed; }
+    }
+
+    public LayerMask ObstacleMask
+    {
+        get { return obstacleMask; }
+    }
+
+    public float StrafingStateDuration
+    {
+        get { return strafeStateDuration; }
+    } 
     /*// Update is called once per frame
     void Update()
     {
