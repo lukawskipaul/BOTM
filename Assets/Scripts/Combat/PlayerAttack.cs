@@ -20,6 +20,9 @@ public class PlayerAttack : MonoBehaviour
 
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
+    private const string baseAttackBooleanName = "isAttackBase";
+    private const string combo1AttackBooleanName = "isAttackCombo";
+    private const string attackAnimationTriggerName = "Attack";
 
     #endregion
 
@@ -61,6 +64,18 @@ public class PlayerAttack : MonoBehaviour
         /* Play TK pull animation when push button is pressed */
         if (Input.GetButtonDown(tkThrowButtonName))
         {
+            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
+
+            ///* Cancels possible combo attack queuing */
+            //if (attackAnimationIsPlaying)
+            //{
+            //    anim.ResetTrigger(attackAnimationTriggerName);
+            //}
+
+            ///* Cancels possible dodge queuing */
+            //anim.ResetTrigger("FreeLookDodge");
+            //anim.ResetTrigger("LockedOnDodge");
+
             //TODO: play animation
             //TODO: change enemy location
             //TODO: stun enemy?
@@ -89,6 +104,8 @@ public class PlayerAttack : MonoBehaviour
     {
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
+
+        //subscribe to detectobject OnEnemyObjDetected
     }
 
     /* Unsubscribe from events */
@@ -96,6 +113,8 @@ public class PlayerAttack : MonoBehaviour
     {
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
+
+        //unsubscribe to detectobject OnEnemyObjDetected
     }
 
     #region Animation Events
