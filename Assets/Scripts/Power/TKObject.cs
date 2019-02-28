@@ -5,20 +5,57 @@ using UnityEngine;
 public class TKObject : MonoBehaviour
 {
     Animator enemyAnim;
+
+    enum State{Neutral, Levitating, Thrown};
+
+    State currentState;
+
+    private State CurrentState
+    {
+        get
+        {
+            return currentState;
+        }
+
+        set
+        {
+            currentState = value;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (CurrentState == State.Thrown || CurrentState == State.Levitating)
         {
-            enemyAnim = collision.gameObject.GetComponent<Animator>();
-            enemyAnim.SetTrigger("Stun");
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            if (this.gameObject.tag == "ThrownObj")
+            if (collision.gameObject.tag == "Enemy")
             {
-                this.gameObject.tag = "LevitatableObject";
+                enemyAnim = collision.gameObject.GetComponent<Animator>();
+                enemyAnim.SetTrigger("Stun");
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                if (CurrentState == State.Thrown)
+                {
+                    currentState = State.Neutral;
+                }            
             }
         }
+        
+    }
+
+    public void SetNeutral()
+    {
+        CurrentState = State.Neutral;
+    }
+
+    public void SetLevitating()
+    {
+        CurrentState = State.Levitating;
+    }
+
+    public void SetThrown()
+    {
+        CurrentState = State.Thrown;
     }
 }
