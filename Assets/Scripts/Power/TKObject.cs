@@ -13,5 +13,12 @@ public class TKObject : MonoBehaviour
             enemyAnim.SetTrigger("Stun");
             Destroy(this.gameObject);
         }
+        else
+        {
+            if (this.gameObject.tag == "ThrownObj")
+            {
+                this.gameObject.tag = "LevitatableObject";
+            }
+        }
     }
 }
