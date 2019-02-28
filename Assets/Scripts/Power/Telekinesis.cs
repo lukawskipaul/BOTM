@@ -10,7 +10,7 @@ public class Telekinesis : MonoBehaviour
     public static event Action TeleStoppedManualMovingObject;
 
     Rigidbody objectRigidBody;
-    public GameObject levitatableObj;
+    private GameObject levitatableObj;
     bool isLiftingObject = false;
 
     [SerializeField]
