@@ -2,25 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LickWeaponState : StateMachineBehaviour
+public class Boss_AttackBite : StateMachineBehaviour
 {
+    Vector3 lookpos;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("isLicking",false);
+        //Activates Head Hitbox
+        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = true;
+        animator.SetBool("isBiting", true);
+
+        //Set look position to player
+        //lookpos = animator.GetComponent<BossEnemyMono>().Player.transform.position - animator.transform.position;
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //Set boss rotation to look at player
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos,Vector3.up);
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
-        animator.gameObject.GetComponentInChildren<MobAttackHitbox>().collider.enabled = true;
+        //Deactivates Head Hitbox
+        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = false;
+        animator.SetBool("isBiting", false);
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

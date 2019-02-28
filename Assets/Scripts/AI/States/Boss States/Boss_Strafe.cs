@@ -34,6 +34,7 @@ public class Boss_Strafe : StateMachineBehaviour
     // The position of the player relative to the boss
     Vector3 relativePosition;
 
+    private float currentTime;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -77,11 +78,25 @@ public class Boss_Strafe : StateMachineBehaviour
         // Find the closest point between the boss and player on the strafe radius
         // And place the target on it
         target.transform.position = ClosestPoint(boss.transform.position, player.transform.position);
+
+        //Reset the Timer
+        currentTime = 0;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //if Timer reaches Max Duration, leave this Strafing State at once.
+        //[Summary]This is a timer
+        if (currentTime < bossAI.StrafingStateDuration)
+        {
+            currentTime += Time.deltaTime;
+            Debug.Log("currentTime: "+currentTime);
+        }
+        else
+        {
+            animator.SetTrigger("EndStrafing");
+        }
         // for debugging and testing strafing speed only
         // comment out when proper strafing speed is found
         strafeSpeed = bossAI.StrafeSpeed;
@@ -105,7 +120,6 @@ public class Boss_Strafe : StateMachineBehaviour
             if (relativePosition.x >= 0)
             {
                 target.transform.RotateAround(new Vector3(player.transform.position.x, 5.0f, player.transform.position.z), Vector3.up, strafeSpeed * Time.deltaTime);
-
             }
             // If the player is to the left of the boss, the boss should strafe counterclockwise
             else

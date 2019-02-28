@@ -1,42 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class Boss_WalkForward : StateMachineBehaviour
+public class Boss_HeadButt : StateMachineBehaviour
 {
-    GameObject boss;
-    GameObject player;
-    BossAI bossAI;
-    NavMeshAgent bossNavMeshAgent;
-
+    Vector3 lookpos;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // establish variables
-        boss = animator.gameObject;
-        bossAI = boss.GetComponent<BossAI>();
-        player = bossAI.Player;
-        bossNavMeshAgent = bossAI.BossNavMeshAgent;
+        //Activates Head Hitbox
+        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = true;
+        animator.SetBool("isHeadbutting", true);
 
-        bossNavMeshAgent.SetDestination(player.transform.position);
-        if (animator.GetFloat("distanceFromPlayerSq") < 500)
-        {
-            animator.SetInteger("AttackChoice",(int)(Random.value * 8));
-
-        }
+        //Set look position to player 
+        //lookpos = animator.GetComponent<BossEnemyMono>().Player.transform.position - animator.transform.position;
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //Set boss rotation to look at player
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        bossNavMeshAgent.ResetPath();
+        //Deactivates Head Hitbox
+        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = false;
+        animator.SetBool("isHeadbutting", false);
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

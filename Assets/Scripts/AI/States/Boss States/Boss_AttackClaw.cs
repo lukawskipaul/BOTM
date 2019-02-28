@@ -2,31 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackPlayer : StateMachineBehaviour
+public class Boss_AttackClaw : StateMachineBehaviour
 {
-    MobAttackHitbox attackMobHB;
+    Vector3 lookpos;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        attackMobHB = animator.gameObject.GetComponentInChildren<MobAttackHitbox>();
-        attackMobHB.collider.enabled = true;
+        //Activate Hitbox On Boss' Hands
+        animator.SetBool("isClawing",true);
+        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = true;
+
+        //Set look position to player 
+        //lookpos = animator.GetComponent<BossEnemyMono>().Player.transform.position - animator.transform.position;
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 PlayertoEnemy = animator.gameObject.GetComponent<CrocEnemyMono>().Target().transform.position - animator.gameObject.transform.position;
-        animator.gameObject.transform.rotation = Quaternion.LookRotation(PlayertoEnemy,Vector3.up);
+        //Set boss rotation to look at player
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (attackMobHB.collider.enabled)
-        {
-            attackMobHB.collider.enabled = false;
-        }
-        
+        //Deactivate Hitbox On Boss' Hands
+        animator.SetBool("isClawing", false);
+        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = false;
+        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
