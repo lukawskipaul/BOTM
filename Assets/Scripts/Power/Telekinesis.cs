@@ -99,7 +99,6 @@ public class Telekinesis : MonoBehaviour
             MoveObjectToTransform(objectRigidBody, objectTransfrom);
             currentTKObject.SetLevitating();
             CheckDistance();
-            Debug.Log("LevitatingObj");
         }
         else
         {
@@ -207,11 +206,6 @@ public class Telekinesis : MonoBehaviour
 
             }
         }
-        else
-        {
-            Debug.Log("No levitatable object");
-        }
-
     }
 
     private void SetLevitatableObject(GameObject gameObject)
@@ -222,8 +216,6 @@ public class Telekinesis : MonoBehaviour
 
             //TEMPORARY FEEDBACK
             levitatableGO.GetComponent<Renderer>().material.color = Color.green;
-
-            Debug.Log(levitatableGO.name + " can be levitated.");
         }
 
     }

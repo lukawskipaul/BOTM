@@ -2,29 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//prevents this script from being attached to more than one GameObject in a scene
+//Prevents this script from being attached to more than one GameObject in a scene
 [DisallowMultipleComponent]
-//GameObjects with this script require components below, a component will be added if one does not exist
+
+//GameObjects with this script require the components below, a component will be added if one does not exist
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
+
+//This script goes on the player
 public class RootMotionMovementController : MonoBehaviour
 {
+    #region Variables
+
     private Animator anim;
     private Rigidbody rb;
-    private bool canMove = true;
+
+    private bool canMove;
+    private bool canDodge;
+    private bool isOnGround;
+
+    private const string dodgeButtonName = "Dodge";
+    private const string baseAttackBooleanName = "isAttackBase";
+    private const string combo1AttackBooleanName = "isAttackCombo";
+    private const string attackAnimationTriggerName = "Attack";
+    private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
+    private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
+
+    #endregion
 
     private void Awake()
     {
+        canMove = true;
+        canDodge = true;
+        isOnGround = true;
+    }
+
+    private void Start()
+    {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
-        if (canMove)
+        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
         {
             Rotate();
         }
@@ -32,10 +57,15 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
         {
             Move();
-            Dodge();
+
+            if (canDodge)
+            {
+                FreeLookDodge();
+                LockedOnDodge();
+            }
         }
     }
 
@@ -58,15 +88,59 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
-    private void Dodge()
+    private void FreeLookDodge()
     {
-        if (Input.GetButtonDown("Dodge") /*&& isOnGround*/)
+        /* Play roll dodge animation when dodge button is pressed and is not locked on */
+        if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
-            anim.SetTrigger("Dodge");
+            bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
 
-            rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);
+            /* Cancels possible combo attack queuing */
+            if (attackAnimationIsPlaying)
+            {
+                anim.ResetTrigger(attackAnimationTriggerName);
+            }
 
-            //have i-frames
+            anim.SetTrigger(freeLookDodgeAnimationTriggerName);
+
+            //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
+        }
+    }
+
+    private void LockedOnDodge()
+    {
+        /* Play hop dodge animation when dodge button is pressed and is locked on */
+        if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
+        {
+            bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
+
+            /* Cancels possible combo attack queuing */
+            if (attackAnimationIsPlaying)
+            {
+                anim.ResetTrigger(attackAnimationTriggerName);
+            }
+
+            anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
+
+            //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        /* Check if player is on a walkable surface */
+        if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
+        {
+            isOnGround = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        /* Check if player is not on a walkable surface */
+        if (other.gameObject.tag == "Ground")
+        {
+            isOnGround = false;
         }
     }
 
@@ -81,4 +155,26 @@ public class RootMotionMovementController : MonoBehaviour
             canMove = true;
         }
     }
+
+    #region Animation Events
+
+    /* Remember, changing name of animation event functions requires changing the function in the animation event! */
+
+    /* Called at specific dodge animation frame to start dodge cooldown */
+    public void StartDodgeCooldown()
+    {
+        StartCoroutine(DodgeCooldown());
+    }
+
+    /* Starts cooldown for the player's dodge ability */
+    private IEnumerator DodgeCooldown()
+    {
+        canDodge = false;
+
+        yield return new WaitForSecondsRealtime(2.0f);
+
+        canDodge = true;
+    }
+
+    #endregion
 }
