@@ -29,7 +29,11 @@ public class Boss_AttackLeap : StateMachineBehaviour
         {
             animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = false;
         }
+<<<<<<< HEAD
         animator.SetBool("isLeapAttacking", false);
+=======
+        animator.SetBool("isLeapAttacking",false);
+>>>>>>> BJ-Paner
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

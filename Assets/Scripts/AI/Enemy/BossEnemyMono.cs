@@ -21,13 +21,21 @@ public class BossEnemyMono : MonoBehaviour
     #region Damage Modifier Fields
     [Header("Damage Modifiers")]
     [Header("Head")]
+<<<<<<< HEAD
     [SerializeField, Tooltip("Headbutt Damage Output")]
+=======
+    [SerializeField,Tooltip("Headbutt Damage Output")]
+>>>>>>> BJ-Paner
     private int headbuttDamage = 10;
     public int HeadbuttDamage
     {
         get { return headbuttDamage; }
     }
+<<<<<<< HEAD
     [SerializeField, Tooltip("Bite Damage Output")]
+=======
+    [SerializeField,Tooltip("Bite Damage Output")]
+>>>>>>> BJ-Paner
     private int biteDamage = 25;
     public int BiteDamage
     {

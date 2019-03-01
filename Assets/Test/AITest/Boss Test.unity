@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 6ac3e0461730c144b9757469071007cc, type: 2}
+--- !u!4 &15643923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859,
+    type: 3}
+  m_PrefabInstance: {fileID: 1048259771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361830770
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +508,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544074689}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 881bb32f70909c647b0549fae71069b5, type: 3}
   m_Name: 
@@ -512,7 +518,7 @@ MonoBehaviour:
   DelayInSeconds: 0.2
   TargetMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2560
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -627,7 +633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &725544918
 Transform:
   m_ObjectHideFlags: 0
@@ -919,6 +925,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044212376}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1048259771
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1376817845}
+    m_Modifications:
+    - target: {fileID: 100000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_Name
+      value: Monster_ThunderJaw_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa8bec884c7a8c04a9c6894def8a6859, type: 3}
 --- !u!1 &1359266587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1106,7 @@ Animator:
   m_GameObject: {fileID: 1376817839}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 725705383115cbc4090ccdd996717327, type: 2}
+  m_Controller: {fileID: 9100000, guid: 406897aebf0d7444285ff3e9c4206524, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1140,10 +1203,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376817839}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -7.59, y: 0, z: 9.81}
+  m_LocalPosition: {x: -0.45, y: 0, z: 7.33}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 2126954644}
+  - {fileID: 15643923}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1154,12 +1218,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376817839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 881bb32f70909c647b0549fae71069b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ViewRadius: 7.5
+  ViewRadius: 0
   ViewAngle: 45
   DelayInSeconds: 0.2
   TargetMask:
@@ -1182,19 +1246,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376817839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e741599ce89baf4fa13680f281698c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ce1c20ab4062db4ab9f8b0d92b22af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 544074689}
   target: {fileID: 1654936684}
   bossNavMeshAgent: {fileID: 0}
-  chargeDistanceScalar: 1.5
-  speedScalar: 1
-  accelerationScalar: 1
-  angularSpeedScalar: 1
-  tempStopping: 0
-  strafeRadius: 7
-  strafeSpeed: 40
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
+  chargeDistanceScalar: 1
+  chargeSpeedScalar: 1
+  chargeAccelerationScalar: 1
+  chargeAngularSpeedScalar: 1
+  chargeTempStopping: 1
+  strafeRadius: 1
+  strafeSpeed: 1
+  jumpBackDistance: 1
+  lookRotationSpeed: 1
+  maximumExplosionRadius: 10
+  explosionRateOfGrowth: 0.05
+  strafeStateDuration: 7
 --- !u!1 &1434795964
 GameObject:
   m_ObjectHideFlags: 0
