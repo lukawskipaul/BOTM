@@ -143,6 +143,62 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_BiteAttack" ID="{1FF9B90C-6B79-4F54-A7BF-7B18ECD93293}">
+					<ChildrenList>
+						<Action Name="" ID="{52AA2F5E-26AF-4796-B8A5-919C046EC4CA}" ShortID="240369854">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BiteAttack" ID="{F992C2F9-9A41-4098-A309-AA7039429536}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ClawAttack" ID="{C93AAF74-07B3-4906-939F-CB6098880AAF}">
+					<ChildrenList>
+						<Action Name="" ID="{BAD3A7AF-463F-438E-B66F-97A80DC47BEA}" ShortID="838769094">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ClawAttack" ID="{14F765FF-8B1D-46AE-8ECA-FBFC43455263}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ElectricPassive" ID="{6E753B7C-462D-4ABB-8C02-A313A707EB47}">
+					<ChildrenList>
+						<Action Name="" ID="{3457DDCA-BAC7-4847-ABE3-B81D0A744A98}" ShortID="27244401">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ElectricPassive" ID="{535DA9FA-2CB3-4E0A-AD73-EC3B2B4412B6}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FootStepsBoss" ID="{F16D912B-CD4E-4C55-9E97-081CB4EA1270}">
+					<ChildrenList>
+						<Action Name="" ID="{0E279C66-1328-43C8-8739-99A1C4C22CD7}" ShortID="234706914">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FootStepsBoss" ID="{1CC2E325-98CC-4DBF-BBD1-7028CAA97AD6}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

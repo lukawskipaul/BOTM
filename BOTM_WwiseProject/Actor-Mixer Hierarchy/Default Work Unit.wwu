@@ -225,6 +225,85 @@
 						<ActiveSource Name="CrocAggro1" ID="{AAB7FA4A-17BD-411B-AD53-06A384466424}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="ElectricPassive" ID="{535DA9FA-2CB3-4E0A-AD73-EC3B2B4412B6}" ShortID="886395915">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ElectricPassive" ID="{0A0AA635-2F64-4811-A7EC-5F6AED4E6289}" ShortID="774986204">
+							<Language>SFX</Language>
+							<AudioFile>ElectricPassive.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ElectricPassive" ID="{0A0AA635-2F64-4811-A7EC-5F6AED4E6289}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="FootStepsBoss" ID="{1CC2E325-98CC-4DBF-BBD1-7028CAA97AD6}" ShortID="280336695">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="FootStepsBoss" ID="{861345AC-FC1E-4E63-A965-17A965006848}" ShortID="835706351">
+							<Language>SFX</Language>
+							<AudioFile>FootStepsBoss.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="FootStepsBoss" ID="{861345AC-FC1E-4E63-A965-17A965006848}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="BiteAttack" ID="{F992C2F9-9A41-4098-A309-AA7039429536}" ShortID="860383209">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BiteAttack" ID="{FFB44E87-5093-4D38-8AF2-864977032347}" ShortID="646184627">
+							<Language>SFX</Language>
+							<AudioFile>BiteAttack.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BiteAttack" ID="{FFB44E87-5093-4D38-8AF2-864977032347}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ClawAttack" ID="{14F765FF-8B1D-46AE-8ECA-FBFC43455263}" ShortID="419583500">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ClawAttack" ID="{30A521F4-BB98-4F00-9785-C491B8FC86CD}" ShortID="756330449">
+							<Language>SFX</Language>
+							<AudioFile>ClawAttack.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ClawAttack" ID="{30A521F4-BB98-4F00-9785-C491B8FC86CD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

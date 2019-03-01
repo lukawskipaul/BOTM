@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
 	<RootPaths>
-		<ProjectRoot>D:\BOTM\BOTM_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -25,6 +25,7 @@
 				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1"/>
 				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1"/>
 				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1"/>
+				<Event Id="2387251670" Name="Play_ElectricPassive" ObjectPath="\Events\Default Work Unit\Play_ElectricPassive"/>
 				<Event Id="709837481" Name="Play_MetalDoorBreakdown1" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown1"/>
 				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower"/>
 				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1"/>
@@ -68,6 +69,10 @@
 				<File Id="759940777" Language="SFX">
 					<ShortName>Rockslide1(Initial).wav</ShortName>
 					<Path>SFX\Rockslide1(Initial)_56D34C19.wem</Path>
+				</File>
+				<File Id="774986204" Language="SFX">
+					<ShortName>ElectricPassive.wav</ShortName>
+					<Path>SFX\ElectricPassive_8956FC97.wem</Path>
 				</File>
 				<File Id="1052687345" Language="SFX">
 					<ShortName>CrocDeath1.wav</ShortName>
