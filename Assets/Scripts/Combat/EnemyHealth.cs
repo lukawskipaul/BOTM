@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //GameObjects with this script require the components below, a component will be added if one does not exist
-[RequireComponent(typeof(CapsuleCollider))]
 
 //This script goes on the enemies
 public class EnemyHealth : MonoBehaviour

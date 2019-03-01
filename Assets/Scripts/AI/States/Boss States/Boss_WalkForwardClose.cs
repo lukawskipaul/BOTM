@@ -20,7 +20,7 @@ public class Boss_WalkForwardClose : StateMachineBehaviour
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
         bossNavMeshAgent.SetDestination(player.transform.position);
         //Select random attack action
-        animator.SetInteger("AttackChoice", (int)(Random.value * 10));//0-9
+        animator.SetInteger("AttackChoice", (int)(Random.value * 9));//0-8
         bossNavMeshAgent.isStopped = false;
     }
 

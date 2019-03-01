@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        //UpdateHealthBar();
+        UpdateHealthBar();
     }
 
     public void DamagePlayer(int amount)
