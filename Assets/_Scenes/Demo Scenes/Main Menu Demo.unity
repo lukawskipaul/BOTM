@@ -120233,6 +120233,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1795400985344564431, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5879421539413077252, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -120315,3 +120320,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1b1b74801f7484796947d8c2801506, type: 3}
+--- !u!1 &7324633962914483741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7324633963467791256, guid: fb1b1b74801f7484796947d8c2801506,
+    type: 3}
+  m_PrefabInstance: {fileID: 7324633962914483740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7324633962914483742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324633962914483741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2050095534e178140a0123f228c02ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: d10afed3030dc86418c719d4bf1dd533, type: 3}
+  fadeSpeed: 0.1
