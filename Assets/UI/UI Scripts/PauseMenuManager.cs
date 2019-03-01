@@ -17,6 +17,7 @@ public class PauseMenuManager : MonoBehaviour
     public string controlsInput;
 
     public bool paused;
+    public bool journalOpen;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetButtonDown(pauseInput))
         {
-            if(paused == false)
+            if(paused == false && journalOpen == false)
             {
                 PauseGame();
             }
@@ -40,16 +41,21 @@ public class PauseMenuManager : MonoBehaviour
             {
                 ClosePauseMenu();
             }
+
+            else if(journalOpen == true)
+            {
+                CloseJournal();
+            }
         }
 
-        if (Input.GetButton(journalInput))
+        if (Input.GetButtonDown(journalInput))
         {
-            if (paused == false)
+            if (paused == false && journalOpen == false)
             {
                 OpenJournal();
             }
 
-            else if (paused == true)
+            else if (journalOpen == true)
             {
                 CloseJournal();
             }
@@ -75,6 +81,8 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+
+
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
@@ -89,7 +97,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         Time.timeScale = 0;
         journalMenu.gameObject.SetActive(true);
-        paused = true;
+        journalOpen = true;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -98,7 +106,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         Time.timeScale = 1;
         journalMenu.gameObject.SetActive(false);
-        paused = false;
+        journalOpen = false;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
