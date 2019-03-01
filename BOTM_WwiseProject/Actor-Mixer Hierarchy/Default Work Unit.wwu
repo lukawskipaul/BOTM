@@ -227,9 +227,19 @@
 				</Sound>
 				<Sound Name="ElectricPassive" ID="{535DA9FA-2CB3-4E0A-AD73-EC3B2B4412B6}" ShortID="886395915">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="ElectricPassive" ID="{84884067-2CD7-4984-8432-E8032B3B046D}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
