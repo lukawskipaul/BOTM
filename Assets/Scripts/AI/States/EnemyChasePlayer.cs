@@ -16,6 +16,7 @@ public class EnemyChasePlayer : StateMachineBehaviour
         Agent = animator.gameObject.GetComponent<NavMeshAgent>();
         Enemy = animator.gameObject.GetComponent<CrocEnemyMono>();
         Target = Enemy.Target();
+        Agent.isStopped = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
