@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_AI_VO_LINE1 = 3091365192U;
+        static const AkUniqueID PLAY_AI_VO_LINE2 = 3091365195U;
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
         static const AkUniqueID PLAY_CROCAGGRO1 = 149344824U;
         static const AkUniqueID PLAY_CROCDEATH1 = 1217506344U;
@@ -23,6 +25,7 @@ namespace AK
         static const AkUniqueID PLAY_ROCKSLIDE1 = 3618693649U;
         static const AkUniqueID PLAY_ROOM1AMBIANCEDEMO = 1605460501U;
         static const AkUniqueID PLAY_STATIC1 = 2385860965U;
+        static const AkUniqueID PLAY_TELEKINESIS = 1574242408U;
         static const AkUniqueID PLAY_WATERDRIPPING = 1308308546U;
     } // namespace EVENTS
 

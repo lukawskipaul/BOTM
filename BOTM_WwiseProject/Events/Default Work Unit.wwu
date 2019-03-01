@@ -199,6 +199,62 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Telekinesis" ID="{1C6916B9-BC30-4257-BAE5-C1E2EE19BA20}">
+					<ChildrenList>
+						<Action Name="" ID="{600EE7CB-C947-4127-95F3-58272B67F8FB}" ShortID="677090219">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Telekinesis" ID="{652B60EA-5AF1-4619-861B-86C62C068027}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AI_VO_Line1" ID="{6EA8F10E-5AB7-4069-9DC3-5A56FEE8F50B}">
+					<ChildrenList>
+						<Action Name="" ID="{B7CD26F3-9A1C-4F8D-98FA-21849E78E3EC}" ShortID="792645502">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AI_VO_Line1" ID="{E27FD462-989C-4CCE-BD7E-877A866C9C89}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AI_VO_Line2" ID="{FA76F4EF-8AAA-4A5E-8BFA-3CFF0618C1B7}">
+					<ChildrenList>
+						<Action Name="" ID="{00AD26B8-B27D-445E-A472-36E9EE0EE2F9}" ShortID="488835938">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AI_VO_Line2" ID="{06E37D0B-CDAB-4571-963B-DEE164037C2C}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SwordSwing" ID="{71B5ADBD-6D3A-4DCE-953A-76473C27F95F}">
+					<ChildrenList>
+						<Action Name="" ID="{8D579B4A-3DAB-4F67-8D38-2D17832AE0C6}" ShortID="265442401">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sword Swing" ID="{A8ECE2AC-20F2-48C7-BA9C-B2E12DE1132D}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
 	<RootPaths>
-		<ProjectRoot>D:\BOTM\BOTM_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,6 +21,8 @@
 			<ShortName>Level1</ShortName>
 			<Path>Level1.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3091365192" Name="Play_AI_VO_Line1" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line1"/>
+				<Event Id="3091365195" Name="Play_AI_VO_Line2" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line2"/>
 				<Event Id="934217562" Name="Play_CaveAmbiance1" ObjectPath="\Events\Default Work Unit\Play_CaveAmbiance1"/>
 				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1"/>
 				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1"/>
@@ -31,6 +33,7 @@
 				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1"/>
 				<Event Id="1605460501" Name="Play_Room1AmbianceDemo" ObjectPath="\Events\Default Work Unit\Play_Room1AmbianceDemo"/>
 				<Event Id="2385860965" Name="Play_Static1" ObjectPath="\Events\Default Work Unit\Play_Static1"/>
+				<Event Id="1574242408" Name="Play_Telekinesis" ObjectPath="\Events\Default Work Unit\Play_Telekinesis"/>
 				<Event Id="1308308546" Name="Play_WaterDripping" ObjectPath="\Events\Default Work Unit\Play_WaterDripping"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -54,6 +57,10 @@
 					<ShortName>CaveAmbiance1.wav</ShortName>
 					<Path>SFX\CaveAmbiance1_56D34C19.wem</Path>
 				</File>
+				<File Id="606053402" Language="SFX">
+					<ShortName>AI VO Line 2.wav</ShortName>
+					<Path>SFX\AI VO Line 2_56D34C19.wem</Path>
+				</File>
 				<File Id="685822108" Language="SFX">
 					<ShortName>MetalDoorSlamCloseNoPower.wav</ShortName>
 					<Path>SFX\MetalDoorSlamCloseNoPower_56D34C19.wem</Path>
@@ -73,6 +80,14 @@
 				<File Id="774986204" Language="SFX">
 					<ShortName>ElectricPassive.wav</ShortName>
 					<Path>SFX\ElectricPassive_8956FC97.wem</Path>
+				</File>
+				<File Id="824725648" Language="SFX">
+					<ShortName>AI VO Line 1 Take 2.wav</ShortName>
+					<Path>SFX\AI VO Line 1 Take 2_56D34C19.wem</Path>
+				</File>
+				<File Id="843081733" Language="SFX">
+					<ShortName>TelekinesisExtraHigh.wav</ShortName>
+					<Path>SFX\TelekinesisExtraHigh_56D34C19.wem</Path>
 				</File>
 				<File Id="1052687345" Language="SFX">
 					<ShortName>CrocDeath1.wav</ShortName>
