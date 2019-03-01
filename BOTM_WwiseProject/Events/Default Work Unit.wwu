@@ -255,6 +255,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_TelekinesisThrow" ID="{EA03671D-FBDB-4899-A88C-A779DB527DD0}">
+					<ChildrenList>
+						<Action Name="" ID="{3D0FA707-B692-4786-A965-881EBAFB8682}" ShortID="934585618">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TelekinesisThrow" ID="{98BC671B-CDCE-4980-8AA1-DE2A86858BFF}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

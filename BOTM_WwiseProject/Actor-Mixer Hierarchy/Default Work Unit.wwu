@@ -582,6 +582,25 @@
 						<ActiveSource Name="MagicSwordHitShort" ID="{169A6A32-6E75-41B1-91AD-342A20CB069E}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="TelekinesisThrow" ID="{98BC671B-CDCE-4980-8AA1-DE2A86858BFF}" ShortID="98628407">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="TelekinesisThrow" ID="{14B5703E-2EF0-4412-B221-C52A7D4C1AE2}" ShortID="1025091138">
+							<Language>SFX</Language>
+							<AudioFile>TelekinesisThrow.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="TelekinesisThrow" ID="{14B5703E-2EF0-4412-B221-C52A7D4C1AE2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

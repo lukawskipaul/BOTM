@@ -26,6 +26,7 @@ namespace AK
         static const AkUniqueID PLAY_ROOM1AMBIANCEDEMO = 1605460501U;
         static const AkUniqueID PLAY_STATIC1 = 2385860965U;
         static const AkUniqueID PLAY_TELEKINESIS = 1574242408U;
+        static const AkUniqueID PLAY_TELEKINESISTHROW = 2842595968U;
         static const AkUniqueID PLAY_WATERDRIPPING = 1308308546U;
     } // namespace EVENTS
 
