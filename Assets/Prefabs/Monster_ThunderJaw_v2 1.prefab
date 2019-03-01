@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 756093254}
   - component: {fileID: 756093253}
   - component: {fileID: 756093257}
+  - component: {fileID: 2574029938686165196}
   m_Layer: 0
   m_Name: Monster_ThunderJaw_v2 1
   m_TagString: Untagged
@@ -115,7 +116,7 @@ MonoBehaviour:
   player: {fileID: 0}
   target: {fileID: 0}
   bossNavMeshAgent: {fileID: 756093254}
-  obstacleMask:
+  targetMask:
     serializedVersion: 2
     m_Bits: 0
   chargeDistanceScalar: 1
@@ -127,6 +128,8 @@ MonoBehaviour:
   strafeSpeed: 10
   jumpBackDistance: 20
   lookRotationSpeed: 1
+  maximumExplosionRadius: 0
+  explosionRateOfGrowth: 0
   strafeStateDuration: 8
 --- !u!114 &756093257
 MonoBehaviour:
@@ -146,6 +149,20 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &2574029938686165196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756093252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5a5af16c451164a80cf43a10cd24e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  maxHealth: 100
 --- !u!1 &53223702423569049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,7 +3210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5025960713295225782}
   - component: {fileID: 4973361697703186755}
-  - component: {fileID: 5225155465944895790}
+  - component: {fileID: 2713186826709618003}
   m_Layer: 0
   m_Name: Paw_Front_R
   m_TagString: Untagged
@@ -3229,7 +3246,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9289319, y: 0.59426886, z: 0.5513398}
   m_Center: {x: -0.018470788, y: 0.09429756, z: 0.046004407}
---- !u!114 &5225155465944895790
+--- !u!114 &2713186826709618003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3238,9 +3255,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3936835647559041357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 583e4ecb736b63d4b85b607777cd30b4, type: 3}
+  m_Script: {fileID: 11500000, guid: f1e8a28f8d7bfb34b8f62e29f1b0f292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clawDamage: 15
+  attackLeapDamage: 20
   showDebug: 1
 --- !u!1 &3968768374617228301
 GameObject:
@@ -3313,7 +3332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2582437700342318598}
   - component: {fileID: 8737809742174235302}
-  - component: {fileID: 3024627600325733291}
+  - component: {fileID: 582172529263918771}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -3350,7 +3369,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1566263, y: 1, z: 0.88425773}
   m_Center: {x: -0.16173248, y: 0.000000042094342, z: 0.022886932}
---- !u!114 &3024627600325733291
+--- !u!114 &582172529263918771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3359,9 +3378,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3999398458003261885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fd156cd6b4e7642b4b1c44e90b6d55, type: 3}
+  m_Script: {fileID: 11500000, guid: bbf5e59aa9aef0f42b2dbb825f1e54a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headbuttDamage: 10
+  biteDamage: 25
   showDebug: 1
 --- !u!1 &4000394741360992443
 GameObject:

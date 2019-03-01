@@ -36,7 +36,6 @@ public class MobAttackHitbox : MonoBehaviour
             }
             other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
             collider.enabled = false;
-            //parentAnim.SetBool("isLicking", true);
             parentAnim.SetTrigger("isLicking");
         }
     }

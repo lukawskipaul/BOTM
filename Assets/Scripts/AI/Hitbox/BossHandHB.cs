@@ -5,9 +5,12 @@ using UnityEngine;
 /// Player must have a 'Player' tag
 /// </summary>
 [RequireComponent(typeof(BoxCollider))]
-public class BossHeadHitbox : MonoBehaviour
+public class BossHandHB : MonoBehaviour
 {
-    
+    [SerializeField, Tooltip("Claw Attack Damage Output")]
+    private int clawDamage = 15;
+    [SerializeField, Tooltip("Attack Leap Damage Output")]
+    private int attackLeapDamage = 20;
     [SerializeField]
     private bool showDebug = true;
     private Animator parentAnim;//Get animator controller
@@ -27,20 +30,22 @@ public class BossHeadHitbox : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (parentAnim.GetBool("isHeadbutting"))
+            if (parentAnim.GetBool("isClawing"))
             {
-                //TODO: Add player losing Health Here
+                //Claw Damage output towards Player
+                other.GetComponent<PlayerHealth>().DamagePlayer(clawDamage);
                 if (showDebug)
                 {
-                    Debug.Log("HeadButt");
+                    Debug.Log("Claw");
                 }
             }
-            if (parentAnim.GetBool("isBiting"))
+            if (parentAnim.GetBool("isLeapAttacking"))
             {
-                //TODO: Add player losing Health Here
+                ////Attack Leap Damage output towards Player
+                other.GetComponent<PlayerHealth>().DamagePlayer(attackLeapDamage);
                 if (showDebug)
                 {
-                    Debug.Log("Bite");
+                    Debug.Log("Leaping Attack");
                 }
             }
         }

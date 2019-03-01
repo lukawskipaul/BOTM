@@ -9,7 +9,7 @@ public class Boss_AttackBite : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Activates Head Hitbox
-        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = true;
+        animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled = true;
         animator.SetBool("isBiting", true);
 
         //Set look position to player
@@ -28,7 +28,7 @@ public class Boss_AttackBite : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Deactivates Head Hitbox
-        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = false;
+        animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled = false;
         animator.SetBool("isBiting", false);
         //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }

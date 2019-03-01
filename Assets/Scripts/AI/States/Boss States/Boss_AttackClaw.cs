@@ -10,7 +10,7 @@ public class Boss_AttackClaw : StateMachineBehaviour
     {
         //Activate Hitbox On Boss' Hands
         animator.SetBool("isClawing",true);
-        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = true;
+        animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = true;
 
         //Set look position to player 
         //lookpos = animator.GetComponent<BossEnemyMono>().Player.transform.position - animator.transform.position;
@@ -29,7 +29,7 @@ public class Boss_AttackClaw : StateMachineBehaviour
     {
         //Deactivate Hitbox On Boss' Hands
         animator.SetBool("isClawing", false);
-        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = false;
+        animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = false;
         //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
