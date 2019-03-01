@@ -22,7 +22,9 @@ public class PlayerAttack : MonoBehaviour
     private const string tkThrowButtonName = "Throw";
     private const string baseAttackBooleanName = "isAttackBase";
     private const string combo1AttackBooleanName = "isAttackCombo";
-    private const string attackAnimationTriggerName = "Attack";
+    private const string attackAnimationBooleanName = "Attack";
+    private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
+    private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
     #endregion
 
@@ -52,10 +54,10 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown(attackButtonName))
         {
             /* Cancels possible dodge queuing */
-            anim.ResetTrigger("FreeLookDodge");
-            anim.ResetTrigger("LockedOnDodge");
+            anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
+            anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
 
-            anim.SetTrigger("Attack");
+            anim.SetBool(attackAnimationBooleanName, true);
         }
     }
 
@@ -73,8 +75,8 @@ public class PlayerAttack : MonoBehaviour
             //}
 
             ///* Cancels possible dodge queuing */
-            //anim.ResetTrigger("FreeLookDodge");
-            //anim.ResetTrigger("LockedOnDodge");
+            //anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
+            //anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
 
             //TODO: play animation
             //TODO: change enemy location
@@ -105,7 +107,7 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
 
-        //subscribe to detectobject OnEnemyObjDetected
+        //TODO: subscribe to detectobject OnEnemyObjDetected
     }
 
     /* Unsubscribe from events */
@@ -114,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
 
-        //unsubscribe to detectobject OnEnemyObjDetected
+        //TODO: unsubscribe to detectobject OnEnemyObjDetected
     }
 
     #region Animation Events

@@ -25,7 +25,7 @@ public class RootMotionMovementController : MonoBehaviour
     private const string dodgeButtonName = "Dodge";
     private const string baseAttackBooleanName = "isAttackBase";
     private const string combo1AttackBooleanName = "isAttackCombo";
-    private const string attackAnimationTriggerName = "Attack";
+    private const string attackAnimationBooleanName = "Attack";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
@@ -98,7 +98,7 @@ public class RootMotionMovementController : MonoBehaviour
             /* Cancels possible combo attack queuing */
             if (attackAnimationIsPlaying)
             {
-                anim.ResetTrigger(attackAnimationTriggerName);
+                anim.SetBool(attackAnimationBooleanName, false);
             }
 
             anim.SetTrigger(freeLookDodgeAnimationTriggerName);
@@ -117,7 +117,7 @@ public class RootMotionMovementController : MonoBehaviour
             /* Cancels possible combo attack queuing */
             if (attackAnimationIsPlaying)
             {
-                anim.ResetTrigger(attackAnimationTriggerName);
+                anim.SetBool(attackAnimationBooleanName, false);
             }
 
             anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
