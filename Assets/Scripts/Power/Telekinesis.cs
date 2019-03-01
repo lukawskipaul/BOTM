@@ -265,12 +265,14 @@ public class Telekinesis : MonoBehaviour
     {
         DetectObject.LevObjectDetected += SetLevitatableObject;
         DetectObject.LevObjectGone += ResetLevitatableObj;
+        PlayerHealth.TakeDamage += DropObject;
     }
 
     private void OnDisable()
     {
         DetectObject.LevObjectDetected -= SetLevitatableObject;
         DetectObject.LevObjectGone -= ResetLevitatableObj;
+        PlayerHealth.TakeDamage -= DropObject;
     }
     #endregion
 }
