@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackCombo : StateMachineBehaviour
+public class AttackBase : StateMachineBehaviour
 {
     DamageEnemy swordAttack;
 
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("isAttackCombo", true);
+        animator.SetBool("isAttackBase", true);
+        animator.SetBool("Attack", false);
 
         swordAttack = animator.gameObject.GetComponentInChildren<DamageEnemy>();
         swordAttack.ChangeToBaseDamage();
@@ -24,7 +25,7 @@ public class AttackCombo : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("isAttackCombo", false);
+        animator.SetBool("isAttackBase", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
