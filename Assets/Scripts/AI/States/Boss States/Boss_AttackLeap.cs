@@ -9,10 +9,10 @@ public class Boss_AttackLeap : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Activate Hitbox On Boss' Hands
-        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = true;
+        animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = true;
         animator.SetBool("isLeapAttacking", true);
         //Select a random evasive action
-        animator.SetInteger("EvasiveChoice",(int)Random.value * 4);//0-3
+        animator.SetInteger("EvasiveChoice", (int)Random.value * 4);//0-3
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -25,8 +25,11 @@ public class Boss_AttackLeap : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Deactivate Hitbox On Boss' Hands
-        animator.gameObject.GetComponentInChildren<BossHandHitBox>().Collider.enabled = false;
-        animator.SetBool("isLeapAttacking",false);
+        if (animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled)
+        {
+            animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = false;
+        }
+        animator.SetBool("isLeapAttacking", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

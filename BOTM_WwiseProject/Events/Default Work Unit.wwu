@@ -143,6 +143,188 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_BiteAttack" ID="{1FF9B90C-6B79-4F54-A7BF-7B18ECD93293}">
+					<ChildrenList>
+						<Action Name="" ID="{52AA2F5E-26AF-4796-B8A5-919C046EC4CA}" ShortID="240369854">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BiteAttack" ID="{F992C2F9-9A41-4098-A309-AA7039429536}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ClawAttack" ID="{C93AAF74-07B3-4906-939F-CB6098880AAF}">
+					<ChildrenList>
+						<Action Name="" ID="{BAD3A7AF-463F-438E-B66F-97A80DC47BEA}" ShortID="838769094">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ClawAttack" ID="{14F765FF-8B1D-46AE-8ECA-FBFC43455263}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ElectricPassive" ID="{6E753B7C-462D-4ABB-8C02-A313A707EB47}">
+					<ChildrenList>
+						<Action Name="" ID="{3457DDCA-BAC7-4847-ABE3-B81D0A744A98}" ShortID="27244401">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ElectricPassive" ID="{535DA9FA-2CB3-4E0A-AD73-EC3B2B4412B6}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FootStepsBoss" ID="{F16D912B-CD4E-4C55-9E97-081CB4EA1270}">
+					<ChildrenList>
+						<Action Name="" ID="{0E279C66-1328-43C8-8739-99A1C4C22CD7}" ShortID="234706914">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FootStepsBoss" ID="{1CC2E325-98CC-4DBF-BBD1-7028CAA97AD6}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Telekinesis" ID="{1C6916B9-BC30-4257-BAE5-C1E2EE19BA20}">
+					<ChildrenList>
+						<Action Name="" ID="{600EE7CB-C947-4127-95F3-58272B67F8FB}" ShortID="677090219">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Telekinesis" ID="{652B60EA-5AF1-4619-861B-86C62C068027}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AI_VO_Line1" ID="{6EA8F10E-5AB7-4069-9DC3-5A56FEE8F50B}">
+					<ChildrenList>
+						<Action Name="" ID="{B7CD26F3-9A1C-4F8D-98FA-21849E78E3EC}" ShortID="792645502">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AI_VO_Line1" ID="{E27FD462-989C-4CCE-BD7E-877A866C9C89}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AI_VO_Line2" ID="{FA76F4EF-8AAA-4A5E-8BFA-3CFF0618C1B7}">
+					<ChildrenList>
+						<Action Name="" ID="{00AD26B8-B27D-445E-A472-36E9EE0EE2F9}" ShortID="488835938">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AI_VO_Line2" ID="{06E37D0B-CDAB-4571-963B-DEE164037C2C}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SwordSwing" ID="{71B5ADBD-6D3A-4DCE-953A-76473C27F95F}">
+					<ChildrenList>
+						<Action Name="" ID="{8D579B4A-3DAB-4F67-8D38-2D17832AE0C6}" ShortID="265442401">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sword Swing" ID="{A8ECE2AC-20F2-48C7-BA9C-B2E12DE1132D}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TelekinesisThrow" ID="{EA03671D-FBDB-4899-A88C-A779DB527DD0}">
+					<ChildrenList>
+						<Action Name="" ID="{3D0FA707-B692-4786-A965-881EBAFB8682}" ShortID="934585618">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TelekinesisThrow" ID="{98BC671B-CDCE-4980-8AA1-DE2A86858BFF}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_JournalOpen" ID="{7CD837F5-E349-4177-8D42-A66006191083}">
+					<ChildrenList>
+						<Action Name="" ID="{501FA57A-14E2-4259-93D1-1D2BF55911FA}" ShortID="706121468">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_JournalOpen" ID="{95611E43-29C7-4751-B003-0E0D48E4E125}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_JournalClose" ID="{D4E14F34-82AA-4A09-8E55-D3F8B24B7951}">
+					<ChildrenList>
+						<Action Name="" ID="{BB9F9496-8298-44C1-975C-554154DF7A33}" ShortID="540308076">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_JournalClose" ID="{004E3865-3E7F-4C2C-804C-EC015DB2EAC9}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_PageFlip" ID="{99EF6F77-50EB-47CC-9824-05EDA9435E28}">
+					<ChildrenList>
+						<Action Name="" ID="{21490DC3-80E1-4791-8599-3F8EF5CC50AF}" ShortID="1038745714">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_PageFlip" ID="{0A4B7D47-24FC-49CB-BD07-655B8080D0D0}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AmbiantMusic" ID="{BE43092E-F6DA-496F-A5BE-DA4854BE22A2}">
+					<ChildrenList>
+						<Action Name="" ID="{A4994704-3B54-44A5-8857-87A33775FB53}" ShortID="624357651">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{E7D579FC-1ECE-458E-91B3-2B2631BE5D38}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
