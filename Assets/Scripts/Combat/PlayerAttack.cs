@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField]
     private int tkPullDamageAmount = 10;
+    [SerializeField]
+    private float tkPullCooldownInSeconds = 10.0f;
 
     private Animator anim;
     private DamageEnemy swordAttack;
@@ -183,7 +185,7 @@ public class PlayerAttack : MonoBehaviour
     {
         canDoTKPull = false;
 
-        yield return new WaitForSecondsRealtime(5.0f);
+        yield return new WaitForSecondsRealtime(tkPullCooldownInSeconds);
 
         canDoTKPull = true;
     }
