@@ -4,33 +4,28 @@ using UnityEngine;
 
 public class Boss_HeadButt : StateMachineBehaviour
 {
-    Vector3 lookpos;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Activates Head Hitbox
-        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = true;
+        animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled = true;
         animator.SetBool("isHeadbutting", true);
-
-        //Set look position to player 
-        //lookpos = animator.GetComponent<BossEnemyMono>().Player.transform.position - animator.transform.position;
-        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        //Set boss rotation to look at player
-        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Deactivates Head Hitbox
-        animator.gameObject.GetComponentInChildren<BossHeadHitbox>().Collider.enabled = false;
+        if (animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled)
+        {
+            animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled = false;
+        }
         animator.SetBool("isHeadbutting", false);
-        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

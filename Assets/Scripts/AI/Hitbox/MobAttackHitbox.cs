@@ -8,11 +8,10 @@ using UnityEngine;
 public class MobAttackHitbox : MonoBehaviour
 {
     [SerializeField]
-    private int attackDamage = 10;
-    [SerializeField]
     private string playerTag = "Player";
     [SerializeField]
     private bool showDebug = true;
+    private CrocEnemyMono crocStats;
     private Animator parentAnim;
     public Collider collider { get; private set; }
     private void Start()
@@ -21,6 +20,7 @@ public class MobAttackHitbox : MonoBehaviour
         collider.isTrigger = true;//Automatically set collider to a trigger
         collider.enabled = false;//start with collider turned off <*efficient*>
         parentAnim = this.GetComponentInParent<Animator>();
+        crocStats = this.GetComponentInParent<CrocEnemyMono>();
     }
     /// <summary>
     /// Trigger event which detects whether the hitbox collided with the player
@@ -34,11 +34,11 @@ public class MobAttackHitbox : MonoBehaviour
             {
                 Debug.Log("Player Hit!");
             }
-            other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
+            other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(crocStats.AttackDamage);
             collider.enabled = false;
             parentAnim.SetTrigger("isLicking");
         }
     }
-    
-    
+
+
 }
