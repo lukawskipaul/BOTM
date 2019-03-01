@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_AI_VO_LINE1 = 3091365192U;
         static const AkUniqueID PLAY_AI_VO_LINE2 = 3091365195U;
+        static const AkUniqueID PLAY_AMBIANTMUSIC = 2139734863U;
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
         static const AkUniqueID PLAY_CROCAGGRO1 = 149344824U;
         static const AkUniqueID PLAY_CROCDEATH1 = 1217506344U;
@@ -27,6 +28,9 @@ namespace AK
         static const AkUniqueID PLAY_STATIC1 = 2385860965U;
         static const AkUniqueID PLAY_TELEKINESIS = 1574242408U;
         static const AkUniqueID PLAY_TELEKINESISTHROW = 2842595968U;
+        static const AkUniqueID PLAY_UI_JOURNALCLOSE = 168369292U;
+        static const AkUniqueID PLAY_UI_JOURNALOPEN = 2407564056U;
+        static const AkUniqueID PLAY_UI_PAGEFLIP = 3236627135U;
         static const AkUniqueID PLAY_WATERDRIPPING = 1308308546U;
     } // namespace EVENTS
 

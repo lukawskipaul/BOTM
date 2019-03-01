@@ -23,7 +23,18 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Rockslide1(Initial)" ID="{F9908647-8119-4CBF-BDE0-9339300E5B4C}" ShortID="851480495">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Rockslide" ID="{035B6BD0-56DC-4B3F-B283-47A85FBFE62F}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -108,7 +119,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="MetalDoorSlamCloseNoPower" ID="{5E442E7A-94FE-4B93-ADA8-DFB0705AEF4E}" ShortID="882799412">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -333,13 +350,17 @@
 				</RandomSequenceContainer>
 				<Sound Name="MetalDoorBreakdown1" ID="{FF3FBF1E-0B4C-46CD-A5DE-3ECAEDFED129}" ShortID="195046005">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-4</Value>
+								<Value>-6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -361,7 +382,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="CrocDeath1" ID="{AE7BD185-B6F9-461E-ADE9-AD3315028927}" ShortID="419795923">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -380,7 +407,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="CrocFlinch1" ID="{B245DC29-0940-40F2-93A4-AB57DB3FA7FA}" ShortID="914275620">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -399,7 +432,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="CrocAggro1" ID="{3F58CB2E-6C60-48EE-931B-5B7753E5AF5B}" ShortID="95640236">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -599,6 +638,85 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="TelekinesisThrow" ID="{14B5703E-2EF0-4412-B221-C52A7D4C1AE2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="UI_JournalClose" ID="{004E3865-3E7F-4C2C-804C-EC015DB2EAC9}" ShortID="229324886">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="UI_JournalClose" ID="{2747DAF9-B578-4DA3-B4A5-0B06640A6D7C}" ShortID="948046825">
+							<Language>SFX</Language>
+							<AudioFile>UI_JournalClose.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="UI_JournalClose" ID="{2747DAF9-B578-4DA3-B4A5-0B06640A6D7C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="UI_JournalOpen" ID="{95611E43-29C7-4751-B003-0E0D48E4E125}" ShortID="958206000">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="UI_JournalOpen" ID="{97D24588-4358-446A-AD23-1B09A92E9A72}" ShortID="530152481">
+							<Language>SFX</Language>
+							<AudioFile>UI_JournalOpen.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="UI_JournalOpen" ID="{97D24588-4358-446A-AD23-1B09A92E9A72}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="UI_PageFlip" ID="{0A4B7D47-24FC-49CB-BD07-655B8080D0D0}" ShortID="310170823">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="UI_NotePickup2" ID="{01D2A61F-7B92-4BB5-AED8-66C4C1582806}" ShortID="984849189">
+							<Language>SFX</Language>
+							<AudioFile>UI_NotePickup2.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="UI_NotePickup2" ID="{01D2A61F-7B92-4BB5-AED8-66C4C1582806}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{E7D579FC-1ECE-458E-91B3-2B2631BE5D38}" ShortID="802283542">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{BCB3C1CD-45EC-441F-A00F-AF02A362ADA8}" ShortID="906061255">
+							<Language>SFX</Language>
+							<AudioFile>LTG _Ambient_Battle_ [Ambient Loop].wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{BCB3C1CD-45EC-441F-A00F-AF02A362ADA8}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

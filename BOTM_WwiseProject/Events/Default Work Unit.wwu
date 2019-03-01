@@ -269,6 +269,62 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_UI_JournalOpen" ID="{7CD837F5-E349-4177-8D42-A66006191083}">
+					<ChildrenList>
+						<Action Name="" ID="{501FA57A-14E2-4259-93D1-1D2BF55911FA}" ShortID="706121468">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_JournalOpen" ID="{95611E43-29C7-4751-B003-0E0D48E4E125}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_JournalClose" ID="{D4E14F34-82AA-4A09-8E55-D3F8B24B7951}">
+					<ChildrenList>
+						<Action Name="" ID="{BB9F9496-8298-44C1-975C-554154DF7A33}" ShortID="540308076">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_JournalClose" ID="{004E3865-3E7F-4C2C-804C-EC015DB2EAC9}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_PageFlip" ID="{99EF6F77-50EB-47CC-9824-05EDA9435E28}">
+					<ChildrenList>
+						<Action Name="" ID="{21490DC3-80E1-4791-8599-3F8EF5CC50AF}" ShortID="1038745714">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_PageFlip" ID="{0A4B7D47-24FC-49CB-BD07-655B8080D0D0}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AmbiantMusic" ID="{BE43092E-F6DA-496F-A5BE-DA4854BE22A2}">
+					<ChildrenList>
+						<Action Name="" ID="{A4994704-3B54-44A5-8857-87A33775FB53}" ShortID="624357651">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{E7D579FC-1ECE-458E-91B3-2B2631BE5D38}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

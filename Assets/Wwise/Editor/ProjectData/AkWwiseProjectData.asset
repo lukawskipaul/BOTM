@@ -28,7 +28,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586501864299263495
+    m_lastTime: -8586501821217747928
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,7 +43,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586501864299382900
+    m_lastTime: -8586501821217488635
     List:
     - name: Play_AI_VO_Line1
       guid: 0ef1a86eb75a69409dc35a56fee8f50b
@@ -66,6 +66,18 @@ MonoBehaviour:
       - ElementName: Play_AI_VO_Line2
         ObjectType: 3
       Path: Default Work Unit\Play_AI_VO_Line2
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_AmbiantMusic
+      guid: 2e0943bedaf66f49a5beda4854be22a2
+      id: 2139734863
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_AmbiantMusic
+        ObjectType: 3
+      Path: Default Work Unit\Play_AmbiantMusic
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -150,7 +162,7 @@ MonoBehaviour:
       - ElementName: Play_ElectricPassive
         ObjectType: 3
       Path: Default Work Unit\Play_ElectricPassive
-      maxAttenuation: 15
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_FootStepsBoss
@@ -249,6 +261,54 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_TelekinesisThrow
+      guid: 1d6703eadbfb9948a88ca779db527dd0
+      id: 2842595968
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_TelekinesisThrow
+        ObjectType: 3
+      Path: Default Work Unit\Play_TelekinesisThrow
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_JournalClose
+      guid: 344fe1d4aa82094a8e55d3f8b24b7951
+      id: 168369292
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_JournalClose
+        ObjectType: 3
+      Path: Default Work Unit\Play_UI_JournalClose
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_JournalOpen
+      guid: f537d87c49e377418d42a66006191083
+      id: 2407564056
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_JournalOpen
+        ObjectType: 3
+      Path: Default Work Unit\Play_UI_JournalOpen
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_PageFlip
+      guid: 776fef99eb50cc47982405eda9435e28
+      id: 3236627135
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_PageFlip
+        ObjectType: 3
+      Path: Default Work Unit\Play_UI_PageFlip
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_WaterDripping
       guid: e8ef47487b8db044b7fd3ff65474952b
       id: 1308308546
@@ -287,7 +347,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /BOTM_WwiseProject
-  - /BOTM_WwiseProject/Events
-  - /BOTM_WwiseProject/Events/Default Work Unit
+  - /BOTM_WwiseProject/SoundBanks
+  - /BOTM_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
