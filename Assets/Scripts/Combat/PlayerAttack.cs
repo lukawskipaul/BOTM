@@ -15,14 +15,17 @@ public class PlayerAttack : MonoBehaviour
 
     private Animator anim;
     private DamageEnemy swordAttack;
+    private GameObject enemy;
 
     private bool canAttack;
+    private bool canDoTKPull;
 
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
     private const string baseAttackBooleanName = "isAttackBase";
     private const string combo1AttackBooleanName = "isAttackCombo";
     private const string attackAnimationBooleanName = "Attack";
+    private const string tkPullAnimationTriggerName = "TKPull";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
@@ -31,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         canAttack = true;
+        canDoTKPull = true;
     }
 
     private void Start()
@@ -44,7 +48,11 @@ public class PlayerAttack : MonoBehaviour
         if (canAttack)
         {
             Attack();
-            //TKPull();
+
+            //if (canDoTKPull)
+            //{
+            //    TKPull();
+            //}
         }
     }
 
@@ -53,6 +61,9 @@ public class PlayerAttack : MonoBehaviour
         /* Play attack animation when attack button is pressed */
         if (Input.GetButtonDown(attackButtonName))
         {
+            /* Cancels possible tk pull queuing */
+            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+
             /* Cancels possible dodge queuing */
             anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
             anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
@@ -68,23 +79,28 @@ public class PlayerAttack : MonoBehaviour
         {
             //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
 
-            ///* Cancels possible combo attack queuing */
+            /* Cancels possible combo attack queuing */
             //if (attackAnimationIsPlaying)
             //{
-            //    anim.ResetTrigger(attackAnimationTriggerName);
+            //    anim.SetBool(attackAnimationBooleanName, false);
             //}
+            anim.SetBool(attackAnimationBooleanName, false);
 
-            ///* Cancels possible dodge queuing */
-            //anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
-            //anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
+            /* Cancels possible dodge queuing */
+            anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
+            anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
+
+            /* Search for enemy to attack */
+            DetectObject.EnemySearchNeeded = true;
 
             //TODO: play animation
             //TODO: change enemy location
             //TODO: stun enemy?
 
-            //TODO: ENEMY.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
+            enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
 
-            //TODO: ability cooldown
+            //TODO: ability cooldown as animation event
+            //TODO: cancel possible tk pull queuing in other spots when animation is set up
         }
     }
 
@@ -101,13 +117,19 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    /* Assigns enemy GameObject to class variable */
+    private void FindEnemy(GameObject detectedEnemy)
+    {
+        enemy = detectedEnemy;
+    }
+
     /* Subscribe to events */
     private void OnEnable()
     {
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
 
-        //TODO: subscribe to detectobject OnEnemyObjDetected
+        DetectObject.EnemyObjDetected += FindEnemy;
     }
 
     /* Unsubscribe from events */
@@ -116,7 +138,7 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
 
-        //TODO: unsubscribe to detectobject OnEnemyObjDetected
+        DetectObject.EnemyObjDetected -= FindEnemy;
     }
 
     #region Animation Events
@@ -148,6 +170,22 @@ public class PlayerAttack : MonoBehaviour
     {
         swordAttack.IsAttacking = false;
         Time.timeScale = 1.0f;
+    }
+
+    /* Called at specific tk pull animation frame to start tk pull cooldown */
+    public void StartTKPullCooldown()
+    {
+        StartCoroutine(TKPullCooldown());
+    }
+
+    /* Starts cooldown for the player's tk pull ability */
+    private IEnumerator TKPullCooldown()
+    {
+        canDoTKPull = false;
+
+        yield return new WaitForSecondsRealtime(5.0f);
+
+        canDoTKPull = true;
     }
 
     #endregion
