@@ -4,7 +4,10 @@ using UnityEngine;
 /// <summary>
 /// Player must have a 'Player' tag
 /// </summary>
+<<<<<<< HEAD:Assets/Scripts/AI/Hitbox/BossHandHB.cs
 [RequireComponent(typeof(BoxCollider))]
+=======
+>>>>>>> 8096902f3cf73cbdf0d5991462e2ed742cae6ede:Assets/Scripts/AI/Hitbox/BossHandHB.cs
 public class BossHandHB : MonoBehaviour
 {
     [SerializeField]

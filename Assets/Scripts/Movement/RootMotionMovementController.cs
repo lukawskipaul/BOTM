@@ -23,9 +23,10 @@ public class RootMotionMovementController : MonoBehaviour
     private bool isOnGround;
 
     private const string dodgeButtonName = "Dodge";
-    private const string baseAttackAnimationName = "Attack Base";
-    private const string combo1AttackAnimationName = "Attack Combo 1";
-    private const string attackAnimationTriggerName = "Attack";
+    private const string baseAttackBooleanName = "isAttackBase";
+    private const string combo1AttackBooleanName = "isAttackCombo";
+    private const string attackAnimationBooleanName = "Attack";
+    private const string tkPullAnimationTriggerName = "TKPull";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
@@ -49,7 +50,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove && isOnGround)
         {
             Rotate();
         }
@@ -57,7 +58,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove && isOnGround)
         {
             Move();
 
@@ -93,14 +94,17 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
         if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
-            bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) ||
-                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
+            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
 
             /* Cancels possible combo attack queuing */
-            if (attackAnimationIsPlaying)
-            {
-                anim.ResetTrigger(attackAnimationTriggerName);
-            }
+            //if (attackAnimationIsPlaying)
+            //{
+            //    anim.SetBool(attackAnimationBooleanName, false);
+            //}
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(freeLookDodgeAnimationTriggerName);
 
@@ -113,14 +117,17 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play hop dodge animation when dodge button is pressed and is locked on */
         if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
         {
-            bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) ||
-                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
+            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
 
             /* Cancels possible combo attack queuing */
-            if (attackAnimationIsPlaying)
-            {
-                anim.ResetTrigger(attackAnimationTriggerName);
-            }
+            //if (attackAnimationIsPlaying)
+            //{
+            //    anim.SetBool(attackAnimationBooleanName, false);
+            //}
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
 
@@ -157,8 +164,6 @@ public class RootMotionMovementController : MonoBehaviour
             canMove = true;
         }
     }
-
-    
 
     #region Animation Events
 

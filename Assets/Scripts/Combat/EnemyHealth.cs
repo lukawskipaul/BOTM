@@ -49,10 +49,12 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             anim.SetTrigger("Die");
+            AkSoundEngine.PostEvent("Play_CrocDeath1", gameObject);
         }
         else
         {
             anim.SetTrigger("Flinch");
+            AkSoundEngine.PostEvent("Play_CrocFlinch1", gameObject);
         }
     }
 

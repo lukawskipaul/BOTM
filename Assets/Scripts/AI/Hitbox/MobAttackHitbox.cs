@@ -39,6 +39,6 @@ public class MobAttackHitbox : MonoBehaviour
             parentAnim.SetTrigger("isLicking");
         }
     }
-    
-    
+
+
 }

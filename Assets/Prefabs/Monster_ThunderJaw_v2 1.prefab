@@ -14,8 +14,12 @@ GameObject:
   - component: {fileID: 756093254}
   - component: {fileID: 756093253}
   - component: {fileID: 756093257}
+<<<<<<< HEAD
   - component: {fileID: 2574029938686165196}
   - component: {fileID: 840586123}
+=======
+  - component: {fileID: 4339820590008046638}
+>>>>>>> 8096902f3cf73cbdf0d5991462e2ed742cae6ede
   m_Layer: 0
   m_Name: Monster_ThunderJaw_v2 1
   m_TagString: Enemy
@@ -149,11 +153,15 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 512
+<<<<<<< HEAD
   headbuttDamage: 10
   biteDamage: 25
   clawDamage: 15
   attackLeapDamage: 20
 --- !u!114 &2574029938686165196
+=======
+--- !u!114 &4339820590008046638
+>>>>>>> 8096902f3cf73cbdf0d5991462e2ed742cae6ede
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   maxHealth: 100
+<<<<<<< HEAD
 --- !u!54 &840586123
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -183,6 +192,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+>>>>>>> 8096902f3cf73cbdf0d5991462e2ed742cae6ede
 --- !u!1 &53223702423569049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,6 +3289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e8a28f8d7bfb34b8f62e29f1b0f292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clawDamage: 15
+  attackLeapDamage: 20
   showDebug: 1
 --- !u!1 &3968768374617228301
 GameObject:
@@ -3399,6 +3412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf5e59aa9aef0f42b2dbb825f1e54a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headbuttDamage: 10
+  biteDamage: 25
   showDebug: 1
 --- !u!1 &4000394741360992443
 GameObject:
