@@ -7,7 +7,7 @@ public class Boss_Explosion : StateMachineBehaviour
     GameObject boss;
     GameObject player;
     BossAI bossAI;
-
+    private bool showDebug = true;
     // The current radius of the explosion
     float currentExplosionRadius;
 
@@ -65,9 +65,12 @@ public class Boss_Explosion : StateMachineBehaviour
             bossAI.CurrentExplosionRadius = this.currentExplosionRadius;
             bossAI.OpenTargets = this.openTargets;
             //isExploding = true;
-
-            Debug.Log(isExploding);
-            Debug.Log(explosionScalar);
+            if (showDebug)
+            {
+                Debug.Log("Is Exploding?: " + isExploding);
+                Debug.Log("Explosion Speed: " + explosionScalar);
+            }
+            
         }//*/
     }
 
@@ -107,7 +110,11 @@ public class Boss_Explosion : StateMachineBehaviour
             {
                 explosionScalar = 1.0f;
             }
-            Debug.Log("Exploding");
+            if (showDebug)
+            {
+                Debug.Log("Exploding");
+            }
+            
         }
         // When the explosion goes above the maximum radius
         // Its size is reset to zero and the explosion is set to false
@@ -115,7 +122,11 @@ public class Boss_Explosion : StateMachineBehaviour
         {
             isExploding = false;
             explosionScalar = 0.0f;
-            Debug.Log("Reseting");
+            if (showDebug)
+            {
+                Debug.Log("Reseting");
+            }
+            
         }
 
         // The current size of the explosion is determined as
@@ -157,5 +168,10 @@ public class Boss_Explosion : StateMachineBehaviour
                 openTargets.Add(target);
             }
         }
+        if (showDebug)
+        {
+            Debug.Log("# of target objects detected: " + targetsInRange.Length);
+        }
+        
     }
 }

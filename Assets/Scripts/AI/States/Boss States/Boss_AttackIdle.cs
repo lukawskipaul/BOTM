@@ -11,7 +11,7 @@ public class Boss_AttackIdle : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Select random attack action
-        animator.SetInteger("AttackChoice", (int)(Random.value * 8));
+        animator.SetInteger("AttackChoice", (int)(Random.value * 10));//0-9
         //Set look position to player
         lookpos = Quaternion.LookRotation(animator.GetComponent<BossEnemyMono>().Player.transform.position - animator.transform.position);
     }

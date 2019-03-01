@@ -118,7 +118,7 @@ MonoBehaviour:
   bossNavMeshAgent: {fileID: 756093254}
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   chargeDistanceScalar: 1
   chargeSpeedScalar: 1
   chargeAccelerationScalar: 1
@@ -128,8 +128,8 @@ MonoBehaviour:
   strafeSpeed: 10
   jumpBackDistance: 20
   lookRotationSpeed: 1
-  maximumExplosionRadius: 0
-  explosionRateOfGrowth: 0
+  maximumExplosionRadius: 10
+  explosionRateOfGrowth: 0.182
   strafeStateDuration: 8
 --- !u!114 &756093257
 MonoBehaviour:
@@ -143,12 +143,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75599d057b336e742a948f29a9821c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
   player: {fileID: 0}
   showDebug: 0
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  headbuttDamage: 10
+  biteDamage: 25
+  clawDamage: 15
+  attackLeapDamage: 20
 --- !u!114 &2574029938686165196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,8 +3261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e8a28f8d7bfb34b8f62e29f1b0f292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clawDamage: 15
-  attackLeapDamage: 20
   showDebug: 1
 --- !u!1 &3968768374617228301
 GameObject:
@@ -3381,8 +3382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf5e59aa9aef0f42b2dbb825f1e54a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headbuttDamage: 10
-  biteDamage: 25
   showDebug: 1
 --- !u!1 &4000394741360992443
 GameObject:
