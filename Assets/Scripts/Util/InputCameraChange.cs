@@ -54,6 +54,7 @@ public class InputCameraChange : MonoBehaviour
                 if (Input.GetButtonDown("LockOnSwitch"))
                 {
                     LockOnTarget.layer = LayerMask.NameToLayer("Ignore Raycast");
+                    DetectObject.SearchDirection = Input.GetAxis("LockOnSwitch");
                     DetectObject.EnemySearchNeeded = true;
 
                 }
@@ -105,7 +106,7 @@ public class InputCameraChange : MonoBehaviour
         {
             if(LockOnTarget.layer == 2)
             {
-                LockOnTarget.layer = 0;
+                LockOnTarget.layer = 12;
             }
         }
         //we found our LockOn Target, set it as what to target in the cinemachine object
