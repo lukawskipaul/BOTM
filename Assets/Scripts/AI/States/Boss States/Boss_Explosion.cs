@@ -7,6 +7,7 @@ public class Boss_Explosion : StateMachineBehaviour
     GameObject boss;
     GameObject player;
     BossAI bossAI;
+    BossEnemyMono bossStats;
     private bool showDebug = true;
     // The current radius of the explosion
     float currentExplosionRadius;
@@ -40,6 +41,7 @@ public class Boss_Explosion : StateMachineBehaviour
         boss = animator.gameObject;
         bossAI = boss.GetComponent<BossAI>();
         player = bossAI.Player;
+        bossStats = boss.GetComponent<BossEnemyMono>();
 
         currentExplosionRadius = 0.0f;
         maximumExplosionRadius = bossAI.MaximumExplosionRadius;
@@ -138,6 +140,22 @@ public class Boss_Explosion : StateMachineBehaviour
         // Check if there are any open targets 
         // within range of the current explosion radius
         CheckInRange();
+        if (openTargets.Count > 0)
+        {
+            for (int i =0;i < openTargets.Count;i++)
+            {
+                if (openTargets[i].tag == "Player")
+                {
+                    openTargets[i].GetComponent<PlayerHealth>().DamagePlayer(bossStats.UltimateDamage);
+                    if (showDebug)
+                    {
+                        Debug.Log("Player taking damage");
+                    }
+                }
+                
+            }
+            
+        }
     }
 
     // This function checks if there are any unguarded targets
