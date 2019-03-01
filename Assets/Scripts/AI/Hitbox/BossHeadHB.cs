@@ -7,12 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class BossHeadHB : MonoBehaviour
 {
-    [SerializeField, Tooltip("Headbutt Damage Output")]
-    private int headbuttDamage = 10;
-    [SerializeField, Tooltip("Bite Damage Output")]
-    private int biteDamage = 25;
     [SerializeField]
     private bool showDebug = true;
+    private BossEnemyMono bossStats;
     private Animator parentAnim;//Get animator controller
     public Collider Collider { get; private set; }
     private void Start()
@@ -20,7 +17,8 @@ public class BossHeadHB : MonoBehaviour
         Collider = this.GetComponent<Collider>();
         Collider.isTrigger = true;//Automatically set collider to a trigger
         Collider.enabled = false;//Initially turns off collider
-        parentAnim = this.GetComponentInParent<Animator>();
+        parentAnim = this.GetComponentInParent<Animator>();//reference to animator
+        bossStats = this.GetComponentInParent<BossEnemyMono>();
     }
     /// <summary>
     /// Trigger event which detects whether the hitbox collided with the player
@@ -33,20 +31,22 @@ public class BossHeadHB : MonoBehaviour
             if (parentAnim.GetBool("isHeadbutting"))
             {
                 //Headbutt Damage output towards Player
-                other.GetComponent<PlayerHealth>().DamagePlayer(headbuttDamage);
+                other.GetComponent<PlayerHealth>().DamagePlayer(bossStats.HeadbuttDamage);
                 if (showDebug)
                 {
                     Debug.Log("HeadButt");
                 }
+                Collider.enabled = false;
             }
             if (parentAnim.GetBool("isBiting"))
             {
                 //Bite Damage output towards Player
-                other.GetComponent<PlayerHealth>().DamagePlayer(biteDamage);
+                other.GetComponent<PlayerHealth>().DamagePlayer(bossStats.BiteDamage);
                 if (showDebug)
                 {
                     Debug.Log("Bite");
                 }
+                Collider.enabled = false;
             }
         }
     }

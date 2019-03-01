@@ -7,6 +7,12 @@ using UnityEngine.AI;
 public class CrocEnemyMono : MonoBehaviour
 {
     //Hiding and showing in Inspector
+    [SerializeField,Tooltip("Attack Damage Output")]
+    private int attackDamage = 10;
+    public int AttackDamage
+    {
+        get { return attackDamage; }
+    }
     [SerializeField]
     private GameObject player;
 

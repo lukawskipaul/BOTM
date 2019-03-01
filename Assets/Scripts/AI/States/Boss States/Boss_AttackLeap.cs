@@ -25,7 +25,10 @@ public class Boss_AttackLeap : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Deactivate Hitbox On Boss' Hands
-        animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = false;
+        if (animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled)
+        {
+            animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = false;
+        }
         animator.SetBool("isLeapAttacking",false);
     }
 

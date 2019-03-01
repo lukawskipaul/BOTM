@@ -8,8 +8,6 @@ public class BossEnemyMono : MonoBehaviour
 {
     //Hiding and showing in Inspector
     [SerializeField]
-    private int Health = 100;
-    [SerializeField]
     private GameObject player;
 
     private NavMeshAgent agent;
@@ -18,8 +16,37 @@ public class BossEnemyMono : MonoBehaviour
     private Animator anim;
     [SerializeField]
     private bool showDebug = true;
-    [SerializeField,Tooltip("Layer must be set to 'Player' for cast to work(and Enemy if neccessary)")]
+    [SerializeField, Tooltip("Layer must be set to 'Player' for cast to work(and Enemy if neccessary)")]
     private LayerMask ObstacleMask;
+    #region Damage Modifier Fields
+    [Header("Damage Modifiers")]
+    [Header("Head")]
+    [SerializeField,Tooltip("Headbutt Damage Output")]
+    private int headbuttDamage = 10;
+    public int HeadbuttDamage
+    {
+        get { return headbuttDamage; }
+    }
+    [SerializeField,Tooltip("Bite Damage Output")]
+    private int biteDamage = 25;
+    public int BiteDamage
+    {
+        get { return biteDamage; }
+    }
+    [Header("Paw")]
+    [SerializeField, Tooltip("Claw Attack Damage Output")]
+    private int clawDamage = 15;
+    public int ClawDamage
+    {
+        get { return clawDamage; }
+    }
+    [SerializeField, Tooltip("Attack Leap Damage Output")]
+    private int attackLeapDamage = 20;
+    public int AttackLeapDamage
+    {
+        get { return attackLeapDamage; }
+    }
+    #endregion
 
     // Start is called before the first frame update
     void Start()

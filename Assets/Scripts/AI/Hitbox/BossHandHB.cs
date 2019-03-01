@@ -7,12 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class BossHandHB : MonoBehaviour
 {
-    [SerializeField, Tooltip("Claw Attack Damage Output")]
-    private int clawDamage = 15;
-    [SerializeField, Tooltip("Attack Leap Damage Output")]
-    private int attackLeapDamage = 20;
     [SerializeField]
     private bool showDebug = true;
+    private BossEnemyMono bossStats;
     private Animator parentAnim;//Get animator controller
     public Collider Collider { get; private set; }
     private void Start()
@@ -20,7 +17,8 @@ public class BossHandHB : MonoBehaviour
         Collider = this.GetComponent<Collider>();
         Collider.isTrigger = true;//Automatically set collider to a trigger
         Collider.enabled = false;//Initially turns off collider
-        parentAnim = this.GetComponentInParent<Animator>();
+        parentAnim = this.GetComponentInParent<Animator>();//Get reference to animator
+        bossStats = this.GetComponentInParent<BossEnemyMono>();
     }
     /// <summary>
     /// Trigger event which detects whether the hitbox collided with the player
@@ -33,20 +31,23 @@ public class BossHandHB : MonoBehaviour
             if (parentAnim.GetBool("isClawing"))
             {
                 //Claw Damage output towards Player
-                other.GetComponent<PlayerHealth>().DamagePlayer(clawDamage);
+                other.GetComponent<PlayerHealth>().DamagePlayer(bossStats.ClawDamage);
                 if (showDebug)
                 {
                     Debug.Log("Claw");
                 }
+                Collider.enabled = false;
             }
             if (parentAnim.GetBool("isLeapAttacking"))
             {
                 ////Attack Leap Damage output towards Player
-                other.GetComponent<PlayerHealth>().DamagePlayer(attackLeapDamage);
+                other.GetComponent<PlayerHealth>().DamagePlayer(bossStats.AttackLeapDamage);
                 if (showDebug)
                 {
                     Debug.Log("Leaping Attack");
                 }
+                //Turn off collider when player is hit
+                Collider.enabled = false;
             }
         }
     }
