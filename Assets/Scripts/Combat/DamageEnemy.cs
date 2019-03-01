@@ -32,11 +32,14 @@ public class DamageEnemy : MonoBehaviour
     private void Awake()
     {
         isAttacking = false;
+
+        currentAttackDamage = baseAttackDamage;
     }
 
     /* Called in PlayerAttack to change damage to base amount */
     public void ChangeToBaseDamage()
     {
+        Debug.Log("change to base damage");
         currentAttackDamage = baseAttackDamage;
     }
 

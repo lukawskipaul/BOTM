@@ -20,8 +20,9 @@ public class PlayerAttack : MonoBehaviour
 
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
-    private const string baseAttackAnimationName = "Attack Base";
-    private const string combo1AttackAnimationName = "Attack Combo 1";
+    private const string baseAttackBooleanName = "isAttackBase";
+    private const string combo1AttackBooleanName = "isAttackCombo";
+    private const string attackAnimationTriggerName = "Attack";
 
     #endregion
 
@@ -52,22 +53,9 @@ public class PlayerAttack : MonoBehaviour
         {
             /* Cancels possible dodge queuing */
             anim.ResetTrigger("FreeLookDodge");
-            anim.ResetTrigger("LockedOnLookDodge");
+            anim.ResetTrigger("LockedOnDodge");
 
             anim.SetTrigger("Attack");
-
-            bool baseAttackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName);
-            bool combo1AttackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);
-
-            /* Changes damage value depending on whether base or combo animation is playing */
-            if (baseAttackAnimationIsPlaying)
-            {
-                swordAttack.ChangeToBaseDamage();
-            }
-            else if (combo1AttackAnimationIsPlaying)
-            {
-                swordAttack.ChangeToCombo1Damage();
-            }
         }
     }
 
@@ -76,6 +64,18 @@ public class PlayerAttack : MonoBehaviour
         /* Play TK pull animation when push button is pressed */
         if (Input.GetButtonDown(tkThrowButtonName))
         {
+            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
+
+            ///* Cancels possible combo attack queuing */
+            //if (attackAnimationIsPlaying)
+            //{
+            //    anim.ResetTrigger(attackAnimationTriggerName);
+            //}
+
+            ///* Cancels possible dodge queuing */
+            //anim.ResetTrigger("FreeLookDodge");
+            //anim.ResetTrigger("LockedOnDodge");
+
             //TODO: play animation
             //TODO: change enemy location
             //TODO: stun enemy?
@@ -104,6 +104,8 @@ public class PlayerAttack : MonoBehaviour
     {
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
+
+        //subscribe to detectobject OnEnemyObjDetected
     }
 
     /* Unsubscribe from events */
@@ -111,6 +113,8 @@ public class PlayerAttack : MonoBehaviour
     {
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
+
+        //unsubscribe to detectobject OnEnemyObjDetected
     }
 
     #region Animation Events

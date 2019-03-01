@@ -53,9 +53,9 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float strafeSpeed = 1;
 
-    [Tooltip("How long the boss character strafes in one direction before alternating (in seconds)")]
-    [SerializeField]
-    private float strafeTime = 1;
+    //[Tooltip("How long the boss character strafes in one direction before alternating (in seconds)")]
+    //[SerializeField]
+    //private float strafeTime = 1;
 
     [Tooltip("The maximum distance that the boss character can jump back")]
     [SerializeField]
@@ -65,6 +65,8 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float lookRotationSpeed = 1;
 
+    [SerializeField,Tooltip("[Seconds]How long the strafing will last before the boss switches to a different state.")]
+    private float strafeStateDuration = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -120,10 +122,10 @@ public class BossAI : MonoBehaviour
         get { return strafeSpeed; }
     }
 
-    public float StrafeTime
-    {
-        get { return strafeTime; }
-    }
+    //public float StrafeTime
+    //{
+    //    get { return strafeTime; }
+    //}
 
     public float JumpBackDistance
     {
@@ -140,6 +142,10 @@ public class BossAI : MonoBehaviour
         get { return obstacleMask; }
     }
 
+    public float StrafingStateDuration
+    {
+        get { return strafeStateDuration; }
+    } 
     /*// Update is called once per frame
     void Update()
     {

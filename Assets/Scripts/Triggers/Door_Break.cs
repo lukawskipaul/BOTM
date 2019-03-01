@@ -6,8 +6,10 @@ public class Door_Break : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "TeleObjects" || other.gameObject.tag == "ThrownObj")
+        Debug.Log("Collision detected");
+        if (other.gameObject.tag == "ThrownObj")
         {
+            Debug.Log("Thrown object detected");
             GameObject.Destroy(gameObject);
         }
     }
