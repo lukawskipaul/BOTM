@@ -49,7 +49,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove && isOnGround)
         {
             Rotate();
         }
@@ -57,7 +57,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove && isOnGround)
         {
             Move();
 

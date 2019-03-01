@@ -39,14 +39,14 @@ public class DamageEnemy : MonoBehaviour
     /* Called in PlayerAttack to change damage to base amount */
     public void ChangeToBaseDamage()
     {
-        Debug.Log("Change to base damage.");
+        //Debug.Log("Change to base damage.");
         currentAttackDamage = baseAttackDamage;
     }
 
     /* Called in PlayerAttack to change damage to combo 1 amount */
     public void ChangeToCombo1Damage()
     {
-        Debug.Log("Change to combo damage.");
+        //Debug.Log("Change to combo damage.");
         currentAttackDamage = combo1AttackDamage;
     }
 
