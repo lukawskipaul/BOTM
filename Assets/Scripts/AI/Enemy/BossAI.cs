@@ -21,8 +21,10 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private NavMeshAgent bossNavMeshAgent;
 
+    [Tooltip("The list of tags that the boss will recognize as an enemy\n" +
+        "All other tags are considered an obstacle")]
     [SerializeField]
-    private LayerMask obstacleMask;
+    private LayerMask targetMask;
 
     [Tooltip("A scalar used to determine how far past a target point the boss charges")]
     [SerializeField]
@@ -65,13 +67,41 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float lookRotationSpeed = 1;
 
+    [Tooltip("The maximum radius of the explosion attack\n" +
+        "The blue circle around the boss in the Scene window")]
+    [SerializeField]
+    private float maximumExplosionRadius = 0.0f;
+
+    [Tooltip("The rate that the explosion attack grows over time")]
+    [SerializeField]
+    [Range(0.0f, 0.25f)]
+    private float explosionRateOfGrowth = 0.0f;
+
     [SerializeField,Tooltip("[Seconds]How long the strafing will last before the boss switches to a different state.")]
     private float strafeStateDuration = 7;
+
+    // The list of all tags that the boss recognizes as an obstacle
+    private LayerMask obstacleMask;
+
+    // The current size of the boss' explosion attack
+    // Used for debugging
+    private float currentExplosionRadius = 0.0f;
+
+    // The objects that can be caught in the boss' explosion attack
+    // USed for debugging
+    private List<Transform> openTargets = new List<Transform>();
+
     // Start is called before the first frame update
     void Start()
     {
         bossNavMeshAgent = GetComponent<NavMeshAgent>();
-        obstacleMask = ~obstacleMask;
+        obstacleMask = ~targetMask;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, currentExplosionRadius);
     }
 
     // Getters/ Setters
@@ -142,10 +172,37 @@ public class BossAI : MonoBehaviour
         get { return obstacleMask; }
     }
 
+    public LayerMask TargetMask
+    {
+        get { return targetMask; }
+    }
+
     public float StrafingStateDuration
     {
         get { return strafeStateDuration; }
-    } 
+    }
+
+    public float CurrentExplosionRadius
+    {
+        set { currentExplosionRadius = value; }
+    }
+
+    public float MaximumExplosionRadius
+    {
+        get { return maximumExplosionRadius; }
+    }
+
+    public float ExplosionRateOfGrowth
+    {
+        get { return explosionRateOfGrowth; }
+    }
+
+    public List<Transform> OpenTargets
+    {
+        get { return openTargets; }
+        set { openTargets = value; }
+    }
+
     /*// Update is called once per frame
     void Update()
     {
