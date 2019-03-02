@@ -67,10 +67,6 @@ public class RootMotionMovementController : MonoBehaviour
                 FreeLookDodge();
                 LockedOnDodge();
             }
-            else
-            {
-                CancelQueuingDuringDodgeCooldown();
-            }
         }
     }
 
@@ -136,25 +132,6 @@ public class RootMotionMovementController : MonoBehaviour
             anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
 
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
-        }
-    }
-
-    private void CancelQueuingDuringDodgeCooldown()
-    {
-        /* Cancel attack queuing even when dodge cooldown is active */
-        if (Input.GetButtonDown(dodgeButtonName))
-        {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
-            /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
-            anim.SetBool(attackAnimationBooleanName, false);
-
-            /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
         }
     }
 
