@@ -75,6 +75,7 @@ public class PlayerHealthTest : MonoBehaviour
         HealthRegenTrigger();
         HealthAtMax();
         CheckIfRegenIsFalse();
+        HealthRegen();
 
 
 
@@ -88,8 +89,9 @@ public class PlayerHealthTest : MonoBehaviour
 
     public void DamagePlayer(float amount)
     {
-        StopCoroutine(HealthRegen());
+        //StopCoroutine(HealthRegen());
         isDamaged = true;
+        healthIsRegenerating = false;
 
         currentHealth -= amount;
 
@@ -131,7 +133,7 @@ public class PlayerHealthTest : MonoBehaviour
             midHighDamageVignetteActive = false;
             highDamageVignetteActive = false;
 
-            StopCoroutine(HealthRegen());
+            StopCoroutine(HealthRegenTimer());
         }
         
     }
@@ -180,7 +182,7 @@ public class PlayerHealthTest : MonoBehaviour
             playerDamageVignetteLowMidDamage.gameObject.SetActive(false);
             playerDamageVignetteMidHighDamage.gameObject.SetActive(false);
             playerDamageVignetteHighDamage.gameObject.SetActive(false);
-            StopCoroutine(HealthRegen());
+            StopCoroutine(HealthRegenTimer());
         }
     }
 
@@ -373,21 +375,38 @@ public class PlayerHealthTest : MonoBehaviour
         if (isDamaged == true)
         {
             //StartCoroutine(DamageIsHandled());
-            StartCoroutine(HealthRegen());
+            StartCoroutine(HealthRegenTimer());
+            healthIsRegenerating = false;
         }
     }
 
-    IEnumerator HealthRegen()
+    IEnumerator HealthRegenTimer()
     {
-        yield return new WaitForSecondsRealtime(5.0f);
-        currentHealth += Time.deltaTime * 5;
+        
+         
+        yield return new WaitForSecondsRealtime(4.0f);
+        //currentHealth += Time.deltaTime * 5;
         healthIsRegenerating = true;
         isDamaged = false;
     }
 
+    void HealthRegen()
+    {
+        if (healthIsRegenerating == false)
+        {
+            StopCoroutine(HealthRegenTimer());
+            currentHealth = currentHealth;
+        }
+
+        if (healthIsRegenerating == true)
+        {
+            currentHealth += Time.deltaTime * 5;
+        }
+    }
+
     void StopRegen()
     {
-        StopCoroutine(HealthRegen());
+        StopCoroutine(HealthRegenTimer());
         
     }
 
@@ -403,7 +422,7 @@ public class PlayerHealthTest : MonoBehaviour
     {
         if (currentHealth >= maxHealth)
         {
-            StopCoroutine(HealthRegen());
+            StopRegen();
             currentHealth = maxHealth;
             healthIsRegenerating = false;
             isDamaged = false;
