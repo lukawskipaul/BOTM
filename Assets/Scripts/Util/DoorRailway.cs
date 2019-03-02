@@ -4,26 +4,40 @@ using UnityEngine;
 
 public class DoorRailway : TriggerableObject
 {
-    public Transform[] target;
+    public Transform[] OpenPoint;
+    public Transform[] ClosePoint;
     public float speed;
     private int current;
 
     void Update()
     { 
-        if (GetComponent<TriggerableObject>().isTriggered == true)
+        if (GetComponent<TriggerableObject>().IsTriggered == true)
         {
-            Railway();
+            RailwayOpen();
+        }
+        if (GetComponent<TriggerableObject>().isTriggered == false)
+        {
+            RailwayClose();
         }
        
     }
-    public void Railway()
+    public void RailwayOpen()
     {
-        if (transform.position != target[current].position)
+        if (transform.position != OpenPoint[current].position)
         {
-            Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
+            Vector3 pos = Vector3.MoveTowards(transform.position, OpenPoint[current].position, speed * Time.deltaTime);
             GetComponent<Rigidbody>().MovePosition(pos);
         }
-        else current = (current + 1) % target.Length;
+        else current = (current + 1) % OpenPoint.Length;
     }
-    
+    public void RailwayClose()
+    {
+        if (transform.position != ClosePoint[current].position)
+        {
+            Vector3 pos = Vector3.MoveTowards(transform.position, ClosePoint[current].position, speed * Time.deltaTime);
+            GetComponent<Rigidbody>().MovePosition(pos);
+        }
+        else current = (current + 1) % ClosePoint.Length;
+    }
+
 }
