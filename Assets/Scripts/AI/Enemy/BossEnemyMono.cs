@@ -27,21 +27,13 @@ public class BossEnemyMono : MonoBehaviour
     #region Damage Modifier Fields
     [Header("Damage Modifiers")]
     [Header("Head")]
-<<<<<<< HEAD
     [SerializeField,Tooltip("Headbutt Damage Output")]
-=======
-    [SerializeField, Tooltip("Headbutt Damage Output")]
->>>>>>> 8096902f3cf73cbdf0d5991462e2ed742cae6ede
     private int headbuttDamage = 10;
     public int HeadbuttDamage
     {
         get { return headbuttDamage; }
     }
-<<<<<<< HEAD
     [SerializeField,Tooltip("Bite Damage Output")]
-=======
-    [SerializeField, Tooltip("Bite Damage Output")]
->>>>>>> 8096902f3cf73cbdf0d5991462e2ed742cae6ede
     private int biteDamage = 25;
     public int BiteDamage
     {
@@ -112,7 +104,7 @@ public class BossEnemyMono : MonoBehaviour
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-            Debug.DrawLine(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y / 2, player.transform.position.z), Color.cyan); /*player.transform.position + new Vector3(0,this.player.GetComponent<Collider>().bounds.center.y * 2 / 3, 0)*/
+            Debug.DrawLine(new Vector3(this.transform.position.x,this.transform.position.y+0.5f,this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y /2, player.transform.position.z), Color.cyan); /*player.transform.position + new Vector3(0,this.player.GetComponent<Collider>().bounds.center.y * 2 / 3, 0)*/
         }
     }
     public GameObject Player
