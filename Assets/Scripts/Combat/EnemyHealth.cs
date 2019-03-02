@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+<<<<<<< HEAD
 //GameObjects with this script require the components below, a component will be added if one does not exist
 
+=======
+>>>>>>> bd855dd0812d2914691abf053d90e3b6317dbca0
 //This script goes on the enemies
 public class EnemyHealth : MonoBehaviour
 {
