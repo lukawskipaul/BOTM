@@ -7,11 +7,7 @@ using UnityEngine.AI;
 public class CrocEnemyMono : MonoBehaviour
 {
     //Hiding and showing in Inspector
-<<<<<<< HEAD
-    [SerializeField, Tooltip("Attack Damage Output")]
-=======
     [SerializeField,Tooltip("Attack Damage Output")]
->>>>>>> BJ-Paner
     private int attackDamage = 10;
     public int AttackDamage
     {
@@ -53,15 +49,6 @@ public class CrocEnemyMono : MonoBehaviour
             // Player layer must be set to "Player" for cast to work
             //This condition is to prevent the enemy from detecting player through walls
             if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
-<<<<<<< HEAD
-			{
-				Debug.Log("Linecast hit");
-			}
-			else
-			{
-				Debug.Log("Linecast no hit");
-			}
-=======
             {
                 Debug.Log("Linecast hit");
             }
@@ -69,12 +56,11 @@ public class CrocEnemyMono : MonoBehaviour
             {
                 Debug.Log("Linecast no hit");
             }
->>>>>>> BJ-Paner
             //Plays the Death Animation for Ai
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                anim.SetTrigger("Flinch");
                 anim.SetTrigger("Die");
+                anim.SetTrigger("Flinch");
             }
         }
         CalculateDetectionRange();
@@ -85,36 +71,17 @@ public class CrocEnemyMono : MonoBehaviour
     /// </summary>
     private void CalculateDetectionRange()
     {
-<<<<<<< HEAD
-        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask) 
-=======
         if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask)
->>>>>>> BJ-Paner
             && !anim.GetBool("PlayerDetected"))
         {
             anim.SetBool("PlayerDetected", true);
             if (showDebug) Debug.Log("Enemy Detected!");
-            AkSoundEngine.PostEvent("Play_CrocAggro1", gameObject);
         }
 
     }
     /// <summary>
     /// If player is out of the enemy's attack range or there is an obstacle in the way, the enemy won't attack
     /// </summary>
-<<<<<<< HEAD
-    private void AttackRangeAnimExecution(){
-		if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) || 
-            Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
-		{
-			anim.SetBool("InAttackRange", false);
-		}
-		else
-		{
-			anim.SetBool("InAttackRange", true);
-		}
-	}
-	//Debug Tools to show in editor at all times if enabled
-=======
     private void AttackRangeAnimExecution()
     {
         if (enemyStats.SquaredDistanceToPlayer(this.gameObject, player) > (agent.stoppingDistance * agent.stoppingDistance) ||
@@ -128,17 +95,12 @@ public class CrocEnemyMono : MonoBehaviour
         }
     }
     //Debug Tools to show in editor at all times if enabled
->>>>>>> BJ-Paner
     void OnDrawGizmos()
     {
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-<<<<<<< HEAD
-            Debug.DrawLine(new Vector3(this.transform.position.x,this.transform.position.y + 0.5f,this.transform.position.z), new Vector3(player.transform.position.x,player.transform.position.y + 0.5f,player.transform.position.z), Color.cyan);
-=======
             Debug.DrawLine(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), Color.cyan);
->>>>>>> BJ-Paner
         }
     }
 

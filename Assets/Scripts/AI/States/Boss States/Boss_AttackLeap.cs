@@ -12,7 +12,7 @@ public class Boss_AttackLeap : StateMachineBehaviour
         animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = true;
         animator.SetBool("isLeapAttacking", true);
         //Select a random evasive action
-        animator.SetInteger("EvasiveChoice", (int)Random.value * 4);//0-3
+        animator.SetInteger("EvasiveChoice",(int)Random.value * 4);//0-3
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -29,11 +29,7 @@ public class Boss_AttackLeap : StateMachineBehaviour
         {
             animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = false;
         }
-<<<<<<< HEAD
-        animator.SetBool("isLeapAttacking", false);
-=======
         animator.SetBool("isLeapAttacking",false);
->>>>>>> BJ-Paner
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
