@@ -15,27 +15,25 @@ public class BossEnemyMono : MonoBehaviour
 
     private Animator anim;
     [SerializeField]
+    private int ultimateDamage = 50;
+    public int UltimateDamage
+    {
+        get { return ultimateDamage; }
+    }
+    [SerializeField]
     private bool showDebug = true;
     [SerializeField, Tooltip("Layer must be set to 'Player' for cast to work(and Enemy if neccessary)")]
     private LayerMask ObstacleMask;
     #region Damage Modifier Fields
     [Header("Damage Modifiers")]
     [Header("Head")]
-<<<<<<< HEAD
-    [SerializeField, Tooltip("Headbutt Damage Output")]
-=======
     [SerializeField,Tooltip("Headbutt Damage Output")]
->>>>>>> BJ-Paner
     private int headbuttDamage = 10;
     public int HeadbuttDamage
     {
         get { return headbuttDamage; }
     }
-<<<<<<< HEAD
-    [SerializeField, Tooltip("Bite Damage Output")]
-=======
     [SerializeField,Tooltip("Bite Damage Output")]
->>>>>>> BJ-Paner
     private int biteDamage = 25;
     public int BiteDamage
     {
@@ -106,7 +104,7 @@ public class BossEnemyMono : MonoBehaviour
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-            Debug.DrawLine(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y / 2, player.transform.position.z), Color.cyan); /*player.transform.position + new Vector3(0,this.player.GetComponent<Collider>().bounds.center.y * 2 / 3, 0)*/
+            Debug.DrawLine(new Vector3(this.transform.position.x,this.transform.position.y+0.5f,this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y /2, player.transform.position.z), Color.cyan); /*player.transform.position + new Vector3(0,this.player.GetComponent<Collider>().bounds.center.y * 2 / 3, 0)*/
         }
     }
     public GameObject Player

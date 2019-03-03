@@ -31,9 +31,6 @@ public class PlayerAttack : MonoBehaviour
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
-    public GameObject journalMenu;
-    public GameObject pauseMenu;
-
     #endregion
 
     private void Awake()
@@ -50,7 +47,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (canAttack && !journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
+        if (canAttack)
         {
             Attack();
 
