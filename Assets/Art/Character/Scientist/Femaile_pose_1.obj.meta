@@ -11,8 +11,14 @@ ModelImporter:
     2300000: Jacket:polySurface2
     3300000: Jacket:polySurface2
     4300000: Jacket:polySurface2
+    6400000: Jacket:polySurface2
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jacket_polySurface2Mat
+    second: {fileID: 2100000, guid: cefef82fec510454b9ce9a2b4cc58d9f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +51,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 0.06
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

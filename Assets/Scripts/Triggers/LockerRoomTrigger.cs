@@ -1,0 +1,18 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LockerRoomTrigger : MonoBehaviour
+{
+    [SerializeField]
+    private Rigidbody PipeBlock;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            PipeBlock.isKinematic = false;
+            //player stun animation here
+        }
+    }
+}
