@@ -70,9 +70,7 @@ public class Telekinesis : MonoBehaviour
         {
             LevitateObject(levitatableGO);
         }
-
     }
-
 
     private void TelekinesisInputHandler()
     {

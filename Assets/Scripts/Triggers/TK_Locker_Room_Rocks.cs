@@ -10,7 +10,7 @@ public class TK_Locker_Room_Rocks : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             myAnimatorController.SetBool("Locker_Room_Falling_Stuff", true);
-            Destroy(gameObject);
+            //Destroy(gameObject);
 
             AkSoundEngine.PostEvent("Play_MetalDoorSlamCloseNoPower", gameObject);
         }
