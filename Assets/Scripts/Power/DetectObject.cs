@@ -43,10 +43,10 @@ public class DetectObject : MonoBehaviour
     {
         Ray ray = new Ray(detectVector, detectPoint.forward);
         RaycastHit hit;
-        int IgnoreRayCastLayer = 1 << 2;
-        int PlayerLayer = 1 << 9;
+        int IgnoreRayCastLayer = 1 << LayerMask.NameToLayer("Ignore Raycast");
+        int PlayerLayer = 1 << LayerMask.NameToLayer("Player");
         int SearchingLayerMask = ~((IgnoreRayCastLayer) | (PlayerLayer));
-        if (FindTag == "Enemy") SearchingLayerMask = 1 << 12;
+        if (FindTag == "Enemy") SearchingLayerMask = 1 << LayerMask.NameToLayer("Enemies");
         if (Physics.SphereCast(ray, detectRadius, out hit, detectRange, SearchingLayerMask))
         {
             if (hit.collider.gameObject.tag == FindTag)
@@ -100,10 +100,7 @@ public class DetectObject : MonoBehaviour
 
     private void FindSecondEnemy()
     {
-        int IgnoreRayCastLayer = 1 << 2;
-        int PlayerLayer = 1 << 9;
-        int EnemyLayer = 1 << 12;
-        int IgnoredLayerMask = ~((IgnoreRayCastLayer) | (PlayerLayer));
+        int EnemyLayer = 1 << LayerMask.NameToLayer("Enemies");
         Camera LockOnCamera = GameObject.Find("Main Camera").GetComponent<Cinemachine.CinemachineBrain>().OutputCamera;
         Plane[] CameraFrame = new Plane[1];
         if (LockOnCamera != null) CameraFrame = GeometryUtility.CalculateFrustumPlanes(LockOnCamera);
@@ -111,6 +108,7 @@ public class DetectObject : MonoBehaviour
         Collider[] EnemiesInRange = Physics.OverlapSphere(transform.position, detectRange, EnemyLayer);
         List<GameObject> EnemiesInFrame = new List<GameObject>();
         GameObject EnemyToReturn = null;
+
         if (CameraFrame.Length == 6)
         {
             foreach (Collider EnemyCollider in EnemiesInRange)
@@ -118,7 +116,9 @@ public class DetectObject : MonoBehaviour
                 bool InCamera = GeometryUtility.TestPlanesAABB(CameraFrame, EnemyCollider.bounds);
                 if (InCamera) EnemiesInFrame.Add(EnemyCollider.gameObject);
             }
+
             EnemiesInFrame.Sort(CompareDistanceToCenterScreen);
+
             foreach (GameObject Enemy in EnemiesInFrame)
             {
                 int PlaneIndexToTranslate;
