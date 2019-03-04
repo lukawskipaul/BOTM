@@ -15,6 +15,12 @@ public class BossEnemyMono : MonoBehaviour
 
     private Animator anim;
     [SerializeField]
+    private int ultimateDamage = 50;
+    public int UltimateDamage
+    {
+        get { return ultimateDamage; }
+    }
+    [SerializeField]
     private bool showDebug = true;
     [SerializeField, Tooltip("Layer must be set to 'Player' for cast to work(and Enemy if neccessary)")]
     private LayerMask ObstacleMask;

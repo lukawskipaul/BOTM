@@ -11,7 +11,7 @@ public class Boss_AttackIdle : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Select random attack action
-        animator.SetInteger("AttackChoice", (int)(Random.value * 8));
+        animator.SetInteger("AttackChoice", (int)(Random.value * 9));//0-8
         //Set look position to player
         lookpos = Quaternion.LookRotation(animator.GetComponent<BossEnemyMono>().Player.transform.position - animator.transform.position);
     }
@@ -25,7 +25,6 @@ public class Boss_AttackIdle : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //animator.gameObject.transform.rotation = Quaternion.LookRotation(lookpos, Vector3.up);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
