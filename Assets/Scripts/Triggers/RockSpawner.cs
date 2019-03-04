@@ -7,10 +7,12 @@ public class RockSpawner : MonoBehaviour
 {
     public GameObject RockPrefab;
     private GameObject activeRock;
+    public float SpawnDelay;
+
 
     private void Start()
     {
-        SpawnNewRock();
+        InvokeRepeating("SpawnNewRock", SpawnDelay);
     }
 
     public void SpawnNewRock()
