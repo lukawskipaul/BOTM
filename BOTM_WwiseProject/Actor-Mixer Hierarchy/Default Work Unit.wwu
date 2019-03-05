@@ -546,6 +546,9 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Telekinesis" ID="{652B60EA-5AF1-4619-861B-86C62C068027}" ShortID="739264617">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>

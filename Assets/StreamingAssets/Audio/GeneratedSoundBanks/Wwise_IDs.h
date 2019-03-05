@@ -26,8 +26,8 @@ namespace AK
         static const AkUniqueID PLAY_ROCKSLIDE1 = 3618693649U;
         static const AkUniqueID PLAY_ROOM1AMBIANCEDEMO = 1605460501U;
         static const AkUniqueID PLAY_STATIC1 = 2385860965U;
-        static const AkUniqueID PLAY_TELEKINESIS = 1574242408U;
-        static const AkUniqueID PLAY_TELEKINESISTHROW = 2842595968U;
+        static const AkUniqueID PLAY_TK = 2027969869U;
+        static const AkUniqueID PLAY_TK_THROW = 2278693504U;
         static const AkUniqueID PLAY_UI_JOURNALCLOSE = 168369292U;
         static const AkUniqueID PLAY_UI_JOURNALOPEN = 2407564056U;
         static const AkUniqueID PLAY_UI_PAGEFLIP = 3236627135U;
