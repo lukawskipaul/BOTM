@@ -28,7 +28,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586501821217747928
+    m_lastTime: -8586498583138548749
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,7 +43,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586501821217488635
+    m_lastTime: -8586498526925692990
     List:
     - name: Play_AI_VO_Line1
       guid: 0ef1a86eb75a69409dc35a56fee8f50b
@@ -126,7 +126,7 @@ MonoBehaviour:
       - ElementName: Play_CrocAggro1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocAggro1
-      maxAttenuation: 0
+      maxAttenuation: 15
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocDeath1
@@ -138,7 +138,7 @@ MonoBehaviour:
       - ElementName: Play_CrocDeath1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocDeath1
-      maxAttenuation: 0
+      maxAttenuation: 15
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocFlinch1
@@ -150,7 +150,7 @@ MonoBehaviour:
       - ElementName: Play_CrocFlinch1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocFlinch1
-      maxAttenuation: 0
+      maxAttenuation: 15
       maxDuration: 0
       minDuration: 0
     - name: Play_ElectricPassive
@@ -162,7 +162,7 @@ MonoBehaviour:
       - ElementName: Play_ElectricPassive
         ObjectType: 3
       Path: Default Work Unit\Play_ElectricPassive
-      maxAttenuation: 0
+      maxAttenuation: 15
       maxDuration: 0
       minDuration: 0
     - name: Play_FootStepsBoss
@@ -186,7 +186,7 @@ MonoBehaviour:
       - ElementName: Play_MetalDoorBreakdown1
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorBreakdown1
-      maxAttenuation: 0
+      maxAttenuation: 10
       maxDuration: 0
       minDuration: 0
     - name: Play_MetalDoorSlamCloseNoPower
@@ -198,7 +198,7 @@ MonoBehaviour:
       - ElementName: Play_MetalDoorSlamCloseNoPower
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorSlamCloseNoPower
-      maxAttenuation: 0
+      maxAttenuation: 10
       maxDuration: 0
       minDuration: 0
     - name: Play_Rockslide1
@@ -210,7 +210,7 @@ MonoBehaviour:
       - ElementName: Play_Rockslide1
         ObjectType: 3
       Path: Default Work Unit\Play_Rockslide1
-      maxAttenuation: 0
+      maxAttenuation: 25
       maxDuration: 0
       minDuration: 0
     - name: Play_Room1AmbianceDemo
@@ -318,6 +318,18 @@ MonoBehaviour:
       - ElementName: Play_WaterDripping
         ObjectType: 3
       Path: Default Work Unit\Play_WaterDripping
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Telekinesis
+      guid: 77cfd7f5e00e2545abc145fc325731bd
+      id: 2803498362
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_Telekinesis
+        ObjectType: 3
+      Path: Default Work Unit\Stop_Telekinesis
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0

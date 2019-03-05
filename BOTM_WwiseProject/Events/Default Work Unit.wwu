@@ -325,6 +325,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Stop_Telekinesis" ID="{F5D7CF77-0EE0-4525-ABC1-45FC325731BD}">
+					<ChildrenList>
+						<Action Name="" ID="{ED30EBC4-190B-460D-B38A-39D2BE9369FA}" ShortID="118411415">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Telekinesis" ID="{652B60EA-5AF1-4619-861B-86C62C068027}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
