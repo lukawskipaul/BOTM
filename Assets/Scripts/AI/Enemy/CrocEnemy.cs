@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CrocEnemy : EnemyAI
 {
-    public CrocEnemy(int _health) : base(_health)
+    public CrocEnemy() : base()
     {
 
     }
