@@ -101,13 +101,7 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
         if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
@@ -124,13 +118,7 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play hop dodge animation when dodge button is pressed and is locked on */
         if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
@@ -147,13 +135,7 @@ public class RootMotionMovementController : MonoBehaviour
         /* Cancel attack queuing even when dodge cooldown is active */
         if (Input.GetButtonDown(dodgeButtonName))
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
