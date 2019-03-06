@@ -51,8 +51,6 @@ public class DetectObject : MonoBehaviour
                 {
                     if (nonTagObjHit.collider.gameObject.tag != FindTag && nonTagObjHit.collider.gameObject.tag != "Checkpoint" && nonTagObjHit.collider.gameObject.tag != "Untagged")
                     {
-
-                        Debug.Log("PathBlockedByObject: " + nonTagObjHit.collider.gameObject);
                         pathToObjClear = false;
                         //the path to the enemy is blocked, give up searching
                         if (FindTag == "Enemy") EnemySearchNeeded = false;
@@ -60,8 +58,6 @@ public class DetectObject : MonoBehaviour
                     else
                     {
                         pathToObjClear = true;
-
-                        Debug.Log(FindTag + "Detected");
                     }
                 }
                 else
@@ -83,7 +79,7 @@ public class DetectObject : MonoBehaviour
         }
         else
         {
-            Debug.Log("No" + FindTag);
+            //Debug.Log("No" + FindTag);
             if (FindTag == "LevitatableObject") OnLevObjectGone();
             if (FindTag == "Enemy")
             {

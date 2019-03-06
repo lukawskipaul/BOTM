@@ -23,9 +23,10 @@ public class RootMotionMovementController : MonoBehaviour
     private bool isOnGround;
 
     private const string dodgeButtonName = "Dodge";
-    private const string baseAttackAnimationName = "Attack Base";
-    private const string combo1AttackAnimationName = "Attack Combo 1";
-    private const string attackAnimationTriggerName = "Attack";
+    private const string baseAttackBooleanName = "isAttackBase";
+    private const string combo1AttackBooleanName = "isAttackCombo";
+    private const string attackAnimationBooleanName = "Attack";
+    private const string tkPullAnimationTriggerName = "TKPull";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
@@ -49,7 +50,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove && isOnGround)
         {
             Rotate();
         }
@@ -57,7 +58,7 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove && isOnGround)
         {
             Move();
 
@@ -65,6 +66,10 @@ public class RootMotionMovementController : MonoBehaviour
             {
                 FreeLookDodge();
                 LockedOnDodge();
+            }
+            else
+            {
+                CancelQueuingDuringDodgeCooldown();
             }
         }
     }
@@ -93,14 +98,17 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
         if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
-            bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) ||
-                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
+            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
 
             /* Cancels possible combo attack queuing */
-            if (attackAnimationIsPlaying)
-            {
-                anim.ResetTrigger(attackAnimationTriggerName);
-            }
+            //if (attackAnimationIsPlaying)
+            //{
+            //    anim.SetBool(attackAnimationBooleanName, false);
+            //}
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(freeLookDodgeAnimationTriggerName);
 
@@ -113,18 +121,40 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play hop dodge animation when dodge button is pressed and is locked on */
         if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
         {
-            bool attackAnimationIsPlaying = anim.GetCurrentAnimatorStateInfo(0).IsName(baseAttackAnimationName) ||
-                anim.GetCurrentAnimatorStateInfo(0).IsName(combo1AttackAnimationName);      //will need to be updated with all attack animation names
+            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
 
             /* Cancels possible combo attack queuing */
-            if (attackAnimationIsPlaying)
-            {
-                anim.ResetTrigger(attackAnimationTriggerName);
-            }
+            //if (attackAnimationIsPlaying)
+            //{
+            //    anim.SetBool(attackAnimationBooleanName, false);
+            //}
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
 
             //rb.AddForce(transform.up * 10.0f, ForceMode.Impulse);     //change to animation event if we need it
+        }
+    }
+
+    private void CancelQueuingDuringDodgeCooldown()
+    {
+        /* Cancel attack queuing even when dodge cooldown is active */
+        if (Input.GetButtonDown(dodgeButtonName))
+        {
+            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
+
+            /* Cancels possible combo attack queuing */
+            //if (attackAnimationIsPlaying)
+            //{
+            //    anim.SetBool(attackAnimationBooleanName, false);
+            //}
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
         }
     }
 
@@ -156,18 +186,6 @@ public class RootMotionMovementController : MonoBehaviour
         {
             canMove = true;
         }
-    }
-
-    private void OnEnable()
-    {
-        Telekinesis.TeleManualMovingObject += SetCanMove;
-        Telekinesis.TeleStoppedManualMovingObject += SetCanMove;
-    }
-
-    private void OnDisable()
-    {
-        Telekinesis.TeleManualMovingObject -= SetCanMove;
-        Telekinesis.TeleStoppedManualMovingObject -= SetCanMove;
     }
 
     #region Animation Events
