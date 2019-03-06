@@ -77,8 +77,7 @@ public class RootMotionMovementController : MonoBehaviour
         }
         else
         {
-            anim.SetFloat("MoveZ", 0);
-            anim.SetFloat("MoveX", 0);
+            Debug.Log("Player not on Ground");
         }
     }
 
