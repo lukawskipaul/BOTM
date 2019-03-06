@@ -105,7 +105,7 @@ public class RootMotionMovementController : MonoBehaviour
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(freeLookDodgeAnimationTriggerName);
 
@@ -122,7 +122,7 @@ public class RootMotionMovementController : MonoBehaviour
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
 
@@ -139,7 +139,7 @@ public class RootMotionMovementController : MonoBehaviour
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+            anim.ResetTrigger(tkPullAnimationTriggerName);
         }
     }
 

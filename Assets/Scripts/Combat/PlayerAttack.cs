@@ -64,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown(attackButtonName))
         {
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             /* Cancels possible dodge queuing */
             anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
@@ -89,14 +89,14 @@ public class PlayerAttack : MonoBehaviour
             /* Search for enemy to attack */
             DetectObject.TKPullTargetSearchNeeded = true;
 
-            //TODO: play animation
+            anim.SetTrigger(tkPullAnimationTriggerName);
+
             //TODO: change enemy location
             //TODO: stun enemy?
 
             enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
 
             //TODO: ability cooldown as animation event
-            //TODO: cancel possible tk pull queuing in other spots when animation is set up
         }
     }
 
