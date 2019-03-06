@@ -4,6 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}" PersistMode="Standalone">
 			<ChildrenList>
 				<Sound Name="CaveAmbiance1" ID="{C61696FA-729E-4A31-89F1-BCC9E8416718}" ShortID="238602525">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -720,6 +727,123 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{BCB3C1CD-45EC-441F-A00F-AF02A362ADA8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="HowlingWind1" ID="{D47A7E4B-A9AF-43DE-828D-C89FFB04F756}" ShortID="99316403">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Wind" ID="{B04FEF14-9964-4F90-8CD4-52F54BDADA3D}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="HowlingWind1" ID="{335EE8CF-F066-4F72-8648-05145D7BCC8A}" ShortID="826357523">
+							<Language>SFX</Language>
+							<AudioFile>HowlingWind1.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="HowlingWind1" ID="{335EE8CF-F066-4F72-8648-05145D7BCC8A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SlidingDoorClose" ID="{E4B07D79-9268-4445-A0B2-F83930C53C7E}" ShortID="478796706">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SlidingDoorClose" ID="{7C5D9368-B3E6-4B5F-B792-5B42D02E9F7B}" ShortID="698697704">
+							<Language>SFX</Language>
+							<AudioFile>SlidingDoorClose.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SlidingDoorClose" ID="{7C5D9368-B3E6-4B5F-B792-5B42D02E9F7B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SlidingDoorOpen" ID="{10F49571-485F-42C1-A948-6258924C6CA4}" ShortID="257587834">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SlidingDoorOpen" ID="{A2DC105C-553C-4B65-ADA9-551D1DEDD8A6}" ShortID="526947358">
+							<Language>SFX</Language>
+							<AudioFile>SlidingDoorOpen.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SlidingDoorOpen" ID="{A2DC105C-553C-4B65-ADA9-551D1DEDD8A6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="GeneratorHum" ID="{8F9706C4-E8EB-4DCC-B67C-86E205284E16}" ShortID="506267039">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-710</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-19</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="GeneratorRoom" ID="{B2C7D2BD-3C40-4253-B588-E15F9CC93A3B}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="GeneratorHum" ID="{14715729-1B63-45B0-9CBB-5C640F34294B}" ShortID="227186557">
+							<Language>SFX</Language>
+							<AudioFile>GeneratorHum.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="GeneratorHum" ID="{14715729-1B63-45B0-9CBB-5C640F34294B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

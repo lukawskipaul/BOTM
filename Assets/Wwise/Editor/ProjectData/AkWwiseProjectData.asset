@@ -28,7 +28,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586498465972471308
+    m_lastTime: -8586497609857451622
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,7 +43,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586498464156189466
+    m_lastTime: -8586497609857331946
     List:
     - name: Play_AI_VO_Line1
       guid: 0ef1a86eb75a69409dc35a56fee8f50b
@@ -105,6 +105,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_CharacterFootsteps
+      guid: 864e366e62e9534295895909f5b501e6
+      id: 2603299628
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CharacterFootsteps
+        ObjectType: 3
+      Path: Default Work Unit\Play_CharacterFootsteps
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_ClawAttack
       guid: 74af3ac9b3070649939fcb6098880aaf
       id: 3273478103
@@ -126,7 +138,7 @@ MonoBehaviour:
       - ElementName: Play_CrocAggro1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocAggro1
-      maxAttenuation: 15
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocDeath1
@@ -138,7 +150,7 @@ MonoBehaviour:
       - ElementName: Play_CrocDeath1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocDeath1
-      maxAttenuation: 15
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocFlinch1
@@ -150,7 +162,7 @@ MonoBehaviour:
       - ElementName: Play_CrocFlinch1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocFlinch1
-      maxAttenuation: 15
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_ElectricPassive
@@ -162,7 +174,7 @@ MonoBehaviour:
       - ElementName: Play_ElectricPassive
         ObjectType: 3
       Path: Default Work Unit\Play_ElectricPassive
-      maxAttenuation: 15
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_FootStepsBoss
@@ -177,6 +189,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_GeneratorHum
+      guid: 0bdf07ea26ffd44d865df987d1a88a4e
+      id: 2540781641
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GeneratorHum
+        ObjectType: 3
+      Path: Default Work Unit\Play_GeneratorHum
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_HowlingWind
+      guid: 174c6e3d3f57f34ab5053eac44054790
+      id: 3210990662
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_HowlingWind
+        ObjectType: 3
+      Path: Default Work Unit\Play_HowlingWind
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_MetalDoorBreakdown1
       guid: 02d493344504d44e878febefefd17542
       id: 709837481
@@ -186,7 +222,7 @@ MonoBehaviour:
       - ElementName: Play_MetalDoorBreakdown1
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorBreakdown1
-      maxAttenuation: 10
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_MetalDoorSlamCloseNoPower
@@ -198,7 +234,7 @@ MonoBehaviour:
       - ElementName: Play_MetalDoorSlamCloseNoPower
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorSlamCloseNoPower
-      maxAttenuation: 10
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_Rockslide1
@@ -210,7 +246,7 @@ MonoBehaviour:
       - ElementName: Play_Rockslide1
         ObjectType: 3
       Path: Default Work Unit\Play_Rockslide1
-      maxAttenuation: 25
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_Room1AmbianceDemo
@@ -222,6 +258,30 @@ MonoBehaviour:
       - ElementName: Play_Room1AmbianceDemo
         ObjectType: 3
       Path: Default Work Unit\Play_Room1AmbianceDemo
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_SlidingDoorClose
+      guid: 03a3d2c265e1f54ab32b8ee1cb7ec508
+      id: 3751804120
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_SlidingDoorClose
+        ObjectType: 3
+      Path: Default Work Unit\Play_SlidingDoorClose
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_SlidingDoorOpen
+      guid: 05487ce2c994564e9c84fbc92c933ddc
+      id: 2541895580
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_SlidingDoorOpen
+        ObjectType: 3
+      Path: Default Work Unit\Play_SlidingDoorOpen
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -359,6 +419,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /BOTM_WwiseProject
+  - /BOTM_WwiseProject/Events
+  - /BOTM_WwiseProject/Events/Default Work Unit
   - /BOTM_WwiseProject/SoundBanks
   - /BOTM_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1

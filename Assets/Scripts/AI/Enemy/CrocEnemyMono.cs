@@ -61,6 +61,7 @@ public class CrocEnemyMono : MonoBehaviour
             {
                 anim.SetTrigger("Die");
                 anim.SetTrigger("Flinch");
+                
             }
         }
         CalculateDetectionRange();
@@ -73,6 +74,7 @@ public class CrocEnemyMono : MonoBehaviour
     {
         if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask)
             && !anim.GetBool("PlayerDetected"))
+            AkSoundEngine.PostEvent("Play_CrocAggro1", gameObject);
         {
             anim.SetBool("PlayerDetected", true);
             if (showDebug) Debug.Log("Enemy Detected!");

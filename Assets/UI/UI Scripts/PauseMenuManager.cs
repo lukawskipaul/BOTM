@@ -101,6 +101,7 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        AkSoundEngine.PostEvent("Play_UI_JournalOpen", gameObject);
     }
     private void CloseJournal()
     {
@@ -110,6 +111,7 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
     }
 
     public void QuitToMainButton()
