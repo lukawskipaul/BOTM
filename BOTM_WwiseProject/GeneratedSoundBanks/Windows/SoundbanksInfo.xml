@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
 	<RootPaths>
-		<ProjectRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\BOTM\BOTM_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -29,13 +29,17 @@
 				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1" MaxAttenuation="15.000000"/>
 				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1" MaxAttenuation="15.000000"/>
 				<Event Id="2387251670" Name="Play_ElectricPassive" ObjectPath="\Events\Default Work Unit\Play_ElectricPassive" MaxAttenuation="15.000000"/>
+				<Event Id="2540781641" Name="Play_GeneratorHum" ObjectPath="\Events\Default Work Unit\Play_GeneratorHum" MaxAttenuation="40.000000"/>
+				<Event Id="3210990662" Name="Play_HowlingWind" ObjectPath="\Events\Default Work Unit\Play_HowlingWind" MaxAttenuation="10.000000"/>
 				<Event Id="709837481" Name="Play_MetalDoorBreakdown1" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown1" MaxAttenuation="10.000000"/>
 				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower" MaxAttenuation="10.000000"/>
 				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1" MaxAttenuation="25.000000"/>
 				<Event Id="1605460501" Name="Play_Room1AmbianceDemo" ObjectPath="\Events\Default Work Unit\Play_Room1AmbianceDemo"/>
+				<Event Id="3751804120" Name="Play_SlidingDoorClose" ObjectPath="\Events\Default Work Unit\Play_SlidingDoorClose" MaxAttenuation="10.000000"/>
+				<Event Id="2541895580" Name="Play_SlidingDoorOpen" ObjectPath="\Events\Default Work Unit\Play_SlidingDoorOpen" MaxAttenuation="10.000000"/>
 				<Event Id="2385860965" Name="Play_Static1" ObjectPath="\Events\Default Work Unit\Play_Static1"/>
-				<Event Id="1574242408" Name="Play_Telekinesis" ObjectPath="\Events\Default Work Unit\Play_Telekinesis"/>
-				<Event Id="2842595968" Name="Play_TelekinesisThrow" ObjectPath="\Events\Default Work Unit\Play_TelekinesisThrow"/>
+				<Event Id="2027969869" Name="Play_TK" ObjectPath="\Events\Default Work Unit\Play_TK"/>
+				<Event Id="2278693504" Name="Play_TK_Throw" ObjectPath="\Events\Default Work Unit\Play_TK_Throw"/>
 				<Event Id="168369292" Name="Play_UI_JournalClose" ObjectPath="\Events\Default Work Unit\Play_UI_JournalClose"/>
 				<Event Id="2407564056" Name="Play_UI_JournalOpen" ObjectPath="\Events\Default Work Unit\Play_UI_JournalOpen"/>
 				<Event Id="3236627135" Name="Play_UI_PageFlip" ObjectPath="\Events\Default Work Unit\Play_UI_PageFlip"/>
@@ -45,6 +49,10 @@
 				<File Id="167009388" Language="SFX">
 					<ShortName>Room1AmbianceDemo.wav</ShortName>
 					<Path>SFX\Room1AmbianceDemo_8956FC97.wem</Path>
+				</File>
+				<File Id="227186557" Language="SFX">
+					<ShortName>GeneratorHum.wav</ShortName>
+					<Path>SFX\GeneratorHum_8956FC97.wem</Path>
 				</File>
 				<File Id="288346796" Language="SFX">
 					<ShortName>WaterDripping.wav</ShortName>
@@ -62,6 +70,10 @@
 					<ShortName>CaveAmbiance1.wav</ShortName>
 					<Path>SFX\CaveAmbiance1_56D34C19.wem</Path>
 				</File>
+				<File Id="526947358" Language="SFX">
+					<ShortName>SlidingDoorOpen.wav</ShortName>
+					<Path>SFX\SlidingDoorOpen_56D34C19.wem</Path>
+				</File>
 				<File Id="530152481" Language="SFX">
 					<ShortName>UI_JournalOpen.wav</ShortName>
 					<Path>SFX\UI_JournalOpen_56D34C19.wem</Path>
@@ -77,6 +89,10 @@
 				<File Id="690560153" Language="SFX">
 					<ShortName>CrocAggro1.wav</ShortName>
 					<Path>SFX\CrocAggro1_56D34C19.wem</Path>
+				</File>
+				<File Id="698697704" Language="SFX">
+					<ShortName>SlidingDoorClose.wav</ShortName>
+					<Path>SFX\SlidingDoorClose_56D34C19.wem</Path>
 				</File>
 				<File Id="735080199" Language="SFX">
 					<ShortName>MetalDoorBreakdown1.wav</ShortName>
@@ -94,9 +110,13 @@
 					<ShortName>AI VO Line 1 Take 2.wav</ShortName>
 					<Path>SFX\AI VO Line 1 Take 2_56D34C19.wem</Path>
 				</File>
+				<File Id="826357523" Language="SFX">
+					<ShortName>HowlingWind1.wav</ShortName>
+					<Path>SFX\HowlingWind1_8956FC97.wem</Path>
+				</File>
 				<File Id="843081733" Language="SFX">
 					<ShortName>TelekinesisExtraHigh.wav</ShortName>
-					<Path>SFX\TelekinesisExtraHigh_56D34C19.wem</Path>
+					<Path>SFX\TelekinesisExtraHigh_8956FC97.wem</Path>
 				</File>
 				<File Id="906061255" Language="SFX">
 					<ShortName>LTG _Ambient_Battle_ [Ambient Loop].wav</ShortName>
