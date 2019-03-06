@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 [RequireComponent(typeof(Animator))]
@@ -72,10 +73,10 @@ public class CrocEnemyMono : MonoBehaviour
     /// </summary>
     private void CalculateDetectionRange()
     {
-        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask)
-            && !anim.GetBool("PlayerDetected"))
-            AkSoundEngine.PostEvent("Play_CrocAggro1", gameObject);
+        if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
+            
         {
+            AkSoundEngine.PostEvent("Play_CrocAggro1", gameObject);
             anim.SetBool("PlayerDetected", true);
             if (showDebug) Debug.Log("Enemy Detected!");
         }
@@ -103,9 +104,10 @@ public class CrocEnemyMono : MonoBehaviour
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
             Debug.DrawLine(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), Color.cyan);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(this.transform.position, detectionDistance);
         }
     }
-
     public GameObject Target()
     {
         return player;
