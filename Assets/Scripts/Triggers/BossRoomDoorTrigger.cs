@@ -21,5 +21,6 @@ public class BossRoomDoorTrigger : MonoBehaviour
     {
         ThisBattery.gameObject.SetActive(true);
         BossDoor.SetBool("Boss_Door_Set_Open", true);
+        AkSoundEngine.PostEvent("Play_SlidingDoorOpen", gameObject);
     }
 }

@@ -199,7 +199,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Telekinesis" ID="{1C6916B9-BC30-4257-BAE5-C1E2EE19BA20}">
+				<Event Name="Play_TK" ID="{1C6916B9-BC30-4257-BAE5-C1E2EE19BA20}">
 					<ChildrenList>
 						<Action Name="" ID="{600EE7CB-C947-4127-95F3-58272B67F8FB}" ShortID="677090219">
 							<PropertyList>
@@ -255,7 +255,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_TelekinesisThrow" ID="{EA03671D-FBDB-4899-A88C-A779DB527DD0}">
+				<Event Name="Play_TK_Throw" ID="{EA03671D-FBDB-4899-A88C-A779DB527DD0}">
 					<ChildrenList>
 						<Action Name="" ID="{3D0FA707-B692-4786-A965-881EBAFB8682}" ShortID="934585618">
 							<PropertyList>
@@ -320,6 +320,90 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{E7D579FC-1ECE-458E-91B3-2B2631BE5D38}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_TK" ID="{F5D7CF77-0EE0-4525-ABC1-45FC325731BD}">
+					<ChildrenList>
+						<Action Name="" ID="{ED30EBC4-190B-460D-B38A-39D2BE9369FA}" ShortID="118411415">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Telekinesis" ID="{652B60EA-5AF1-4619-861B-86C62C068027}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CharacterFootsteps" ID="{6E364E86-E962-4253-9589-5909F5B501E6}">
+					<ChildrenList>
+						<Action Name="" ID="{9551DFE9-C2DB-40CD-848D-AA4CD8459AA9}" ShortID="798690761">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{F62760E5-27E4-47E8-A814-87501CAD1C06}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_HowlingWind" ID="{3D6E4C17-573F-4AF3-B505-3EAC44054790}">
+					<ChildrenList>
+						<Action Name="" ID="{9CA313D5-D379-4C7E-AEFC-3605952EA47C}" ShortID="544018085">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HowlingWind1" ID="{D47A7E4B-A9AF-43DE-828D-C89FFB04F756}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SlidingDoorOpen" ID="{E27C4805-94C9-4E56-9C84-FBC92C933DDC}">
+					<ChildrenList>
+						<Action Name="" ID="{21B20ADA-293A-4978-B60C-72F6695885B4}" ShortID="368024252">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlidingDoorOpen" ID="{10F49571-485F-42C1-A948-6258924C6CA4}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SlidingDoorClose" ID="{C2D2A303-E165-4AF5-B32B-8EE1CB7EC508}">
+					<ChildrenList>
+						<Action Name="" ID="{883A4207-791F-41EC-90E7-58FF772981BE}" ShortID="122998720">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SlidingDoorClose" ID="{E4B07D79-9268-4445-A0B2-F83930C53C7E}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_GeneratorHum" ID="{EA07DF0B-FF26-4DD4-865D-F987D1A88A4E}">
+					<ChildrenList>
+						<Action Name="" ID="{E486EF25-BCDD-478C-A980-42634C04B774}" ShortID="872686796">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GeneratorHum" ID="{8F9706C4-E8EB-4DCC-B67C-86E205284E16}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

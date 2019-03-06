@@ -23,17 +23,22 @@
 			<IncludedEvents>
 				<Event Id="3091365192" Name="Play_AI_VO_Line1" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line1"/>
 				<Event Id="3091365195" Name="Play_AI_VO_Line2" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line2"/>
+				<Event Id="2139734863" Name="Play_AmbiantMusic" ObjectPath="\Events\Default Work Unit\Play_AmbiantMusic"/>
 				<Event Id="934217562" Name="Play_CaveAmbiance1" ObjectPath="\Events\Default Work Unit\Play_CaveAmbiance1"/>
-				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1"/>
-				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1"/>
-				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1"/>
+				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1" MaxAttenuation="15.000000"/>
+				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1" MaxAttenuation="15.000000"/>
+				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1" MaxAttenuation="15.000000"/>
 				<Event Id="2387251670" Name="Play_ElectricPassive" ObjectPath="\Events\Default Work Unit\Play_ElectricPassive" MaxAttenuation="15.000000"/>
-				<Event Id="709837481" Name="Play_MetalDoorBreakdown1" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown1"/>
-				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower"/>
-				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1"/>
+				<Event Id="709837481" Name="Play_MetalDoorBreakdown1" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown1" MaxAttenuation="10.000000"/>
+				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower" MaxAttenuation="10.000000"/>
+				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1" MaxAttenuation="25.000000"/>
 				<Event Id="1605460501" Name="Play_Room1AmbianceDemo" ObjectPath="\Events\Default Work Unit\Play_Room1AmbianceDemo"/>
 				<Event Id="2385860965" Name="Play_Static1" ObjectPath="\Events\Default Work Unit\Play_Static1"/>
-				<Event Id="1574242408" Name="Play_Telekinesis" ObjectPath="\Events\Default Work Unit\Play_Telekinesis"/>
+				<Event Id="2027969869" Name="Play_TK" ObjectPath="\Events\Default Work Unit\Play_TK"/>
+				<Event Id="2278693504" Name="Play_TK_Throw" ObjectPath="\Events\Default Work Unit\Play_TK_Throw"/>
+				<Event Id="168369292" Name="Play_UI_JournalClose" ObjectPath="\Events\Default Work Unit\Play_UI_JournalClose"/>
+				<Event Id="2407564056" Name="Play_UI_JournalOpen" ObjectPath="\Events\Default Work Unit\Play_UI_JournalOpen"/>
+				<Event Id="3236627135" Name="Play_UI_PageFlip" ObjectPath="\Events\Default Work Unit\Play_UI_PageFlip"/>
 				<Event Id="1308308546" Name="Play_WaterDripping" ObjectPath="\Events\Default Work Unit\Play_WaterDripping"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -56,6 +61,10 @@
 				<File Id="340536415" Language="SFX">
 					<ShortName>CaveAmbiance1.wav</ShortName>
 					<Path>SFX\CaveAmbiance1_56D34C19.wem</Path>
+				</File>
+				<File Id="530152481" Language="SFX">
+					<ShortName>UI_JournalOpen.wav</ShortName>
+					<Path>SFX\UI_JournalOpen_56D34C19.wem</Path>
 				</File>
 				<File Id="606053402" Language="SFX">
 					<ShortName>AI VO Line 2.wav</ShortName>
@@ -87,7 +96,23 @@
 				</File>
 				<File Id="843081733" Language="SFX">
 					<ShortName>TelekinesisExtraHigh.wav</ShortName>
-					<Path>SFX\TelekinesisExtraHigh_56D34C19.wem</Path>
+					<Path>SFX\TelekinesisExtraHigh_8956FC97.wem</Path>
+				</File>
+				<File Id="906061255" Language="SFX">
+					<ShortName>LTG _Ambient_Battle_ [Ambient Loop].wav</ShortName>
+					<Path>SFX\LTG _Ambient_Battle_ [Ambient Loop]_8956FC97.wem</Path>
+				</File>
+				<File Id="948046825" Language="SFX">
+					<ShortName>UI_JournalClose.wav</ShortName>
+					<Path>SFX\UI_JournalClose_56D34C19.wem</Path>
+				</File>
+				<File Id="984849189" Language="SFX">
+					<ShortName>UI_NotePickup2.wav</ShortName>
+					<Path>SFX\UI_NotePickup2_56D34C19.wem</Path>
+				</File>
+				<File Id="1025091138" Language="SFX">
+					<ShortName>TelekinesisThrow.wav</ShortName>
+					<Path>SFX\TelekinesisThrow_56D34C19.wem</Path>
 				</File>
 				<File Id="1052687345" Language="SFX">
 					<ShortName>CrocDeath1.wav</ShortName>
