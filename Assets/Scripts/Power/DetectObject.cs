@@ -80,7 +80,7 @@ public class DetectObject : MonoBehaviour
                 }
                 if (pathToObjClear)
                 {
-                    if (FindTag == "LevitatableObject" && !TKPullTargetSearchNeeded)
+                    if (FindTag == "LevitatableObject")
                     {
                         OnLevObjectDetected(hit.collider.gameObject);
                     }
