@@ -72,6 +72,11 @@ public class RootMotionMovementController : MonoBehaviour
                 CancelQueuingDuringDodgeCooldown();
             }
         }
+        else
+        {
+            anim.SetFloat("MoveZ", 0);
+            anim.SetFloat("MoveX", 0);
+        }
     }
 
     private void Move()
