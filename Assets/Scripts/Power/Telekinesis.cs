@@ -10,7 +10,7 @@ public class Telekinesis : MonoBehaviour
     public static event Action TeleStoppedManualMovingObject;
 
     Rigidbody objectRigidBody;
-    public GameObject levitatableGO;
+    private GameObject levitatableGO;
     bool isLiftingObject = false;
 
     [SerializeField]
@@ -265,12 +265,14 @@ public class Telekinesis : MonoBehaviour
     {
         DetectObject.LevObjectDetected += SetLevitatableObject;
         DetectObject.LevObjectGone += ResetLevitatableObj;
+        PlayerHealth.TakeDamage += DropObject;
     }
 
     private void OnDisable()
     {
         DetectObject.LevObjectDetected -= SetLevitatableObject;
         DetectObject.LevObjectGone -= ResetLevitatableObj;
+        PlayerHealth.TakeDamage -= DropObject;
     }
     #endregion
 }
