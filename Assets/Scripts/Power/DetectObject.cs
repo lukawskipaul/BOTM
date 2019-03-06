@@ -86,15 +86,18 @@ public class DetectObject : MonoBehaviour
                     }
                     else if (FindTag == "Enemy")
                     {
-                        OnEnemyObjDetected(hit.collider.gameObject);
-                        //We found an enemy, we don't need to search anymore
-                        EnemySearchNeeded = false;
-                    }
-                    else if (TKPullTargetSearchNeeded)
-                    {
-                        OnTKPullTargetDetected(hit.collider.gameObject);
-                        //We found an enemy, we don't need to search anymore
-                        TKPullTargetSearchNeeded = false;
+                        if (TKPullTargetSearchNeeded)
+                        {
+                            OnTKPullTargetDetected(hit.collider.gameObject);
+                            //We found an enemy, we don't need to search anymore
+                            TKPullTargetSearchNeeded = false;
+                        }
+                        else
+                        {
+                            OnEnemyObjDetected(hit.collider.gameObject);
+                            //We found an enemy, we don't need to search anymore
+                            EnemySearchNeeded = false;
+                        }
                     }
                 }
             }
