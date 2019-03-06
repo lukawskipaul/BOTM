@@ -87,7 +87,7 @@ public class PlayerAttack : MonoBehaviour
             anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
 
             /* Search for enemy to attack */
-            DetectObject.EnemySearchNeeded = true;
+            DetectObject.TKPullTargetSearchNeeded = true;
 
             //TODO: play animation
             //TODO: change enemy location
@@ -125,7 +125,7 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
 
-        DetectObject.EnemyObjDetected += FindEnemy;
+        DetectObject.TKPullTargetDetected += FindEnemy;
     }
 
     /* Unsubscribe from events */
@@ -134,7 +134,7 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
 
-        DetectObject.EnemyObjDetected -= FindEnemy;
+        DetectObject.TKPullTargetDetected -= FindEnemy;
     }
 
     #region Animation Events
