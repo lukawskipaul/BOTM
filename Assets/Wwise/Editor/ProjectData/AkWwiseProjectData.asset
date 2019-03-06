@@ -28,7 +28,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586501821217747928
+    m_lastTime: -8586497609857451622
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,7 +43,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586501821217488635
+    m_lastTime: -8586497609857331946
     List:
     - name: Play_AI_VO_Line1
       guid: 0ef1a86eb75a69409dc35a56fee8f50b
@@ -102,6 +102,18 @@ MonoBehaviour:
       - ElementName: Play_CaveAmbiance1
         ObjectType: 3
       Path: Default Work Unit\Play_CaveAmbiance1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_CharacterFootsteps
+      guid: 864e366e62e9534295895909f5b501e6
+      id: 2603299628
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CharacterFootsteps
+        ObjectType: 3
+      Path: Default Work Unit\Play_CharacterFootsteps
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -177,6 +189,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_GeneratorHum
+      guid: 0bdf07ea26ffd44d865df987d1a88a4e
+      id: 2540781641
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GeneratorHum
+        ObjectType: 3
+      Path: Default Work Unit\Play_GeneratorHum
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_HowlingWind
+      guid: 174c6e3d3f57f34ab5053eac44054790
+      id: 3210990662
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_HowlingWind
+        ObjectType: 3
+      Path: Default Work Unit\Play_HowlingWind
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_MetalDoorBreakdown1
       guid: 02d493344504d44e878febefefd17542
       id: 709837481
@@ -225,6 +261,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_SlidingDoorClose
+      guid: 03a3d2c265e1f54ab32b8ee1cb7ec508
+      id: 3751804120
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_SlidingDoorClose
+        ObjectType: 3
+      Path: Default Work Unit\Play_SlidingDoorClose
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_SlidingDoorOpen
+      guid: 05487ce2c994564e9c84fbc92c933ddc
+      id: 2541895580
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_SlidingDoorOpen
+        ObjectType: 3
+      Path: Default Work Unit\Play_SlidingDoorOpen
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Static1
       guid: 8430cf91c75ea3418fdc61932f133c7f
       id: 2385860965
@@ -249,27 +309,27 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Play_Telekinesis
+    - name: Play_TK
       guid: b916691c30bc5742bae5c1e2ee19ba20
-      id: 1574242408
+      id: 2027969869
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_Telekinesis
+      - ElementName: Play_TK
         ObjectType: 3
-      Path: Default Work Unit\Play_Telekinesis
+      Path: Default Work Unit\Play_TK
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Play_TelekinesisThrow
+    - name: Play_TK_Throw
       guid: 1d6703eadbfb9948a88ca779db527dd0
-      id: 2842595968
+      id: 2278693504
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_TelekinesisThrow
+      - ElementName: Play_TK_Throw
         ObjectType: 3
-      Path: Default Work Unit\Play_TelekinesisThrow
+      Path: Default Work Unit\Play_TK_Throw
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -321,6 +381,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_TK
+      guid: 77cfd7f5e00e2545abc145fc325731bd
+      id: 2893389503
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_TK
+        ObjectType: 3
+      Path: Default Work Unit\Stop_TK
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -347,6 +419,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /BOTM_WwiseProject
+  - /BOTM_WwiseProject/Events
+  - /BOTM_WwiseProject/Events/Default Work Unit
   - /BOTM_WwiseProject/SoundBanks
   - /BOTM_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1

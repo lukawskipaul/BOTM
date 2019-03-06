@@ -14,7 +14,7 @@ public class BossEnemyMono : MonoBehaviour
     private BossEnemy bossStats;
 
     private Animator anim;
-    [SerializeField]
+    //[SerializeField]
     private int ultimateDamage = 50;
     public int UltimateDamage
     {
@@ -74,7 +74,7 @@ public class BossEnemyMono : MonoBehaviour
             // Linecast checks if an obstacle is between the enemy and the player
             // Player layer must be set to "Player" for cast to work(and Enemy if neccessary)
             // This condition is to prevent the enemy from detecting player through walls
-            if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y+0.5f, player.transform.position.z), ObstacleMask))
+            if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y +0.5f, player.transform.position.z), ObstacleMask))
             {
                 Debug.Log("Linecast hit");
             }
@@ -90,7 +90,7 @@ public class BossEnemyMono : MonoBehaviour
     /// </summary>
     private void ObstacleDetection()
     {
-        if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y +0.5f, player.transform.position.z), ObstacleMask))
+        if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
         {
             anim.SetBool("isLineOfObstacle", true);
         }

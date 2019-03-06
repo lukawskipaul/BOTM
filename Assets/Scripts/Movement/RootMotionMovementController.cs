@@ -15,6 +15,9 @@ public class RootMotionMovementController : MonoBehaviour
 {
     #region Variables
 
+    [SerializeField]
+    private float dodgeCooldownInSeconds = 2.0f;
+
     private Animator anim;
     private Rigidbody rb;
 
@@ -208,7 +211,7 @@ public class RootMotionMovementController : MonoBehaviour
     {
         canDodge = false;
 
-        yield return new WaitForSecondsRealtime(2.0f);
+        yield return new WaitForSecondsRealtime(dodgeCooldownInSeconds);
 
         canDodge = true;
     }

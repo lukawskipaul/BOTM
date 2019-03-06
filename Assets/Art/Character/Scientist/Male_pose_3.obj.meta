@@ -11,8 +11,14 @@ ModelImporter:
     2300000: polySurface2
     3300000: polySurface2
     4300000: polySurface2
+    6400000: polySurface2
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface2Mat
+    second: {fileID: 2100000, guid: e290f22c209fa0e4ea5eb9e68b8a5b76, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +51,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 0.3
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
