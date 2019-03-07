@@ -409,6 +409,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_CrocAttack1" ID="{2C0D7161-98C8-4BB4-9306-A1C07DFF30CF}">
+					<ChildrenList>
+						<Action Name="" ID="{C5EAE36A-AAC1-47E3-9AF8-30BA8DBE6BF1}" ShortID="467506569">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocAttack1" ID="{B89D1EA2-85C5-462B-9DD2-3285A4E51F83}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

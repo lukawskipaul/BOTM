@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID PLAY_AMBIANTMUSIC = 2139734863U;
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
         static const AkUniqueID PLAY_CROCAGGRO1 = 149344824U;
+        static const AkUniqueID PLAY_CROCATTACK1 = 1952116840U;
         static const AkUniqueID PLAY_CROCDEATH1 = 1217506344U;
         static const AkUniqueID PLAY_CROCFLINCH1 = 4111079834U;
         static const AkUniqueID PLAY_ELECTRICPASSIVE = 2387251670U;

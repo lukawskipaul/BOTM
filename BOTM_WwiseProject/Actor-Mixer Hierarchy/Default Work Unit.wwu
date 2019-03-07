@@ -846,6 +846,25 @@
 						<ActiveSource Name="GeneratorHum" ID="{14715729-1B63-45B0-9CBB-5C640F34294B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="CrocAttack1" ID="{B89D1EA2-85C5-462B-9DD2-3285A4E51F83}" ShortID="199100018">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="CrocAttack1" ID="{4AA4D2A4-212D-4B73-ABFA-501D631B7EDE}" ShortID="449308922">
+							<Language>SFX</Language>
+							<AudioFile>CrocAttack1.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="CrocAttack1" ID="{4AA4D2A4-212D-4B73-ABFA-501D631B7EDE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
