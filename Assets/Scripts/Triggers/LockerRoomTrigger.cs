@@ -18,6 +18,7 @@ public class LockerRoomTrigger : MonoBehaviour
             //player stun animation here
             LockerRoomTriggerBreak.SetActive(true);
             Destroy(this.gameObject.GetComponent<Collider>());
+            AkSoundEngine.PostEvent("Play_MetalDoorSlamCloseNoPower", gameObject);
         }
     }
 }
