@@ -53,7 +53,8 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove && isOnGround)
+        if (canMove)
+            //&& isOnGround)
         {
             Rotate();
         }
@@ -61,7 +62,8 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove && isOnGround)
+        if (canMove)
+            //&& isOnGround)
         {
             Move();
 
