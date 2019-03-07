@@ -24,6 +24,13 @@ public class RootMotionMovementController : MonoBehaviour
     private bool canMove;
     private bool canDodge;
     private bool isOnGround;
+    public bool IsOnGround
+    {
+        set
+        {
+            isOnGround = value;
+        }
+    }
 
     private const string dodgeButtonName = "Dodge";
     private const string baseAttackBooleanName = "isAttackBase";
@@ -140,24 +147,6 @@ public class RootMotionMovementController : MonoBehaviour
 
             /* Cancels possible tk pull queuing */
             anim.ResetTrigger(tkPullAnimationTriggerName);
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        /* Check if player is on a walkable surface */
-        if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
-        {
-            isOnGround = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        /* Check if player is not on a walkable surface */
-        if (other.gameObject.tag == "Ground")
-        {
-            isOnGround = false;
         }
     }
 
