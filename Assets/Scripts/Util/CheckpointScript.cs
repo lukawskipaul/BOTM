@@ -14,5 +14,6 @@ public class CheckpointScript : MonoBehaviour
     {
         Debug.Log(gameObject.name + "is Activated");
         isActivated = value;
+        GetComponent<BoxCollider>().enabled = false;
     }
 }

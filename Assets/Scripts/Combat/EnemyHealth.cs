@@ -3,23 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CapsuleCollider))]
-//This script goes on enemy
+//This script goes on the enemies
 public class EnemyHealth : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
     private int maxHealth = 100;
 
     private Animator anim;
-    
+
     private int currentHealth;
+
+    #endregion
+
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        anim = GetComponent<Animator>();
+        anim = this.gameObject.GetComponent<Animator>();
+
+        healthBar.maxValue = maxHealth;
 
         UpdateHealthBar();
     }
@@ -38,13 +47,18 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             anim.SetTrigger("Die");
-            GetComponent<CapsuleCollider>().enabled = false;
+            
+        }
+        else
+        {
+            anim.SetTrigger("Flinch");
+            
         }
     }
 
     private void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = currentHealth / maxHealth;
+        healthBar.value = currentHealth;
     }
 }

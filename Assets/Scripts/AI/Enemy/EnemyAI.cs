@@ -4,31 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI {
-    protected int Health;
     
-    public EnemyAI(int _health)
+    public EnemyAI()
     {
-        Health = _health;
-    }
-    /// <summary>
-    /// Calculate how much Health the enemy has after taking damage 
-    /// </summary>
-    /// <param name="_damage">How much health to take away</param>
-    public void TakeDamage(int _damage)
-    {
-        Health -= _damage;
-        if (Health < 0)
-        {
-            Health = 0;
-        }
-    }
-    /// <summary>
-    /// Retrieves the amount of heath the enemy has
-    /// </summary>
-    /// <returns>The enemy's Health</returns>
-    public int GetHealth()
-    {
-        return Health;
+
     }
     /// <summary>
     /// Calculate the square distance between the Player and the Enemy
