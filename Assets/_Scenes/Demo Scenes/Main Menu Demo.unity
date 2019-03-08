@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31805715, g: 0.44666988, b: 0.65232426, a: 1}
+  m_IndirectSpecularColor: {r: 0.3180566, g: 0.44666904, b: 0.65232384, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -120403,6 +120403,36 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: VilcaneLabs
       objectReference: {fileID: 0}
+    - target: {fileID: 1014663795605386053, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014663795605386053, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014663795605386053, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014663795605386053, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7324633962914483744}
+    - target: {fileID: 1014663795605386053, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnQuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014663795605386053, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1b1b74801f7484796947d8c2801506, type: 3}
 --- !u!1 &7324633962914483741 stripped
@@ -120424,4 +120454,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOutTexture: {fileID: 2800000, guid: d10afed3030dc86418c719d4bf1dd533, type: 3}
-  fadeSpeed: 0.1
+  fadeSpeed: 0.12
+--- !u!114 &7324633962914483744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7324633963467791257, guid: fb1b1b74801f7484796947d8c2801506,
+    type: 3}
+  m_PrefabInstance: {fileID: 7324633962914483740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324633962914483741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05845a1d4321d97489d6893347b20992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
