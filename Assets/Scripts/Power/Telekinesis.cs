@@ -22,7 +22,8 @@ public class Telekinesis : MonoBehaviour
     [SerializeField]
     float transfromMoveSpeed = 3f;
     [SerializeField]
-    float telePushPullSpeed = 3f;
+    [Range(.5f, 2f)]
+    float telePushPullSpeed = 1f;
     [SerializeField]
     float maxSpeed = 1f;
     [SerializeField]
@@ -155,7 +156,8 @@ public class Telekinesis : MonoBehaviour
 
     private void MoveLevitateTransform()
     {
-        zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+        //zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+        zInput = Input.GetAxis("PushPull") * (telePushPullSpeed * .01f);
 
         if ((Vector3.Distance(levitatableGO.transform.position, player.transform.position) <= minDistance))
         {
