@@ -47,14 +47,16 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        InputCameraChange cameraChange = GetComponent<InputCameraChange>();
+        canDoTKPull = cameraChange.lockOn;
         if (canAttack)
         {
             Attack();
 
-            //if (canDoTKPull)
-            //{
-            //    TKPull();
-            //}
+            if (canDoTKPull)
+            {
+                TKPull();
+            }
         }
     }
 
@@ -76,8 +78,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void TKPull()
     {
+        InputCameraChange cameraChange = GetComponent<InputCameraChange>();
         /* Play TK pull animation when push button is pressed */
-        if (Input.GetButtonDown(tkThrowButtonName))
+        if (Input.GetButtonDown(tkThrowButtonName) && cameraChange.lockOn)
         {
             /* Cancels possible combo attack queuing */
             anim.SetBool(attackAnimationBooleanName, false);

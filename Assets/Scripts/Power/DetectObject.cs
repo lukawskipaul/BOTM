@@ -110,8 +110,6 @@ public class DetectObject : MonoBehaviour
             if (FindTag == "LevitatableObject")
             {
                 OnLevObjectGone();
-
-                hit.collider.GetComponent<MeshRenderer>().material.color = Color.white;
             }
 
             if (FindTag == "Enemy")
