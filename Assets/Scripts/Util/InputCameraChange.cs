@@ -81,6 +81,16 @@ public class InputCameraChange : MonoBehaviour
             }
         }
     }
+    //return the current Gameobject the player is locked on to
+    public GameObject GetLockOnTarget()
+    {
+        if (lockOn)
+        {
+            return LockOnTarget;
+        }
+        else return null;
+    }
+
 
     private void UnLockCamera()
     {
