@@ -83,6 +83,7 @@ public class DetectObject : MonoBehaviour
                     if (FindTag == "LevitatableObject")
                     {
                         OnLevObjectDetected(hit.collider.gameObject);
+                        hit.collider.GetComponent<MeshRenderer>().material.color = Color.green;
                     }
                     else if (FindTag == "Enemy")
                     {
@@ -106,7 +107,13 @@ public class DetectObject : MonoBehaviour
         else
         {
             Debug.Log("No" + FindTag);
-            if (FindTag == "LevitatableObject") OnLevObjectGone();
+            if (FindTag == "LevitatableObject")
+            {
+                OnLevObjectGone();
+
+                hit.collider.GetComponent<MeshRenderer>().material.color = Color.white;
+            }
+
             if (FindTag == "Enemy")
             {
                 OnEnemyObjGone();
