@@ -154,6 +154,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="Footsteps" ID="{F62760E5-27E4-47E8-A814-87501CAD1C06}" ShortID="581589718">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -863,6 +870,25 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="CrocAttack1" ID="{4AA4D2A4-212D-4B73-ABFA-501D631B7EDE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="PipeFall" ID="{98879796-DC3D-4D53-B560-195878E39E2C}" ShortID="446294385">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pipe Fall 3" ID="{7914FC4C-8B20-4EBB-B63A-8FCCCF558AE5}" ShortID="639194255">
+							<Language>SFX</Language>
+							<AudioFile>Pipe Fall 3.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Pipe Fall 3" ID="{7914FC4C-8B20-4EBB-B63A-8FCCCF558AE5}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

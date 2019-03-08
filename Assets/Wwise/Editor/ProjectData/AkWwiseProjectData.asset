@@ -28,7 +28,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586497609857451622
+    m_lastTime: -8586495926120187863
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,7 +43,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586497609857331946
+    m_lastTime: -8586495922798110091
     List:
     - name: Play_AI_VO_Line1
       guid: 0ef1a86eb75a69409dc35a56fee8f50b
@@ -141,6 +141,18 @@ MonoBehaviour:
       maxAttenuation: 15
       maxDuration: 0
       minDuration: 0
+    - name: Play_CrocAttack1
+      guid: 61710d2cc898b44b9306a1c07dff30cf
+      id: 1952116840
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CrocAttack1
+        ObjectType: 3
+      Path: Default Work Unit\Play_CrocAttack1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_CrocDeath1
       guid: 7ca569e9bbdb8c4aac0ebc49c7b8f2ee
       id: 1217506344
@@ -235,6 +247,18 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorSlamCloseNoPower
       maxAttenuation: 10
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_PipeFall
+      guid: d475f647c022ca4189bfb03fee21bf2b
+      id: 726787325
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PipeFall
+        ObjectType: 3
+      Path: Default Work Unit\Play_PipeFall
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_Rockslide1
