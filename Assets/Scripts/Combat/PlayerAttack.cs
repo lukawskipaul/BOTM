@@ -64,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown(attackButtonName))
         {
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             /* Cancels possible dodge queuing */
             anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
@@ -79,13 +79,7 @@ public class PlayerAttack : MonoBehaviour
         /* Play TK pull animation when push button is pressed */
         if (Input.GetButtonDown(tkThrowButtonName))
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible dodge queuing */
@@ -93,16 +87,16 @@ public class PlayerAttack : MonoBehaviour
             anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
 
             /* Search for enemy to attack */
-            DetectObject.EnemySearchNeeded = true;
+            DetectObject.TKPullTargetSearchNeeded = true;
 
-            //TODO: play animation
+            anim.SetTrigger(tkPullAnimationTriggerName);
+
             //TODO: change enemy location
             //TODO: stun enemy?
 
             enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
 
             //TODO: ability cooldown as animation event
-            //TODO: cancel possible tk pull queuing in other spots when animation is set up
         }
     }
 
@@ -131,7 +125,7 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
 
-        DetectObject.EnemyObjDetected += FindEnemy;
+        DetectObject.TKPullTargetDetected += FindEnemy;
     }
 
     /* Unsubscribe from events */
@@ -140,25 +134,12 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
 
-        DetectObject.EnemyObjDetected -= FindEnemy;
+        DetectObject.TKPullTargetDetected -= FindEnemy;
     }
 
     #region Animation Events
 
     /* Remember, changing name of animation event functions requires changing the function in the animation event! */
-
-    /* Was originally intended to prevent attack queuing, but not helpful with combo system active */
-    /* Called at start of attack animation to prevent being able to attack again */
-    //public void StartAttackAnimation()
-    //{
-    //    canAttack = false;
-    //}
-
-    ///* Called at end of attack animation to allow being able to attack again */
-    //public void EndAttackAnimation()
-    //{
-    //    canAttack = true;
-    //}
 
     /* Called during specific attack animation frame to start doing damage to hit enemies */
     public void StartDamageWindow()
