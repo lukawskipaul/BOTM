@@ -22,7 +22,7 @@ public class PauseMenuManager : MonoBehaviour
     void Start()
     {
         pauseMenu.gameObject.SetActive(false);
-        journalMenu.gameObject.SetActive(true);
+        journalMenu.gameObject.SetActive(false);
         controlsCanvas.gameObject.SetActive(false);
     }
 
