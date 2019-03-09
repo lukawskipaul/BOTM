@@ -12,13 +12,10 @@ public class GainTK : MonoBehaviour
     [SerializeField]
     private TKShieldController thisTKSC;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnEnable()
     {
-        if(other.tag == "Player")
-        {
-            GivePlayerTK();
-            Destroy(this.gameObject);
-        }
+        GivePlayerTK();
+        Destroy(this.gameObject);
     }
 
     private void GivePlayerTK()

@@ -17,7 +17,9 @@ namespace AK
         static const AkUniqueID PLAY_AI_VO_LINE2 = 3091365195U;
         static const AkUniqueID PLAY_AMBIANTMUSIC = 2139734863U;
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
+        static const AkUniqueID PLAY_CHARACTERFOOTSTEPS = 2603299628U;
         static const AkUniqueID PLAY_CROCAGGRO1 = 149344824U;
+        static const AkUniqueID PLAY_CROCATTACK1 = 1952116840U;
         static const AkUniqueID PLAY_CROCDEATH1 = 1217506344U;
         static const AkUniqueID PLAY_CROCFLINCH1 = 4111079834U;
         static const AkUniqueID PLAY_ELECTRICPASSIVE = 2387251670U;
@@ -25,6 +27,7 @@ namespace AK
         static const AkUniqueID PLAY_HOWLINGWIND = 3210990662U;
         static const AkUniqueID PLAY_METALDOORBREAKDOWN1 = 709837481U;
         static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
+        static const AkUniqueID PLAY_PIPEFALL = 726787325U;
         static const AkUniqueID PLAY_ROCKSLIDE1 = 3618693649U;
         static const AkUniqueID PLAY_ROOM1AMBIANCEDEMO = 1605460501U;
         static const AkUniqueID PLAY_SLIDINGDOORCLOSE = 3751804120U;
