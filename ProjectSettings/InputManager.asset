@@ -65,7 +65,7 @@ InputManager:
     dead: 0.001
     sensitivity: 1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
     axis: 1
     joyNum: 0
@@ -110,7 +110,7 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0
+    dead: 0.3
     sensitivity: 1
     snap: 0
     invert: 0
@@ -142,7 +142,7 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0
+    dead: 0.3
     sensitivity: 1
     snap: 0
     invert: 1
@@ -202,9 +202,9 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: f
+    positiveButton: joystick button 2
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: f
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -291,7 +291,23 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 8
+    axis: 2
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: PushPull
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 10
+    snap: 0
+    invert: 0
+    type: 1
+    axis: 2
     joyNum: 0
   - serializedVersion: 3
     m_Name: Throw
@@ -300,7 +316,7 @@ InputManager:
     negativeButton: 
     positiveButton: mouse 1
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: joystick button 5
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
