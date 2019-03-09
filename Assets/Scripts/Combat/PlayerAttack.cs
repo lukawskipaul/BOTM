@@ -47,16 +47,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        InputCameraChange cameraChange = GetComponent<InputCameraChange>();
-        canDoTKPull = cameraChange.lockOn;
         if (canAttack)
         {
             Attack();
 
-            if (canDoTKPull)
-            {
-                TKPull();
-            }
+            //if (canDoTKPull)
+            //{
+            //    TKPull();
+            //}
         }
     }
 
@@ -81,28 +79,24 @@ public class PlayerAttack : MonoBehaviour
         /* Play TK pull animation when push button is pressed */
         if (Input.GetButtonDown(tkThrowButtonName))
         {
-            InputCameraChange cameraChange = GetComponent<InputCameraChange>();
-            if (cameraChange.lockOn)
-            {
-                /* Cancels possible combo attack queuing */
-                anim.SetBool(attackAnimationBooleanName, false);
+            /* Cancels possible combo attack queuing */
+            anim.SetBool(attackAnimationBooleanName, false);
 
-                /* Cancels possible dodge queuing */
-                anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
-                anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
+            /* Cancels possible dodge queuing */
+            anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
+            anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
 
-                /* Search for enemy to attack */
-                enemy = cameraChange.GetLockOnTarget();
+            /* Search for enemy to attack */
+            DetectObject.TKPullTargetSearchNeeded = true;
 
-                anim.SetTrigger(tkPullAnimationTriggerName);
+            anim.SetTrigger(tkPullAnimationTriggerName);
 
-                //TODO: change enemy location
-                //TODO: stun enemy?
+            //TODO: change enemy location
+            //TODO: stun enemy?
 
-                enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
+            enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
 
-                //TODO: ability cooldown as animation event
-            }
+            //TODO: ability cooldown as animation event
         }
     }
 
@@ -119,11 +113,19 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    /* Assigns enemy GameObject to class variable */
+    private void FindEnemy(GameObject detectedEnemy)
+    {
+        enemy = detectedEnemy;
+    }
+
     /* Subscribe to events */
     private void OnEnable()
     {
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
+
+        DetectObject.TKPullTargetDetected += FindEnemy;
     }
 
     /* Unsubscribe from events */
@@ -132,6 +134,7 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
 
+        DetectObject.TKPullTargetDetected -= FindEnemy;
     }
 
     #region Animation Events
