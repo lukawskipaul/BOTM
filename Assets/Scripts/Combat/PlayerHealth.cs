@@ -60,15 +60,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnTakeDamage()
-    {
-        /* Invokes TakeDamage event */
-        if (TakeDamage != null)
-        {
-            TakeDamage.Invoke();
-        }
-    }
-
     public void HealPlayer(int amount)
     {
         /* Heals player by pickup amount */
@@ -85,6 +76,15 @@ public class PlayerHealth : MonoBehaviour
     {
         /* Updates health bar with current health */
         //healthBar.value = currentHealth;  //comment made by Brendan Wascher 2-23 
+    }
+    
+    private void OnTakeDamage()
+    {
+        /* Invokes TakeDamage event */
+        if (TakeDamage != null)
+        {
+            TakeDamage.Invoke();
+        }
     }
 
     #region Animation Events

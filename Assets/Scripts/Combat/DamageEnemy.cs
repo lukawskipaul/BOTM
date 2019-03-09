@@ -39,7 +39,6 @@ public class DamageEnemy : MonoBehaviour
     /* Called in PlayerAttack to change damage to base amount */
     public void ChangeToBaseDamage()
     {
-        Debug.Log("change to base damage");
         currentAttackDamage = baseAttackDamage;
     }
 

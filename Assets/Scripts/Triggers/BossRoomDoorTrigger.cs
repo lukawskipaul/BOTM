@@ -10,7 +10,7 @@ public class BossRoomDoorTrigger : MonoBehaviour
     {
         if(other.tag == "LevitatableObject" || other.tag == "ThrownObj")
         {
-            if(other.gameObject.name == "Battery")
+            if(other.gameObject.name == "Battery&&")
             {
                 Destroy(other.gameObject);
                 TurnOnBattery();
@@ -21,5 +21,6 @@ public class BossRoomDoorTrigger : MonoBehaviour
     {
         ThisBattery.gameObject.SetActive(true);
         BossDoor.SetBool("Boss_Door_Set_Open", true);
+        AkSoundEngine.PostEvent("Play_SlidingDoorOpen", gameObject);
     }
 }

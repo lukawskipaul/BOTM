@@ -20,9 +20,8 @@ public class Boss_WalkForwardClose : StateMachineBehaviour
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
         bossNavMeshAgent.SetDestination(player.transform.position);
         //Select random attack action
-        animator.SetInteger("AttackChoice", (int)(Random.value * 8));
+        animator.SetInteger("AttackChoice", (int)(Random.value * 9));//0-8
         bossNavMeshAgent.isStopped = false;
-        //Debug.Log(animator.GetInteger("AttackChoice"));
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

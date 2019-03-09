@@ -16,19 +16,19 @@ MonoBehaviour:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 344f631891176143bf2681f6dcc28092
-    m_lastTime: -8586513216887596720
+    m_lastTime: -8586502028434601654
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: b51f7e28bfa4ea418cf5c544eeba0fa7
-    m_lastTime: -8586513216887995644
+    m_lastTime: -8586502028440589399
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586503596930186185
+    m_lastTime: -8586495926120187863
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,8 +43,56 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586503596930285920
+    m_lastTime: -8586495922798110091
     List:
+    - name: Play_AI_VO_Line1
+      guid: 0ef1a86eb75a69409dc35a56fee8f50b
+      id: 3091365192
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_AI_VO_Line1
+        ObjectType: 3
+      Path: Default Work Unit\Play_AI_VO_Line1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_AI_VO_Line2
+      guid: eff476faaa8a5e4a8bfa3cff0618c1b7
+      id: 3091365195
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_AI_VO_Line2
+        ObjectType: 3
+      Path: Default Work Unit\Play_AI_VO_Line2
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_AmbiantMusic
+      guid: 2e0943bedaf66f49a5beda4854be22a2
+      id: 2139734863
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_AmbiantMusic
+        ObjectType: 3
+      Path: Default Work Unit\Play_AmbiantMusic
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_BiteAttack
+      guid: 0cb9f91f796b544fa7bf7b18ecd93293
+      id: 2233757400
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_BiteAttack
+        ObjectType: 3
+      Path: Default Work Unit\Play_BiteAttack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_CaveAmbiance1
       guid: 510c2ede051a374a94c02c116c0dd629
       id: 934217562
@@ -57,6 +105,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_CharacterFootsteps
+      guid: 864e366e62e9534295895909f5b501e6
+      id: 2603299628
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CharacterFootsteps
+        ObjectType: 3
+      Path: Default Work Unit\Play_CharacterFootsteps
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ClawAttack
+      guid: 74af3ac9b3070649939fcb6098880aaf
+      id: 3273478103
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_ClawAttack
+        ObjectType: 3
+      Path: Default Work Unit\Play_ClawAttack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_CrocAggro1
       guid: 132cdce4f2212f4f9ecc4b674aebe803
       id: 149344824
@@ -66,6 +138,18 @@ MonoBehaviour:
       - ElementName: Play_CrocAggro1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocAggro1
+      maxAttenuation: 15
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_CrocAttack1
+      guid: 61710d2cc898b44b9306a1c07dff30cf
+      id: 1952116840
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CrocAttack1
+        ObjectType: 3
+      Path: Default Work Unit\Play_CrocAttack1
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -78,7 +162,7 @@ MonoBehaviour:
       - ElementName: Play_CrocDeath1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocDeath1
-      maxAttenuation: 0
+      maxAttenuation: 15
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocFlinch1
@@ -90,7 +174,55 @@ MonoBehaviour:
       - ElementName: Play_CrocFlinch1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocFlinch1
+      maxAttenuation: 15
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_ElectricPassive
+      guid: 7c3b756e2d46bb4a8c02a313a707eb47
+      id: 2387251670
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_ElectricPassive
+        ObjectType: 3
+      Path: Default Work Unit\Play_ElectricPassive
+      maxAttenuation: 15
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_FootStepsBoss
+      guid: 2b916df14ecd554c9e97081cb4ea1270
+      id: 2991667156
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_FootStepsBoss
+        ObjectType: 3
+      Path: Default Work Unit\Play_FootStepsBoss
       maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_GeneratorHum
+      guid: 0bdf07ea26ffd44d865df987d1a88a4e
+      id: 2540781641
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_GeneratorHum
+        ObjectType: 3
+      Path: Default Work Unit\Play_GeneratorHum
+      maxAttenuation: 40
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_HowlingWind
+      guid: 174c6e3d3f57f34ab5053eac44054790
+      id: 3210990662
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_HowlingWind
+        ObjectType: 3
+      Path: Default Work Unit\Play_HowlingWind
+      maxAttenuation: 10
       maxDuration: 0
       minDuration: 0
     - name: Play_MetalDoorBreakdown1
@@ -102,7 +234,7 @@ MonoBehaviour:
       - ElementName: Play_MetalDoorBreakdown1
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorBreakdown1
-      maxAttenuation: 0
+      maxAttenuation: 10
       maxDuration: 0
       minDuration: 0
     - name: Play_MetalDoorSlamCloseNoPower
@@ -114,6 +246,18 @@ MonoBehaviour:
       - ElementName: Play_MetalDoorSlamCloseNoPower
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorSlamCloseNoPower
+      maxAttenuation: 10
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_PipeFall
+      guid: d475f647c022ca4189bfb03fee21bf2b
+      id: 726787325
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PipeFall
+        ObjectType: 3
+      Path: Default Work Unit\Play_PipeFall
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -126,7 +270,7 @@ MonoBehaviour:
       - ElementName: Play_Rockslide1
         ObjectType: 3
       Path: Default Work Unit\Play_Rockslide1
-      maxAttenuation: 0
+      maxAttenuation: 25
       maxDuration: 0
       minDuration: 0
     - name: Play_Room1AmbianceDemo
@@ -141,6 +285,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_SlidingDoorClose
+      guid: 03a3d2c265e1f54ab32b8ee1cb7ec508
+      id: 3751804120
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_SlidingDoorClose
+        ObjectType: 3
+      Path: Default Work Unit\Play_SlidingDoorClose
+      maxAttenuation: 10
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_SlidingDoorOpen
+      guid: 05487ce2c994564e9c84fbc92c933ddc
+      id: 2541895580
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_SlidingDoorOpen
+        ObjectType: 3
+      Path: Default Work Unit\Play_SlidingDoorOpen
+      maxAttenuation: 10
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Static1
       guid: 8430cf91c75ea3418fdc61932f133c7f
       id: 2385860965
@@ -150,6 +318,78 @@ MonoBehaviour:
       - ElementName: Play_Static1
         ObjectType: 3
       Path: Default Work Unit\Play_Static1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_SwordSwing
+      guid: bdadb5713a6dce4d953a76473c27f95f
+      id: 1746766985
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_SwordSwing
+        ObjectType: 3
+      Path: Default Work Unit\Play_SwordSwing
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_TK
+      guid: b916691c30bc5742bae5c1e2ee19ba20
+      id: 2027969869
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_TK
+        ObjectType: 3
+      Path: Default Work Unit\Play_TK
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_TK_Throw
+      guid: 1d6703eadbfb9948a88ca779db527dd0
+      id: 2278693504
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_TK_Throw
+        ObjectType: 3
+      Path: Default Work Unit\Play_TK_Throw
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_JournalClose
+      guid: 344fe1d4aa82094a8e55d3f8b24b7951
+      id: 168369292
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_JournalClose
+        ObjectType: 3
+      Path: Default Work Unit\Play_UI_JournalClose
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_JournalOpen
+      guid: f537d87c49e377418d42a66006191083
+      id: 2407564056
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_JournalOpen
+        ObjectType: 3
+      Path: Default Work Unit\Play_UI_JournalOpen
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_UI_PageFlip
+      guid: 776fef99eb50cc47982405eda9435e28
+      id: 3236627135
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_UI_PageFlip
+        ObjectType: 3
+      Path: Default Work Unit\Play_UI_PageFlip
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -165,33 +405,47 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_TK
+      guid: 77cfd7f5e00e2545abc145fc325731bd
+      id: 2893389503
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_TK
+        ObjectType: 3
+      Path: Default Work Unit\Stop_TK
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 79e8b6069079954b9ba023e00388c12d
-    m_lastTime: -8586513216888633940
+    m_lastTime: -8586502028445716457
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e750412bc076fe4b8598869bdedf6226
-    m_lastTime: -8586513216887636871
+    m_lastTime: -8586502028434626448
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 61dbc9d14a01ac4a9f9f8fd5d842e2b9
-    m_lastTime: -8586513216888315058
+    m_lastTime: -8586502028434616474
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 25cd57fb3f7ad04898a4395d19f13034
-    m_lastTime: -8586513216888274912
+    m_lastTime: -8586502028434606501
     List: []
   ExpandedItems:
   - /BOTM_WwiseProject
   - /BOTM_WwiseProject/Events
   - /BOTM_WwiseProject/Events/Default Work Unit
+  - /BOTM_WwiseProject/SoundBanks
+  - /BOTM_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

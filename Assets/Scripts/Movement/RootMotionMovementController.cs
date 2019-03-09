@@ -15,17 +15,28 @@ public class RootMotionMovementController : MonoBehaviour
 {
     #region Variables
 
+    [SerializeField]
+    private float dodgeCooldownInSeconds = 2.0f;
+
     private Animator anim;
     private Rigidbody rb;
 
     private bool canMove;
     private bool canDodge;
     private bool isOnGround;
+    public bool IsOnGround
+    {
+        set
+        {
+            isOnGround = value;
+        }
+    }
 
     private const string dodgeButtonName = "Dodge";
     private const string baseAttackBooleanName = "isAttackBase";
     private const string combo1AttackBooleanName = "isAttackCombo";
-    private const string attackAnimationTriggerName = "Attack";
+    private const string attackAnimationBooleanName = "Attack";
+    private const string tkPullAnimationTriggerName = "TKPull";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
@@ -49,7 +60,8 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove)
+            //&& isOnGround)
         {
             Rotate();
         }
@@ -57,7 +69,8 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove /*&& isOnGround*/)  //TODO: uncomment when walkable surfaces are tagged with "Ground"
+        if (canMove)
+            //&& isOnGround)
         {
             Move();
 
@@ -66,6 +79,14 @@ public class RootMotionMovementController : MonoBehaviour
                 FreeLookDodge();
                 LockedOnDodge();
             }
+            else
+            {
+                CancelQueuingDuringDodgeCooldown();
+            }
+        }
+        else
+        {
+            Debug.Log("Player not on Ground");
         }
     }
 
@@ -93,13 +114,11 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
         if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
-            bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            if (attackAnimationIsPlaying)
-            {
-                anim.ResetTrigger(attackAnimationTriggerName);
-            }
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(freeLookDodgeAnimationTriggerName);
 
@@ -112,13 +131,11 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play hop dodge animation when dodge button is pressed and is locked on */
         if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
         {
-            bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            if (attackAnimationIsPlaying)
-            {
-                anim.ResetTrigger(attackAnimationTriggerName);
-            }
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
 
@@ -126,21 +143,16 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void CancelQueuingDuringDodgeCooldown()
     {
-        /* Check if player is on a walkable surface */
-        if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
+        /* Cancel attack queuing even when dodge cooldown is active */
+        if (Input.GetButtonDown(dodgeButtonName))
         {
-            isOnGround = true;
-        }
-    }
+            /* Cancels possible combo attack queuing */
+            anim.SetBool(attackAnimationBooleanName, false);
 
-    private void OnCollisionExit(Collision other)
-    {
-        /* Check if player is not on a walkable surface */
-        if (other.gameObject.tag == "Ground")
-        {
-            isOnGround = false;
+            /* Cancels possible tk pull queuing */
+            anim.ResetTrigger(tkPullAnimationTriggerName);
         }
     }
 
@@ -171,7 +183,7 @@ public class RootMotionMovementController : MonoBehaviour
     {
         canDodge = false;
 
-        yield return new WaitForSecondsRealtime(2.0f);
+        yield return new WaitForSecondsRealtime(dodgeCooldownInSeconds);
 
         canDodge = true;
     }

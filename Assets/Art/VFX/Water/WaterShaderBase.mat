@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterShaderBase
+  m_Shader: {fileID: 4800000, guid: 4319d15d6ea12344cad9174b1a5d5aae, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_5F219A61:
+        m_Texture: {fileID: 2800000, guid: 068a75fb72247cc44a8aa2ef5ae5c1d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8F3D38EF:
+        m_Texture: {fileID: 2800000, guid: 29e86b7b33506294daf0db68243b99aa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C6D233F9:
+        m_Texture: {fileID: 2800000, guid: 29e86b7b33506294daf0db68243b99aa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1069F4D9: 0
+    - Vector1_373A509C: 1
+    - Vector1_380FF4FE: 0.01
+    - Vector1_50841EC0: 0.6
+    - Vector1_6702AFBA: 0.45
+    - Vector1_6C0D0861: 1
+    - Vector1_7F6DC874: 0
+    - Vector1_8365FF58: -0.23
+    - Vector1_9367EC63: 1
+    - Vector1_95AEA0AE: 1.39
+    - Vector1_BE9E9023: 0
+    - Vector1_C5B3E18: 0.21
+    - Vector1_CF5E9613: 1.49
+    - Vector1_E07C4418: 0.43
+    - Vector1_E0D86D44: 0.89
+    - Vector1_E29A34E0: 0.58
+    - Vector1_E6F4CFD6: 0.01
+    - Vector1_EE7F8AE9: 1
+    m_Colors:
+    - Color_1186D00: {r: 0.7647059, g: 0.6901489, b: 0.5019608, a: 0}
+    - Color_4BA67667: {r: 0.6226415, g: 0.2731399, b: 0.2731399, a: 0.4392157}
+    - Color_52532C: {r: 0.11764704, g: 0.7058824, b: 0.38512087, a: 0}
+    - Color_8A0CBAFD: {r: 0.1843137, g: 0.46432987, b: 0.58431375, a: 0}
+    - Color_FDD8578F: {r: 0.065103225, g: 0.6883806, b: 0.7264151, a: 0}

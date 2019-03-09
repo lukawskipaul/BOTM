@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//GameObjects with this script require the components below, a component will be added if one does not exist
-[RequireComponent(typeof(CapsuleCollider))]
-
 //This script goes on the enemies
 public class EnemyHealth : MonoBehaviour
 {
@@ -50,12 +47,12 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             anim.SetTrigger("Die");
-            AkSoundEngine.PostEvent("Play_CrocDeath1", gameObject);
+            
         }
         else
         {
             anim.SetTrigger("Flinch");
-            AkSoundEngine.PostEvent("Play_CrocFlinch1", gameObject);
+            
         }
     }
 
