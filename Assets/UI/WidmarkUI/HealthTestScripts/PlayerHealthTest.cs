@@ -21,7 +21,6 @@ public class PlayerHealthTest : MonoBehaviour
     GameObject playerDamageVignetteMidHighDamage;
     [SerializeField]
     GameObject playerDamageVignetteHighDamage;
-
     [SerializeField]
     Transform respawnPoint;
 
@@ -30,31 +29,12 @@ public class PlayerHealthTest : MonoBehaviour
     public bool midHighDamageVignetteActive;
     public bool highDamageVignetteActive;
 
-    public bool hasTakenDamage = false;
+    public bool isDamaged;
+    public bool healthIsRegenerating;
 
-    public float healthCoolDown;
-
-
-
+    public bool damagedWhileRegen;
 
 
-
-
-    //
-
-    //public float shakeStrength = 1;
-    //public float shake = 1;
-
-   // Vector3 originalPosition;
-
-
-
-    //
-
-    private void Awake()
-    {
-       // originalPosition = transform.localPosition;
-    }
 
     void Start()
     {
@@ -67,15 +47,6 @@ public class PlayerHealthTest : MonoBehaviour
         playerDamageVignetteMidHighDamage.gameObject.SetActive(false);
         playerDamageVignetteHighDamage.gameObject.SetActive(false);
 
-        healthCoolDown = 1000.0f;
-
-        //shake = 0;
-
-
-        // might not need a camera shake 
-        //originalPosition = transform.localPosition;
-
-        
 
 
     }
@@ -101,25 +72,26 @@ public class PlayerHealthTest : MonoBehaviour
         HandleVignette();
 
 
-        //PlayerHealthRestoreCountDown();
-        //HealthFullyRestored();
+        HealthRegenTrigger();
+        HealthAtMax();
+        CheckIfRegenIsFalse();
+        HealthRegen();
 
-        PlayerHealthRestoreCountDown();
-        HealthFullyRestored();
-        DamageTakenHandler();
+
 
     }
 
     void LateUpdate()
     {
         UpdateHealthBar();
-        //CameraShake();
     }
     
 
     public void DamagePlayer(float amount)
     {
-        hasTakenDamage = true;
+        //StopCoroutine(HealthRegen());
+        isDamaged = true;
+        healthIsRegenerating = false;
 
         currentHealth -= amount;
 
@@ -154,9 +126,14 @@ public class PlayerHealthTest : MonoBehaviour
             StartCoroutine(Die());
         }
 
-        else if (currentHealth == 100)
+        else if (currentHealth >= 100)
         {
-            
+            lowDamageVignetteActive = false;
+            lowMidDamageVignetteActive = false;
+            midHighDamageVignetteActive = false;
+            highDamageVignetteActive = false;
+
+            StopCoroutine(HealthRegenTimer());
         }
         
     }
@@ -191,7 +168,7 @@ public class PlayerHealthTest : MonoBehaviour
 
         else if (currentHealth == maxHealth)
         {
-            hasTakenDamage = false;
+            isDamaged = false;
             lowDamageVignetteActive = false;
             lowMidDamageVignetteActive = false;
             midHighDamageVignetteActive = false;
@@ -205,34 +182,9 @@ public class PlayerHealthTest : MonoBehaviour
             playerDamageVignetteLowMidDamage.gameObject.SetActive(false);
             playerDamageVignetteMidHighDamage.gameObject.SetActive(false);
             playerDamageVignetteHighDamage.gameObject.SetActive(false);
+            StopCoroutine(HealthRegenTimer());
         }
     }
-
-
-    //
-
-    //void CameraShake()
-    //{
-    //    if (HasTakenDamage == true)
-    //    {
-    //        shake = shakeStrength;
-    //    }
-
-    //    Camera.main.transform.localPosition = originalPosition + (Random.insideUnitSphere * shake);
-
-    //    shake = Mathf.MoveTowards(shake, 0, Time.deltaTime * shakeStrength);
-
-    //    HasTakenDamage = false;
-
-    //    if (shake == 0)
-    //    {
-    //        Camera.main.transform.localPosition = originalPosition;
-    //        HasTakenDamage = false;
-    //    }
-    //}
-
-
-    //
 
 
     public void HealPlayer(float amount)
@@ -388,32 +340,9 @@ public class PlayerHealthTest : MonoBehaviour
         }
     }
 
-    void PlayerHealthRestoreCountDown()
-    {
-        if (currentHealth < maxHealth )
-        {
-            StopCoroutine(HasTakenDamageTimer());
-            StartCoroutine(HealthRestoreTimer());
-            //hasTakenDamage = false;
-        }
-    }
+  
 
-
-    //void RestoreHealth()
-    //{
-    //    currentHealth =+ Time.deltaTime;
-    //}
-
-    void HealthFullyRestored()
-    {
-        if (currentHealth >= maxHealth)
-        {
-            StopCoroutine(HealthRestoreTimer());
-            //healthCoolDown = 1000f;
-            currentHealth = 100;
-            hasTakenDamage = false;
-        }
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -421,19 +350,14 @@ public class PlayerHealthTest : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
-    }
 
-    void DamageTakenHandler()
-    {
-        if (hasTakenDamage == true)
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            StartCoroutine(HasTakenDamageTimer());
-            StopCoroutine(HealthRestoreTimer());
-            
-
+            healthIsRegenerating = false;
+            isDamaged = true;
+            StopRegen();
         }
     }
-
 
 
     IEnumerator Die()
@@ -446,19 +370,79 @@ public class PlayerHealthTest : MonoBehaviour
         this.gameObject.transform.position = respawnPoint.position;
     }
 
-    IEnumerator HealthRestoreTimer()
+    void HealthRegenTrigger()
     {
-        yield return new WaitForSecondsRealtime(10.0f);
-        currentHealth += Time.deltaTime * 2;
-    
+        if (isDamaged == true)
+        {
+            //StartCoroutine(DamageIsHandled());
+            StartCoroutine(HealthRegenTimer());
+            healthIsRegenerating = false;
+        }
     }
 
-    IEnumerator HasTakenDamageTimer()
+    IEnumerator HealthRegenTimer()
     {
-        yield return new WaitForSecondsRealtime(2.0f);
-        hasTakenDamage = false;
+        
+         
+        yield return new WaitForSecondsRealtime(4.0f);
+        //currentHealth += Time.deltaTime * 5;
+        healthIsRegenerating = true;
+        isDamaged = false;
     }
 
+    void HealthRegen()
+    {
+        if (healthIsRegenerating == false)
+        {
+            StopCoroutine(HealthRegenTimer());
+            currentHealth = currentHealth;
+        }
+
+        if (healthIsRegenerating == true)
+        {
+            currentHealth += Time.deltaTime * 5;
+        }
+    }
+
+    void StopRegen()
+    {
+        StopCoroutine(HealthRegenTimer());
+        
+    }
+
+    void CheckIfRegenIsFalse()
+    {
+        if (healthIsRegenerating == false)
+        {
+            StopRegen();
+        }
+    }
+
+    void HealthAtMax()
+    {
+        if (currentHealth >= maxHealth)
+        {
+            StopRegen();
+            currentHealth = maxHealth;
+            healthIsRegenerating = false;
+            isDamaged = false;
+        }
+    }
+
+    //IEnumerator DamageIsHandled()
+    //{
+    //    if (IsDamaged == true)
+    //    {
+    //        yield return new WaitForSecondsRealtime(1.0f);
+    //        IsDamaged = false;
+    //    }
+
+
+    //}
+
     
+
+
+
 
 }

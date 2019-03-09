@@ -11,4 +11,9 @@ public class StartButton : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    public void OnQuitButton()
+    {
+        Application.Quit();
+    }
 }
