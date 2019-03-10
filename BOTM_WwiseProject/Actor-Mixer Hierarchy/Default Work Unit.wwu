@@ -891,6 +891,32 @@
 						<ActiveSource Name="Pipe Fall 3" ID="{7914FC4C-8B20-4EBB-B63A-8FCCCF558AE5}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="ElectricStaticPassive" ID="{DC1526FB-34FA-4C05-BF88-4638E5DC0AAB}" ShortID="523811413">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="ElectricPassive" ID="{84884067-2CD7-4984-8432-E8032B3B046D}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ElectricStaticPassive" ID="{BFB81434-1051-4AE9-AF02-E2E257E61A97}" ShortID="780838416">
+							<Language>SFX</Language>
+							<AudioFile>ElectricStaticPassive.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ElectricStaticPassive" ID="{BFB81434-1051-4AE9-AF02-E2E257E61A97}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
