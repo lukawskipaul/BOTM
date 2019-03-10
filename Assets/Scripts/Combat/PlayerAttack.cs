@@ -14,6 +14,10 @@ public class PlayerAttack : MonoBehaviour
     private int tkPullDamageAmount = 10;
     [SerializeField]
     private float tkPullCooldownInSeconds = 10.0f;
+    [SerializeField]
+    private GameObject journalMenu;
+    [SerializeField]
+    private GameObject pauseMenu;
 
     private Animator anim;
     private DamageEnemy swordAttack;
@@ -61,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         /* Play attack animation when attack button is pressed */
-        if (Input.GetButtonDown(attackButtonName))
+        if (Input.GetButtonDown(attackButtonName) && !journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
         {
             /* Cancels possible tk pull queuing */
             anim.ResetTrigger(tkPullAnimationTriggerName);
