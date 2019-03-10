@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: 1669cd059ccc8714c9e163e04254d689
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cavity_Bottom
+    100002: Cavity_Top
+    100004: Cheek_Back_L
+    100006: Cheek_Back_R
+    100008: Cheek_Loot_L
+    100010: Cheek_Root_R
+    100012: Claw2_Tip__L
+    100014: Claw2_Tip__R
+    100016: Claw2_Top_L
+    100018: Claw2_Top_R
+    100020: Core
+    100022: Crystal_1
+    100024: Crystal_1_Top
+    100026: Crystal_2
+    100028: Crystal_2_Top
+    100030: Crystal_3
+    100032: Crystal_3_Top
+    100034: Crystal_4
+    100036: Crystal_4_Top
+    100038: Crystal_5
+    100040: Crystal_5_Top
+    100042: Crystal_6
+    100044: Crystal_6_Top
+    100046: Crystal_Core
+    100048: Electro
+    100050: Electro1
+    100052: Eye_L
+    100054: Eye_R
+    100056: EyeBall_L
+    100058: EyeBall_R
+    100060: Hair
+    100062: Hair_Back
+    100064: Hair_Mane_1
+    100066: Hair_Mane_2
+    100068: Hair_Mane_3
+    100070: Head
+    100072: Humerus_Front_L
+    100074: Humerus_Front_R
+    100076: Humerus_Hind_L
+    100078: Humerus_Hind_R
+    100080: Jaw_Bottom_1
+    100082: Jaw_Bottom_1_1
+    100084: Jaw_Bottom_2
+    100086: Jaw_Top_1
+    100088: Jaw_Top_2
+    100090: joint40
+    100092: joint40 1
+    100094: joint44Toungue_4
+    100096: Ladius_Front_L
+    100098: Ladius_L
+    100100: Lid_Bot_L
+    100102: Lid_Bot_R
+    100104: Lid_Top_L
+    100106: Lid_Top_R
+    100108: Lip_Center_L
+    100110: Lip_Center_R
+    100112: Lip_Front_L
+    100114: Lip_Front_R
+    100116: Magitech_Drain_1
+    100118: Magitech_Drain_1 1
+    100120: Magitech_Drain_1 2
+    100122: Magitech_Drain_1 3
+    100124: Magitech_Drain_2
+    100126: Magitech_Drain_2 1
+    100128: Magitech_Drain_2 2
+    100130: Magitech_Drain_2 3
+    100132: Magitech_Drain_3
+    100134: Magitech_Drain_4
+    100136: Magitech_Drain_5
+    100138: Magitech_Drain_6
+    100140: Metacarpal_L
+    100142: Metacarpal_R
+    100144: //RootNode
+    100146: Paw_Front_L
+    100148: Paw_Front_R
+    100150: Paw_Hind_L
+    100152: Paw_Hind_R
+    100154: Pelvis
+    100156: Radius_Front2_L
+    100158: Radius_Front2_R
+    100160: Radius_Front_R
+    100162: Radius_R
+    100164: Shoulder_1_L
+    100166: Shoulder_1_R
+    100168: Snout_Front_L
+    100170: Snout_Front_R
+    100172: Snout_Loot_L
+    100174: Snout_MIddle_L
+    100176: Snout_MIddle_R
+    100178: Snout_Root_R
+    100180: Spine_1
+    100182: Spine_2
+    100184: Spine_3
+    100186: Spine_4
+    100188: Spine_5
+    100190: Stomach_End_L
+    100192: Stomach_End_R
+    100194: Stomach_Lower_End_L
+    100196: Stomach_Lower_End_R
+    100198: Stomach_Lower_Mid_L
+    100200: Stomach_Lower_Mid_R
+    100202: Stomach_Lower_Top_L
+    100204: Stomach_Lower_Top_R
+    100206: Stomach_Mid_L
+    100208: Stomach_Mid_R
+    100210: Stomach_Top_L
+    100212: Stomach_Top_R
+    100214: Tail_1
+    100216: Tail_2
+    100218: Tail_3
+    100220: Tail_4
+    100222: Teeth_Bottom
+    100224: Teeth_Top
+    100226: Thigh_1_L
+    100228: Thigh_1_R
+    100230: Thunder_Jaw_Body
+    100232: Thunder_Jaw_Body 1
+    100234: Toe_3_Tip_L
+    100236: Toe_3_Tip_R
+    100238: Toe_3_Top_L
+    100240: Toe_3_Top_R
+    100242: Toungue
+    100244: Toungue_1
+    100246: Toungue_2
+    100248: Toungue_3
+    100250: Whisker_1_L
+    100252: Whisker_1_R
+    100254: Whisker_2_L
+    100256: Whisker_2_L 1
+    100258: Whisker_2_R
+    100260: Whisker_2_R 1
+    400000: Cavity_Bottom
+    400002: Cavity_Top
+    400004: Cheek_Back_L
+    400006: Cheek_Back_R
+    400008: Cheek_Loot_L
+    400010: Cheek_Root_R
+    400012: Claw2_Tip__L
+    400014: Claw2_Tip__R
+    400016: Claw2_Top_L
+    400018: Claw2_Top_R
+    400020: Core
+    400022: Crystal_1
+    400024: Crystal_1_Top
+    400026: Crystal_2
+    400028: Crystal_2_Top
+    400030: Crystal_3
+    400032: Crystal_3_Top
+    400034: Crystal_4
+    400036: Crystal_4_Top
+    400038: Crystal_5
+    400040: Crystal_5_Top
+    400042: Crystal_6
+    400044: Crystal_6_Top
+    400046: Crystal_Core
+    400048: Electro
+    400050: Electro1
+    400052: Eye_L
+    400054: Eye_R
+    400056: EyeBall_L
+    400058: EyeBall_R
+    400060: Hair
+    400062: Hair_Back
+    400064: Hair_Mane_1
+    400066: Hair_Mane_2
+    400068: Hair_Mane_3
+    400070: Head
+    400072: Humerus_Front_L
+    400074: Humerus_Front_R
+    400076: Humerus_Hind_L
+    400078: Humerus_Hind_R
+    400080: Jaw_Bottom_1
+    400082: Jaw_Bottom_1_1
+    400084: Jaw_Bottom_2
+    400086: Jaw_Top_1
+    400088: Jaw_Top_2
+    400090: joint40
+    400092: joint40 1
+    400094: joint44Toungue_4
+    400096: Ladius_Front_L
+    400098: Ladius_L
+    400100: Lid_Bot_L
+    400102: Lid_Bot_R
+    400104: Lid_Top_L
+    400106: Lid_Top_R
+    400108: Lip_Center_L
+    400110: Lip_Center_R
+    400112: Lip_Front_L
+    400114: Lip_Front_R
+    400116: Magitech_Drain_1
+    400118: Magitech_Drain_1 1
+    400120: Magitech_Drain_1 2
+    400122: Magitech_Drain_1 3
+    400124: Magitech_Drain_2
+    400126: Magitech_Drain_2 1
+    400128: Magitech_Drain_2 2
+    400130: Magitech_Drain_2 3
+    400132: Magitech_Drain_3
+    400134: Magitech_Drain_4
+    400136: Magitech_Drain_5
+    400138: Magitech_Drain_6
+    400140: Metacarpal_L
+    400142: Metacarpal_R
+    400144: //RootNode
+    400146: Paw_Front_L
+    400148: Paw_Front_R
+    400150: Paw_Hind_L
+    400152: Paw_Hind_R
+    400154: Pelvis
+    400156: Radius_Front2_L
+    400158: Radius_Front2_R
+    400160: Radius_Front_R
+    400162: Radius_R
+    400164: Shoulder_1_L
+    400166: Shoulder_1_R
+    400168: Snout_Front_L
+    400170: Snout_Front_R
+    400172: Snout_Loot_L
+    400174: Snout_MIddle_L
+    400176: Snout_MIddle_R
+    400178: Snout_Root_R
+    400180: Spine_1
+    400182: Spine_2
+    400184: Spine_3
+    400186: Spine_4
+    400188: Spine_5
+    400190: Stomach_End_L
+    400192: Stomach_End_R
+    400194: Stomach_Lower_End_L
+    400196: Stomach_Lower_End_R
+    400198: Stomach_Lower_Mid_L
+    400200: Stomach_Lower_Mid_R
+    400202: Stomach_Lower_Top_L
+    400204: Stomach_Lower_Top_R
+    400206: Stomach_Mid_L
+    400208: Stomach_Mid_R
+    400210: Stomach_Top_L
+    400212: Stomach_Top_R
+    400214: Tail_1
+    400216: Tail_2
+    400218: Tail_3
+    400220: Tail_4
+    400222: Teeth_Bottom
+    400224: Teeth_Top
+    400226: Thigh_1_L
+    400228: Thigh_1_R
+    400230: Thunder_Jaw_Body
+    400232: Thunder_Jaw_Body 1
+    400234: Toe_3_Tip_L
+    400236: Toe_3_Tip_R
+    400238: Toe_3_Top_L
+    400240: Toe_3_Top_R
+    400242: Toungue
+    400244: Toungue_1
+    400246: Toungue_2
+    400248: Toungue_3
+    400250: Whisker_1_L
+    400252: Whisker_1_R
+    400254: Whisker_2_L
+    400256: Whisker_2_L 1
+    400258: Whisker_2_R
+    400260: Whisker_2_R 1
+    2100000: ThunderJaw_Material
+    2100002: Magitech_Drain_Materail
+    4300000: Eye_L
+    4300002: Eye_R
+    4300004: Cavity_Top
+    4300006: Cavity_Bottom
+    4300008: Thunder_Jaw_Body
+    4300010: Toungue
+    4300012: Hair_Mane_1
+    4300014: Hair_Back
+    4300016: Hair_Mane_2
+    4300018: Hair_Mane_3
+    4300020: Magitech_Drain_1
+    4300022: Magitech_Drain_2
+    4300024: Magitech_Drain_3
+    4300026: Magitech_Drain_4
+    4300028: Magitech_Drain_5
+    4300030: Magitech_Drain_6
+    9500000: //RootNode
+    13700000: Cavity_Bottom
+    13700002: Cavity_Top
+    13700004: Eye_L
+    13700006: Eye_R
+    13700008: Hair_Back
+    13700010: Hair_Mane_1
+    13700012: Hair_Mane_2
+    13700014: Hair_Mane_3
+    13700016: Magitech_Drain_1
+    13700018: Magitech_Drain_2
+    13700020: Magitech_Drain_3
+    13700022: Magitech_Drain_4
+    13700024: Magitech_Drain_5
+    13700026: Magitech_Drain_6
+    13700028: Thunder_Jaw_Body 1
+    13700030: Toungue
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ThunderJaw_Material
+    second: {fileID: 2100000, guid: 47ee760ed55386241979d28dc045ec49, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.4
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.4
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
