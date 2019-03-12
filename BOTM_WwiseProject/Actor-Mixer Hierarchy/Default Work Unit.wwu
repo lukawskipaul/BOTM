@@ -713,28 +713,6 @@
 						<ActiveSource Name="UI_NotePickup2" ID="{01D2A61F-7B92-4BB5-AED8-66C4C1582806}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{E7D579FC-1ECE-458E-91B3-2B2631BE5D38}" ShortID="802283542">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{BCB3C1CD-45EC-441F-A00F-AF02A362ADA8}" ShortID="906061255">
-							<Language>SFX</Language>
-							<AudioFile>LTG _Ambient_Battle_ [Ambient Loop].wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{BCB3C1CD-45EC-441F-A00F-AF02A362ADA8}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="HowlingWind1" ID="{D47A7E4B-A9AF-43DE-828D-C89FFB04F756}" ShortID="99316403">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
@@ -914,6 +892,25 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="ElectricStaticPassive" ID="{BFB81434-1051-4AE9-AF02-E2E257E61A97}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="LTG _Ambient_Battle_ [Ambient Loop] v03" ID="{521F1784-E03B-4367-AA7F-A839763AAF1D}" ShortID="951146951">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="LTG _Ambient_Battle_ [Ambient Loop] v03" ID="{B4C842EA-9E9F-41A0-92CE-34D1C0B1D73B}" ShortID="690070088">
+							<Language>SFX</Language>
+							<AudioFile>LTG _Ambient_Battle_ [Ambient Loop] v03.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="LTG _Ambient_Battle_ [Ambient Loop] v03" ID="{B4C842EA-9E9F-41A0-92CE-34D1C0B1D73B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
