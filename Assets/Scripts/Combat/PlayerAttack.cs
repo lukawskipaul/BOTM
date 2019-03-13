@@ -12,11 +12,12 @@ public class PlayerAttack : MonoBehaviour
     #region Variables
 
     [SerializeField]
-    private Slider tkPullCooldownSlider;
-    [SerializeField]
     private int tkPullDamageAmount = 10;
     [SerializeField]
     private float tkPullCooldownInSeconds = 10.0f;
+
+    [SerializeField]
+    private Slider tkPullCooldownSlider;
     [SerializeField]
     private GameObject journalMenu;
     [SerializeField]
@@ -44,6 +45,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
+        tkPullCooldownRemaining = 0.0f;
+
         canAttack = true;
         canDoTKPull = true;
     }
@@ -52,6 +55,8 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = this.gameObject.GetComponent<Animator>();
         swordAttack = this.gameObject.GetComponentInChildren<DamageEnemy>();
+
+        tkPullCooldownSlider.enabled = false;
 
         tkPullCooldownSlider.maxValue = tkPullCooldownInSeconds;
         tkPullCooldownSlider.minValue = 0;
@@ -62,17 +67,20 @@ public class PlayerAttack : MonoBehaviour
         InputCameraChange cameraChange = GetComponent<InputCameraChange>();
 
         canDoTKPull = cameraChange.lockOn;
+
         if (canAttack)
         {
             Attack();
 
-            //if (canDoTKPull)
-            //{
-            //    TKPull();
-            //}
+            if (canDoTKPull)
+            {
+                TKPull();
+            }
+            else
+	        {
+                UpdateTKPullCooldown();
+            }
         }
-
-
     }
 
     private void Attack()
@@ -112,8 +120,19 @@ public class PlayerAttack : MonoBehaviour
             //TODO: stun enemy?
 
             enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
+        }
+    }
 
-            //TODO: ability cooldown as animation event
+    private void UpdateTKPullCooldown()
+    {
+        tkPullCooldownRemaining -= Time.deltaTime;
+        tkPullCooldownSlider.value = tkPullCooldownRemaining;
+
+        if (tkPullCooldownRemaining <= 0)
+        {
+            canDoTKPull = true;
+
+            tkPullCooldownSlider.enabled = false;
         }
     }
 
@@ -175,18 +194,11 @@ public class PlayerAttack : MonoBehaviour
     /* Called at specific tk pull animation frame to start tk pull cooldown */
     public void StartTKPullCooldown()
     {
-        StopCoroutine(TKPullCooldown());
-        StartCoroutine(TKPullCooldown());
-    }
+        tkPullCooldownRemaining = tkPullCooldownInSeconds;
 
-    /* Starts cooldown for the player's tk pull ability */
-    private IEnumerator TKPullCooldown()
-    {
         canDoTKPull = false;
 
-        yield return new WaitForSecondsRealtime(tkPullCooldownInSeconds);
-
-        canDoTKPull = true;
+        tkPullCooldownSlider.enabled = true;
     }
 
     #endregion
