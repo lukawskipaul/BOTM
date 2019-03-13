@@ -31,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool canAttack;
     private bool canDoTKPull;
+    private bool isLockedOn;
 
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
@@ -49,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
 
         canAttack = true;
         canDoTKPull = true;
+        isLockedOn = false;
     }
 
     private void Start()
@@ -66,18 +68,18 @@ public class PlayerAttack : MonoBehaviour
     {
         InputCameraChange cameraChange = GetComponent<InputCameraChange>();
 
-        canDoTKPull = cameraChange.lockOn;
+        isLockedOn = cameraChange.lockOn;
 
         if (canAttack)
         {
             Attack();
 
-            if (canDoTKPull)
+            if (canDoTKPull && isLockedOn)
             {
                 TKPull();
             }
-            else
-	        {
+            else if (!canDoTKPull)
+            {
                 UpdateTKPullCooldown();
             }
         }
@@ -117,8 +119,9 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger(tkPullAnimationTriggerName);
 
             //TODO: change enemy location
-            //TODO: stun enemy?
-
+            
+            enemy.gameObject.GetComponent<Animator>().SetTrigger("Stun");
+            
             enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
         }
     }
