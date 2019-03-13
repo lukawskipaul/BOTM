@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //GameObjects with this script require the components below, a component will be added if one does not exist
 [RequireComponent(typeof(Animator))]
@@ -10,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
 {
     #region Variables
 
+    [SerializeField]
+    private Slider tkPullCooldownSlider;
     [SerializeField]
     private int tkPullDamageAmount = 10;
     [SerializeField]
@@ -22,6 +25,8 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private DamageEnemy swordAttack;
     private GameObject enemy;
+
+    private float tkPullCooldownRemaining;
 
     private bool canAttack;
     private bool canDoTKPull;
@@ -47,10 +52,16 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = this.gameObject.GetComponent<Animator>();
         swordAttack = this.gameObject.GetComponentInChildren<DamageEnemy>();
+
+        tkPullCooldownSlider.maxValue = tkPullCooldownInSeconds;
+        tkPullCooldownSlider.minValue = 0;
     }
 
     private void Update()
     {
+        InputCameraChange cameraChange = GetComponent<InputCameraChange>();
+
+        canDoTKPull = cameraChange.lockOn;
         if (canAttack)
         {
             Attack();
@@ -60,6 +71,8 @@ public class PlayerAttack : MonoBehaviour
             //    TKPull();
             //}
         }
+
+
     }
 
     private void Attack()
@@ -162,6 +175,7 @@ public class PlayerAttack : MonoBehaviour
     /* Called at specific tk pull animation frame to start tk pull cooldown */
     public void StartTKPullCooldown()
     {
+        StopCoroutine(TKPullCooldown());
         StartCoroutine(TKPullCooldown());
     }
 
