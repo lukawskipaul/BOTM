@@ -4921,6 +4921,7 @@ GameObject:
   - component: {fileID: 503843492}
   - component: {fileID: 503843491}
   - component: {fileID: 503843501}
+  - component: {fileID: 2475621360784129476}
   - component: {fileID: 503843500}
   - component: {fileID: 503843493}
   - component: {fileID: 503843494}
@@ -5000,6 +5001,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2475621360784129476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503843490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967a57ea7a40101408e04f87e81b9e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesetting:
+    forwardVelocity: 12
+    rotateVelocity: 100
+    distToGrounded: 0.1
+    ground:
+      serializedVersion: 2
+      m_Bits: 0
+  inputsetting:
+    inputDelay: 0.1
+    FORWARD_AXIS: Vertical
+    TURN_AXIS: Horizontal
 --- !u!136 &503843500
 CapsuleCollider:
   m_ObjectHideFlags: 0
