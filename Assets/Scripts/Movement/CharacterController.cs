@@ -4,10 +4,34 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    public float inputDelay = 0.1f;// input DeadZone
-    public float forwardVelocity = 12;
-    public float rotateVelocity = 100;
 
+    [System.Serializable]
+    public class MoveSettings
+    {
+        public float forwardVelocity = 12;
+        public float rotateVelocity = 100;
+        public float distToGrounded = 0.1f;
+        public LayerMask ground;
+
+    }
+    [System.Serializable]
+    public class PhysicsSettings
+    {
+
+    }
+    [System.Serializable]
+    public class InputSettings
+    {
+        public float inputDelay = 0.1f;// input DeadZone
+        public string FORWARD_AXIS = "Vertical";
+        public string TURN_AXIS = "Horizontal";
+    }
+
+    public MoveSettings movesetting = new MoveSettings();
+    public PhysicsSettings physicsetting = new PhysicsSettings();
+    public InputSettings inputsetting = new InputSettings();
+
+    Vector3 velocity = Vector3.zero;
     Quaternion targetRotation;
     Rigidbody rb;
     float forwardInput, turnInput;
@@ -15,6 +39,11 @@ public class CharacterController : MonoBehaviour
     public Quaternion TargetRotation
     {
         get { return targetRotation; }
+    }
+
+    bool Grounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, movesetting.distToGrounded, movesetting.ground);
     }
 
     void Start()
@@ -29,8 +58,8 @@ public class CharacterController : MonoBehaviour
     }
     void GetInput()
     {
-        forwardInput = Input.GetAxis("Veritcal");
-        turnInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis(inputsetting.FORWARD_AXIS);
+        turnInput = Input.GetAxis(inputsetting.TURN_AXIS);
     }
 
     void Update()
@@ -41,26 +70,29 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        Walk();
+        rb.velocity = transform.TransformDirection(velocity);
     }
 
     void Walk()
     {
-        if (Mathf.Abs(forwardInput) > inputDelay)
+        if (Mathf.Abs(forwardInput) > inputsetting.inputDelay)
         {
             //move
-            rb.velocity = transform.forward * forwardInput * forwardVelocity;
+            //rb.velocity = transform.forward * forwardInput * movesetting.forwardVelocity;
+            velocity.z = movesetting.forwardVelocity * forwardInput;
         }
         else
             //zero velocity if less then deadzone
-            rb.velocity = Vector3.zero;
+            //rb.velocity = Vector3.zero;
+            velocity.z = 0;
     }
 
     void Turn()
     {
-        if (Mathf.Abs(turnInput) > inputDelay)
+        if (Mathf.Abs(turnInput) > inputsetting.inputDelay)
         {
-            targetRotation *= Quaternion.AngleAxis(rotateVelocity * turnInput * Time.deltaTime, Vector3.up);
+            targetRotation *= Quaternion.AngleAxis(movesetting.rotateVelocity * turnInput * Time.deltaTime, Vector3.up);
         }
             transform.rotation = targetRotation;
     }
