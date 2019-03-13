@@ -59,6 +59,9 @@ public class Telekinesis : MonoBehaviour
         if (isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
             ThrowObject();
+            //AkSoundEngine.PostEvent("Stop_Tk", gameObject);
+            AkSoundEngine.PostEvent("Play_TK_Throw", gameObject);
+            
         }
 
 
@@ -70,15 +73,14 @@ public class Telekinesis : MonoBehaviour
         {
             LevitateObject(levitatableGO);
         }
-
     }
-
 
     private void TelekinesisInputHandler()
     {
         if (Input.GetButtonDown("UseTele"))
         {
             UsePower(levitatableGO);
+            //AkSoundEngine.PostEvent("Play_TK", gameObject);
         }
     }
 
@@ -153,7 +155,8 @@ public class Telekinesis : MonoBehaviour
 
     private void MoveLevitateTransform()
     {
-        zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+        //zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+        zInput = Input.GetAxis("PushPull") * (telePushPullSpeed * .01f);
 
         if ((Vector3.Distance(levitatableGO.transform.position, player.transform.position) <= minDistance))
         {
