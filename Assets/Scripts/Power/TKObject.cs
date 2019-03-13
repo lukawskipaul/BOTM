@@ -37,6 +37,11 @@ public class TKObject : MonoBehaviour
             {
                 if (CurrentState == State.Thrown)
                 {
+                    if (collision.gameObject.tag == "Breakable")
+                    {
+                        Destroy(collision.gameObject); //added brendan wascher 3-3 
+                        Destroy(this.gameObject);
+                    }
                     currentState = State.Neutral;
                 }            
             }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Boss_AttackClaw : StateMachineBehaviour
 {
+    Vector3 lookpos;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Activate Hitbox On Boss' Hands
-        animator.SetBool("isClawing", true);
+        animator.SetBool("isClawing",true);
         animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = true;
     }
 

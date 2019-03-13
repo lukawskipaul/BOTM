@@ -13,6 +13,7 @@ public class BossRoomDoorCloseTrigger : MonoBehaviour
         {
             BossDoor.SetBool("Boss_Door_Set_Open", false);
             Destroy(TriggerZone);
+            AkSoundEngine.PostEvent("Play_SlidingDoorClose", gameObject);
         }
     }
 }

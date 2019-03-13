@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(BoxCollider))]
 /// <summary>
 /// Player must have a 'Player' tag
 /// </summary>
+[RequireComponent(typeof(BoxCollider))]
 public class BossHandHB : MonoBehaviour
 {
     [SerializeField]

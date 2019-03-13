@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //GameObjects with this script require the components below, a component will be added if one does not exist
 [RequireComponent(typeof(Animator))]
@@ -11,51 +12,82 @@ public class PlayerAttack : MonoBehaviour
     #region Variables
 
     [SerializeField]
+    private Slider tkPullCooldownSlider;
+    [SerializeField]
     private int tkPullDamageAmount = 10;
+    [SerializeField]
+    private float tkPullCooldownInSeconds = 10.0f;
+    [SerializeField]
+    private GameObject journalMenu;
+    [SerializeField]
+    private GameObject pauseMenu;
 
     private Animator anim;
     private DamageEnemy swordAttack;
+    private GameObject enemy;
+
+    private float tkPullCooldownRemaining;
 
     private bool canAttack;
+    private bool canDoTKPull;
 
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
     private const string baseAttackBooleanName = "isAttackBase";
     private const string combo1AttackBooleanName = "isAttackCombo";
-    private const string attackAnimationTriggerName = "Attack";
+    private const string attackAnimationBooleanName = "Attack";
+    private const string tkPullAnimationTriggerName = "TKPull";
+    private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
+    private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
 
     #endregion
 
     private void Awake()
     {
         canAttack = true;
+        canDoTKPull = true;
     }
 
     private void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
         swordAttack = this.gameObject.GetComponentInChildren<DamageEnemy>();
+
+        tkPullCooldownSlider.maxValue = tkPullCooldownInSeconds;
+        tkPullCooldownSlider.minValue = 0;
     }
 
     private void Update()
     {
+        InputCameraChange cameraChange = GetComponent<InputCameraChange>();
+
+        canDoTKPull = cameraChange.lockOn;
         if (canAttack)
         {
             Attack();
-            //TKPull();
+
+            //if (canDoTKPull)
+            //{
+            //    TKPull();
+            //}
         }
+
+
     }
 
     private void Attack()
     {
         /* Play attack animation when attack button is pressed */
-        if (Input.GetButtonDown(attackButtonName))
+        if (Input.GetButtonDown(attackButtonName) && !journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
         {
-            /* Cancels possible dodge queuing */
-            anim.ResetTrigger("FreeLookDodge");
-            anim.ResetTrigger("LockedOnDodge");
+            /* Cancels possible tk pull queuing */
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
-            anim.SetTrigger("Attack");
+            /* Cancels possible dodge queuing */
+            anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
+            anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
+
+            anim.SetBool(attackAnimationBooleanName, true);
         }
     }
 
@@ -64,25 +96,24 @@ public class PlayerAttack : MonoBehaviour
         /* Play TK pull animation when push button is pressed */
         if (Input.GetButtonDown(tkThrowButtonName))
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
+            /* Cancels possible combo attack queuing */
+            anim.SetBool(attackAnimationBooleanName, false);
 
-            ///* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.ResetTrigger(attackAnimationTriggerName);
-            //}
+            /* Cancels possible dodge queuing */
+            anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
+            anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
 
-            ///* Cancels possible dodge queuing */
-            //anim.ResetTrigger("FreeLookDodge");
-            //anim.ResetTrigger("LockedOnDodge");
+            /* Search for enemy to attack */
+            DetectObject.TKPullTargetSearchNeeded = true;
 
-            //TODO: play animation
+            anim.SetTrigger(tkPullAnimationTriggerName);
+
             //TODO: change enemy location
             //TODO: stun enemy?
 
-            //TODO: ENEMY.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
+            enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
 
-            //TODO: ability cooldown
+            //TODO: ability cooldown as animation event
         }
     }
 
@@ -99,13 +130,19 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    /* Assigns enemy GameObject to class variable */
+    private void FindEnemy(GameObject detectedEnemy)
+    {
+        enemy = detectedEnemy;
+    }
+
     /* Subscribe to events */
     private void OnEnable()
     {
         Telekinesis.TeleManualMovingObject += SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
 
-        //subscribe to detectobject OnEnemyObjDetected
+        DetectObject.TKPullTargetDetected += FindEnemy;
     }
 
     /* Unsubscribe from events */
@@ -114,25 +151,12 @@ public class PlayerAttack : MonoBehaviour
         Telekinesis.TeleManualMovingObject -= SetCanAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
 
-        //unsubscribe to detectobject OnEnemyObjDetected
+        DetectObject.TKPullTargetDetected -= FindEnemy;
     }
 
     #region Animation Events
 
     /* Remember, changing name of animation event functions requires changing the function in the animation event! */
-
-    /* Was originally intended to prevent attack queuing, but not helpful with combo system active */
-    /* Called at start of attack animation to prevent being able to attack again */
-    //public void StartAttackAnimation()
-    //{
-    //    canAttack = false;
-    //}
-
-    ///* Called at end of attack animation to allow being able to attack again */
-    //public void EndAttackAnimation()
-    //{
-    //    canAttack = true;
-    //}
 
     /* Called during specific attack animation frame to start doing damage to hit enemies */
     public void StartDamageWindow()
@@ -146,6 +170,23 @@ public class PlayerAttack : MonoBehaviour
     {
         swordAttack.IsAttacking = false;
         Time.timeScale = 1.0f;
+    }
+
+    /* Called at specific tk pull animation frame to start tk pull cooldown */
+    public void StartTKPullCooldown()
+    {
+        StopCoroutine(TKPullCooldown());
+        StartCoroutine(TKPullCooldown());
+    }
+
+    /* Starts cooldown for the player's tk pull ability */
+    private IEnumerator TKPullCooldown()
+    {
+        canDoTKPull = false;
+
+        yield return new WaitForSecondsRealtime(tkPullCooldownInSeconds);
+
+        canDoTKPull = true;
     }
 
     #endregion

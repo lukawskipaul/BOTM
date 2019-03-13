@@ -1,0 +1,524 @@
+fileFormatVersion: 2
+guid: dd918110471eefd409d7eb0f73f8120a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bottom_Jaw
+    100002: joint16
+    100004: joint17
+    100006: joint18
+    100008: joint19
+    100010: joint20
+    100012: joint21
+    100014: joint22
+    100016: joint24
+    100018: joint25
+    100020: joint26
+    100022: joint27
+    100024: joint28
+    100026: joint29
+    100028: joint30
+    100030: joint31
+    100032: joint32
+    100034: joint33
+    100036: joint34
+    100038: joint35
+    100040: joint37
+    100042: joint40
+    100044: joint41
+    100046: joint42
+    100048: joint46
+    100050: joint54
+    100052: joint55
+    100054: joint56
+    100056: joint57
+    100058: joint58
+    100060: joint59
+    100062: joint60
+    100064: joint62
+    100066: joint63
+    100068: joint64
+    100070: joint65
+    100072: joint66
+    100074: joint67
+    100076: joint68
+    100078: joint69
+    100080: joint70
+    100082: joint71
+    100084: joint72
+    100086: joint73
+    100088: joint74
+    100090: joint76
+    100092: joint77
+    100094: joint79
+    100096: joint80
+    100098: joint91
+    100100: joint92
+    100102: joint93
+    100104: joint94
+    100106: joint95
+    100108: Left_arm
+    100110: //RootNode
+    100112: Neck_Head
+    100114: pasted__joint19
+    100116: pasted__joint20
+    100118: pasted__joint21
+    100120: pasted__joint22
+    100122: pasted__joint28
+    100124: pasted__joint29
+    100126: pasted__joint30
+    100128: pasted__joint31
+    100130: pasted__joint32
+    100132: pasted__joint33
+    100134: pasted__joint34
+    100136: pasted__joint35
+    100138: pasted__joint36
+    100140: pasted__joint37
+    100142: pasted__pasted__joint19
+    100144: pasted__pasted__joint20
+    100146: pasted__pasted__joint21
+    100148: pasted__pasted__joint22
+    100150: pasted__pasted__joint28
+    100152: pasted__pasted__joint29
+    100154: pasted__pasted__joint30
+    100156: pasted__pasted__joint31
+    100158: pasted__pasted__joint32
+    100160: pasted__pasted__joint33
+    100162: pasted__pasted__joint34
+    100164: pasted__pasted__joint35
+    100166: pasted__pasted__joint36
+    100168: pasted__pasted__joint37
+    100170: pasted__pasted__pasted__joint19
+    100172: pasted__pasted__pasted__joint20
+    100174: pasted__pasted__pasted__joint21
+    100176: pasted__pasted__pasted__joint22
+    100178: pasted__pasted__pasted__joint23
+    100180: pasted__pasted__pasted__joint24
+    100182: pasted__pasted__pasted__joint25
+    100184: pasted__pasted__pasted__joint26
+    100186: Rig
+    100188: Right_Arm
+    100190: Top_Jaw
+    100192: transform29
+    100194: transform30
+    400000: Bottom_Jaw
+    400002: joint16
+    400004: joint17
+    400006: joint18
+    400008: joint19
+    400010: joint20
+    400012: joint21
+    400014: joint22
+    400016: joint24
+    400018: joint25
+    400020: joint26
+    400022: joint27
+    400024: joint28
+    400026: joint29
+    400028: joint30
+    400030: joint31
+    400032: joint32
+    400034: joint33
+    400036: joint34
+    400038: joint35
+    400040: joint37
+    400042: joint40
+    400044: joint41
+    400046: joint42
+    400048: joint46
+    400050: joint54
+    400052: joint55
+    400054: joint56
+    400056: joint57
+    400058: joint58
+    400060: joint59
+    400062: joint60
+    400064: joint62
+    400066: joint63
+    400068: joint64
+    400070: joint65
+    400072: joint66
+    400074: joint67
+    400076: joint68
+    400078: joint69
+    400080: joint70
+    400082: joint71
+    400084: joint72
+    400086: joint73
+    400088: joint74
+    400090: joint76
+    400092: joint77
+    400094: joint79
+    400096: joint80
+    400098: joint91
+    400100: joint92
+    400102: joint93
+    400104: joint94
+    400106: joint95
+    400108: Left_arm
+    400110: //RootNode
+    400112: Neck_Head
+    400114: pasted__joint19
+    400116: pasted__joint20
+    400118: pasted__joint21
+    400120: pasted__joint22
+    400122: pasted__joint28
+    400124: pasted__joint29
+    400126: pasted__joint30
+    400128: pasted__joint31
+    400130: pasted__joint32
+    400132: pasted__joint33
+    400134: pasted__joint34
+    400136: pasted__joint35
+    400138: pasted__joint36
+    400140: pasted__joint37
+    400142: pasted__pasted__joint19
+    400144: pasted__pasted__joint20
+    400146: pasted__pasted__joint21
+    400148: pasted__pasted__joint22
+    400150: pasted__pasted__joint28
+    400152: pasted__pasted__joint29
+    400154: pasted__pasted__joint30
+    400156: pasted__pasted__joint31
+    400158: pasted__pasted__joint32
+    400160: pasted__pasted__joint33
+    400162: pasted__pasted__joint34
+    400164: pasted__pasted__joint35
+    400166: pasted__pasted__joint36
+    400168: pasted__pasted__joint37
+    400170: pasted__pasted__pasted__joint19
+    400172: pasted__pasted__pasted__joint20
+    400174: pasted__pasted__pasted__joint21
+    400176: pasted__pasted__pasted__joint22
+    400178: pasted__pasted__pasted__joint23
+    400180: pasted__pasted__pasted__joint24
+    400182: pasted__pasted__pasted__joint25
+    400184: pasted__pasted__pasted__joint26
+    400186: Rig
+    400188: Right_Arm
+    400190: Top_Jaw
+    400192: transform29
+    400194: transform30
+    7400000: Idle
+    7400002: Attack
+    7400004: Walk_Loop
+    7400006: Aggro
+    7400008: Idle_Lick
+    7400010: Flinch
+    7400012: Death
+    7400014: Animations
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.2924528
+        functionName: callEvent
+        data: Play_CrocAttack1
+        objectReferenceParameter: {fileID: 100118, guid: aa65f44eaf0e1d74f882cb8171fdf6b0,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk_Loop
+      takeName: Take 001
+      firstFrame: 85
+      lastFrame: 115
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Aggro
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 185
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: callEvent
+        data: Play_CrocAggro1
+        objectReferenceParameter: {fileID: 100118, guid: aa65f44eaf0e1d74f882cb8171fdf6b0,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_Lick
+      takeName: Take 001
+      firstFrame: 185
+      lastFrame: 225
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Flinch
+      takeName: Take 001
+      firstFrame: 225
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: callEvent
+        data: Play_CrocFlinch1
+        objectReferenceParameter: {fileID: 100118, guid: aa65f44eaf0e1d74f882cb8171fdf6b0,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 260
+      lastFrame: 312
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: callEvent
+        data: Play_CrocDeath1
+        objectReferenceParameter: {fileID: 100118, guid: aa65f44eaf0e1d74f882cb8171fdf6b0,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.4
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.4
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
