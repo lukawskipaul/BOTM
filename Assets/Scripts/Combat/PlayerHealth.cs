@@ -10,14 +10,33 @@ public class PlayerHealth : MonoBehaviour
     #region Variables
 
     [SerializeField]
-    private Slider healthBar;
+    private float regenCooldownInSeconds = 5.0f;
+    [SerializeField]
+    private float healthRegenSpeed = 5.0f;
+
     [SerializeField]
     private int maxHealth = 100;
+    public int MaxHealth
+    {
+        get
+        {
+            return maxHealth;
+        }
+    }
 
     private PlayerRespawnScript respawn;
 
-    private int currentHealth;
+    private float currentHealth;
+    public float CurrentHealth
+    {
+        get
+        {
+            return currentHealth;
+        }
+    }
+
     private bool isInvulnerable;
+    private bool canRegen;
 
     public static event Action TakeDamage;
 
@@ -27,20 +46,19 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         isInvulnerable = false;
+        canRegen = true;
     }
 
     private void Start()
     {
         respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
-
-        healthBar.maxValue = maxHealth;
-
-        UpdateHealthBar();
     }
 
     private void Update()
     {
-        UpdateHealthBar();
+        CapHealth();
+
+        HealthRegen();
     }
 
     public void DamagePlayer(int amount)
@@ -49,6 +67,9 @@ public class PlayerHealth : MonoBehaviour
         if (!isInvulnerable)
         {
             currentHealth -= amount;
+
+            StopCoroutine(DisableHealthRegen());
+            StartCoroutine(DisableHealthRegen());
 
             OnTakeDamage();
         }
@@ -64,20 +85,38 @@ public class PlayerHealth : MonoBehaviour
     {
         /* Heals player by pickup amount */
         currentHealth += amount;
+    }
 
+    private void CapHealth()
+    {
         /* Caps player health at 100% */
         if (currentHealth >= maxHealth)
         {
             currentHealth = maxHealth;
+
+            canRegen = false;
         }
     }
 
-    void UpdateHealthBar()
+    void HealthRegen()
     {
-        /* Updates health bar with current health */
-        //healthBar.value = currentHealth;  //comment made by Brendan Wascher 2-23 
+        /* Regenerates health over time if the player hasn't been damaged in a while */
+        if (canRegen)
+        {
+            currentHealth += Time.deltaTime * healthRegenSpeed;
+        }
     }
-    
+
+    private IEnumerator DisableHealthRegen()
+    {
+        /* Stops health regen when the player takes damage */
+        canRegen = false;
+
+        yield return new WaitForSecondsRealtime(regenCooldownInSeconds);
+
+        canRegen = true;
+    }
+
     private void OnTakeDamage()
     {
         /* Invokes TakeDamage event */
