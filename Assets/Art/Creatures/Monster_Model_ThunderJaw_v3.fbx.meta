@@ -250,7 +250,17 @@ ModelImporter:
     13700008: Hair
     13700010: Thunder_Jaw_Body 1
     13700012: Toungue
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6
+    second: {fileID: 2100000, guid: 47ee760ed55386241979d28dc045ec49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: 47ee760ed55386241979d28dc045ec49, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -302,7 +312,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.4
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
