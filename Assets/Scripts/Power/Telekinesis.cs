@@ -155,7 +155,8 @@ public class Telekinesis : MonoBehaviour
 
     private void MoveLevitateTransform()
     {
-        zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+        //zInput = Input.mouseScrollDelta.y * telePushPullSpeed;
+        zInput = Input.GetAxis("PushPull") * (telePushPullSpeed * .01f);
 
         if ((Vector3.Distance(levitatableGO.transform.position, player.transform.position) <= minDistance))
         {
@@ -170,12 +171,9 @@ public class Telekinesis : MonoBehaviour
 
     private void DropObject()
     {
-        if (isLiftingObject == true)
-        {
-            objectRigidBody.useGravity = true;
-            currentTKObject.SetNeutral();
-            ResetTK();
-        }     
+        objectRigidBody.useGravity = true;
+        currentTKObject.SetNeutral();
+        ResetTK();
     }
 
     private void CheckDistance()

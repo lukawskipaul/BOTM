@@ -8,12 +8,14 @@ public class DetectObject : MonoBehaviour
     // Event that is raised when an object is detected
     public static event Action<GameObject> LevObjectDetected;
     public static event Action<GameObject> EnemyObjDetected;
+    public static event Action<GameObject> TKPullTargetDetected;
     // Event that is rasied when an object is no longer in sight
     public static event Action LevObjectGone;
     public static event Action EnemyObjGone;
 
     //A boolean that InputCameraChange modifies to inform this class to run the private method CastSphere
     public static bool EnemySearchNeeded;
+    public static bool TKPullTargetSearchNeeded;
     public static float SearchDirection;
 
     [SerializeField]
@@ -35,6 +37,11 @@ public class DetectObject : MonoBehaviour
             }
 
             else CastSphere("Enemy");
+        }
+
+        if (TKPullTargetSearchNeeded)
+        {
+            CastSphere("Enemy");
         }
     }
 
@@ -80,9 +87,18 @@ public class DetectObject : MonoBehaviour
                     }
                     else if (FindTag == "Enemy")
                     {
+                        if (TKPullTargetSearchNeeded)
+                        {
+                            OnTKPullTargetDetected(hit.collider.gameObject);
+                            //We found an enemy, we don't need to search anymore
+                            TKPullTargetSearchNeeded = false;
+                        }
+                        else
+                        {
                             OnEnemyObjDetected(hit.collider.gameObject);
                             //We found an enemy, we don't need to search anymore
                             EnemySearchNeeded = false;
+                        }
                     }
                 }
             }
@@ -94,6 +110,8 @@ public class DetectObject : MonoBehaviour
             if (FindTag == "LevitatableObject")
             {
                 OnLevObjectGone();
+
+                hit.collider.GetComponent<MeshRenderer>().material.color = Color.white;
             }
 
             if (FindTag == "Enemy")
@@ -237,6 +255,14 @@ public class DetectObject : MonoBehaviour
         if (LevObjectGone != null)
         {
             LevObjectGone.Invoke();
+        }
+    }
+
+    private void OnTKPullTargetDetected(GameObject detObj)
+    {
+        if (TKPullTargetDetected != null)
+        {
+            TKPullTargetDetected.Invoke(detObj);
         }
     }
 }
