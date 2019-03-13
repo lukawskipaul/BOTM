@@ -194,6 +194,7 @@ public class RootMotionMovementController : MonoBehaviour
     /* Called at specific dodge animation frame to start dodge cooldown */
     public void StartDodgeCooldown()
     {
+        StopCoroutine(DodgeCooldown());
         StartCoroutine(DodgeCooldown());
     }
 
