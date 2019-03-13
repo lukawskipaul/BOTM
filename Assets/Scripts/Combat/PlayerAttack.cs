@@ -139,17 +139,16 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    /* Disables/enables attacking when carrying/dropping with telekenesis */
-    private void SetCanAttack()
+    /* Enables attacking when dropping with telekenesis */
+    private void EnableCanAttack()
     {
-        if (canAttack)
-        {
-            canAttack = false;
-        }
-        else
-        {
-            canAttack = true;
-        }
+        canAttack = true;
+    }
+
+    /* Disables attacking when carrying with telekenesis */
+    private void DisableCanAttack()
+    {
+        canAttack = false;
     }
 
     /* Assigns enemy GameObject to class variable */
@@ -161,8 +160,8 @@ public class PlayerAttack : MonoBehaviour
     /* Subscribe to events */
     private void OnEnable()
     {
-        Telekinesis.TeleManualMovingObject += SetCanAttack;
-        Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
+        Telekinesis.TeleManualMovingObject += DisableCanAttack;
+        Telekinesis.TeleStoppedManualMovingObject += EnableCanAttack;
 
         DetectObject.TKPullTargetDetected += FindEnemy;
     }
@@ -170,8 +169,8 @@ public class PlayerAttack : MonoBehaviour
     /* Unsubscribe from events */
     private void OnDisable()
     {
-        Telekinesis.TeleManualMovingObject -= SetCanAttack;
-        Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
+        Telekinesis.TeleManualMovingObject -= DisableCanAttack;
+        Telekinesis.TeleStoppedManualMovingObject -= EnableCanAttack;
 
         DetectObject.TKPullTargetDetected -= FindEnemy;
     }
