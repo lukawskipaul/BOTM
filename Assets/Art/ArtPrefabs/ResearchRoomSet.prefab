@@ -60,7 +60,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1666239143858314287
 Transform:
@@ -157,7 +157,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1666239144332217763
 Transform:
@@ -254,7 +254,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1666239142972997252
 Transform:
@@ -378,7 +378,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4797226623045643033
 Transform:
@@ -482,7 +482,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1666239142937213555
 Transform:
@@ -538,6 +538,7 @@ Transform:
   - {fileID: 1194042617598048529}
   - {fileID: 3923495247007304201}
   - {fileID: 3107489330104016740}
+  - {fileID: 8925939733080536851}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -644,6 +645,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: e0f427540679ee646aade34d12e90251, type: 3}
+--- !u!1 &4447313221216986269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8925939733080536851}
+  m_Layer: 0
+  m_Name: catwalk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &8925939733080536851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447313221216986269}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.4108539, y: 2.6023633, z: 19.285545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1666239142937213555}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1028182930626752082
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -907,6 +938,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catwalk_MedBeam_V3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.8900003
@@ -965,15 +1000,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
---- !u!1 &64952882518313647 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 64952882518412303}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &64952882518283919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0138cb2294a9f444da49640b0664ed0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 64952882518412303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &64952882518313647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a,
     type: 3}
   m_PrefabInstance: {fileID: 64952882518412303}
   m_PrefabAsset: {fileID: 0}
@@ -987,6 +1022,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_Name
       value: Modular_Catwalk_A_V3 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1034,15 +1073,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
---- !u!1 &374273599611949181 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 374273599611918045}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &374273599611784285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 374273599611918045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &374273599611949181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2,
     type: 3}
   m_PrefabInstance: {fileID: 374273599611918045}
   m_PrefabAsset: {fileID: 0}
@@ -1056,6 +1095,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_Name
       value: Modular_Catwalk_A_V3 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1126,6 +1169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkB_V3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.689
@@ -1180,15 +1227,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
---- !u!4 &894426879162294711 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b,
-    type: 3}
-  m_PrefabInstance: {fileID: 894426879161908023}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &894426879161810327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b,
+    type: 3}
+  m_PrefabInstance: {fileID: 894426879161908023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &894426879162294711 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b,
     type: 3}
   m_PrefabInstance: {fileID: 894426879161908023}
   m_PrefabAsset: {fileID: 0}
@@ -1286,6 +1333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkStairs_V3 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0f427540679ee646aade34d12e90251, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0f427540679ee646aade34d12e90251, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.185
@@ -1354,6 +1405,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_Name
       value: Modular_CatwalkB_V3 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1426,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkStairs_V3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0f427540679ee646aade34d12e90251, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0f427540679ee646aade34d12e90251, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2
@@ -1494,6 +1553,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
       propertyPath: m_Name
       value: ResearchRoom_Computer_Low (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1569,6 +1632,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_Name
       value: Catwalk_MedBeam_V3 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1651,6 +1718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Crystal_V01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.8546374
@@ -1697,15 +1768,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
---- !u!4 &3107489330104016740 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff,
-    type: 3}
-  m_PrefabInstance: {fileID: 3107489330104141284}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3107489330104173380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff,
+    type: 3}
+  m_PrefabInstance: {fileID: 3107489330104141284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3107489330104016740 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff,
     type: 3}
   m_PrefabInstance: {fileID: 3107489330104141284}
   m_PrefabAsset: {fileID: 0}
@@ -1719,6 +1790,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_Name
       value: Modular_CatwalkB_V3 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1796,6 +1871,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_Name
       value: Catwalk_MedBeam_V3 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1878,6 +1957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkStairs_V3 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0f427540679ee646aade34d12e90251, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0f427540679ee646aade34d12e90251, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.208
@@ -1947,6 +2030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkC_V3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.8159995
@@ -2001,15 +2088,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
---- !u!1 &3614375381107586324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 3614375381107487668}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3614375381107353908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3614375381107487668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3614375381107586324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7,
     type: 3}
   m_PrefabInstance: {fileID: 3614375381107487668}
   m_PrefabAsset: {fileID: 0}
@@ -2107,6 +2194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkStairs_V3 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0f427540679ee646aade34d12e90251, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0f427540679ee646aade34d12e90251, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.55
@@ -2183,6 +2274,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_Name
       value: Catwalk_MedBeam_V3 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2265,6 +2360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkB_V3 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.2649999
@@ -2335,6 +2434,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f9ac0c6c949d1241966245cb254016d, type: 3}
       propertyPath: m_Name
       value: ModularMachinery_TestBox_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f9ac0c6c949d1241966245cb254016d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f9ac0c6c949d1241966245cb254016d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2411,6 +2514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResearchRoom_Keyboard_V3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9e5d40e7c743a514295017271623bf0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9e5d40e7c743a514295017271623bf0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7275658
@@ -2473,6 +2580,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_Name
       value: Modular_Catwalk_A_V3 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2551,6 +2662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_Catwalk_A_V3 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -2605,15 +2720,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
---- !u!4 &5690932425192460971 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 5690932425192851499}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5690932425192820363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5690932425192851499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5690932425192460971 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2,
     type: 3}
   m_PrefabInstance: {fileID: 5690932425192851499}
   m_PrefabAsset: {fileID: 0}
@@ -2627,6 +2742,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_Name
       value: Modular_Catwalk_A_V3 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2697,6 +2816,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: RR_ResearchRoom_V3
       objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.93
@@ -2751,21 +2898,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af7b261064e5a946a5556f8dcbab8f2, type: 3}
---- !u!1 &5959540402734860159 stripped
+--- !u!1 &5959540402734860157 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 5af7b261064e5a946a5556f8dcbab8f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 5959540402734760415}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5959540402734860149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100010, guid: 5af7b261064e5a946a5556f8dcbab8f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 5959540402734760415}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5959540402734860153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: 5af7b261064e5a946a5556f8dcbab8f2,
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 5af7b261064e5a946a5556f8dcbab8f2,
     type: 3}
   m_PrefabInstance: {fileID: 5959540402734760415}
   m_PrefabAsset: {fileID: 0}
@@ -2775,15 +2910,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5959540402734760415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5959540402734860159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5af7b261064e5a946a5556f8dcbab8f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5959540402734760415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5959540402734860153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: 5af7b261064e5a946a5556f8dcbab8f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5959540402734760415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5959540402734860155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 5af7b261064e5a946a5556f8dcbab8f2,
     type: 3}
   m_PrefabInstance: {fileID: 5959540402734760415}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5959540402734860157 stripped
+--- !u!1 &5959540402734860149 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: 5af7b261064e5a946a5556f8dcbab8f2,
+  m_CorrespondingSourceObject: {fileID: 100010, guid: 5af7b261064e5a946a5556f8dcbab8f2,
     type: 3}
   m_PrefabInstance: {fileID: 5959540402734760415}
   m_PrefabAsset: {fileID: 0}
@@ -2797,6 +2944,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
       propertyPath: m_Name
       value: ResearchRoom_Computer_Low (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2872,6 +3023,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_Name
       value: Catwalk_MedBeam_V3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2954,6 +3109,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ModularMachinery_Switch_V04
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.29
@@ -3010,6 +3181,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b885195d8c387c648afe1cf0ab551ee4, type: 3}
 --- !u!4 &6709372118310018890 stripped
@@ -3028,6 +3211,30 @@ PrefabInstance:
     - target: {fileID: 100010, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
       propertyPath: m_Name
       value: RR_Hallway_V3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3087,15 +3294,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ed9e67c5564194db4116f99bf6c21b, type: 3}
---- !u!4 &7045023914287516402 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400010, guid: 84ed9e67c5564194db4116f99bf6c21b,
-    type: 3}
-  m_PrefabInstance: {fileID: 7045023914287386744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7045023914287355600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100008, guid: 84ed9e67c5564194db4116f99bf6c21b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7045023914287386744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7045023914287355614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: 84ed9e67c5564194db4116f99bf6c21b,
     type: 3}
   m_PrefabInstance: {fileID: 7045023914287386744}
   m_PrefabAsset: {fileID: 0}
@@ -3105,9 +3312,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7045023914287386744}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7045023914287355614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: 84ed9e67c5564194db4116f99bf6c21b,
+--- !u!4 &7045023914287516402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400010, guid: 84ed9e67c5564194db4116f99bf6c21b,
     type: 3}
   m_PrefabInstance: {fileID: 7045023914287386744}
   m_PrefabAsset: {fileID: 0}
@@ -3121,6 +3328,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
       propertyPath: m_Name
       value: Modular_CatwalkC_V3 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3184,6 +3395,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_Name
       value: Modular_Catwalk_A_V3 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d24dfbd76044c0d49a47e871f8e905e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3254,6 +3469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkC_V3 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.2749996
@@ -3300,15 +3519,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
---- !u!1 &7709049944841933866 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 7709049944842031754}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7709049944841897994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7709049944842031754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7709049944841933866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7,
     type: 3}
   m_PrefabInstance: {fileID: 7709049944842031754}
   m_PrefabAsset: {fileID: 0}
@@ -3322,6 +3541,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_Name
       value: Modular_CatwalkB_V3 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3483,6 +3706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkB_V3 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6939996
@@ -3537,15 +3764,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3db2633ee45ecc8479ebf11e8179b20b, type: 3}
---- !u!4 &8660741184769875539 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8660741184769737939}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8660741184769639027 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 3db2633ee45ecc8479ebf11e8179b20b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8660741184769737939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8660741184769875539 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 3db2633ee45ecc8479ebf11e8179b20b,
     type: 3}
   m_PrefabInstance: {fileID: 8660741184769737939}
   m_PrefabAsset: {fileID: 0}
@@ -3559,6 +3786,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_Name
       value: Catwalk_MedBeam_V3 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0138cb2294a9f444da49640b0664ed0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3635,6 +3866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResearchRoom_Computer_Low
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd9dfe8044498914aa76aa419fdab80f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6627002
@@ -3710,6 +3945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_CatwalkC_V3 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13599996
@@ -3764,15 +4003,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94253fe82b1c34f44a7411d5a68541a7, type: 3}
---- !u!4 &9222456545396486422 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 9222456545396353942}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9222456545396321590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 94253fe82b1c34f44a7411d5a68541a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 9222456545396353942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9222456545396486422 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 94253fe82b1c34f44a7411d5a68541a7,
     type: 3}
   m_PrefabInstance: {fileID: 9222456545396353942}
   m_PrefabAsset: {fileID: 0}
