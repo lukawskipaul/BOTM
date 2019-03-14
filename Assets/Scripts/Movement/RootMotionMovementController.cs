@@ -24,6 +24,8 @@ public class RootMotionMovementController : MonoBehaviour
     private bool canMove;
     private bool canDodge;
     private bool isOnGround;
+
+    Vector3 direction;
     public bool IsOnGround
     {
         set
@@ -53,6 +55,7 @@ public class RootMotionMovementController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        //direction = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical")));
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -64,6 +67,7 @@ public class RootMotionMovementController : MonoBehaviour
             //&& isOnGround)
         {
             Rotate();
+            //UpdateRotation();
         }
     }
 
@@ -100,12 +104,27 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Rotate()
     {
-        if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
+
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
         {
+            
             //look with Camera
             transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);
+
             //lock rotation to only the Y axis
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+
+            
+        }
+    }
+
+    private void UpdateRotation()
+    {
+        float turnThreshold = 0.1f;
+        if (direction.magnitude > turnThreshold && direction != Vector3.zero)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, .5f);
         }
     }
 
