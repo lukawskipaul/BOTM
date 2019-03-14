@@ -23,17 +23,6 @@ public class Boss_StartStrafe : StateMachineBehaviour
         // I.E. The boss' position is considered local (0,0) and the direction 
         // it's facing decides the orientation of the local x-axis and z-axis
         relativePosition = boss.transform.InverseTransformPoint(player.transform.position);
-    }
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
         // If the player is to the right of the boss, the boss should strafe clockwise
         if (relativePosition.x >= 0)
         {
@@ -45,6 +34,18 @@ public class Boss_StartStrafe : StateMachineBehaviour
             animator.Play("Strafe_Right");
         }
     }
+
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
+
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+        
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
