@@ -33,7 +33,7 @@ public class GeneratorRestart : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
         if(other.tag == "LevitatableObject" && other.name == "Battery&&" && hasBeenTriggered == false)
         {
             BatteryHitTrigger(other);
@@ -42,7 +42,7 @@ public class GeneratorRestart : MonoBehaviour
 
     private void BatteryHitTrigger(Collider other)
     {
-        Debug.Log("Trigger2");
+        //Debug.Log("Trigger2");
         hasBeenTriggered = true;
         ThisBattery.SetActive(true);
         Destroy(other.gameObject);

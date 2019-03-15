@@ -11,7 +11,7 @@ public class Hallway_Door_Trigger : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             myAnimatorController.SetBool("Front_Door", true);
-            playerLight.SetActive(true);
+            //playerLight.SetActive(true);
 
             AkSoundEngine.PostEvent("Play_MetalDoorSlamCloseNoPower", gameObject);
             Destroy(this.gameObject.GetComponent<Collider>());

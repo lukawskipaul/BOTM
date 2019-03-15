@@ -1,0 +1,340 @@
+fileFormatVersion: 2
+guid: f5216f0cc5974cf4f96cbdd9e8addbbd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Back_1
+    100006: Back_2
+    100008: Back_3
+    100010: Back_4
+    100012: Bones
+    100014: Calve_R
+    100016: Calves_L
+    100018: Canister
+    100020: Canister_1
+    100022: Canister_2
+    100024: Canister_3
+    100026: Canister_R
+    100028: Chest
+    100030: Cinster_L
+    100032: Cocodile_Body
+    100034: Crocdile_Model
+    100036: Eye_1
+    100038: Eye_2
+    100040: Eye_L
+    100042: Eye_R
+    100044: Finger_1_R_1
+    100046: Finger_1_R_1 1
+    100048: Finger_1_R_2
+    100050: Finger_1_R_2 1
+    100052: Finger_1_R_3
+    100054: Finger_1_R_3 1
+    100056: Finger_1_R_4
+    100058: Finger_1_R_4 1
+    100060: Finger_2_R_1
+    100062: Finger_2_R_1 1
+    100064: Finger_2_R_2
+    100066: Finger_2_R_2 1
+    100068: Finger_2_R_3
+    100070: Finger_2_R_3 1
+    100072: Finger_2_R_4
+    100074: Finger_2_R_4 1
+    100076: Finger_3_R_1
+    100078: Finger_3_R_1 1
+    100080: Finger_3_R_2
+    100082: Finger_3_R_2 1
+    100084: Finger_3_R_3
+    100086: Finger_3_R_3 1
+    100088: Finger_3_R_4
+    100090: Finger_3_R_4 1
+    100092: Foot_L
+    100094: Foot_R
+    100096: Forearm_R
+    100098: Foreartm_L
+    100100: Hand_L
+    100102: Hand_R
+    100104: Head_Spikes
+    100106: Jaw_Bottom_1
+    100108: Jaw_Bottom_2
+    100110: Jaw_Bottom_3
+    100112: Jaw_Bottom_4
+    100114: Jaw_Flesh_1
+    100116: Jaw_Flesh_2
+    100118: Knee_L
+    100120: Knee_R
+    100122: Leg_L
+    100124: Leg_R
+    100126: //RootNode
+    100128: Neck_Flesh
+    100130: Neck_Head
+    100132: Root
+    100134: Shoulder_L
+    100136: Shoulder_R
+    100138: Tail_1
+    100140: Tail_2
+    100142: Tail_3
+    100144: Tail_4
+    100146: Tail_5
+    100148: Thumb_L_1
+    100150: Thumb_L_2
+    100152: Thumb_L_3
+    100154: Thumb_L_4
+    100156: Thunb_R_1
+    100158: Thunb_R_2
+    100160: Thunb_R_3
+    100162: Thunb_R_4
+    100164: Toe_1_L_1
+    100166: Toe_1_L_1 1
+    100168: Toe_1_L_2
+    100170: Toe_1_L_2 1
+    100172: Toe_1_L_3
+    100174: Toe_1_L_3 1
+    100176: Toe_2_L_1
+    100178: Toe_2_L_1 1
+    100180: Toe_2_L_2
+    100182: Toe_2_L_2 1
+    100184: Toe_2_L_3
+    100186: Toe_2_L_3 1
+    100188: Toe_3_L_1
+    100190: Toe_3_L_1 1
+    100192: Toe_3_L_2
+    100194: Toe_3_L_2 1
+    100196: Toe_3_L_3
+    100198: Toe_3_L_3 1
+    100200: Top_Jaw_1
+    100202: Top_Jaw_2
+    100204: Top_Jaw_3
+    100206: Tounge_1
+    100208: Tounge_2
+    100210: Tounge_3
+    100212: Tounge_4
+    100214: Toungue
+    100216: transform29
+    100218: transform30
+    400000: Arm_L
+    400002: Arm_R
+    400004: Back_1
+    400006: Back_2
+    400008: Back_3
+    400010: Back_4
+    400012: Bones
+    400014: Calve_R
+    400016: Calves_L
+    400018: Canister
+    400020: Canister_1
+    400022: Canister_2
+    400024: Canister_3
+    400026: Canister_R
+    400028: Chest
+    400030: Cinster_L
+    400032: Cocodile_Body
+    400034: Crocdile_Model
+    400036: Eye_1
+    400038: Eye_2
+    400040: Eye_L
+    400042: Eye_R
+    400044: Finger_1_R_1
+    400046: Finger_1_R_1 1
+    400048: Finger_1_R_2
+    400050: Finger_1_R_2 1
+    400052: Finger_1_R_3
+    400054: Finger_1_R_3 1
+    400056: Finger_1_R_4
+    400058: Finger_1_R_4 1
+    400060: Finger_2_R_1
+    400062: Finger_2_R_1 1
+    400064: Finger_2_R_2
+    400066: Finger_2_R_2 1
+    400068: Finger_2_R_3
+    400070: Finger_2_R_3 1
+    400072: Finger_2_R_4
+    400074: Finger_2_R_4 1
+    400076: Finger_3_R_1
+    400078: Finger_3_R_1 1
+    400080: Finger_3_R_2
+    400082: Finger_3_R_2 1
+    400084: Finger_3_R_3
+    400086: Finger_3_R_3 1
+    400088: Finger_3_R_4
+    400090: Finger_3_R_4 1
+    400092: Foot_L
+    400094: Foot_R
+    400096: Forearm_R
+    400098: Foreartm_L
+    400100: Hand_L
+    400102: Hand_R
+    400104: Head_Spikes
+    400106: Jaw_Bottom_1
+    400108: Jaw_Bottom_2
+    400110: Jaw_Bottom_3
+    400112: Jaw_Bottom_4
+    400114: Jaw_Flesh_1
+    400116: Jaw_Flesh_2
+    400118: Knee_L
+    400120: Knee_R
+    400122: Leg_L
+    400124: Leg_R
+    400126: //RootNode
+    400128: Neck_Flesh
+    400130: Neck_Head
+    400132: Root
+    400134: Shoulder_L
+    400136: Shoulder_R
+    400138: Tail_1
+    400140: Tail_2
+    400142: Tail_3
+    400144: Tail_4
+    400146: Tail_5
+    400148: Thumb_L_1
+    400150: Thumb_L_2
+    400152: Thumb_L_3
+    400154: Thumb_L_4
+    400156: Thunb_R_1
+    400158: Thunb_R_2
+    400160: Thunb_R_3
+    400162: Thunb_R_4
+    400164: Toe_1_L_1
+    400166: Toe_1_L_1 1
+    400168: Toe_1_L_2
+    400170: Toe_1_L_2 1
+    400172: Toe_1_L_3
+    400174: Toe_1_L_3 1
+    400176: Toe_2_L_1
+    400178: Toe_2_L_1 1
+    400180: Toe_2_L_2
+    400182: Toe_2_L_2 1
+    400184: Toe_2_L_3
+    400186: Toe_2_L_3 1
+    400188: Toe_3_L_1
+    400190: Toe_3_L_1 1
+    400192: Toe_3_L_2
+    400194: Toe_3_L_2 1
+    400196: Toe_3_L_3
+    400198: Toe_3_L_3 1
+    400200: Top_Jaw_1
+    400202: Top_Jaw_2
+    400204: Top_Jaw_3
+    400206: Tounge_1
+    400208: Tounge_2
+    400210: Tounge_3
+    400212: Tounge_4
+    400214: Toungue
+    400216: transform29
+    400218: transform30
+    2100000: Katalan_Croc_Material
+    2100002: Magitech_Accesories_Material
+    4300000: Cocodile_Body
+    4300002: Toungue
+    4300004: Eye_2
+    4300006: Eye_1
+    4300008: Bones
+    4300010: Canister_1
+    4300012: Canister_2
+    4300014: Canister_3
+    9500000: //RootNode
+    13700000: Bones
+    13700002: Canister_1
+    13700004: Canister_2
+    13700006: Canister_3
+    13700008: Cocodile_Body
+    13700010: Eye_1
+    13700012: Eye_2
+    13700014: Toungue
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Katalan_Croc_Material
+    second: {fileID: 2100000, guid: 8db38fad172b7424b87188e21beda14a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Magitech_Accesories_Material
+    second: {fileID: 2100000, guid: 4598850e9668b88438465499bc0a7496, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.4
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.4
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

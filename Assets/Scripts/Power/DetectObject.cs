@@ -24,6 +24,7 @@ public class DetectObject : MonoBehaviour
     float detectRadius, detectRange;
 
     Vector3 detectVector;
+    GameObject currentLevObject = null;
 
     private void Update()
     {
@@ -83,7 +84,8 @@ public class DetectObject : MonoBehaviour
                     if (FindTag == "LevitatableObject")
                     {
                         OnLevObjectDetected(hit.collider.gameObject);
-                        hit.collider.GetComponent<MeshRenderer>().material.color = Color.green;
+                        currentLevObject = hit.collider.gameObject;
+                        currentLevObject.GetComponentInChildren<Light>().enabled = true;
                     }
                     else if (FindTag == "Enemy")
                     {
@@ -109,9 +111,10 @@ public class DetectObject : MonoBehaviour
             Debug.Log("No" + FindTag);
             if (FindTag == "LevitatableObject")
             {
+                Debug.Log("Deselected: " + currentLevObject);
+                currentLevObject.GetComponentInChildren<Light>().enabled = false;
+                currentLevObject = null;
                 OnLevObjectGone();
-
-                hit.collider.GetComponent<MeshRenderer>().material.color = Color.white;
             }
 
             if (FindTag == "Enemy")
@@ -122,7 +125,6 @@ public class DetectObject : MonoBehaviour
             }
         }
     }
-
 
     private void FindSecondEnemy()
     {
