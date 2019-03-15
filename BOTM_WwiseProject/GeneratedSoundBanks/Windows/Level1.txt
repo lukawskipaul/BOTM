@@ -5,6 +5,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	726787325	Play_PipeFall			\Default Work Unit\Play_PipeFall	
 	934217562	Play_CaveAmbiance1			\Default Work Unit\Play_CaveAmbiance1	
 	1217506344	Play_CrocDeath1			\Default Work Unit\Play_CrocDeath1	
+	1291320897	Play_CrocLick1			\Default Work Unit\Play_CrocLick1	
 	1308308546	Play_WaterDripping			\Default Work Unit\Play_WaterDripping	
 	1605460501	Play_Room1AmbianceDemo			\Default Work Unit\Play_Room1AmbianceDemo	
 	1952116840	Play_CrocAttack1			\Default Work Unit\Play_CrocAttack1	
@@ -34,6 +35,7 @@ Effect plug-ins	ID	Name	Type				Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	46481961	ConcreteFootsteps_08	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ConcreteFootsteps_08_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_08		21392
 	167009388	Room1AmbianceDemo	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\Room1AmbianceDemo_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Room1AmbianceDemo		5760474
+	180231856	MetalDoorSlamCloseNoPower	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\MetalDoorSlamCloseNoPowerShort_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\MetalDoorSlamCloseNoPower		347732
 	227186557	GeneratorHum	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\GeneratorHum_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneratorHum		1175704
 	266411289	ConcreteFootsteps_09	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ConcreteFootsteps_09_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_09		22440
 	288346796	WaterDripping	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\WaterDripping_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\WaterDripping		6154912
@@ -51,12 +53,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	613338343	ConcreteFootsteps_001	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ConcreteFootsteps_001_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_001		19592
 	634832991	ConcreteFootsteps_005	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ConcreteFootsteps_005_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_005		13220
 	639194255	PipeFall	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\Pipe Fall 3_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\PipeFall		405508
-	685822108	MetalDoorSlamCloseNoPower	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\MetalDoorSlamCloseNoPower_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\MetalDoorSlamCloseNoPower		411640
 	690560153	CrocAggro1	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\CrocAggro1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\CrocAggro1		291476
 	698697704	SlidingDoorClose	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\SlidingDoorClose_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\SlidingDoorClose		257634
 	735080199	MetalDoorBreakdown1	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\MetalDoorBreakdown1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\MetalDoorBreakdown1		96762
 	759940777	Rockslide1(Initial)	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\Rockslide1(Initial)_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Rockslide1(Initial)		610180
-	780838416	ElectricStaticPassive	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ElectricStaticPassive_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\ElectricStaticPassive		1680520
+	774986204	ElectricPassive	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ElectricPassive_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\ElectricPassive		1781644
 	806803310	ConcreteFootsteps_07	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ConcreteFootsteps_07_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_07		8672
 	824725648	AI_VO_Line1	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\AI VO Line 1 Take 2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\AI_VO_Line1		1719380
 	826357523	HowlingWind1	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\HowlingWind1_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\HowlingWind1		1668536
@@ -64,6 +65,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	906061255	LTG _Ambient_Battle_ [Ambient Loop]	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\LTG _Ambient_Battle_ [Ambient Loop]_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\LTG _Ambient_Battle_ [Ambient Loop]		11546376
 	948046825	UI_JournalClose	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\UI_JournalClose_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI_JournalClose		110132
 	984849189	UI_PageFlip	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\UI_NotePickup2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI_PageFlip		126304
+	1005188426	CrocLick1	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\CrocLick1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\CrocLick1		108644
 	1010027217	ConcreteFootsteps_010	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\ConcreteFootsteps_010_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_010		16456
 	1025091138	TelekinesisThrow	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\TelekinesisThrow_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TelekinesisThrow		398444
 	1052687345	CrocDeath1	D:\BOTM\BOTM_WwiseProject\.cache\Windows\SFX\CrocDeath1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\CrocDeath1		212976

@@ -30,6 +30,7 @@
 				<Event Id="1952116840" Name="Play_CrocAttack1" ObjectPath="\Events\Default Work Unit\Play_CrocAttack1"/>
 				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1" MaxAttenuation="15.000000"/>
 				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1" MaxAttenuation="15.000000"/>
+				<Event Id="1291320897" Name="Play_CrocLick1" ObjectPath="\Events\Default Work Unit\Play_CrocLick1"/>
 				<Event Id="2387251670" Name="Play_ElectricPassive" ObjectPath="\Events\Default Work Unit\Play_ElectricPassive" MaxAttenuation="15.000000"/>
 				<Event Id="2540781641" Name="Play_GeneratorHum" ObjectPath="\Events\Default Work Unit\Play_GeneratorHum" MaxAttenuation="32.000000"/>
 				<Event Id="3210990662" Name="Play_HowlingWind" ObjectPath="\Events\Default Work Unit\Play_HowlingWind" MaxAttenuation="10.000000"/>
@@ -56,6 +57,10 @@
 				<File Id="167009388" Language="SFX">
 					<ShortName>Room1AmbianceDemo.wav</ShortName>
 					<Path>SFX\Room1AmbianceDemo_8956FC97.wem</Path>
+				</File>
+				<File Id="180231856" Language="SFX">
+					<ShortName>MetalDoorSlamCloseNoPowerShort.wav</ShortName>
+					<Path>SFX\MetalDoorSlamCloseNoPowerShort_56D34C19.wem</Path>
 				</File>
 				<File Id="227186557" Language="SFX">
 					<ShortName>GeneratorHum.wav</ShortName>
@@ -125,10 +130,6 @@
 					<ShortName>Pipe Fall 3.wav</ShortName>
 					<Path>SFX\Pipe Fall 3_56D34C19.wem</Path>
 				</File>
-				<File Id="685822108" Language="SFX">
-					<ShortName>MetalDoorSlamCloseNoPower.wav</ShortName>
-					<Path>SFX\MetalDoorSlamCloseNoPower_56D34C19.wem</Path>
-				</File>
 				<File Id="690560153" Language="SFX">
 					<ShortName>CrocAggro1.wav</ShortName>
 					<Path>SFX\CrocAggro1_56D34C19.wem</Path>
@@ -176,6 +177,10 @@
 				<File Id="984849189" Language="SFX">
 					<ShortName>UI_NotePickup2.wav</ShortName>
 					<Path>SFX\UI_NotePickup2_56D34C19.wem</Path>
+				</File>
+				<File Id="1005188426" Language="SFX">
+					<ShortName>CrocLick1.wav</ShortName>
+					<Path>SFX\CrocLick1_56D34C19.wem</Path>
 				</File>
 				<File Id="1010027217" Language="SFX">
 					<ShortName>ConcreteFootsteps_010.wav</ShortName>
