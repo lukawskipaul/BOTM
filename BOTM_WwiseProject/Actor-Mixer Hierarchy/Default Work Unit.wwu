@@ -125,34 +125,6 @@
 						<ActiveSource Name="Room1AmbianceDemo" ID="{413B1CFD-D0E8-497A-A38C-6D4348DC544E}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="MetalDoorSlamCloseNoPower" ID="{5E442E7A-94FE-4B93-ADA8-DFB0705AEF4E}" ShortID="882799412">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
-						</Reference>
-						<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
-							<ObjectRef Name="Inside_My_Head" ID="{94B53301-9AA1-468F-8419-92AEDAAE39DF}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="MetalDoorSlamCloseNoPower" ID="{24F9F441-C16C-468A-B18B-39EBC1D33CC8}" ShortID="685822108">
-							<Language>SFX</Language>
-							<AudioFile>MetalDoorSlamCloseNoPower.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="MetalDoorSlamCloseNoPower" ID="{24F9F441-C16C-468A-B18B-39EBC1D33CC8}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<RandomSequenceContainer Name="Footsteps" ID="{F62760E5-27E4-47E8-A814-87501CAD1C06}" ShortID="581589718">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
@@ -473,6 +445,7 @@
 				<Sound Name="ElectricPassive" ID="{535DA9FA-2CB3-4E0A-AD73-EC3B2B4412B6}" ShortID="886395915">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -713,6 +686,28 @@
 						<ActiveSource Name="UI_NotePickup2" ID="{01D2A61F-7B92-4BB5-AED8-66C4C1582806}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{E7D579FC-1ECE-458E-91B3-2B2631BE5D38}" ShortID="802283542">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{BCB3C1CD-45EC-441F-A00F-AF02A362ADA8}" ShortID="906061255">
+							<Language>SFX</Language>
+							<AudioFile>LTG _Ambient_Battle_ [Ambient Loop].wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{BCB3C1CD-45EC-441F-A00F-AF02A362ADA8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 				<Sound Name="HowlingWind1" ID="{D47A7E4B-A9AF-43DE-828D-C89FFB04F756}" ShortID="99316403">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
@@ -805,7 +800,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>-19</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -868,49 +863,63 @@
 						<ActiveSource Name="Pipe Fall 3" ID="{7914FC4C-8B20-4EBB-B63A-8FCCCF558AE5}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="ElectricStaticPassive" ID="{DC1526FB-34FA-4C05-BF88-4638E5DC0AAB}" ShortID="523811413">
+				<Sound Name="CrocLick1" ID="{F4FA6A03-1233-4D00-8A62-C8B978693963}" ShortID="892662435">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-100</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="CrocLick1" ID="{0F68BFB2-D4BE-4E6C-9C75-C51EC2052096}" ShortID="1005188426">
+							<Language>SFX</Language>
+							<AudioFile>CrocLick1.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="CrocLick1" ID="{0F68BFB2-D4BE-4E6C-9C75-C51EC2052096}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="MetalDoorSlamCloseNoPower" ID="{D765C3CF-EFA1-4761-92B4-DAFB8CD70573}" ShortID="75470344">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
-							<ObjectRef Name="ElectricPassive" ID="{84884067-2CD7-4984-8432-E8032B3B046D}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
 						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Inside_My_Head" ID="{94B53301-9AA1-468F-8419-92AEDAAE39DF}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="ElectricStaticPassive" ID="{BFB81434-1051-4AE9-AF02-E2E257E61A97}" ShortID="780838416">
+						<AudioFileSource Name="MetalDoorSlamCloseNoPowerShort" ID="{00C2D1CB-7D16-4934-A573-935EFD69EB76}" ShortID="180231856">
 							<Language>SFX</Language>
-							<AudioFile>ElectricStaticPassive.wav</AudioFile>
+							<AudioFile>MetalDoorSlamCloseNoPowerShort.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="ElectricStaticPassive" ID="{BFB81434-1051-4AE9-AF02-E2E257E61A97}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="LTG _Ambient_Battle_ [Ambient Loop] v03" ID="{521F1784-E03B-4367-AA7F-A839763AAF1D}" ShortID="951146951">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="LTG _Ambient_Battle_ [Ambient Loop] v03" ID="{B4C842EA-9E9F-41A0-92CE-34D1C0B1D73B}" ShortID="690070088">
-							<Language>SFX</Language>
-							<AudioFile>LTG _Ambient_Battle_ [Ambient Loop] v03.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="LTG _Ambient_Battle_ [Ambient Loop] v03" ID="{B4C842EA-9E9F-41A0-92CE-34D1C0B1D73B}" Platform="Linked"/>
+						<ActiveSource Name="MetalDoorSlamCloseNoPowerShort" ID="{00C2D1CB-7D16-4934-A573-935EFD69EB76}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

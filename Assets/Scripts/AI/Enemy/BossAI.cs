@@ -21,8 +21,8 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private NavMeshAgent bossNavMeshAgent;
 
-    [Tooltip("The list of tags that the boss will recognize as an enemy\n" +
-        "All other tags are considered an obstacle")]
+    [Tooltip("The list of layers that the boss will recognize as an enemy\n" +
+        "All other layers are considered an obstacle")]
     [SerializeField]
     private LayerMask targetMask;
 
@@ -80,7 +80,7 @@ public class BossAI : MonoBehaviour
     [SerializeField,Tooltip("[Seconds]How long the strafing will last before the boss switches to a different state.")]
     private float strafeStateDuration = 7;
 
-    // The list of all tags that the boss recognizes as an obstacle
+    // The list of all layers that the boss recognizes as an obstacle
     private LayerMask obstacleMask;
 
     // The current size of the boss' explosion attack
