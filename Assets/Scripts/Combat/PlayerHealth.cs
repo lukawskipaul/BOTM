@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
     {
         CapHealth();
 
-        HealthRegen();
+        //HealthRegen();
     }
 
     public void DamagePlayer(int amount)
@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(DisableHealthRegen());
 
             OnTakeDamage();
+            Debug.Log("Damage taken "+currentHealth);
         }
 
         /* Player dies when health reaches 0 */
