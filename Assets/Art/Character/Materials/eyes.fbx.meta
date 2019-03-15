@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1051fda0ef35c1a44a4a0db8d2125a20
+guid: 44e1d4da8f24dc74788cc1f573365e59
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,9 +8,13 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface2
-    9500000: //RootNode
-  externalObjects: {}
+    4300000: Eyes_low
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 21fbe8d463e67624ba279bdfb40c5223, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,7 +45,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.17
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -61,9 +65,9 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -90,7 +94,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
