@@ -9047,7 +9047,6 @@ GameObject:
   - component: {fileID: 3557765208442582753}
   - component: {fileID: 1524328197088037127}
   - component: {fileID: 602561430937125945}
-  - component: {fileID: 7446175601146957789}
   m_Layer: 9
   m_Name: Player_Character
   m_TagString: Player
@@ -9192,9 +9191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9a0892a487d4741b81a3c683d9709d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tkPullCooldownSlider: {fileID: 0}
   tkPullDamageAmount: 10
   tkPullCooldownInSeconds: 10
+  tkPullCooldownSlider: {fileID: 0}
   journalMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
 --- !u!114 &6669080912601736098
@@ -9284,33 +9283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad5617f2ad3bf14e90294e6b412766d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7446175601146957789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3237078800339859549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7a79f54aa8e97647a6b73a50227580b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  currentHealth: 100
-  maxHealth: 100
-  playerDamageVignetteLowDamage: {fileID: 0}
-  playerDamageVignetteLowMidDamage: {fileID: 0}
-  playerDamageVignetteMidHighDamage: {fileID: 0}
-  playerDamageVignetteHighDamage: {fileID: 0}
-  respawnPoint: {fileID: 0}
-  lowDamageVignetteActive: 0
-  lowMidDamageVignetteActive: 0
-  midHighDamageVignetteActive: 0
-  highDamageVignetteActive: 0
-  isDamaged: 0
-  healthIsRegenerating: 0
-  damagedWhileRegen: 0
 --- !u!1 &3272228983347996078
 GameObject:
   m_ObjectHideFlags: 0
