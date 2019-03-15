@@ -17,6 +17,7 @@ public class RockSpawner : MonoBehaviour
         activeRock = GameObject.Instantiate(RockPrefab, this.transform);
         shouldSpawnRock = false;
         isOnCooldown = false;
+        Debug.Log("Rock Spawned");
     }
 
     private void FixedUpdate()

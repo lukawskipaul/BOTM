@@ -20,7 +20,7 @@ public class PickupPrompt : MonoBehaviour
         {
             isInTrigger = true;
             PickupPromptText.SetActive(true);
-            Debug.Log("Player entered pickup zone");
+            //Debug.Log("Player entered pickup zone");
         }
     }
 
@@ -30,7 +30,7 @@ public class PickupPrompt : MonoBehaviour
         {
             isInTrigger = false;
             PickupPromptText.SetActive(false);
-            Debug.Log("Player left pickup zone");
+            //Debug.Log("Player left pickup zone");
         }
     }
 
