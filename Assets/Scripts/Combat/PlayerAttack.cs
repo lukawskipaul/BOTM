@@ -12,11 +12,12 @@ public class PlayerAttack : MonoBehaviour
     #region Variables
 
     [SerializeField]
-    private Slider tkPullCooldownSlider;
-    [SerializeField]
     private int tkPullDamageAmount = 10;
     [SerializeField]
     private float tkPullCooldownInSeconds = 10.0f;
+
+    [SerializeField]
+    private Slider tkPullCooldownSlider;
     [SerializeField]
     private GameObject journalMenu;
     [SerializeField]
@@ -30,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool canAttack;
     private bool canDoTKPull;
+    private bool isLockedOn;
 
     private const string attackButtonName = "Attack";
     private const string tkThrowButtonName = "Throw";
@@ -44,14 +46,19 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
+        tkPullCooldownRemaining = 0.0f;
+
         canAttack = true;
         canDoTKPull = true;
+        isLockedOn = false;
     }
 
     private void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
         swordAttack = this.gameObject.GetComponentInChildren<DamageEnemy>();
+
+        tkPullCooldownSlider.enabled = false;
 
         tkPullCooldownSlider.maxValue = tkPullCooldownInSeconds;
         tkPullCooldownSlider.minValue = 0;
@@ -61,18 +68,21 @@ public class PlayerAttack : MonoBehaviour
     {
         InputCameraChange cameraChange = GetComponent<InputCameraChange>();
 
-        canDoTKPull = cameraChange.lockOn;
+        isLockedOn = cameraChange.lockOn;
+
         if (canAttack)
         {
             Attack();
 
-            //if (canDoTKPull)
+            //if (canDoTKPull && isLockedOn)
             //{
             //    TKPull();
             //}
+            //else if (!canDoTKPull)
+            //{
+            //    UpdateTKPullCooldown();
+            //}
         }
-
-
     }
 
     private void Attack()
@@ -109,25 +119,36 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger(tkPullAnimationTriggerName);
 
             //TODO: change enemy location
-            //TODO: stun enemy?
-
+            
+            enemy.gameObject.GetComponent<Animator>().SetTrigger("Stun");
+            
             enemy.gameObject.GetComponent<EnemyHealth>().DamageEnemy(tkPullDamageAmount);
-
-            //TODO: ability cooldown as animation event
         }
     }
 
-    /* Disables/enables attacking when carrying/dropping with telekenesis */
-    private void SetCanAttack()
+    private void UpdateTKPullCooldown()
     {
-        if (canAttack)
+        tkPullCooldownRemaining -= Time.deltaTime;
+        tkPullCooldownSlider.value = tkPullCooldownRemaining;
+
+        if (tkPullCooldownRemaining <= 0)
         {
-            canAttack = false;
+            canDoTKPull = true;
+
+            tkPullCooldownSlider.enabled = false;
         }
-        else
-        {
-            canAttack = true;
-        }
+    }
+
+    /* Enables attacking when dropping with telekenesis */
+    private void EnableCanAttack()
+    {
+        canAttack = true;
+    }
+
+    /* Disables attacking when carrying with telekenesis */
+    private void DisableCanAttack()
+    {
+        canAttack = false;
     }
 
     /* Assigns enemy GameObject to class variable */
@@ -139,8 +160,8 @@ public class PlayerAttack : MonoBehaviour
     /* Subscribe to events */
     private void OnEnable()
     {
-        Telekinesis.TeleManualMovingObject += SetCanAttack;
-        Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
+        Telekinesis.TeleManualMovingObject += DisableCanAttack;
+        Telekinesis.TeleStoppedManualMovingObject += EnableCanAttack;
 
         DetectObject.TKPullTargetDetected += FindEnemy;
     }
@@ -148,8 +169,8 @@ public class PlayerAttack : MonoBehaviour
     /* Unsubscribe from events */
     private void OnDisable()
     {
-        Telekinesis.TeleManualMovingObject -= SetCanAttack;
-        Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
+        Telekinesis.TeleManualMovingObject -= DisableCanAttack;
+        Telekinesis.TeleStoppedManualMovingObject -= EnableCanAttack;
 
         DetectObject.TKPullTargetDetected -= FindEnemy;
     }
@@ -175,18 +196,11 @@ public class PlayerAttack : MonoBehaviour
     /* Called at specific tk pull animation frame to start tk pull cooldown */
     public void StartTKPullCooldown()
     {
-        StopCoroutine(TKPullCooldown());
-        StartCoroutine(TKPullCooldown());
-    }
+        tkPullCooldownRemaining = tkPullCooldownInSeconds;
 
-    /* Starts cooldown for the player's tk pull ability */
-    private IEnumerator TKPullCooldown()
-    {
         canDoTKPull = false;
 
-        yield return new WaitForSecondsRealtime(tkPullCooldownInSeconds);
-
-        canDoTKPull = true;
+        tkPullCooldownSlider.enabled = true;
     }
 
     #endregion
