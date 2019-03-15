@@ -150,7 +150,8 @@ ModelImporter:
     7400020: Rio Telekinesis Shield
     7400022: Rio Stumble
     7400024: Rio Death
-    7400026: Rio Attack
+    7400026: Rio Attack 1
+    7400028: Rio Attack 2
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -198,8 +199,8 @@ ModelImporter:
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -218,7 +219,7 @@ ModelImporter:
       firstFrame: 192
       lastFrame: 216
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -16.78
       level: 0
       cycleOffset: 0
       loop: 0
@@ -226,7 +227,7 @@ ModelImporter:
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -246,7 +247,7 @@ ModelImporter:
       firstFrame: 227
       lastFrame: 259
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -5.18
       level: 0
       cycleOffset: 0
       loop: 0
@@ -274,7 +275,7 @@ ModelImporter:
       firstFrame: 266
       lastFrame: 300
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -74.39
       level: 0
       cycleOffset: 0
       loop: 0
@@ -302,7 +303,7 @@ ModelImporter:
       firstFrame: 303
       lastFrame: 325
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -85.88
       level: 0
       cycleOffset: 0
       loop: 0
@@ -330,7 +331,7 @@ ModelImporter:
       firstFrame: 327
       lastFrame: 356
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 1.15
       level: 0
       cycleOffset: 0
       loop: 0
@@ -358,14 +359,14 @@ ModelImporter:
       firstFrame: 362
       lastFrame: 380
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -6.86
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
@@ -395,7 +396,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -421,9 +422,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -449,9 +450,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -479,7 +480,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -505,8 +506,8 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -533,8 +534,8 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -549,20 +550,48 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rio Attack
+      name: Rio Attack 1
       takeName: Take 001
       firstFrame: 738
-      lastFrame: 783
+      lastFrame: 759
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -49
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Rio Attack 2
+      takeName: Take 001
+      firstFrame: 760
+      lastFrame: 783
+      wrapMode: 0
+      orientationOffsetY: 40.26
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
