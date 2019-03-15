@@ -74,14 +74,14 @@ public class PlayerAttack : MonoBehaviour
         {
             Attack();
 
-            if (canDoTKPull && isLockedOn)
-            {
-                TKPull();
-            }
-            else if (!canDoTKPull)
-            {
-                UpdateTKPullCooldown();
-            }
+            //if (canDoTKPull && isLockedOn)
+            //{
+            //    TKPull();
+            //}
+            //else if (!canDoTKPull)
+            //{
+            //    UpdateTKPullCooldown();
+            //}
         }
     }
 
