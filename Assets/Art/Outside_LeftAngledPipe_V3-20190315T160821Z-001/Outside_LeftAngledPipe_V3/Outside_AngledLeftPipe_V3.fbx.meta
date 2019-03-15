@@ -93,7 +93,13 @@ ModelImporter:
     2300000: polySurface256
     3300000: polySurface256
     4300000: polySurface256
-  externalObjects: {}
+    6400000: polySurface256
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Material
+    second: {fileID: 2100000, guid: 0bc6f6bd0681328469e804ba0c7c85c6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -126,7 +132,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
@@ -144,7 +150,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:

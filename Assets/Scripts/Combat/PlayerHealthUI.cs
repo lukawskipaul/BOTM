@@ -19,7 +19,7 @@ public class PlayerHealthUI : MonoBehaviour
     private GameObject playerDamageVignetteMidHighDamage;
     [SerializeField]
     private GameObject playerDamageVignetteHighDamage;
-
+    [SerializeField]
     private PlayerHealth health;
 
     public bool lowDamageVignetteActive;
@@ -31,7 +31,7 @@ public class PlayerHealthUI : MonoBehaviour
 
     void Start()
     {
-        health = this.gameObject.GetComponent<PlayerHealth>();
+        //health = this.gameObject.GetComponent<PlayerHealth>();
 
         healthBar.maxValue = health.MaxHealth;
 
@@ -39,8 +39,6 @@ public class PlayerHealthUI : MonoBehaviour
         playerDamageVignetteLowMidDamage.gameObject.SetActive(false);
         playerDamageVignetteMidHighDamage.gameObject.SetActive(false);
         playerDamageVignetteHighDamage.gameObject.SetActive(false);
-
-        UpdateHealthBar();
     }
 
     void Update()
@@ -62,15 +60,18 @@ public class PlayerHealthUI : MonoBehaviour
         DamageVignetteFadeInFour();
 
         HandleVignette();
+        //UpdateHealthBar();
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         UpdateHealthBar();
+        HandleVignette();
     }
 
     void UpdateHealthBar()
     {
+        Debug.Log("This is being called.");
         /* Updates health bar with current health */
         healthBar.value = health.CurrentHealth;
     }

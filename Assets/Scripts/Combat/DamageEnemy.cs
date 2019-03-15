@@ -10,17 +10,26 @@ using UnityEngine;
 public class DamageEnemy : MonoBehaviour
 {
     #region Variables
+    [HideInInspector]
+    public bool shouldDamageEnemy = false;
 
     [SerializeField]
     private int baseAttackDamage = 25;
     [SerializeField]
     private int combo1AttackDamage = 35;
 
+    private EnemyHealth enemyHealth;
+
     private int currentAttackDamage;
 
     private bool isAttacking;
     public bool IsAttacking
     {
+        get
+        {
+            return isAttacking;
+        }
+
         set
         {
             isAttacking = value;
@@ -48,6 +57,12 @@ public class DamageEnemy : MonoBehaviour
         currentAttackDamage = combo1AttackDamage;
     }
 
+    public void DoDamageToEnemy()
+    {
+        if(shouldDamageEnemy && enemyHealth != null)
+            enemyHealth.DamageEnemy(currentAttackDamage);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         bool isValidTarget = other.tag == "Enemy";// && isAttacking == true;
@@ -55,8 +70,19 @@ public class DamageEnemy : MonoBehaviour
         /* Damages the enemy if the player is currently attacking */
         if (isValidTarget)
         {
-            other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(currentAttackDamage);
+            enemyHealth = other.gameObject.GetComponent<EnemyHealth>();// .DamageEnemy(currentAttackDamage);
             //Debug.Log("Enemy takes damage");
+            shouldDamageEnemy = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        bool isValidTarget = other.tag == "Enemy";
+        if(isValidTarget)
+        {
+            shouldDamageEnemy = false;
+            enemyHealth = null;
         }
     }
 }

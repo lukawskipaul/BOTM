@@ -11,7 +11,12 @@ ModelImporter:
     2300000: initialShadingGroup_Outside_Terrain04_Low1:Outside_Terrain_Low
     3300000: initialShadingGroup_Outside_Terrain04_Low1:Outside_Terrain_Low
     4300000: initialShadingGroup_Outside_Terrain04_Low1:Outside_Terrain_Low
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup_Outside_Terrain04_Low1_Outside_Terrain_LowMat
+    second: {fileID: 2100000, guid: 68c40b4aa496f5e4383cb5fe436ddbd2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
