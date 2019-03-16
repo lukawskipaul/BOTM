@@ -521,6 +521,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_PipeRoar2" ID="{F69DC46D-6EB2-4370-86D9-8FE47BB474BA}">
+					<ChildrenList>
+						<Action Name="" ID="{CCBF0C18-9728-4041-AE86-401A21E7F941}" ShortID="163524631">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PipeRoar2" ID="{85DC59B2-FFF0-47AD-8E1E-2EB3F03A1AE5}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
