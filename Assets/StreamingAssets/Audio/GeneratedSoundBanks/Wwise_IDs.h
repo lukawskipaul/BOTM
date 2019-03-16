@@ -15,7 +15,11 @@ namespace AK
     {
         static const AkUniqueID PLAY_AI_VO_LINE1 = 3091365192U;
         static const AkUniqueID PLAY_AI_VO_LINE2 = 3091365195U;
-        static const AkUniqueID PLAY_AMBIANTMUSIC = 2139734863U;
+        static const AkUniqueID PLAY_AMBIENTMUSIC = 275338611U;
+        static const AkUniqueID PLAY_BOSSBITE = 2729937127U;
+        static const AkUniqueID PLAY_BOSSCLAW = 516533412U;
+        static const AkUniqueID PLAY_BOSSSTARTROAR = 962646519U;
+        static const AkUniqueID PLAY_BOSSSTEP = 545396215U;
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
         static const AkUniqueID PLAY_CHARACTERFOOTSTEPS = 2603299628U;
         static const AkUniqueID PLAY_CROCAGGRO1 = 149344824U;
@@ -30,6 +34,7 @@ namespace AK
         static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
         static const AkUniqueID PLAY_PIPEFALL = 726787325U;
         static const AkUniqueID PLAY_ROCKSLIDE1 = 3618693649U;
+        static const AkUniqueID PLAY_ROCKSLIDEROAR = 1655857564U;
         static const AkUniqueID PLAY_ROOM1AMBIANCEDEMO = 1605460501U;
         static const AkUniqueID PLAY_SLIDINGDOORCLOSE = 3751804120U;
         static const AkUniqueID PLAY_SLIDINGDOOROPEN = 2541895580U;

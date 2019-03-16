@@ -382,7 +382,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.1271818
+        functionName: callEvent
+        data: Play_BossStep
+        objectReferenceParameter: {fileID: 1495832881582467578, guid: f3bc2bbce1605bd47bb5c4898fdcc4a7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.630923
+        functionName: callEvent
+        data: 
+        objectReferenceParameter: {fileID: 1495832881582467578, guid: f3bc2bbce1605bd47bb5c4898fdcc4a7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -578,7 +594,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.07980041
+        functionName: callEvent
+        data: Play_BossBite
+        objectReferenceParameter: {fileID: 1495832881582467578, guid: f3bc2bbce1605bd47bb5c4898fdcc4a7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -606,7 +630,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.15960146
+        functionName: callEvent
+        data: Play_BossClaw
+        objectReferenceParameter: {fileID: 1495832881582467578, guid: f3bc2bbce1605bd47bb5c4898fdcc4a7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -718,7 +750,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: callEvent
+        data: Play_BossStartRoar
+        objectReferenceParameter: {fileID: 6907902732777179032, guid: 88aca2b987902bd45b337f2139f61349,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
