@@ -8,7 +8,7 @@ using System;
 public class PlayerHealth : MonoBehaviour
 {
     #region Variables
-    //fuck the system again
+    //fuck the system again again
     [SerializeField]
     private float regenCooldownInSeconds = 5.0f;
     [SerializeField]
@@ -77,7 +77,7 @@ public class PlayerHealth : MonoBehaviour
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            respawn.RespawnPlayer();
+            anim.SetTrigger("Die");
         }
     }
 
@@ -140,6 +140,12 @@ public class PlayerHealth : MonoBehaviour
     public void MakeVulnerable()
     {
         isInvulnerable = false;
+    }
+
+    /* Called at specific death animation frame to make player respawn */
+    public void Respawn()
+    {
+        respawn.RespawnPlayer();
     }
 
     #endregion

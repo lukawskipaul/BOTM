@@ -75,13 +75,13 @@
 				</Event>
 				<Event Name="Play_MetalDoorSlamCloseNoPower" ID="{1A96DD9D-0E34-478E-A221-1F21C456A616}">
 					<ChildrenList>
-						<Action Name="" ID="{91CB5A0A-D152-4BD6-AD58-083504FD2E47}" ShortID="80777866">
+						<Action Name="" ID="{9C07B97B-5623-4319-B0B4-1A8E251A8CE0}" ShortID="885367232">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MetalDoorSlamCloseNoPower" ID="{5E442E7A-94FE-4B93-ADA8-DFB0705AEF4E}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+									<ObjectRef Name="MetalDoorSlamCloseNoPower" ID="{D765C3CF-EFA1-4761-92B4-DAFB8CD70573}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -179,7 +179,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="ElectricPassive" ID="{535DA9FA-2CB3-4E0A-AD73-EC3B2B4412B6}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+									<ObjectRef Name="ElectricStaticPassive" ID="{DC1526FB-34FA-4C05-BF88-4638E5DC0AAB}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -311,7 +311,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_AmbiantMusic" ID="{BE43092E-F6DA-496F-A5BE-DA4854BE22A2}">
+				<Event Name="Play_AmbientMusic" ID="{BE43092E-F6DA-496F-A5BE-DA4854BE22A2}">
 					<ChildrenList>
 						<Action Name="" ID="{A4994704-3B54-44A5-8857-87A33775FB53}" ShortID="624357651">
 							<PropertyList>
@@ -319,7 +319,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="LTG _Ambient_Battle_ [Ambient Loop]" ID="{E7D579FC-1ECE-458E-91B3-2B2631BE5D38}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+									<ObjectRef Name="LTG _Ambient_Battle_ [Ambient Loop] v03" ID="{521F1784-E03B-4367-AA7F-A839763AAF1D}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -432,6 +432,20 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PipeFall" ID="{98879796-DC3D-4D53-B560-195878E39E2C}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CrocLick1" ID="{99B99B23-25A6-41AB-ADEA-F579C54D351F}">
+					<ChildrenList>
+						<Action Name="" ID="{D2CB707F-872D-4DCB-A643-1DEB5B80735A}" ShortID="845013972">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocLick1" ID="{F4FA6A03-1233-4D00-8A62-C8B978693963}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

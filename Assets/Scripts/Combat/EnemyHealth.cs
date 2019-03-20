@@ -9,13 +9,15 @@ public class EnemyHealth : MonoBehaviour
     #region Variables
 
     [SerializeField]
-    private Slider healthBar;
+    private GameObject healthBarObject;
     [SerializeField]
     private int maxHealth = 100;
 
     private Animator anim;
+    private Slider healthBar;
 
     private int currentHealth;
+    private bool isDead = false;
 
     #endregion
 
@@ -27,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
     private void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
-
+        healthBar = healthBarObject.GetComponent<Slider>();
         healthBar.maxValue = maxHealth;
 
         UpdateHealthBar();
@@ -35,7 +37,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        UpdateHealthBar();
+        if(!isDead)
+            UpdateHealthBar();
     }
 
     public void DamageEnemy(int amount)
@@ -47,6 +50,8 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             anim.SetTrigger("Die");
+            isDead = true;
+            Destroy(healthBarObject);
             
         }
         else
