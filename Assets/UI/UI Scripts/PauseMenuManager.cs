@@ -9,7 +9,10 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject journalMenu;
     public GameObject pauseMenu;
     public GameObject controlsCanvas;
-    
+
+    [SerializeField]
+    private PickupPrompt thisPickup;
+
     public string MainMenuScene;
     public string DemoScene;
     public string journalInput;
@@ -48,7 +51,7 @@ public class PauseMenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown(journalInput))
+        if (Input.GetButtonDown(journalInput) && thisPickup.hasBeenPickedUp)
         {
             if (paused == false && journalOpen == false)
             {

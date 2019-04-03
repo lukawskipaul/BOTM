@@ -6,6 +6,8 @@ using UnityEngine;
 public class GainTK : MonoBehaviour
 {
     [SerializeField]
+    private GameObject swordVFX;
+    [SerializeField]
     private Telekinesis thisTK;
     [SerializeField]
     private DetectObject thisDO;
@@ -20,8 +22,9 @@ public class GainTK : MonoBehaviour
 
     private void GivePlayerTK()
     {
+        //swordVFX.SetActive(true);
         thisTK.enabled = true;
         thisDO.enabled = true;
-        thisTKSC.enabled = true;
+        //thisTKSC.enabled = true;
     }
 }

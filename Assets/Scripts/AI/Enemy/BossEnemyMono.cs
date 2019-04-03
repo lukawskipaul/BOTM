@@ -21,7 +21,7 @@ public class BossEnemyMono : MonoBehaviour
         get { return ultimateDamage; }
     }
     [SerializeField]
-    private bool showDebug = true;
+    private bool showDebug = false;
     [SerializeField, Tooltip("Layer must be set to 'Player' for cast to work(and Enemy if neccessary)")]
     private LayerMask ObstacleMask;
     #region Damage Modifier Fields

@@ -75,13 +75,13 @@
 				</Event>
 				<Event Name="Play_MetalDoorSlamCloseNoPower" ID="{1A96DD9D-0E34-478E-A221-1F21C456A616}">
 					<ChildrenList>
-						<Action Name="" ID="{91CB5A0A-D152-4BD6-AD58-083504FD2E47}" ShortID="80777866">
+						<Action Name="" ID="{9C07B97B-5623-4319-B0B4-1A8E251A8CE0}" ShortID="885367232">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MetalDoorSlamCloseNoPower" ID="{5E442E7A-94FE-4B93-ADA8-DFB0705AEF4E}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+									<ObjectRef Name="MetalDoorSlamCloseNoPower" ID="{D765C3CF-EFA1-4761-92B4-DAFB8CD70573}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -311,7 +311,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_AmbiantMusic" ID="{BE43092E-F6DA-496F-A5BE-DA4854BE22A2}">
+				<Event Name="Play_AmbientMusic" ID="{BE43092E-F6DA-496F-A5BE-DA4854BE22A2}">
 					<ChildrenList>
 						<Action Name="" ID="{A4994704-3B54-44A5-8857-87A33775FB53}" ShortID="624357651">
 							<PropertyList>
@@ -432,6 +432,104 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PipeFall" ID="{98879796-DC3D-4D53-B560-195878E39E2C}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CrocLick1" ID="{99B99B23-25A6-41AB-ADEA-F579C54D351F}">
+					<ChildrenList>
+						<Action Name="" ID="{D2CB707F-872D-4DCB-A643-1DEB5B80735A}" ShortID="845013972">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocLick1" ID="{F4FA6A03-1233-4D00-8A62-C8B978693963}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BossStartRoar" ID="{A3E2B0D2-DEC5-4821-9913-02C342B985A8}">
+					<ChildrenList>
+						<Action Name="" ID="{94C6DDEA-3497-45E7-82B9-FB789773BCBA}" ShortID="620132462">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossStartRoar" ID="{366FEAFB-DD72-4531-8F6A-EF68D3A63CAD}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BossBite" ID="{23DAE9EE-C60E-4987-92D1-81FFE4CBB246}">
+					<ChildrenList>
+						<Action Name="" ID="{BE08291C-9400-407A-B313-D6A7FCDB7EED}" ShortID="151394523">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossBite" ID="{9AF4E7A9-A244-4B9C-A351-AC39E8DF3396}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BossStep" ID="{A6E1236D-C03C-4521-9986-A6E5B6AA162D}">
+					<ChildrenList>
+						<Action Name="" ID="{EC2DEFD0-10A8-487A-B52E-617A1AAD582D}" ShortID="703372195">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossStep" ID="{8CEAD52A-422C-477B-845E-CFE37876213D}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BossClaw" ID="{502B51DF-6139-4C13-925A-BC016FB6AD55}">
+					<ChildrenList>
+						<Action Name="" ID="{E9C80DEC-58CF-4D52-BCA9-9D12F530CF91}" ShortID="421955591">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossClaw" ID="{1E5BE035-0984-4713-9B04-26057ACC1FC0}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_RockSlideRoar" ID="{C165F0E8-DF9C-4B1A-AFA7-FD34FC5548AE}">
+					<ChildrenList>
+						<Action Name="" ID="{833D92B2-CE90-4D09-BEA9-9E42CA9422D3}" ShortID="905509020">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RockSlideRoar" ID="{0DF1AC86-F746-4C8D-B3E4-E5219E9D17AF}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PipeRoar2" ID="{F69DC46D-6EB2-4370-86D9-8FE47BB474BA}">
+					<ChildrenList>
+						<Action Name="" ID="{CCBF0C18-9728-4041-AE86-401A21E7F941}" ShortID="163524631">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PipeRoar2" ID="{85DC59B2-FFF0-47AD-8E1E-2EB3F03A1AE5}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

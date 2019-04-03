@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 //[RequireComponent(typeof(Animator))]
 public class PlayerRespawnScript : MonoBehaviour
 {
+    [SerializeField]
+    private string sceneToLoad;
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
 
@@ -40,7 +42,7 @@ public class PlayerRespawnScript : MonoBehaviour
 
         if (currentCheckpoint == null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(sceneToLoad);
 
             //Things that need to be reset to intial value will go under here
             //

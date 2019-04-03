@@ -15,12 +15,24 @@ public class RootMotionMovementController : MonoBehaviour
 {
     #region Variables
 
+    [SerializeField]
+    private float dodgeCooldownInSeconds = 2.0f;
+
     private Animator anim;
     private Rigidbody rb;
 
     private bool canMove;
     private bool canDodge;
     private bool isOnGround;
+
+    Vector3 direction;
+    public bool IsOnGround
+    {
+        set
+        {
+            isOnGround = value;
+        }
+    }
 
     private const string dodgeButtonName = "Dodge";
     private const string baseAttackBooleanName = "isAttackBase";
@@ -43,6 +55,7 @@ public class RootMotionMovementController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        //direction = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical")));
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -50,15 +63,18 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove && isOnGround)
+        if (canMove)
+            //&& isOnGround)
         {
             Rotate();
+            //UpdateRotation();
         }
     }
 
     private void FixedUpdate()
     {
-        if (canMove && isOnGround)
+        if (canMove)
+            //&& isOnGround)
         {
             Move();
 
@@ -72,6 +88,10 @@ public class RootMotionMovementController : MonoBehaviour
                 CancelQueuingDuringDodgeCooldown();
             }
         }
+        else
+        {
+            Debug.Log("Player not on Ground");
+        }
     }
 
     private void Move()
@@ -84,12 +104,27 @@ public class RootMotionMovementController : MonoBehaviour
 
     private void Rotate()
     {
-        if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
+
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
         {
+            
             //look with Camera
             transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Camera.main.transform.up);
+
             //lock rotation to only the Y axis
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+
+            
+        }
+    }
+
+    private void UpdateRotation()
+    {
+        float turnThreshold = 0.1f;
+        if (direction.magnitude > turnThreshold && direction != Vector3.zero)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, .5f);
         }
     }
 
@@ -98,17 +133,11 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play roll dodge animation when dodge button is pressed and is not locked on */
         if (Input.GetButtonDown(dodgeButtonName))    //checks for lock on in animator
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(freeLookDodgeAnimationTriggerName);
 
@@ -121,17 +150,11 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play hop dodge animation when dodge button is pressed and is locked on */
         if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
+            anim.ResetTrigger(tkPullAnimationTriggerName);
 
             anim.SetTrigger(lockedOnDodgeAnimationTriggerName);
 
@@ -144,35 +167,11 @@ public class RootMotionMovementController : MonoBehaviour
         /* Cancel attack queuing even when dodge cooldown is active */
         if (Input.GetButtonDown(dodgeButtonName))
         {
-            //bool attackAnimationIsPlaying = anim.GetBool(baseAttackBooleanName) || anim.GetBool(combo1AttackBooleanName);   //will need to be updated with all attack animation names
-
             /* Cancels possible combo attack queuing */
-            //if (attackAnimationIsPlaying)
-            //{
-            //    anim.SetBool(attackAnimationBooleanName, false);
-            //}
             anim.SetBool(attackAnimationBooleanName, false);
 
             /* Cancels possible tk pull queuing */
-            //TODO: anim.ResetTrigger(tkPullAnimationTriggerName);
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        /* Check if player is on a walkable surface */
-        if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
-        {
-            isOnGround = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        /* Check if player is not on a walkable surface */
-        if (other.gameObject.tag == "Ground")
-        {
-            isOnGround = false;
+            anim.ResetTrigger(tkPullAnimationTriggerName);
         }
     }
 
@@ -203,7 +202,7 @@ public class RootMotionMovementController : MonoBehaviour
     {
         canDodge = false;
 
-        yield return new WaitForSecondsRealtime(2.0f);
+        yield return new WaitForSecondsRealtime(dodgeCooldownInSeconds);
 
         canDodge = true;
     }
