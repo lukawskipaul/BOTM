@@ -171,9 +171,13 @@ public class Telekinesis : MonoBehaviour
 
     private void DropObject()
     {
-        objectRigidBody.useGravity = true;
-        currentTKObject.SetNeutral();
-        ResetTK();
+        if(isLiftingObject)
+        {
+            objectRigidBody.useGravity = true;
+            currentTKObject.SetNeutral();
+            ResetTK();
+        }
+        
     }
 
     private void CheckDistance()
