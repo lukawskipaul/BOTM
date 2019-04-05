@@ -78,7 +78,8 @@ public class PlayerHealth : MonoBehaviour
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            respawn.RespawnPlayer();
+            //TODO: uncomment code
+            //anim.SetTrigger("Die");
         }
     }
 
@@ -141,6 +142,12 @@ public class PlayerHealth : MonoBehaviour
     public void MakeVulnerable()
     {
         isInvulnerable = false;
+    }
+
+    /* Called at specific death animation frame to make player respawn */
+    public void Respawn()
+    {
+        respawn.RespawnPlayer();
     }
 
     #endregion
