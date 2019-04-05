@@ -10,8 +10,18 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject controlsCanvas;
 
+    [HideInInspector]
+    public bool hasBeenPickedUp = false;
     [SerializeField]
-    private PickupPrompt thisPickup;
+    private GameObject ObjectToGivePlayer;  //if any
+    [SerializeField]
+    private GameObject PickupPromptText;
+    [SerializeField]
+    private GameObject PickUpObjectCanvas;
+    private bool isInTrigger;
+
+    [SerializeField]
+    //private PickupPrompt thisPickup;
 
     public string MainMenuScene;
     public string DemoScene;
@@ -21,6 +31,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public bool paused;
     public bool journalOpen;
+    public bool pieceOpen;
 
     void Start()
     {
@@ -33,9 +44,14 @@ public class PauseMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isInTrigger)
+        {
+            CheckInput();
+        }
+
         if (Input.GetButtonDown(pauseInput))
         {
-            if(paused == false && journalOpen == false)
+            if(paused == false && journalOpen == false && pieceOpen == false)
             {
                 PauseGame();
             }
@@ -49,9 +65,14 @@ public class PauseMenuManager : MonoBehaviour
             {
                 CloseJournal();
             }
+
+            else if(pieceOpen == true)
+            {
+                CloseJournalPiece();
+            }
         }
 
-        if (Input.GetButtonDown(journalInput) && thisPickup.hasBeenPickedUp)
+        if (Input.GetButtonDown(journalInput))
         {
             if (paused == false && journalOpen == false)
             {
@@ -135,6 +156,40 @@ public class PauseMenuManager : MonoBehaviour
         SceneManager.LoadScene(DemoScene);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Pickup")
+        {
+            isInTrigger = true;
+            PickupPromptText.SetActive(true);
+            //Debug.Log("Player entered pickup zone");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Pickup")
+        {
+            isInTrigger = false;
+            PickupPromptText.SetActive(false);
+            //Debug.Log("Player left pickup zone");
+        }
+    }
+
+    private void CheckInput()
+    {
+        if (Input.GetButtonDown("Interact"))
+        {
+            if (ObjectToGivePlayer != null)
+                ObjectToGivePlayer.SetActive(true);
+            hasBeenPickedUp = true;
+            PickupPromptText.SetActive(false);
+            isInTrigger = false;
+            Destroy(ObjectToGivePlayer);
+            JournalPiecePickup();
+        }
+    }
+
     //Texture for the screen to fade from.
     public Texture2D fadeOutTexture;
     [Tooltip("Speed of the screen fade. Lower is Slower")]
@@ -166,4 +221,23 @@ public class PauseMenuManager : MonoBehaviour
         BeginFade(-1);
     }
 
+    private void JournalPiecePickup()
+    {
+        Time.timeScale = 0;
+        PickUpObjectCanvas.SetActive(true);
+        pieceOpen = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void CloseJournalPiece()
+    {
+        Time.timeScale = 1;
+        PickUpObjectCanvas.gameObject.SetActive(false);
+        pieceOpen = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }
