@@ -12,6 +12,8 @@ public class BossAI : MonoBehaviour
     [Tooltip("The player character")]
     [SerializeField]
     private GameObject player;
+    [Tooltip("The amount of time to be stunned. 0 = duration of animation")]
+    private float StunDuration = 1.25f;
 
     [Tooltip("A target object used for visualization and debugging\nDeactivate or replace with empty object in release")]
     [SerializeField]
@@ -25,7 +27,7 @@ public class BossAI : MonoBehaviour
         "All other layers are considered an obstacle")]
     [SerializeField]
     private LayerMask targetMask;
-
+    [Header(" Charge Params")]
     [Tooltip("A scalar used to determine how far past a target point the boss charges")]
     [SerializeField]
     [Range(1, 2)]
@@ -46,7 +48,7 @@ public class BossAI : MonoBehaviour
     [Tooltip("The maximum distance the boss should be from the player character before stopping when charging")]
     [SerializeField]
     private float chargeTempStopping = 1;
-
+    [Header("Strafe Params")]
     [Tooltip("The maximum distance the boss should be from the player character when strafing")]
     [SerializeField]
     private float strafeRadius = 1;
@@ -55,9 +57,8 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float strafeSpeed = 1;
 
-    //[Tooltip("How long the boss character strafes in one direction before alternating (in seconds)")]
-    //[SerializeField]
-    //private float strafeTime = 1;
+    [SerializeField, Tooltip("[Seconds]How long the strafing will last before the boss switches to a different state.")]
+    private float strafeStateDuration = 7;
 
     [Tooltip("The maximum distance that the boss character can jump back")]
     [SerializeField]
@@ -67,6 +68,7 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private float lookRotationSpeed = 1;
 
+    [Header("Explosion Attack")]
     [Tooltip("The maximum radius of the explosion attack\n" +
         "The blue circle around the boss in the Scene window")]
     [SerializeField]
@@ -77,8 +79,7 @@ public class BossAI : MonoBehaviour
     [Range(0.0f, 0.25f)]
     private float explosionRateOfGrowth = 0.0f;
 
-    [SerializeField,Tooltip("[Seconds]How long the strafing will last before the boss switches to a different state.")]
-    private float strafeStateDuration = 7;
+    
 
     // The list of all layers that the boss recognizes as an obstacle
     private LayerMask obstacleMask;
@@ -202,7 +203,10 @@ public class BossAI : MonoBehaviour
         get { return openTargets; }
         set { openTargets = value; }
     }
-
+    public float StunTime
+    {
+        get { return StunDuration; }
+    }
     /*// Update is called once per frame
     void Update()
     {

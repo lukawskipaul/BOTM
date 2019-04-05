@@ -77,7 +77,8 @@ public class PlayerHealth : MonoBehaviour
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            anim.SetTrigger("Die");
+            //TODO: uncomment code
+            //anim.SetTrigger("Die");
         }
     }
 
