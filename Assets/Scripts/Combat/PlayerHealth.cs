@@ -8,7 +8,7 @@ using System;
 public class PlayerHealth : MonoBehaviour
 {
     #region Variables
-    //fuck the system again again
+    
     [SerializeField]
     private float regenCooldownInSeconds = 5.0f;
     [SerializeField]
@@ -80,6 +80,8 @@ public class PlayerHealth : MonoBehaviour
         {
             //TODO: uncomment code
             //anim.SetTrigger("Die");
+
+            respawn.RespawnPlayer();
         }
     }
 
