@@ -88,16 +88,7 @@ public class PlayerAttack : MonoBehaviour
             anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
 
             anim.SetBool(attackAnimationBooleanName, true);
-            StopCoroutine(AttackDelay());
-            StartCoroutine(AttackDelay());
         }
-    }
-
-    private IEnumerator AttackDelay()
-    {
-        yield return new WaitForSecondsRealtime(.4f);
-        if(swordAttack.IsAttacking)
-            swordAttack.DoDamageToEnemy();
     }
 
     private void TKPull()

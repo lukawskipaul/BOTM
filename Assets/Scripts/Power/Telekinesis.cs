@@ -115,8 +115,9 @@ public class Telekinesis : MonoBehaviour
         objectRigidBody = levitatableGO.GetComponent<Rigidbody>();
         objectRigidBody.useGravity = true;
         objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
+        isLiftingObject = false;
         currentTKObject.SetThrown();
-        ResetTK();
+        levitatableGO = null;
     }
 
     private void GetObjectRigidBody(GameObject objToLevitate)
