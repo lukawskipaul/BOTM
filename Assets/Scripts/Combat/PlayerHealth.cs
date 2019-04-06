@@ -8,7 +8,7 @@ using System;
 public class PlayerHealth : MonoBehaviour
 {
     #region Variables
-    //fuck the system again again
+    
     [SerializeField]
     private float regenCooldownInSeconds = 5.0f;
     [SerializeField]
@@ -72,12 +72,14 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(DisableHealthRegen());
 
             OnTakeDamage();
-            Debug.Log("Damage taken "+currentHealth);
         }
 
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
+            //TODO: uncomment code
+            //anim.SetTrigger("Die");
+
             respawn.RespawnPlayer();
         }
     }
@@ -141,6 +143,12 @@ public class PlayerHealth : MonoBehaviour
     public void MakeVulnerable()
     {
         isInvulnerable = false;
+    }
+
+    /* Called at specific death animation frame to make player respawn */
+    public void Respawn()
+    {
+        respawn.RespawnPlayer();
     }
 
     #endregion

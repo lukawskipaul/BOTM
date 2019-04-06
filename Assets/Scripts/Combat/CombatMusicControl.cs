@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-
 public class CombatMusicControl : MonoBehaviour
 {
     public AudioMixerSnapshot outOfCombat;
@@ -21,9 +20,8 @@ public class CombatMusicControl : MonoBehaviour
     void Start()
     {
         m_QuarterNote = 60 / bpm;
-        m_TransitionIn = m_QuarterNote* 3;
+        m_TransitionIn = m_QuarterNote;
         m_TransitionOut = m_QuarterNote * 32;
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -35,7 +33,8 @@ public class CombatMusicControl : MonoBehaviour
         else if (other.CompareTag("BossZone"))
         {
             bossCombat.TransitionTo(m_TransitionIn);
-        }       
+        }
+        
     }
 
     void OnTriggerExit (Collider other)
@@ -45,14 +44,4 @@ public class CombatMusicControl : MonoBehaviour
             outOfCombat.TransitionTo(m_TransitionOut);
         }
     }
-
-    //void Update()
-    //{
-    //    EnemyHealth enemyHealth = new EnemyHealth();
-
-    //    if (enemyHealth.isDead == true)
-    //    {
-    //        outOfCombat.TransitionTo(m_TransitionOut);
-    //    }
-    //}
 }

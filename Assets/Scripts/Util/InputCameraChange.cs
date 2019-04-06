@@ -54,6 +54,7 @@ public class InputCameraChange : MonoBehaviour
                 if (Input.GetButtonDown("LockOnSwitch"))
                 {
                     LockOnTarget.layer = LayerMask.NameToLayer("Ignore Raycast");
+                    DetectObject.SearchDirection = Input.GetAxis("LockOnSwitch");
                     DetectObject.EnemySearchNeeded = true;
 
                 }
@@ -82,6 +83,16 @@ public class InputCameraChange : MonoBehaviour
         }
     }
 
+    public GameObject GetLockOnTarget()
+    {
+        if (lockOn)
+        {
+            return LockOnTarget;
+        }
+        else return null;
+    }
+
+
     private void UnLockCamera()
     {
         Debug.Log("CameraUnlocked");
@@ -103,9 +114,9 @@ public class InputCameraChange : MonoBehaviour
     {
         if (LockOnTarget != null)
         {
-            if(LockOnTarget.layer == 2)
+            if(LockOnTarget.layer == LayerMask.NameToLayer("Ignore Raycast"))
             {
-                LockOnTarget.layer = 0;
+                LockOnTarget.layer = LayerMask.NameToLayer("Enemies");
             }
         }
         //we found our LockOn Target, set it as what to target in the cinemachine object
@@ -121,15 +132,16 @@ public class InputCameraChange : MonoBehaviour
 
     private void ResetLockOnTarget()
     {
-        bool BreakLock = true;
+        bool BreakLock = false;
         //remove the target from the cinemachine lock on list and unlocks the camera
         if (LockOnTarget != null)
         {
-            if (LockOnTarget.layer == 2)
+            if (LockOnTarget.layer == LayerMask.NameToLayer("Ignore Raycast"))
             {
-                LockOnTarget.layer = 0;
+                LockOnTarget.layer = LayerMask.NameToLayer("Enemies");
                 BreakLock = false;
             }
+            else BreakLock = true;
         }
         if (BreakLock)
         {
