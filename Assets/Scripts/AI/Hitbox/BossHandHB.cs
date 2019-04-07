@@ -15,23 +15,23 @@ public class BossHandHB : MonoBehaviour
     private void Start()
     {
         Collider = this.GetComponent<Collider>();
-        Collider.isTrigger = true;//Automatically set collider to a trigger
+        Collider.isTrigger = false;//Automatically set collider to a collision collider
         Collider.enabled = false;//Initially turns off collider
         parentAnim = this.GetComponentInParent<Animator>();//Get reference to animator
         bossStats = this.GetComponentInParent<BossEnemyMono>();
     }
     /// <summary>
-    /// Trigger event which detects whether the hitbox collided with the player
+    /// Collision event which detects whether the hitbox collided with the player
     /// </summary>
-    /// <param name="other">The Object that caused the activation of the trigger event</param>
-    private void OnTriggerEnter(Collider other)
+    /// <param name="collision">The collider object that caused the activation of the collision event</param>
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             if (parentAnim.GetBool("isClawing"))
             {
                 //Claw Damage output towards Player
-                other.GetComponent<PlayerHealth>().DamagePlayer(bossStats.ClawDamage);
+                collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(bossStats.ClawDamage);
                 if (showDebug)
                 {
                     Debug.Log("Claw");
@@ -41,7 +41,7 @@ public class BossHandHB : MonoBehaviour
             if (parentAnim.GetBool("isLeapAttacking"))
             {
                 ////Attack Leap Damage output towards Player
-                other.GetComponent<PlayerHealth>().DamagePlayer(bossStats.AttackLeapDamage);
+                collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(bossStats.AttackLeapDamage);
                 if (showDebug)
                 {
                     Debug.Log("Leaping Attack");
