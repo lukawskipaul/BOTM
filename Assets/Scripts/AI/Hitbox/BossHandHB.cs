@@ -16,7 +16,7 @@ public class BossHandHB : MonoBehaviour
     {
         Collider = this.GetComponent<Collider>();
         Collider.isTrigger = false;//Automatically set collider to a collision collider
-        Collider.enabled = false;//Initially turns off collider
+        Collider.enabled = true;//Initially turns on collider
         parentAnim = this.GetComponentInParent<Animator>();//Get reference to animator
         bossStats = this.GetComponentInParent<BossEnemyMono>();
     }
@@ -36,7 +36,6 @@ public class BossHandHB : MonoBehaviour
                 {
                     Debug.Log("Claw");
                 }
-                Collider.enabled = false;
             }
             if (parentAnim.GetBool("isLeapAttacking"))
             {
@@ -46,8 +45,6 @@ public class BossHandHB : MonoBehaviour
                 {
                     Debug.Log("Leaping Attack");
                 }
-                //Turn off collider when player is hit
-                Collider.enabled = false;
             }
         }
     }

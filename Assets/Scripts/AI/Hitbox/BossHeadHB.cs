@@ -16,7 +16,7 @@ public class BossHeadHB : MonoBehaviour
     {
         Collider = this.GetComponent<Collider>();
         Collider.isTrigger = false;//Automatically set collider to regular
-        Collider.enabled = true;//Initially turns off collider
+        Collider.enabled = true;//Initially turns on collider
         parentAnim = this.GetComponentInParent<Animator>();//reference to animator
         bossStats = this.GetComponentInParent<BossEnemyMono>();
     }
@@ -36,7 +36,6 @@ public class BossHeadHB : MonoBehaviour
                 {
                     Debug.Log("HeadButt");
                 }
-                Collider.enabled = false;
             }
             if (parentAnim.GetBool("isBiting"))
             {
@@ -46,7 +45,6 @@ public class BossHeadHB : MonoBehaviour
                 {
                     Debug.Log("Bite");
                 }
-                Collider.enabled = false;
             }
         }
     }
