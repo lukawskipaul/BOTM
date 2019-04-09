@@ -17,7 +17,8 @@ public class EnemyHealth : MonoBehaviour
     private Slider healthBar;
 
     private int currentHealth;
-    private bool isDead = false;
+    [HideInInspector]
+    public bool isDead = false;
 
     #endregion
 
