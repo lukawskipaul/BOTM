@@ -9,15 +9,15 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject journalMenu;
     public GameObject pauseMenu;
     public GameObject controlsCanvas;
+    public GameObject pickupObjectCanvas;
 
     [HideInInspector]
     public bool hasBeenPickedUp = false;
     [SerializeField]
-    private GameObject ObjectToGivePlayer;  //if any
+    private GameObject ObjectToGivePlayer;
     [SerializeField]
     private GameObject PickupPromptText;
-    [SerializeField]
-    private GameObject PickUpObjectCanvas;
+
     private bool isInTrigger;
 
     [SerializeField]
@@ -29,14 +29,15 @@ public class PauseMenuManager : MonoBehaviour
     public string pauseInput;
     public string controlsInput;
 
-    public bool paused;
-    public bool journalOpen;
-    public bool pieceOpen;
+    public bool paused = false;
+    public bool journalOpen = false;
+    public bool pieceOpen = false;
 
     void Start()
     {
         pauseMenu.gameObject.SetActive(false);
         journalMenu.gameObject.SetActive(false);
+        pickupObjectCanvas.gameObject.SetActive(false);
         controlsCanvas.gameObject.SetActive(false);
     }
 
@@ -74,7 +75,7 @@ public class PauseMenuManager : MonoBehaviour
 
         if (Input.GetButtonDown(journalInput))
         {
-            if (paused == false && journalOpen == false)
+            if (paused == false && journalOpen == false && pieceOpen == false)
             {
                 OpenJournal();
             }
@@ -106,7 +107,6 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
@@ -116,6 +116,7 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
 
     private void OpenJournal()
     {
@@ -137,6 +138,28 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
     }
+
+
+    private void JournalPiecePickup()
+    {
+        Time.timeScale = 0;
+        pickupObjectCanvas.gameObject.SetActive(true);
+        pieceOpen = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void CloseJournalPiece()
+    {
+        Time.timeScale = 1;
+        pickupObjectCanvas.gameObject.SetActive(false);
+        pieceOpen = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
 
     public void QuitToMainButton()
     {
@@ -185,7 +208,7 @@ public class PauseMenuManager : MonoBehaviour
             hasBeenPickedUp = true;
             PickupPromptText.SetActive(false);
             isInTrigger = false;
-            Destroy(ObjectToGivePlayer);
+            ObjectToGivePlayer.gameObject.SetActive(false);
             JournalPiecePickup();
         }
     }
@@ -221,23 +244,4 @@ public class PauseMenuManager : MonoBehaviour
         BeginFade(-1);
     }
 
-    private void JournalPiecePickup()
-    {
-        Time.timeScale = 0;
-        PickUpObjectCanvas.SetActive(true);
-        pieceOpen = true;
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void CloseJournalPiece()
-    {
-        Time.timeScale = 1;
-        PickUpObjectCanvas.gameObject.SetActive(false);
-        pieceOpen = false;
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 }
