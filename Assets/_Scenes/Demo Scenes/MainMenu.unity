@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32415545, g: 0.46213514, b: 0.70708215, a: 1}
+  m_IndirectSpecularColor: {r: 0.32432106, g: 0.4624035, b: 0.7075478, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22628,7 +22628,7 @@ PrefabInstance:
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
@@ -34560,7 +34560,7 @@ PrefabInstance:
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
@@ -62851,6 +62851,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 677759994504543166, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Menu Canvas 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007801660167428148, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -772.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3007801660167428148, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -242.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5879421539413077252, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -62874,22 +62889,22 @@ PrefabInstance:
     - target: {fileID: 6287352596036889156, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6287352596036889156, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6287352596036889156, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6287352596036889156, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -150.5
       objectReference: {fileID: 0}
     - target: {fileID: 2901962190342090055, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
@@ -62929,6 +62944,11 @@ PrefabInstance:
     - target: {fileID: 8607882082794406827, guid: fb1b1b74801f7484796947d8c2801506,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324633963616084948, guid: fb1b1b74801f7484796947d8c2801506,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -79225,14 +79245,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9fc3c67068eb8b1498505f0c40fb8318, type: 2}
     - target: {fileID: 6400000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9fc3c67068eb8b1498505f0c40fb8318, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
 --- !u!4 &1519274252 stripped
@@ -98821,6 +98841,7 @@ MonoBehaviour:
   hasBeenPickedUp: 0
   ObjectToGivePlayer: {fileID: 0}
   PickupPromptText: {fileID: 0}
+  PickUpObjectCanvas: {fileID: 0}
 --- !u!65 &1891029291
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101792,7 +101813,7 @@ PrefabInstance:
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
@@ -111008,14 +111029,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9fc3c67068eb8b1498505f0c40fb8318, type: 2}
     - target: {fileID: 6400000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9fc3c67068eb8b1498505f0c40fb8318, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b6086a6927f214ab392803dccb7a78, type: 3}
 --- !u!4 &2137710713 stripped
@@ -111570,7 +111591,7 @@ PrefabInstance:
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1666239142937213555, guid: 3c21034a415f7a54983d0deacf5d4279,
         type: 3}
