@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176964362371776393}
   m_Layer: 0
-  m_Name: Journal Menu FULL
+  m_Name: Journal Menu EMPTY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,11 +303,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1176964362371776393}
     m_Modifications:
-    - target: {fileID: 6407240445624612321, guid: af7eff511b86a6b428d35613aed43c5b,
-        type: 3}
-      propertyPath: m_Name
-      value: Table of Contents Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 6407240445624612331, guid: af7eff511b86a6b428d35613aed43c5b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -413,6 +408,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6407240445624612321, guid: af7eff511b86a6b428d35613aed43c5b,
+        type: 3}
+      propertyPath: m_Name
+      value: Table of Contents Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8024061395189668002, guid: af7eff511b86a6b428d35613aed43c5b,
         type: 3}
       propertyPath: m_IsActive
@@ -448,11 +448,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3962966481510816403}
-    - target: {fileID: 8393858892777957063, guid: af7eff511b86a6b428d35613aed43c5b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6779694430470097422, guid: af7eff511b86a6b428d35613aed43c5b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -517,21 +512,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6407240445615123047, guid: af7eff511b86a6b428d35613aed43c5b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6407240444132668187, guid: af7eff511b86a6b428d35613aed43c5b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2111022022322265398, guid: af7eff511b86a6b428d35613aed43c5b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7eff511b86a6b428d35613aed43c5b, type: 3}
