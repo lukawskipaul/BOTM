@@ -28,7 +28,7 @@ public class DamagePlayer : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("You have taken damage");
-            other.gameObject.GetComponent<PlayerHealthTest>().DamagePlayer(attackDamage); // player takes damage
+            other.gameObject.GetComponent<NewHealth>().DamagePlayer(attackDamage); // player takes damage
         }
     }
 }
