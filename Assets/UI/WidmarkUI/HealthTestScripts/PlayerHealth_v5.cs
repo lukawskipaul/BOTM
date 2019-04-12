@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 // this script component goes on to the Player
 
-public class NewHealth : MonoBehaviour
+public class PlayerHealth_v5 : MonoBehaviour
 {
     [SerializeField]
     Slider healthBar;
@@ -78,15 +78,15 @@ public class NewHealth : MonoBehaviour
     }
 
 
-    IEnumerator Die()
-    {
-        Destroy(this.gameObject.GetComponent<Rigidbody>());
+    //IEnumerator Die()
+    //{
+    //    Destroy(this.gameObject.GetComponent<Rigidbody>());
 
-        yield return new WaitForSecondsRealtime(3.0f);
+    //    yield return new WaitForSecondsRealtime(3.0f);
 
-        currentHealth = maxHealth;
-        //this.gameObject.transform.position = respawnPoint.position;
-    }
+    //    currentHealth = maxHealth;
+    //    //this.gameObject.transform.position = respawnPoint.position;
+    //}
 
 
     void SplashScreenOn()
