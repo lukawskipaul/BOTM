@@ -12,6 +12,8 @@ public class PlayerAttack : MonoBehaviour
     #region Variables
 
     [SerializeField]
+    private BoxCollider swordCollider;
+    [SerializeField]
     private Slider tkPullCooldownSlider;
     [SerializeField]
     private int tkPullDamageAmount = 10;
@@ -71,8 +73,6 @@ public class PlayerAttack : MonoBehaviour
             //    TKPull();
             //}
         }
-
-
     }
 
     private void Attack()
@@ -155,6 +155,7 @@ public class PlayerAttack : MonoBehaviour
     /* Called during specific attack animation frame to start doing damage to hit enemies */
     public void StartDamageWindow()
     {
+        swordCollider.enabled = true;
         swordAttack.IsAttacking = true;
         Time.timeScale = 0.5f;
     }
@@ -162,6 +163,7 @@ public class PlayerAttack : MonoBehaviour
     /* Called during specific attack animation frame to stop doing damage to hit enemies */
     public void EndDamageWindow()
     {
+        swordCollider.enabled = false;
         swordAttack.IsAttacking = false;
         Time.timeScale = 1.0f;
     }

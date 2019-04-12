@@ -15,7 +15,7 @@ public class GroundCheck : MonoBehaviour
         movement = this.gameObject.GetComponentInParent<RootMotionMovementController>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collision other)
     {
         /* Check if player is on a walkable surface */
         if (other.gameObject.tag == "Ground")       //need to use ground tag for any walkable surface
@@ -24,7 +24,7 @@ public class GroundCheck : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collision other)
     {
         /* Check if player is not on a walkable surface */
         if (other.gameObject.tag == "Ground")
