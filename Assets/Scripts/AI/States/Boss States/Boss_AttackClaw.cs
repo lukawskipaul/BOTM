@@ -10,7 +10,6 @@ public class Boss_AttackClaw : StateMachineBehaviour
     {
         //Activate Hitbox On Boss' Hands
         animator.SetBool("isClawing",true);
-        animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -23,10 +22,6 @@ public class Boss_AttackClaw : StateMachineBehaviour
     {
         //Deactivate Hitbox On Boss' Hands
         animator.SetBool("isClawing", false);
-        if (animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled)
-        {
-            animator.gameObject.GetComponentInChildren<BossHandHB>().Collider.enabled = false;
-        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -17,28 +17,28 @@ public class MobAttackHitbox : MonoBehaviour
     private void Start()
     {
         collider = this.GetComponent<Collider>();
-        collider.isTrigger = true;//Automatically set collider to a trigger
+        collider.isTrigger = false;//Automatically set collider to a trigger
         collider.enabled = false;//start with collider turned off <*efficient*>
         parentAnim = this.GetComponentInParent<Animator>();
         crocStats = this.GetComponentInParent<CrocEnemyMono>();
     }
     /// <summary>
-    /// Trigger event which detects whether the hitbox collided with the player
+    /// Collision event which detects whether the hitbox collided with the player
     /// </summary>
-    /// <param name="other">The Object that caused the activation of the trigger event</param>
-    private void OnTriggerEnter(Collider other)
+    /// <param name="collision">The collider object that caused the activation of the collision event</param>
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == playerTag && parentAnim.GetBool("InAttackRange"))
+        //Check if its the player & is within attack range
+        if (collision.gameObject.tag == playerTag && parentAnim.GetBool("InAttackRange"))
         {
             if (showDebug)
             {
                 Debug.Log("Player Hit!");
             }
-            other.gameObject.GetComponent<PlayerHealth>().DamagePlayer(crocStats.AttackDamage);
+            collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(crocStats.AttackDamage);
             collider.enabled = false;
             parentAnim.SetTrigger("isLicking");
         }
     }
-    
-    
+
 }

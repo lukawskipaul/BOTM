@@ -8,8 +8,6 @@ public class Boss_AttackBite : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Activates Head Hitbox
-        animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled = true;
         animator.SetBool("isBiting", true);
     }
 
@@ -21,11 +19,6 @@ public class Boss_AttackBite : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Deactivates Head Hitbox
-        if (animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled)
-        {
-            animator.gameObject.GetComponentInChildren<BossHeadHB>().Collider.enabled = false;
-        }
         animator.SetBool("isBiting", false);
     }
 
