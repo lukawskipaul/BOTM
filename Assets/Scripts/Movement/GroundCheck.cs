@@ -5,6 +5,7 @@ using UnityEngine;
 //GameObjects with this script require the components below, a component will be added if one does not exist
 [RequireComponent(typeof(SphereCollider))]
 
+//This script goes on a sphere collider near the player's feet childed to the player GameObject
 public class GroundCheck : MonoBehaviour
 {
     private RootMotionMovementController movement;

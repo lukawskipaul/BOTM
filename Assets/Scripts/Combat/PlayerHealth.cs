@@ -166,11 +166,12 @@ public class PlayerHealth : MonoBehaviour
         isInvulnerable = false;
     }
 
+    //actually called in DamagePlayer() above
     /* Called at specific death animation frame to make player respawn */
-    public void Respawn()
-    {
-        respawn.RespawnPlayer();
-    }
+    //public void Respawn()
+    //{
+    //    respawn.RespawnPlayer();
+    //}
 
     #endregion
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
 
-//This script goes on the sword joint of the player
+//This script goes on an empty GameObject that is a child of the sword joint of the player
 public class DamageEnemy : MonoBehaviour
 {
     #region Variables
