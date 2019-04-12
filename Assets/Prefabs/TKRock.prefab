@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2012651106443643337}
   - component: {fileID: 2012651106444413417}
   - component: {fileID: 2012651106445544233}
-  - component: {fileID: 2012651106441198409}
   - component: {fileID: 2012651106443285995}
   - component: {fileID: 2012651106443285992}
+  - component: {fileID: 2058793087098560855}
+  - component: {fileID: 3647337098230859194}
   m_Layer: 10
   m_Name: TKRock
   m_TagString: LevitatableObject
@@ -94,20 +95,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2012651106441198409
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012651106443285993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: aeb889e9a7a840e4889d130fdd882454, type: 3}
 --- !u!114 &2012651106443285995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +123,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2058793087098560855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012651106443285993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9274738, y: 2.6571114, z: 2.8271108}
+  m_Center: {x: 0.0029097798, y: -0.04139197, z: 0.18051638}
+--- !u!114 &3647337098230859194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012651106443285993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc0273284e7ea543aa22941da45c3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyFeedback: {fileID: 1751380401235948437, guid: b4bfec06f4f336a4fba0a12b871d4b4c,
+    type: 3}
 --- !u!1 &2546972866294226538
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +322,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.85
@@ -364,14 +386,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987373
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &132530454795105094 stripped
@@ -387,6 +401,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.0799999
@@ -443,14 +465,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01498737
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &213001256365123342 stripped
@@ -466,6 +480,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.97684
@@ -522,14 +544,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.015
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &3337492434004512802 stripped
@@ -545,6 +559,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.94000006
@@ -601,14 +623,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01498738
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &4023702213582405322 stripped
@@ -624,6 +638,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.72999746
@@ -680,14 +702,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987361
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &4268874532407666118 stripped
@@ -703,6 +717,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.25219917
@@ -759,14 +781,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987366
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &4268947881853650668 stripped
@@ -782,6 +796,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.3100001
@@ -838,14 +860,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987372
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &5750371850045799086 stripped
@@ -861,6 +875,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.05999997
@@ -917,14 +939,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987377
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &6840475891684971005 stripped
@@ -940,6 +954,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.70182043
@@ -996,14 +1018,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987366
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &7961627776462039433 stripped
@@ -1019,6 +1033,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -1075,14 +1097,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01498737
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &7964162677118562982 stripped
@@ -1098,6 +1112,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2080001
@@ -1154,14 +1176,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987383
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &8168239801113075326 stripped
@@ -1177,6 +1191,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8272862
@@ -1233,14 +1255,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987372
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
 --- !u!4 &8537711758181587580 stripped
@@ -1256,6 +1270,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8105913
@@ -1311,14 +1333,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.014987363
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}

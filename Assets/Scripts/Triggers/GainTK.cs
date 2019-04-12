@@ -22,9 +22,9 @@ public class GainTK : MonoBehaviour
 
     private void GivePlayerTK()
     {
-        swordVFX.SetActive(true);
+        //swordVFX.SetActive(true);
         thisTK.enabled = true;
         thisDO.enabled = true;
-        thisTKSC.enabled = true;
+        //thisTKSC.enabled = true;
     }
 }
