@@ -12,11 +12,14 @@ public class PickupPrompt : MonoBehaviour
     private GameObject ObjectToGivePlayer;  //if any
     [SerializeField]
     private GameObject PickupPromptText;
+    [SerializeField]
+    private GameObject PickUpObjectCanvas;
     private bool isInTrigger;
+    private bool paused;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Pickup")
         {
             isInTrigger = true;
             PickupPromptText.SetActive(true);
@@ -26,7 +29,7 @@ public class PickupPrompt : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Pickup")
         {
             isInTrigger = false;
             PickupPromptText.SetActive(false);
@@ -53,6 +56,19 @@ public class PickupPrompt : MonoBehaviour
             PickupPromptText.SetActive(false);
             isInTrigger = false;
             Destroy(this.gameObject);
+            PickUpObjectCanvas.SetActive(true);
+            PauseGame();
         }
     }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+        //pauseMenu.gameObject.SetActive(true);
+        paused = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
 }

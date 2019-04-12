@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// this script component goes on to the Player
+
 public class NewHealth : MonoBehaviour
 {
     [SerializeField]
@@ -18,18 +20,11 @@ public class NewHealth : MonoBehaviour
     private bool splashScreenHasBeenActivated;
 
 
-
     void Start()
     {
-
         currentHealth = maxHealth;
         UpdateHealthBar();
-
         damageSplashScreen.gameObject.SetActive(false);
-
-
-
-
     }
 
     void Update()
@@ -46,12 +41,7 @@ public class NewHealth : MonoBehaviour
 
     public void DamagePlayer(float amount)
     {
-
-
         currentHealth -= amount;
-
-
-
     }
 
 
@@ -81,7 +71,7 @@ public class NewHealth : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            test();
+            Test();
             splashScreenHasBeenActivated = true;
             damageSplashScreen.gameObject.SetActive(true);
         }
@@ -103,7 +93,7 @@ public class NewHealth : MonoBehaviour
     {
         if (splashScreenHasBeenActivated == true)
         {
-            test();
+            Test();
 
             damageSplashScreen.GetComponent<CanvasGroup>().alpha -= Time.deltaTime;
         }
@@ -111,14 +101,13 @@ public class NewHealth : MonoBehaviour
 
     void SplashScreenOff()
     {
-
         if (damageSplashScreen.GetComponent<CanvasGroup>().alpha <= 0 && splashScreenHasBeenActivated == true)
         {
             splashScreenHasBeenActivated = false;
         }
     }
 
-    void test() // Checks to see if the SplashScreen is active. If it isn't already active, then the DamageSlashScreen appears. 
+    void Test() // Checks to see if the SplashScreen is active. If it isn't already active, then the DamageSlashScreen appears. 
 
     {
         if (splashScreenHasBeenActivated == false && damageSplashScreen.activeSelf == true)
