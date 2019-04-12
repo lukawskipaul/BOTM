@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+//GameObjects with this script require the components below, a component will be added if one does not exist
+[RequireComponent(typeof(Animator))]
+
 //This script goes on the player
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private Animator anim;
     private PlayerRespawnScript respawn;
 
     private float currentHealth;
@@ -40,6 +44,12 @@ public class PlayerHealth : MonoBehaviour
 
     public static event Action TakeDamage;
 
+    private const string takeDamageAnimationTriggerName = "TakeDamage";
+    private const string attackAnimationBooleanName = "Attack";
+    private const string tkPullAnimationTriggerName = "TKPull";
+    private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
+    private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
+
     #endregion
 
     private void Awake()
@@ -51,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        anim = this.gameObject.GetComponent<Animator>();
         respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
     }
 
@@ -66,6 +77,19 @@ public class PlayerHealth : MonoBehaviour
         /* Damages player by enemy attack amount if not during iframe */
         if (!isInvulnerable)
         {
+            /* Cancels possible combo attack queuing */
+            anim.SetBool(attackAnimationBooleanName, false);
+
+            /* Cancels possible tk pull queuing */
+            anim.ResetTrigger(tkPullAnimationTriggerName);
+
+            /* Cancels possible dodge queuing */
+            anim.ResetTrigger(freeLookDodgeAnimationTriggerName);
+            anim.ResetTrigger(lockedOnDodgeAnimationTriggerName);
+
+            /* Plays take damage animation */
+            anim.SetTrigger(takeDamageAnimationTriggerName);
+
             currentHealth -= amount;
 
             StopCoroutine(DisableHealthRegen());
@@ -77,9 +101,6 @@ public class PlayerHealth : MonoBehaviour
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            //TODO: uncomment code
-            //anim.SetTrigger("Die");
-
             respawn.RespawnPlayer();
         }
     }

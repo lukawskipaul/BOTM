@@ -54,7 +54,9 @@ public class PlayerRespawnScript : MonoBehaviour
     private IEnumerator RespawnDelay()
     {
         anim.SetTrigger("Death");
+
         yield return new WaitForSecondsRealtime(3.0f);
+
         if (currentCheckpoint == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -62,7 +64,6 @@ public class PlayerRespawnScript : MonoBehaviour
             //Things that need to be reset to intial value will go under here
             //
         }
-
         else
         {
             transform.position = currentCheckpoint.transform.position;
