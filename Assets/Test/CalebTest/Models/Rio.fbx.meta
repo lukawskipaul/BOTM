@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0ea33d1c52ca09d4882eda7924842a76
+guid: c04c40e8f9c98f04cbd073dd4de2b27f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Head
-    100002: HeadTop_End
+    100000: Character1_Reference
+    100002: Head
     100004: Hips
     100006: LeftArm
     100008: LeftFoot
@@ -32,47 +32,44 @@ ModelImporter:
     100052: LeftHandThumb4
     100054: LeftLeg
     100056: LeftShoulder
-    100058: LeftToe_End
-    100060: LeftToeBase
-    100062: LeftUpLeg
-    100064: Neck
-    100066: //RootNode
-    100068: RightArm
-    100070: RightFoot
-    100072: RightForeArm
-    100074: RightHand
-    100076: RightHandIndex1
-    100078: RightHandIndex2
-    100080: RightHandIndex3
-    100082: RightHandIndex4
-    100084: RightHandMiddle1
-    100086: RightHandMiddle2
-    100088: RightHandMiddle3
-    100090: RightHandMiddle4
-    100092: RightHandPinky1
-    100094: RightHandPinky2
-    100096: RightHandPinky3
-    100098: RightHandPinky4
-    100100: RightHandRing1
-    100102: RightHandRing2
-    100104: RightHandRing3
-    100106: RightHandRing4
-    100108: RightHandThumb1
-    100110: RightHandThumb2
-    100112: RightHandThumb3
-    100114: RightHandThumb4
-    100116: RightLeg
-    100118: RightShoulder
-    100120: RightToe_End
-    100122: RightToeBase
-    100124: RightUpLeg
-    100126: Shield_joint
-    100128: Spine
-    100130: Spine1
-    100132: Spine2
-    100134: Sword_joint
-    400000: Head
-    400002: HeadTop_End
+    100058: LeftToeBase
+    100060: LeftUpLeg
+    100062: Neck
+    100064: RightArm
+    100066: RightFoot
+    100068: RightForeArm
+    100070: RightHand
+    100072: RightHandIndex1
+    100074: RightHandIndex2
+    100076: RightHandIndex3
+    100078: RightHandIndex4
+    100080: RightHandMiddle1
+    100082: RightHandMiddle2
+    100084: RightHandMiddle3
+    100086: RightHandMiddle4
+    100088: RightHandPinky1
+    100090: RightHandPinky2
+    100092: RightHandPinky3
+    100094: RightHandPinky4
+    100096: RightHandRing1
+    100098: RightHandRing2
+    100100: RightHandRing3
+    100102: RightHandRing4
+    100104: RightHandThumb1
+    100106: RightHandThumb2
+    100108: RightHandThumb3
+    100110: RightHandThumb4
+    100112: RightLeg
+    100114: RightShoulder
+    100116: RightToeBase
+    100118: RightUpLeg
+    100120: //RootNode
+    100122: Rio_ReadyForMixamoAnims_1
+    100124: Spine
+    100126: Spine1
+    100128: Spine2
+    400000: Character1_Reference
+    400002: Head
     400004: Hips
     400006: LeftArm
     400008: LeftFoot
@@ -100,47 +97,50 @@ ModelImporter:
     400052: LeftHandThumb4
     400054: LeftLeg
     400056: LeftShoulder
-    400058: LeftToe_End
-    400060: LeftToeBase
-    400062: LeftUpLeg
-    400064: Neck
-    400066: //RootNode
-    400068: RightArm
-    400070: RightFoot
-    400072: RightForeArm
-    400074: RightHand
-    400076: RightHandIndex1
-    400078: RightHandIndex2
-    400080: RightHandIndex3
-    400082: RightHandIndex4
-    400084: RightHandMiddle1
-    400086: RightHandMiddle2
-    400088: RightHandMiddle3
-    400090: RightHandMiddle4
-    400092: RightHandPinky1
-    400094: RightHandPinky2
-    400096: RightHandPinky3
-    400098: RightHandPinky4
-    400100: RightHandRing1
-    400102: RightHandRing2
-    400104: RightHandRing3
-    400106: RightHandRing4
-    400108: RightHandThumb1
-    400110: RightHandThumb2
-    400112: RightHandThumb3
-    400114: RightHandThumb4
-    400116: RightLeg
-    400118: RightShoulder
-    400120: RightToe_End
-    400122: RightToeBase
-    400124: RightUpLeg
-    400126: Shield_joint
-    400128: Spine
-    400130: Spine1
-    400132: Spine2
-    400134: Sword_joint
-    7400000: mixamo.com
+    400058: LeftToeBase
+    400060: LeftUpLeg
+    400062: Neck
+    400064: RightArm
+    400066: RightFoot
+    400068: RightForeArm
+    400070: RightHand
+    400072: RightHandIndex1
+    400074: RightHandIndex2
+    400076: RightHandIndex3
+    400078: RightHandIndex4
+    400080: RightHandMiddle1
+    400082: RightHandMiddle2
+    400084: RightHandMiddle3
+    400086: RightHandMiddle4
+    400088: RightHandPinky1
+    400090: RightHandPinky2
+    400092: RightHandPinky3
+    400094: RightHandPinky4
+    400096: RightHandRing1
+    400098: RightHandRing2
+    400100: RightHandRing3
+    400102: RightHandRing4
+    400104: RightHandThumb1
+    400106: RightHandThumb2
+    400108: RightHandThumb3
+    400110: RightHandThumb4
+    400112: RightLeg
+    400114: RightShoulder
+    400116: RightToeBase
+    400118: RightUpLeg
+    400120: //RootNode
+    400122: Rio_ReadyForMixamoAnims_1
+    400124: Spine
+    400126: Spine1
+    400128: Spine2
+    2100000: lambert7
+    2100002: lambert1
+    2100004: lambert4
+    2100006: lambert2
+    2100008: lambert6
+    4300000: Rio_ReadyForMixamoAnims_1
     9500000: //RootNode
+    13700000: Rio_ReadyForMixamoAnims_1
   externalObjects: {}
   materials:
     importMaterials: 1
