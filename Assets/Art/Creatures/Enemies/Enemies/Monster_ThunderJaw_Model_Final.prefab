@@ -3486,11 +3486,11 @@ MonoBehaviour:
   chargeTempStopping: 1
   strafeRadius: 5.58
   strafeSpeed: 10
+  strafeStateDuration: 8
   jumpBackDistance: 20
   lookRotationSpeed: 1
   maximumExplosionRadius: 10
   explosionRateOfGrowth: 0.182
-  strafeStateDuration: 8
 --- !u!114 &6907902732777179025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3524,8 +3524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5a5af16c451164a80cf43a10cd24e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBarObject: {fileID: 0}
   maxHealth: 100
+  isDead: 0
 --- !u!54 &6907902732777179029
 Rigidbody:
   m_ObjectHideFlags: 0
