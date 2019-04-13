@@ -216,7 +216,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5772252751875604535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7698326151021627643}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1222117637164845205
@@ -256,9 +278,110 @@ Transform:
   - {fileID: 1173182654929556188}
   - {fileID: 1299954199796244198}
   - {fileID: 170524321750941553}
+  - {fileID: 4683307836948555023}
   m_Father: {fileID: 7698326151681799914}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1483352504918410331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4683307836948555023}
+  - component: {fileID: 2330831949626045635}
+  - component: {fileID: 2830291193333696610}
+  - component: {fileID: 2564409800947975421}
+  m_Layer: 5
+  m_Name: Text (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4683307836948555023
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483352504918410331}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -11.429852}
+  m_LocalScale: {x: 0.40606308, y: 0.40606308, z: 0.40606308}
+  m_Children: []
+  m_Father: {fileID: 4328986409130456514}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 222.3, y: -177.8}
+  m_SizeDelta: {x: 528.1, y: 118.08}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2330831949626045635
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483352504918410331}
+  m_CullTransparentMesh: 0
+--- !u!114 &2830291193333696610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483352504918410331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7ef1a5a49f4925644a14473107e97e84, type: 3}
+    m_FontSize: 22
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Composers
+
+
+    Dylan Love
+
+    Alexander Riak'
+--- !u!114 &2564409800947975421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483352504918410331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2033895073803383617
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222.19672, y: -88.97698}
+  m_AnchoredPosition: {x: -25.2, y: -140.6}
   m_SizeDelta: {x: 528.1, y: 164.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5765396029520422287
@@ -1084,8 +1207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.251831, y: -150.34328}
-  m_SizeDelta: {x: 528.1, y: 220.1}
+  m_AnchoredPosition: {x: 221.7, y: -107.2}
+  m_SizeDelta: {x: 528.1, y: 239.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1108771248884484900
 CanvasRenderer:
@@ -1133,6 +1256,8 @@ MonoBehaviour:
 
     Crosby Nelson - Lead
 
+    Francesco Addante
+
     Chris Bokowy
 
     Richard Dorta
@@ -1141,8 +1266,7 @@ MonoBehaviour:
 
     Ami Patel
 
-
-    Francesco Addante - Composer/Designer'
+'
 --- !u!114 &7783633205844009226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1255,7 +1379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7698326151021627639
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1373,8 +1497,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -94.4}
-  m_SizeDelta: {x: -120, y: -222.2}
+  m_AnchoredPosition: {x: 0, y: -72}
+  m_SizeDelta: {x: -120, y: -177.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7698326151681799908
 CanvasRenderer:

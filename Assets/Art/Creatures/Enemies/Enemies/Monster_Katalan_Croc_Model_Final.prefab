@@ -2214,8 +2214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5a5af16c451164a80cf43a10cd24e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBarObject: {fileID: 0}
   maxHealth: 100
+  isDead: 0
 --- !u!136 &7736037114856792329
 CapsuleCollider:
   m_ObjectHideFlags: 0

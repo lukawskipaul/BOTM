@@ -11,7 +11,7 @@ public class Telekinesis : MonoBehaviour
 
     Rigidbody objectRigidBody;
     private GameObject levitatableGO;
-    bool isLiftingObject = false;
+    public bool isLiftingObject = false;
 
     [SerializeField]
     GameObject player;
@@ -169,7 +169,7 @@ public class Telekinesis : MonoBehaviour
 
     }
 
-    private void DropObject()
+    public void DropObject()
     {
         if (isLiftingObject)
         {

@@ -19,8 +19,6 @@ public class Boss_WalkForwardClose : StateMachineBehaviour
         player = bossAI.Player;
         bossNavMeshAgent = bossAI.BossNavMeshAgent;
         bossNavMeshAgent.SetDestination(player.transform.position);
-        //Select random attack action
-        animator.SetInteger("AttackChoice", (int)(Random.value * 9));//0-8
         bossNavMeshAgent.isStopped = false;
     }
 
@@ -38,6 +36,9 @@ public class Boss_WalkForwardClose : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Select random attack action
+        animator.SetInteger("AttackChoice", (int)(Random.value * 9));//0-8
+
         bossNavMeshAgent.isStopped = true;
     }
 
