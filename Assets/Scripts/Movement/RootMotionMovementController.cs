@@ -41,6 +41,7 @@ public class RootMotionMovementController : MonoBehaviour
     private const string tkPullAnimationTriggerName = "TKPull";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
+    Telekinesis telekinesis = new Telekinesis();
 
     #endregion
 
@@ -150,6 +151,9 @@ public class RootMotionMovementController : MonoBehaviour
         /* Play hop dodge animation when dodge button is pressed and is locked on */
         if (Input.GetButtonDown(dodgeButtonName))     //checks for lock on in animator
         {
+            if(telekinesis.isLiftingObject == true)
+                telekinesis.DropObject();
+            
             /* Cancels possible combo attack queuing */
             anim.SetBool(attackAnimationBooleanName, false);
 
@@ -167,6 +171,8 @@ public class RootMotionMovementController : MonoBehaviour
         /* Cancel attack queuing even when dodge cooldown is active */
         if (Input.GetButtonDown(dodgeButtonName))
         {
+            if (telekinesis.isLiftingObject == true)
+                telekinesis.DropObject();
             /* Cancels possible combo attack queuing */
             anim.SetBool(attackAnimationBooleanName, false);
 
