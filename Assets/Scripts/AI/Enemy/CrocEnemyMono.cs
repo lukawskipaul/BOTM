@@ -20,6 +20,7 @@ public class CrocEnemyMono : MonoBehaviour
     private NavMeshAgent agent;
     private CrocEnemy enemyStats;
 
+    [SerializeField]
     private Animator anim;
     [SerializeField]
     private float detectionDistance = 20;
@@ -27,6 +28,19 @@ public class CrocEnemyMono : MonoBehaviour
     private bool showDebug = false;
     [SerializeField, Tooltip("Set to Player layer")]
     private LayerMask ObstacleMask;
+
+    // These variables monitor the status
+    // of the triggers and variables
+    // in the croc's animator
+    [SerializeField]
+    [Tooltip("If this is true, the player has entered the croc's field of view.")]
+    private bool playerDetected = false;
+    [SerializeField]
+    [Tooltip("If this is true, the player is in the croc's attack range.")]
+    private bool inAttackRange = false;
+    [SerializeField]
+    [Tooltip("If this is true, there is an obstacle between the player and the croc's line of sight")]
+    private bool linecastHit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -52,18 +66,21 @@ public class CrocEnemyMono : MonoBehaviour
             if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
             {
                 Debug.Log("Linecast hit");
+                linecastHit = true;
             }
             else
             {
                 Debug.Log("Linecast no hit");
+                linecastHit = false;
             }
-            //Plays the Death Animation for Ai
+
+            /*//Plays the Death Animation for Ai
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 anim.SetTrigger("Die");
                 anim.SetTrigger("Flinch");
                 
-            }
+            }//*/
         }
         CalculateDetectionRange();
         AttackRangeAnimExecution();
@@ -78,6 +95,7 @@ public class CrocEnemyMono : MonoBehaviour
         {
             
             anim.SetBool("PlayerDetected", true);
+            playerDetected = true;
             if (showDebug) Debug.Log("Enemy Detected!");
         }
 
@@ -91,10 +109,12 @@ public class CrocEnemyMono : MonoBehaviour
             Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
         {
             anim.SetBool("InAttackRange", false);
+            inAttackRange = false;
         }
         else
         {
             anim.SetBool("InAttackRange", true);
+            inAttackRange = true;
         }
     }
     //Debug Tools to show in editor at all times if enabled
