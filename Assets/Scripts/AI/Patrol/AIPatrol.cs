@@ -11,6 +11,7 @@ public class AIPatrol : MonoBehaviour
 {
     // This bool decides whether or not the Game Object
     // using this script is actively patrolling.
+    [HideInInspector]
     public bool IsPatrolling = false;
 
     // The speed the Game Object should be moving
@@ -43,7 +44,6 @@ public class AIPatrol : MonoBehaviour
     private Vector3 nextWaypointPosition = Vector3.zero;
 
     // The number of Waypoints in the route List.
-    [SerializeField]
     private int routeSize = 0;
 
     // This bool decides if the Game Object
@@ -56,7 +56,6 @@ public class AIPatrol : MonoBehaviour
 
     // The distance remaining between the Game Object
     // and its destination
-    [SerializeField]
     private float remainingDistance = 0.0f;
 
     // The minimum distance between the Game Object
