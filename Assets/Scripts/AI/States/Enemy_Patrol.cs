@@ -37,6 +37,7 @@ public class Enemy_Patrol : StateMachineBehaviour
         navMeshAgent.speed = originalSpeed;
         navMeshAgent.stoppingDistance = originalStoppingDistance;
         patrol.IsPatrolling = false;
+        navMeshAgent.isStopped = true;//Stops the AI from moving
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
