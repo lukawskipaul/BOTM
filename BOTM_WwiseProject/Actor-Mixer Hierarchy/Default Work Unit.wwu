@@ -1132,6 +1132,25 @@
 						<ActiveSource Name="PipeRoar" ID="{7EF1B3E3-246B-47E9-8EA8-AE4511027465}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="MetalDoorBreakdown2" ID="{C254DE37-30D3-4598-BE7D-DCD6B553BAA7}" ShortID="636753365">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="MetalDoorBreakdown2" ID="{1630E002-9202-4D3B-A39F-5F56DF7FCE33}" ShortID="902663844">
+							<Language>SFX</Language>
+							<AudioFile>MetalDoorBreakdown2.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="MetalDoorBreakdown2" ID="{1630E002-9202-4D3B-A39F-5F56DF7FCE33}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

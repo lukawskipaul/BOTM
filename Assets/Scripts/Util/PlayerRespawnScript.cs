@@ -32,10 +32,13 @@ public class PlayerRespawnScript : MonoBehaviour
         Debug.Log("Set Checkpoint");
     }
 
-    //This should be called at the end of a Player Death Animation
+    //This can be called at the end of a Player Death Animation, for now it's public for the DeathSphereOfDeath script
     public void RespawnPlayer()
     {
         rb.velocity = Vector3.zero;
+
+        //Reset any animation triggers that will be implemented
+        anim.ResetTrigger("TriggerName");
 
         StartCoroutine(RespawnDelay());
     }
@@ -50,8 +53,8 @@ public class PlayerRespawnScript : MonoBehaviour
 
     private IEnumerator RespawnDelay()
     {
-        anim.ResetTrigger("Death");
-        yield return new WaitForSecondsRealtime(2.0f);
+        anim.SetTrigger("Death");
+        yield return new WaitForSecondsRealtime(3.0f);
         if (currentCheckpoint == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

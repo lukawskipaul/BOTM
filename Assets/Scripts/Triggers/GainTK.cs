@@ -6,13 +6,19 @@ using UnityEngine;
 public class GainTK : MonoBehaviour
 {
     [SerializeField]
-    private GameObject swordVFX;
+    private Animator TKObjectFloat;
+    [SerializeField]
+    private Animator PlayerAnimator;
     [SerializeField]
     private Telekinesis thisTK;
     [SerializeField]
     private DetectObject thisDO;
     [SerializeField]
-    private TKShieldController thisTKSC;
+    private SlowMoGameTime SlowMo;
+    [SerializeField]
+    private Transform PlayerLocation;
+    [SerializeField]
+    private GameObject ElectricExplosioin;
 
     private void OnEnable()
     {
@@ -22,9 +28,12 @@ public class GainTK : MonoBehaviour
 
     private void GivePlayerTK()
     {
-        //swordVFX.SetActive(true);
+        PlayerAnimator.SetTrigger("TakeDamage");
+        TKObjectFloat.SetTrigger("shouldFloat");
+        Instantiate(ElectricExplosioin, PlayerLocation.position, PlayerLocation.rotation);
         thisTK.enabled = true;
         thisDO.enabled = true;
-        //thisTKSC.enabled = true;
+        SlowMo.SlowMo();
+        Destroy(TKObjectFloat);
     }
 }

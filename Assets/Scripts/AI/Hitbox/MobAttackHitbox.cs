@@ -5,7 +5,6 @@ using UnityEngine;
 /// Attach this script to the enemy hitbox that will deal damage to Player
 /// </summary>
 [RequireComponent(typeof(BoxCollider))]
-[RequireComponent(typeof(Rigidbody))]
 public class MobAttackHitbox : MonoBehaviour
 {
     [SerializeField]
@@ -15,14 +14,11 @@ public class MobAttackHitbox : MonoBehaviour
     private CrocEnemyMono crocStats;
     private Animator parentAnim;
     public Collider collider { get; private set; }
-    private Rigidbody rb;
     private void Start()
     {
         collider = this.GetComponent<Collider>();
         collider.isTrigger = false;//Automatically set collider to a trigger
         collider.enabled = false;//start with collider turned off <*efficient*>
-        rb = this.GetComponent<Rigidbody>();
-        rb.useGravity = false;//turn off gravity
         parentAnim = this.GetComponentInParent<Animator>();
         crocStats = this.GetComponentInParent<CrocEnemyMono>();
     }

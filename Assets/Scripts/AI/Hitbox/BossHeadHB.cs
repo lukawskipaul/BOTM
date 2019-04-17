@@ -5,7 +5,6 @@ using UnityEngine;
 /// Player must have a 'Player' tag
 /// </summary>
 [RequireComponent(typeof(BoxCollider))]
-[RequireComponent(typeof(Rigidbody))]
 public class BossHeadHB : MonoBehaviour
 {
     [SerializeField]
@@ -13,14 +12,11 @@ public class BossHeadHB : MonoBehaviour
     private BossEnemyMono bossStats;
     private Animator parentAnim;//Get animator controller
     public Collider Collider { get; private set; }
-    private Rigidbody rb;
     private void Start()
     {
         Collider = this.GetComponent<Collider>();
         Collider.isTrigger = false;//Automatically set collider to regular
         Collider.enabled = true;//Initially turns on collider
-        rb = this.GetComponent<Rigidbody>();
-        rb.useGravity = false;//turn off gravity
         parentAnim = this.GetComponentInParent<Animator>();//reference to animator
         bossStats = this.GetComponentInParent<BossEnemyMono>();
     }
