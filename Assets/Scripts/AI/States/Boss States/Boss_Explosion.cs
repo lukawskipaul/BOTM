@@ -107,7 +107,9 @@ public class Boss_Explosion : StateMachineBehaviour
         // It continues to grow in size
         if (isExploding && currentExplosionRadius < maximumExplosionRadius)
         {
-            explosionScalar += explosionRateOfGrowth;
+            // Explosion grows independently of framerate, instead scaling
+            // at fixed intervals on the assumpetion that the game is constantly at 60 FPS
+            explosionScalar += (explosionRateOfGrowth * Time.deltaTime * 60.0f);
             if (explosionScalar > 1.0f)
             {
                 explosionScalar = 1.0f;

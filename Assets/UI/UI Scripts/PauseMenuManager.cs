@@ -9,20 +9,35 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject journalMenu;
     public GameObject pauseMenu;
     public GameObject controlsCanvas;
-    
+    public GameObject pickupObjectCanvas;
+
+    [HideInInspector]
+    public bool hasBeenPickedUp = false;
+    [SerializeField]
+    private GameObject ObjectToGivePlayer;
+    [SerializeField]
+    private GameObject PickupPromptText;
+
+    private bool isInTrigger;
+
+    [SerializeField]
+    //private PickupPrompt thisPickup;
+
     public string MainMenuScene;
     public string DemoScene;
     public string journalInput;
     public string pauseInput;
     public string controlsInput;
 
-    public bool paused;
-    public bool journalOpen;
+    public bool paused = false;
+    public bool journalOpen = false;
+    public bool pieceOpen = false;
 
     void Start()
     {
         pauseMenu.gameObject.SetActive(false);
         journalMenu.gameObject.SetActive(false);
+        pickupObjectCanvas.gameObject.SetActive(false);
         controlsCanvas.gameObject.SetActive(false);
     }
 
@@ -30,9 +45,14 @@ public class PauseMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isInTrigger)
+        {
+            CheckInput();
+        }
+
         if (Input.GetButtonDown(pauseInput))
         {
-            if(paused == false && journalOpen == false)
+            if(paused == false && journalOpen == false && pieceOpen == false)
             {
                 PauseGame();
             }
@@ -46,11 +66,16 @@ public class PauseMenuManager : MonoBehaviour
             {
                 CloseJournal();
             }
+
+            else if(pieceOpen == true)
+            {
+                CloseJournalPiece();
+            }
         }
 
         if (Input.GetButtonDown(journalInput))
         {
-            if (paused == false && journalOpen == false)
+            if (paused == false && journalOpen == false && pieceOpen == false)
             {
                 OpenJournal();
             }
@@ -82,7 +107,6 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
@@ -92,6 +116,7 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
 
     private void OpenJournal()
     {
@@ -114,6 +139,28 @@ public class PauseMenuManager : MonoBehaviour
         AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
     }
 
+
+    private void JournalPiecePickup()
+    {
+        Time.timeScale = 0;
+        pickupObjectCanvas.gameObject.SetActive(true);
+        pieceOpen = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void CloseJournalPiece()
+    {
+        Time.timeScale = 1;
+        pickupObjectCanvas.gameObject.SetActive(false);
+        pieceOpen = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
     public void QuitToMainButton()
     {
         Time.timeScale = 1;
@@ -130,6 +177,40 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         SceneManager.LoadScene(DemoScene);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Pickup")
+        {
+            isInTrigger = true;
+            PickupPromptText.SetActive(true);
+            //Debug.Log("Player entered pickup zone");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Pickup")
+        {
+            isInTrigger = false;
+            PickupPromptText.SetActive(false);
+            //Debug.Log("Player left pickup zone");
+        }
+    }
+
+    private void CheckInput()
+    {
+        if (Input.GetButtonDown("Interact"))
+        {
+            if (ObjectToGivePlayer != null)
+                ObjectToGivePlayer.SetActive(true);
+            hasBeenPickedUp = true;
+            PickupPromptText.SetActive(false);
+            isInTrigger = false;
+            ObjectToGivePlayer.gameObject.SetActive(false);
+            JournalPiecePickup();
+        }
     }
 
     //Texture for the screen to fade from.

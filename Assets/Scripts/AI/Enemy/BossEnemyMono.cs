@@ -21,9 +21,11 @@ public class BossEnemyMono : MonoBehaviour
         get { return ultimateDamage; }
     }
     [SerializeField]
-    private bool showDebug = true;
+    private bool showDebug = false;
     [SerializeField, Tooltip("Layer must be set to 'Player' for cast to work(and Enemy if neccessary)")]
     private LayerMask ObstacleMask;
+
+    private bool isPlayerDead = false;//activates the boss anim trigger even once
     #region Damage Modifier Fields
     [Header("Damage Modifiers")]
     [Header("Head")]
@@ -66,6 +68,7 @@ public class BossEnemyMono : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StopAttackingPlayer();
         anim.SetFloat("distanceFromPlayerSq", bossStats.SquaredDistanceToPlayer(this.gameObject, player));//[Square] Distance between the Player and Enemy
         if (showDebug)
         {
@@ -84,6 +87,22 @@ public class BossEnemyMono : MonoBehaviour
             }
         }
         ObstacleDetection();
+        
+    }
+    /// <summary>
+    /// Stops the boss from attacking if the player's health is 0 or below
+    /// </summary>
+    private void StopAttackingPlayer()
+    {
+        if (player.GetComponent<PlayerHealth>().CurrentHealth <= 0)
+        {
+            //Check if player is dead and set the trigger once
+            if (!isPlayerDead)
+            {
+                anim.SetTrigger("PlayerDies");
+                isPlayerDead = true;
+            }
+        }
     }
     /// <summary>
     /// Detects if obstacles is between Player and Enemy

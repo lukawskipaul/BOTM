@@ -11,7 +11,7 @@ public class Telekinesis : MonoBehaviour
 
     Rigidbody objectRigidBody;
     private GameObject levitatableGO;
-    bool isLiftingObject = false;
+    public bool isLiftingObject = false;
 
     [SerializeField]
     GameObject player;
@@ -170,25 +170,27 @@ public class Telekinesis : MonoBehaviour
 
     }
 
-    private void DropObject()
+    public void DropObject()
     {
         if (isLiftingObject)
         {
             objectRigidBody.useGravity = true;
             currentTKObject.SetNeutral();
             ResetTK();
-        }       
+        }
     }
 
     private void CheckDistance()
     {
-        //Vector3 pos = levitateTransform.position;
-        //pos.z = Mathf.Clamp(levitateTransform.position.z, 7, 25);
-        //levitateTransform.position = pos;
-        if (Vector3.Distance(levitatableGO.transform.position, player.transform.position) <= minDistance)
+        Bounds LevGOBounds = levitatableGO.GetComponent<Collider>().bounds;
+        Vector3 LevGOExtents = LevGOBounds.extents;
+        Vector3 FacePoint = LevGOBounds.center - (levitateTransform.forward * LevGOExtents.magnitude / Mathf.Sqrt(3)); //I did math, don't ask where Sqrt(3) came from
+        Vector3 PointOnPlayer = player.GetComponent<Collider>().bounds.ClosestPoint(FacePoint);
+        if (Vector3.Distance(FacePoint, PointOnPlayer) < minDistance)
         {
-            objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
-            //levitateTransform.position = objectRigidBody.position;
+            objectRigidBody.MovePosition(levitatableGO.transform.position + (levitateTransform.forward * minDistance) * Time.deltaTime);
+            levitateTransform.position = levitatableGO.transform.position;
+            zInput = 0;
         }
         if (Vector3.Distance(levitatableGO.transform.position, player.transform.position) >= maxDistance)
         {

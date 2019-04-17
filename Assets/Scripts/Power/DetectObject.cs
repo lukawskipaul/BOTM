@@ -8,14 +8,12 @@ public class DetectObject : MonoBehaviour
     // Event that is raised when an object is detected
     public static event Action<GameObject> LevObjectDetected;
     public static event Action<GameObject> EnemyObjDetected;
-    public static event Action<GameObject> TKPullTargetDetected;
     // Event that is rasied when an object is no longer in sight
     public static event Action LevObjectGone;
     public static event Action EnemyObjGone;
 
     //A boolean that InputCameraChange modifies to inform this class to run the private method CastSphere
     public static bool EnemySearchNeeded;
-    public static bool TKPullTargetSearchNeeded;
     public static float SearchDirection;
 
     [SerializeField]
@@ -24,6 +22,7 @@ public class DetectObject : MonoBehaviour
     float detectRadius, detectRange;
 
     Vector3 detectVector;
+    GameObject currentLevObject = null;
 
     private void Update()
     {
@@ -37,11 +36,6 @@ public class DetectObject : MonoBehaviour
             }
 
             else CastSphere("Enemy");
-        }
-
-        if (TKPullTargetSearchNeeded)
-        {
-            CastSphere("Enemy");
         }
     }
 
@@ -83,22 +77,14 @@ public class DetectObject : MonoBehaviour
                     if (FindTag == "LevitatableObject")
                     {
                         OnLevObjectDetected(hit.collider.gameObject);
-                        hit.collider.GetComponent<MeshRenderer>().material.color = Color.green;
+                        currentLevObject = hit.collider.gameObject;
+                        currentLevObject.GetComponentInChildren<Light>().enabled = true;
                     }
                     else if (FindTag == "Enemy")
                     {
-                        if (TKPullTargetSearchNeeded)
-                        {
-                            OnTKPullTargetDetected(hit.collider.gameObject);
-                            //We found an enemy, we don't need to search anymore
-                            TKPullTargetSearchNeeded = false;
-                        }
-                        else
-                        {
                             OnEnemyObjDetected(hit.collider.gameObject);
                             //We found an enemy, we don't need to search anymore
                             EnemySearchNeeded = false;
-                        }
                     }
                 }
             }
@@ -109,9 +95,10 @@ public class DetectObject : MonoBehaviour
             Debug.Log("No" + FindTag);
             if (FindTag == "LevitatableObject")
             {
+                Debug.Log("Deselected: " + currentLevObject);
+                currentLevObject.GetComponentInChildren<Light>().enabled = false;
+                currentLevObject = null;
                 OnLevObjectGone();
-
-                hit.collider.GetComponent<MeshRenderer>().material.color = Color.white;
             }
 
             if (FindTag == "Enemy")
@@ -122,7 +109,6 @@ public class DetectObject : MonoBehaviour
             }
         }
     }
-
 
     private void FindSecondEnemy()
     {
@@ -159,11 +145,11 @@ public class DetectObject : MonoBehaviour
                     Plane SearchPlane = Plane.Translate(CameraFrame[PlaneIndexToTranslate], CameraCenter);
                     if (SearchDirection < 0)
                     {
-                        SearchPlane.SetNormalAndPosition(-(detectPoint.right), detectPoint.transform.position);
+                        SearchPlane.SetNormalAndPosition(-(detectPoint.right), detectPoint.position);
                     }
                     else
                     {
-                        SearchPlane.SetNormalAndPosition(detectPoint.right, detectPoint.transform.position);
+                        SearchPlane.SetNormalAndPosition(detectPoint.right, detectPoint.position);
                     }
                     if (SearchPlane.GetDistanceToPoint(EnemiesInFrame[0].transform.position) > 0)
                     {
@@ -174,7 +160,7 @@ public class DetectObject : MonoBehaviour
             }
             if (EnemyToReturn == null && EnemiesInFrame.Count > 0)
             {
-                EnemyToReturn = EnemiesInFrame[EnemiesInFrame.Count - 1].gameObject;
+                EnemyToReturn = EnemiesInFrame[EnemiesInFrame.Count -1].gameObject;
             }
         }
         if (EnemyToReturn != null)
@@ -189,15 +175,16 @@ public class DetectObject : MonoBehaviour
         Camera LockOnCamera = GameObject.Find("Main Camera").GetComponent<Cinemachine.CinemachineBrain>().OutputCamera;
         Vector3 CameraCenter = LockOnCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, LockOnCamera.nearClipPlane));
         Plane SearchPlane;
+        //Searchdirection < 0 means left, and > 0 means right
         if (SearchDirection < 0)
         {
             SearchPlane = Plane.Translate(GeometryUtility.CalculateFrustumPlanes(LockOnCamera)[(int)CameraFrameWalls.right], CameraCenter);
-            SearchPlane.SetNormalAndPosition(-(detectPoint.right), detectPoint.transform.position);
+            SearchPlane.SetNormalAndPosition(-(detectPoint.right), detectPoint.position);
         }
         else
         {
             SearchPlane = Plane.Translate(GeometryUtility.CalculateFrustumPlanes(LockOnCamera)[(int)CameraFrameWalls.left], CameraCenter);
-            SearchPlane.SetNormalAndPosition(detectPoint.right, detectPoint.transform.position);
+            SearchPlane.SetNormalAndPosition(detectPoint.right, detectPoint.position);
         }
         if (x == null)
         {
@@ -255,14 +242,6 @@ public class DetectObject : MonoBehaviour
         if (LevObjectGone != null)
         {
             LevObjectGone.Invoke();
-        }
-    }
-
-    private void OnTKPullTargetDetected(GameObject detObj)
-    {
-        if (TKPullTargetDetected != null)
-        {
-            TKPullTargetDetected.Invoke(detObj);
         }
     }
 }

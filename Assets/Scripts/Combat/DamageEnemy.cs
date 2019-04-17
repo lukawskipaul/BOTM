@@ -51,11 +51,12 @@ public class DamageEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         bool isValidTarget = other.tag == "Enemy" && isAttacking == true;
-
+        //Debug.Log("Sword triggered");
         /* Damages the enemy if the player is currently attacking */
         if (isValidTarget)
         {
             other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(currentAttackDamage);
+            //Debug.Log("Enemy takes damage");
         }
     }
 }
