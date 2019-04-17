@@ -13,8 +13,8 @@ public class GainTK : MonoBehaviour
     private Telekinesis thisTK;
     [SerializeField]
     private DetectObject thisDO;
-    [SerializeField]
-    private SlowMoGameTime SlowMo;
+    //[SerializeField]
+    //private SlowMoGameTime SlowMo;
     [SerializeField]
     private Transform PlayerLocation;
     [SerializeField]
@@ -33,7 +33,7 @@ public class GainTK : MonoBehaviour
         Instantiate(ElectricExplosioin, PlayerLocation.position, PlayerLocation.rotation);
         thisTK.enabled = true;
         thisDO.enabled = true;
-        SlowMo.SlowMo();
+        //SlowMo.SlowMo();
         Destroy(TKObjectFloat);
     }
 }
