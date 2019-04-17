@@ -59,7 +59,7 @@ public class Telekinesis : MonoBehaviour
         if (isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
             ThrowObject();
-            //AkSoundEngine.PostEvent("Stop_Tk", gameObject);
+            AkSoundEngine.PostEvent("Stop_TK", gameObject);
             AkSoundEngine.PostEvent("Play_TK_Throw", gameObject);
             
         }
