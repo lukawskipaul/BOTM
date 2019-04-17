@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 //This script goes on the enemies
 public class EnemyHealth : MonoBehaviour
 {
+    public static event Action EnemyDied;
     #region Variables
 
     [SerializeField]
@@ -38,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        if(!isDead)
+        if (!isDead)
             UpdateHealthBar();
     }
 
@@ -52,13 +54,14 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
             isDead = true;
+            OnEnemyDied();
             Destroy(healthBarObject);
-            
+
         }
         else
         {
             anim.SetTrigger("Flinch");
-            
+
         }
     }
 
@@ -66,5 +69,13 @@ public class EnemyHealth : MonoBehaviour
     {
         /* Updates health bar with current health */
         healthBar.value = currentHealth;
+    }
+
+    private void OnEnemyDied()
+    {
+        if (EnemyDied != null)
+        {
+            EnemyDied.Invoke();
+        }
     }
 }
