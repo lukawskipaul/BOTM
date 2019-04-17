@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
 	<RootPaths>
-		<ProjectRoot>D:\BOTM\BOTM_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -49,6 +49,7 @@
 				<Event Id="2541895580" Name="Play_SlidingDoorOpen" ObjectPath="\Events\Default Work Unit\Play_SlidingDoorOpen" MaxAttenuation="10.000000"/>
 				<Event Id="2385860965" Name="Play_Static1" ObjectPath="\Events\Default Work Unit\Play_Static1"/>
 				<Event Id="2027969869" Name="Play_TK" ObjectPath="\Events\Default Work Unit\Play_TK"/>
+				<Event Id="1496178940" Name="Play_TK_PickUp" ObjectPath="\Events\Default Work Unit\Play_TK_PickUp"/>
 				<Event Id="2278693504" Name="Play_TK_Throw" ObjectPath="\Events\Default Work Unit\Play_TK_Throw"/>
 				<Event Id="168369292" Name="Play_UI_JournalClose" ObjectPath="\Events\Default Work Unit\Play_UI_JournalClose"/>
 				<Event Id="2407564056" Name="Play_UI_JournalOpen" ObjectPath="\Events\Default Work Unit\Play_UI_JournalOpen"/>
@@ -76,9 +77,17 @@
 					<ShortName>GeneratorHum.wav</ShortName>
 					<Path>SFX\GeneratorHum_8956FC97.wem</Path>
 				</File>
+				<File Id="247798144" Language="SFX">
+					<ShortName>TK_Loop_Attempt1.wav</ShortName>
+					<Path>SFX\TK_Loop_Attempt1_8956FC97.wem</Path>
+				</File>
 				<File Id="256313888" Language="SFX">
 					<ShortName>BossClaw.wav</ShortName>
 					<Path>SFX\BossClaw_56D34C19.wem</Path>
+				</File>
+				<File Id="259446113" Language="SFX">
+					<ShortName>TelekinesisPickUp03.wav</ShortName>
+					<Path>SFX\TelekinesisPickUp03_56D34C19.wem</Path>
 				</File>
 				<File Id="266411289" Language="SFX">
 					<ShortName>ConcreteFootsteps_09.wav</ShortName>
@@ -183,10 +192,6 @@
 				<File Id="835706351" Language="SFX">
 					<ShortName>FootStepsBoss.wav</ShortName>
 					<Path>SFX\FootStepsBoss_56D34C19.wem</Path>
-				</File>
-				<File Id="843081733" Language="SFX">
-					<ShortName>TelekinesisExtraHigh.wav</ShortName>
-					<Path>SFX\TelekinesisExtraHigh_8956FC97.wem</Path>
 				</File>
 				<File Id="882711798" Language="SFX">
 					<ShortName>BossStartRoar.wav</ShortName>

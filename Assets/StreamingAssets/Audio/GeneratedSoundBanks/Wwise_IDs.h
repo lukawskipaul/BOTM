@@ -41,6 +41,7 @@ namespace AK
         static const AkUniqueID PLAY_SLIDINGDOOROPEN = 2541895580U;
         static const AkUniqueID PLAY_STATIC1 = 2385860965U;
         static const AkUniqueID PLAY_TK = 2027969869U;
+        static const AkUniqueID PLAY_TK_PICKUP = 1496178940U;
         static const AkUniqueID PLAY_TK_THROW = 2278693504U;
         static const AkUniqueID PLAY_UI_JOURNALCLOSE = 168369292U;
         static const AkUniqueID PLAY_UI_JOURNALOPEN = 2407564056U;

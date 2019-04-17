@@ -535,6 +535,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_TK_PickUp" ID="{78ADD615-0071-4B00-9BEE-6F9D1B2F044C}">
+					<ChildrenList>
+						<Action Name="" ID="{E598EBC5-9B2B-40CF-90CB-5A9696DD49E6}" ShortID="104877795">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TelekinesisPickUp" ID="{34B2D0CD-B864-4DCF-9115-982D22EA20F2}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
