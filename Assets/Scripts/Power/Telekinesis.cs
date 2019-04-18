@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Telekinesis : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class Telekinesis : MonoBehaviour
     [SerializeField]
     float transfromMoveSpeed = 3f;
     [SerializeField]
-    float telePushPullSpeed = 3f;
+    [Range(.5f, 2f)]
+    float telePushPullSpeed = 1f;
     [SerializeField]
     float maxSpeed = 1f;
     [SerializeField]
@@ -45,11 +47,23 @@ public class Telekinesis : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     private TKObject currentTKObject;
+
+    private float currentEnergy = 100f;
+
+    [SerializeField]
+    Slider energySlider;
+
+    [SerializeField]
+    float maxEnergy = 100f;
+
+    [SerializeField]
+    private float energyDrainRate = 1f, energyRechargeRate = 10f;
     #endregion
 
     private void Start()
     {
         startingTransform = levitateTransform.localPosition;
+        energySlider.value = EnergyPercent();
     }
 
     private void Update()
@@ -63,6 +77,12 @@ public class Telekinesis : MonoBehaviour
             AkSoundEngine.PostEvent("Play_TK_Throw", gameObject);
             
         }
+        else if (isLiftingObject == false)
+        {
+            currentEnergy += (energyRechargeRate * Time.deltaTime);
+        }
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
+        energySlider.value = EnergyPercent();
 
 
     }
@@ -86,6 +106,10 @@ public class Telekinesis : MonoBehaviour
 
     private void LevitateObject(GameObject objectToLevitate)
     {
+        if (currentEnergy <= 0)
+        {
+            DropObject();
+        }
         OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
         GetObjectTKObject(objectToLevitate);
@@ -249,6 +273,11 @@ public class Telekinesis : MonoBehaviour
         currentTKObject = null;
         OnTeleStoppedManualMovingObject();
         levitateTransform.localPosition = startingTransform;
+    }
+
+    float EnergyPercent()
+    {
+        return currentEnergy / maxEnergy;
     }
 
     private void OnTeleManualMovingObject()
