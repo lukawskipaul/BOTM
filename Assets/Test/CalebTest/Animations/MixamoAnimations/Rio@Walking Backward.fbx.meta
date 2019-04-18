@@ -185,7 +185,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.23076923
+        functionName: callEvent
+        data: Play_CharacterFootsteps
+        objectReferenceParameter: {fileID: 6392331747763326339, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7751479
+        functionName: callEvent
+        data: Play_CharacterFootsteps
+        objectReferenceParameter: {fileID: 6392331747763326339, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

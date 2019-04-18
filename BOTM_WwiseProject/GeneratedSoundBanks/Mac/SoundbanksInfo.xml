@@ -23,25 +23,33 @@
 			<IncludedEvents>
 				<Event Id="3091365192" Name="Play_AI_VO_Line1" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line1"/>
 				<Event Id="3091365195" Name="Play_AI_VO_Line2" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line2"/>
-				<Event Id="2139734863" Name="Play_AmbiantMusic" ObjectPath="\Events\Default Work Unit\Play_AmbiantMusic"/>
+				<Event Id="275338611" Name="Play_AmbientMusic" ObjectPath="\Events\Default Work Unit\Play_AmbientMusic"/>
+				<Event Id="2729937127" Name="Play_BossBite" ObjectPath="\Events\Default Work Unit\Play_BossBite"/>
+				<Event Id="516533412" Name="Play_BossClaw" ObjectPath="\Events\Default Work Unit\Play_BossClaw"/>
+				<Event Id="962646519" Name="Play_BossStartRoar" ObjectPath="\Events\Default Work Unit\Play_BossStartRoar"/>
+				<Event Id="545396215" Name="Play_BossStep" ObjectPath="\Events\Default Work Unit\Play_BossStep"/>
 				<Event Id="934217562" Name="Play_CaveAmbiance1" ObjectPath="\Events\Default Work Unit\Play_CaveAmbiance1"/>
 				<Event Id="2603299628" Name="Play_CharacterFootsteps" ObjectPath="\Events\Default Work Unit\Play_CharacterFootsteps"/>
 				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1" MaxAttenuation="15.000000"/>
 				<Event Id="1952116840" Name="Play_CrocAttack1" ObjectPath="\Events\Default Work Unit\Play_CrocAttack1"/>
 				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1" MaxAttenuation="15.000000"/>
 				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1" MaxAttenuation="15.000000"/>
+				<Event Id="1291320897" Name="Play_CrocLick1" ObjectPath="\Events\Default Work Unit\Play_CrocLick1"/>
 				<Event Id="2387251670" Name="Play_ElectricPassive" ObjectPath="\Events\Default Work Unit\Play_ElectricPassive" MaxAttenuation="15.000000"/>
-				<Event Id="2540781641" Name="Play_GeneratorHum" ObjectPath="\Events\Default Work Unit\Play_GeneratorHum" MaxAttenuation="40.000000"/>
+				<Event Id="2540781641" Name="Play_GeneratorHum" ObjectPath="\Events\Default Work Unit\Play_GeneratorHum" MaxAttenuation="32.000000"/>
 				<Event Id="3210990662" Name="Play_HowlingWind" ObjectPath="\Events\Default Work Unit\Play_HowlingWind" MaxAttenuation="10.000000"/>
-				<Event Id="709837481" Name="Play_MetalDoorBreakdown1" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown1" MaxAttenuation="10.000000"/>
+				<Event Id="709837482" Name="Play_MetalDoorBreakdown2" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown2"/>
 				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower" MaxAttenuation="10.000000"/>
 				<Event Id="726787325" Name="Play_PipeFall" ObjectPath="\Events\Default Work Unit\Play_PipeFall"/>
+				<Event Id="822967520" Name="Play_PipeRoar2" ObjectPath="\Events\Default Work Unit\Play_PipeRoar2"/>
 				<Event Id="3618693649" Name="Play_Rockslide1" ObjectPath="\Events\Default Work Unit\Play_Rockslide1" MaxAttenuation="25.000000"/>
+				<Event Id="1655857564" Name="Play_RockSlideRoar" ObjectPath="\Events\Default Work Unit\Play_RockSlideRoar"/>
 				<Event Id="1605460501" Name="Play_Room1AmbianceDemo" ObjectPath="\Events\Default Work Unit\Play_Room1AmbianceDemo"/>
 				<Event Id="3751804120" Name="Play_SlidingDoorClose" ObjectPath="\Events\Default Work Unit\Play_SlidingDoorClose" MaxAttenuation="10.000000"/>
 				<Event Id="2541895580" Name="Play_SlidingDoorOpen" ObjectPath="\Events\Default Work Unit\Play_SlidingDoorOpen" MaxAttenuation="10.000000"/>
 				<Event Id="2385860965" Name="Play_Static1" ObjectPath="\Events\Default Work Unit\Play_Static1"/>
 				<Event Id="2027969869" Name="Play_TK" ObjectPath="\Events\Default Work Unit\Play_TK"/>
+				<Event Id="1496178940" Name="Play_TK_PickUp" ObjectPath="\Events\Default Work Unit\Play_TK_PickUp"/>
 				<Event Id="2278693504" Name="Play_TK_Throw" ObjectPath="\Events\Default Work Unit\Play_TK_Throw"/>
 				<Event Id="168369292" Name="Play_UI_JournalClose" ObjectPath="\Events\Default Work Unit\Play_UI_JournalClose"/>
 				<Event Id="2407564056" Name="Play_UI_JournalOpen" ObjectPath="\Events\Default Work Unit\Play_UI_JournalOpen"/>
@@ -57,9 +65,29 @@
 					<ShortName>Room1AmbianceDemo.wav</ShortName>
 					<Path>SFX\Room1AmbianceDemo_8956FC97.wem</Path>
 				</File>
+				<File Id="180009741" Language="SFX">
+					<ShortName>PipeRoar2.wav</ShortName>
+					<Path>SFX\PipeRoar2_56D34C19.wem</Path>
+				</File>
+				<File Id="180231856" Language="SFX">
+					<ShortName>MetalDoorSlamCloseNoPowerShort.wav</ShortName>
+					<Path>SFX\MetalDoorSlamCloseNoPowerShort_56D34C19.wem</Path>
+				</File>
 				<File Id="227186557" Language="SFX">
 					<ShortName>GeneratorHum.wav</ShortName>
 					<Path>SFX\GeneratorHum_8956FC97.wem</Path>
+				</File>
+				<File Id="247798144" Language="SFX">
+					<ShortName>TK_Loop_Attempt1.wav</ShortName>
+					<Path>SFX\TK_Loop_Attempt1_8956FC97.wem</Path>
+				</File>
+				<File Id="256313888" Language="SFX">
+					<ShortName>BossClaw.wav</ShortName>
+					<Path>SFX\BossClaw_56D34C19.wem</Path>
+				</File>
+				<File Id="259446113" Language="SFX">
+					<ShortName>TelekinesisPickUp03.wav</ShortName>
+					<Path>SFX\TelekinesisPickUp03_56D34C19.wem</Path>
 				</File>
 				<File Id="266411289" Language="SFX">
 					<ShortName>ConcreteFootsteps_09.wav</ShortName>
@@ -121,9 +149,13 @@
 					<ShortName>ConcreteFootsteps_005.wav</ShortName>
 					<Path>SFX\ConcreteFootsteps_005_56D34C19.wem</Path>
 				</File>
-				<File Id="685822108" Language="SFX">
-					<ShortName>MetalDoorSlamCloseNoPower.wav</ShortName>
-					<Path>SFX\MetalDoorSlamCloseNoPower_56D34C19.wem</Path>
+				<File Id="639194255" Language="SFX">
+					<ShortName>Pipe Fall 3.wav</ShortName>
+					<Path>SFX\Pipe Fall 3_56D34C19.wem</Path>
+				</File>
+				<File Id="688907312" Language="SFX">
+					<ShortName>BossStep2.wav</ShortName>
+					<Path>SFX\BossStep2_56D34C19.wem</Path>
 				</File>
 				<File Id="690560153" Language="SFX">
 					<ShortName>CrocAggro1.wav</ShortName>
@@ -133,9 +165,9 @@
 					<ShortName>SlidingDoorClose.wav</ShortName>
 					<Path>SFX\SlidingDoorClose_56D34C19.wem</Path>
 				</File>
-				<File Id="735080199" Language="SFX">
-					<ShortName>MetalDoorBreakdown1.wav</ShortName>
-					<Path>SFX\MetalDoorBreakdown1_56D34C19.wem</Path>
+				<File Id="727135171" Language="SFX">
+					<ShortName>BossBite.wav</ShortName>
+					<Path>SFX\BossBite_56D34C19.wem</Path>
 				</File>
 				<File Id="759940777" Language="SFX">
 					<ShortName>Rockslide1(Initial).wav</ShortName>
@@ -157,29 +189,45 @@
 					<ShortName>HowlingWind1.wav</ShortName>
 					<Path>SFX\HowlingWind1_8956FC97.wem</Path>
 				</File>
-				<File Id="843081733" Language="SFX">
-					<ShortName>TelekinesisExtraHigh.wav</ShortName>
-					<Path>SFX\TelekinesisExtraHigh_8956FC97.wem</Path>
+				<File Id="835706351" Language="SFX">
+					<ShortName>FootStepsBoss.wav</ShortName>
+					<Path>SFX\FootStepsBoss_56D34C19.wem</Path>
+				</File>
+				<File Id="882711798" Language="SFX">
+					<ShortName>BossStartRoar.wav</ShortName>
+					<Path>SFX\BossStartRoar_56D34C19.wem</Path>
+				</File>
+				<File Id="902663844" Language="SFX">
+					<ShortName>MetalDoorBreakdown2.wav</ShortName>
+					<Path>SFX\MetalDoorBreakdown2_56D34C19.wem</Path>
 				</File>
 				<File Id="906061255" Language="SFX">
 					<ShortName>LTG _Ambient_Battle_ [Ambient Loop].wav</ShortName>
 					<Path>SFX\LTG _Ambient_Battle_ [Ambient Loop]_8956FC97.wem</Path>
 				</File>
+				<File Id="947491894" Language="SFX">
+					<ShortName>BossStep1.wav</ShortName>
+					<Path>SFX\BossStep1_56D34C19.wem</Path>
+				</File>
 				<File Id="948046825" Language="SFX">
 					<ShortName>UI_JournalClose.wav</ShortName>
 					<Path>SFX\UI_JournalClose_56D34C19.wem</Path>
+				</File>
+				<File Id="954255822" Language="SFX">
+					<ShortName>RockSlideRoar.wav</ShortName>
+					<Path>SFX\RockSlideRoar_56D34C19.wem</Path>
 				</File>
 				<File Id="984849189" Language="SFX">
 					<ShortName>UI_NotePickup2.wav</ShortName>
 					<Path>SFX\UI_NotePickup2_56D34C19.wem</Path>
 				</File>
+				<File Id="1005188426" Language="SFX">
+					<ShortName>CrocLick1.wav</ShortName>
+					<Path>SFX\CrocLick1_56D34C19.wem</Path>
+				</File>
 				<File Id="1010027217" Language="SFX">
 					<ShortName>ConcreteFootsteps_010.wav</ShortName>
 					<Path>SFX\ConcreteFootsteps_010_56D34C19.wem</Path>
-				</File>
-				<File Id="1016008857" Language="SFX">
-					<ShortName>Pipe Fall.wav</ShortName>
-					<Path>SFX\Pipe Fall_56D34C19.wem</Path>
 				</File>
 				<File Id="1025091138" Language="SFX">
 					<ShortName>TelekinesisThrow.wav</ShortName>

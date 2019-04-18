@@ -28,7 +28,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586495926120187863
+    m_lastTime: -8586460071093298196
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,7 +43,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586495922798110091
+    m_lastTime: -8586460071113736974
     List:
     - name: Play_AI_VO_Line1
       guid: 0ef1a86eb75a69409dc35a56fee8f50b
@@ -69,15 +69,15 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Play_AmbiantMusic
+    - name: Play_AmbientMusic
       guid: 2e0943bedaf66f49a5beda4854be22a2
-      id: 2139734863
+      id: 275338611
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_AmbiantMusic
+      - ElementName: Play_AmbientMusic
         ObjectType: 3
-      Path: Default Work Unit\Play_AmbiantMusic
+      Path: Default Work Unit\Play_AmbientMusic
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -90,6 +90,54 @@ MonoBehaviour:
       - ElementName: Play_BiteAttack
         ObjectType: 3
       Path: Default Work Unit\Play_BiteAttack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_BossBite
+      guid: eee9da230ec6874992d181ffe4cbb246
+      id: 2729937127
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_BossBite
+        ObjectType: 3
+      Path: Default Work Unit\Play_BossBite
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_BossClaw
+      guid: df512b503961134c925abc016fb6ad55
+      id: 516533412
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_BossClaw
+        ObjectType: 3
+      Path: Default Work Unit\Play_BossClaw
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_BossStartRoar
+      guid: d2b0e2a3c5de2148991302c342b985a8
+      id: 962646519
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_BossStartRoar
+        ObjectType: 3
+      Path: Default Work Unit\Play_BossStartRoar
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_BossStep
+      guid: 6d23e1a63cc021459986a6e5b6aa162d
+      id: 545396215
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_BossStep
+        ObjectType: 3
+      Path: Default Work Unit\Play_BossStep
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -177,6 +225,18 @@ MonoBehaviour:
       maxAttenuation: 15
       maxDuration: 0
       minDuration: 0
+    - name: Play_CrocLick1
+      guid: 239bb999a625ab41adeaf579c54d351f
+      id: 1291320897
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CrocLick1
+        ObjectType: 3
+      Path: Default Work Unit\Play_CrocLick1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_ElectricPassive
       guid: 7c3b756e2d46bb4a8c02a313a707eb47
       id: 2387251670
@@ -210,7 +270,7 @@ MonoBehaviour:
       - ElementName: Play_GeneratorHum
         ObjectType: 3
       Path: Default Work Unit\Play_GeneratorHum
-      maxAttenuation: 40
+      maxAttenuation: 32
       maxDuration: 0
       minDuration: 0
     - name: Play_HowlingWind
@@ -225,16 +285,16 @@ MonoBehaviour:
       maxAttenuation: 10
       maxDuration: 0
       minDuration: 0
-    - name: Play_MetalDoorBreakdown1
+    - name: Play_MetalDoorBreakdown2
       guid: 02d493344504d44e878febefefd17542
-      id: 709837481
+      id: 709837482
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_MetalDoorBreakdown1
+      - ElementName: Play_MetalDoorBreakdown2
         ObjectType: 3
-      Path: Default Work Unit\Play_MetalDoorBreakdown1
-      maxAttenuation: 10
+      Path: Default Work Unit\Play_MetalDoorBreakdown2
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_MetalDoorSlamCloseNoPower
@@ -261,6 +321,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_PipeRoar2
+      guid: 6dc49df6b26e704386d98fe47bb474ba
+      id: 822967520
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_PipeRoar2
+        ObjectType: 3
+      Path: Default Work Unit\Play_PipeRoar2
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Rockslide1
       guid: 10afde04cc85be42b832fc0eb95faf83
       id: 3618693649
@@ -271,6 +343,18 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_Rockslide1
       maxAttenuation: 25
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_RockSlideRoar
+      guid: e8f065c19cdf1a4bafa7fd34fc5548ae
+      id: 1655857564
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_RockSlideRoar
+        ObjectType: 3
+      Path: Default Work Unit\Play_RockSlideRoar
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_Room1AmbianceDemo
@@ -342,6 +426,18 @@ MonoBehaviour:
       - ElementName: Play_TK
         ObjectType: 3
       Path: Default Work Unit\Play_TK
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_TK_PickUp
+      guid: 15d6ad787100004b9bee6f9d1b2f044c
+      id: 1496178940
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_TK_PickUp
+        ObjectType: 3
+      Path: Default Work Unit\Play_TK_PickUp
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0

@@ -549,6 +549,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_DodgeRoll" ID="{4B12EEDA-4132-491C-BC37-226CDFD9BD8F}">
+					<ChildrenList>
+						<Action Name="" ID="{EDF3ACA9-0EC6-438A-BF51-B935B9E85051}" ShortID="340645581">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DodgeRoll" ID="{A920AB43-962E-4254-9C95-D41D9289A188}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

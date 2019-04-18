@@ -53,6 +53,7 @@ public class PickupPrompt : MonoBehaviour
             if (ObjectToGivePlayer != null)
                 ObjectToGivePlayer.SetActive(true);
             hasBeenPickedUp = true;
+            AkSoundEngine.PostEvent("Play_TK_PickUp", gameObject);
             PickupPromptText.SetActive(false);
             isInTrigger = false;
             Destroy(this.gameObject);

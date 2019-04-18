@@ -1,15 +1,22 @@
 Event	ID	Name			Wwise Object Path	Notes
 	149344824	Play_CrocAggro1			\Default Work Unit\Play_CrocAggro1	
 	168369292	Play_UI_JournalClose			\Default Work Unit\Play_UI_JournalClose	
-	709837481	Play_MetalDoorBreakdown1			\Default Work Unit\Play_MetalDoorBreakdown1	
+	275338611	Play_AmbientMusic			\Default Work Unit\Play_AmbientMusic	
+	516533412	Play_BossClaw			\Default Work Unit\Play_BossClaw	
+	545396215	Play_BossStep			\Default Work Unit\Play_BossStep	
+	709837482	Play_MetalDoorBreakdown2			\Default Work Unit\Play_MetalDoorBreakdown2	
 	726787325	Play_PipeFall			\Default Work Unit\Play_PipeFall	
+	822967520	Play_PipeRoar2			\Default Work Unit\Play_PipeRoar2	
 	934217562	Play_CaveAmbiance1			\Default Work Unit\Play_CaveAmbiance1	
+	962646519	Play_BossStartRoar			\Default Work Unit\Play_BossStartRoar	
 	1217506344	Play_CrocDeath1			\Default Work Unit\Play_CrocDeath1	
+	1291320897	Play_CrocLick1			\Default Work Unit\Play_CrocLick1	
 	1308308546	Play_WaterDripping			\Default Work Unit\Play_WaterDripping	
+	1496178940	Play_TK_PickUp			\Default Work Unit\Play_TK_PickUp	
 	1605460501	Play_Room1AmbianceDemo			\Default Work Unit\Play_Room1AmbianceDemo	
+	1655857564	Play_RockSlideRoar			\Default Work Unit\Play_RockSlideRoar	
 	1952116840	Play_CrocAttack1			\Default Work Unit\Play_CrocAttack1	
 	2027969869	Play_TK			\Default Work Unit\Play_TK	
-	2139734863	Play_AmbiantMusic			\Default Work Unit\Play_AmbiantMusic	
 	2278693504	Play_TK_Throw			\Default Work Unit\Play_TK_Throw	
 	2385860965	Play_Static1			\Default Work Unit\Play_Static1	
 	2387251670	Play_ElectricPassive			\Default Work Unit\Play_ElectricPassive	
@@ -18,6 +25,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2541895580	Play_SlidingDoorOpen			\Default Work Unit\Play_SlidingDoorOpen	
 	2603299628	Play_CharacterFootsteps			\Default Work Unit\Play_CharacterFootsteps	
 	2724618676	Play_MetalDoorSlamCloseNoPower			\Default Work Unit\Play_MetalDoorSlamCloseNoPower	
+	2729937127	Play_BossBite			\Default Work Unit\Play_BossBite	
 	3091365192	Play_AI_VO_Line1			\Default Work Unit\Play_AI_VO_Line1	
 	3091365195	Play_AI_VO_Line2			\Default Work Unit\Play_AI_VO_Line2	
 	3210990662	Play_HowlingWind			\Default Work Unit\Play_HowlingWind	
@@ -34,7 +42,12 @@ Effect plug-ins	ID	Name	Type				Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	46481961	ConcreteFootsteps_08	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\ConcreteFootsteps_08_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_08		21392
 	167009388	Room1AmbianceDemo	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\Room1AmbianceDemo_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Room1AmbianceDemo		5760474
+	180009741	PipeRoar2	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\PipeRoar2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\PipeRoar2		193704
+	180231856	MetalDoorSlamCloseNoPower	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\MetalDoorSlamCloseNoPowerShort_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\MetalDoorSlamCloseNoPower		347732
 	227186557	GeneratorHum	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\GeneratorHum_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\GeneratorHum		1175704
+	247798144	Telekinesis	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\TK_Loop_Attempt1_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Telekinesis		705600
+	256313888	BossClaw	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\BossClaw_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossClaw		90696
+	259446113	TelekinesisPickUp	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\TelekinesisPickUp03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TelekinesisPickUp		172534
 	266411289	ConcreteFootsteps_09	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\ConcreteFootsteps_09_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_09		22440
 	288346796	WaterDripping	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\WaterDripping_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\WaterDripping		6154912
 	292896405	Static	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\Static_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Static		307342
@@ -50,21 +63,26 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	606053402	AI_VO_Line2	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\AI VO Line 2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\AI_VO_Line2		2707746
 	613338343	ConcreteFootsteps_001	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\ConcreteFootsteps_001_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_001		19592
 	634832991	ConcreteFootsteps_005	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\ConcreteFootsteps_005_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_005		13220
-	685822108	MetalDoorSlamCloseNoPower	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\MetalDoorSlamCloseNoPower_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\MetalDoorSlamCloseNoPower		411640
+	639194255	PipeFall	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\Pipe Fall 3_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\PipeFall		405508
+	688907312	BossStep2	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\BossStep2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossStep\BossStep2		32792
 	690560153	CrocAggro1	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\CrocAggro1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\CrocAggro1		291476
 	698697704	SlidingDoorClose	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\SlidingDoorClose_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\SlidingDoorClose		257634
-	735080199	MetalDoorBreakdown1	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\MetalDoorBreakdown1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\MetalDoorBreakdown1		96762
+	727135171	BossBite	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\BossBite_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossBite		65292
 	759940777	Rockslide1(Initial)	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\Rockslide1(Initial)_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Rockslide1(Initial)		610180
 	774986204	ElectricPassive	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\ElectricPassive_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\ElectricPassive		1781644
 	806803310	ConcreteFootsteps_07	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\ConcreteFootsteps_07_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_07		8672
 	824725648	AI_VO_Line1	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\AI VO Line 1 Take 2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\AI_VO_Line1		1719380
 	826357523	HowlingWind1	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\HowlingWind1_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\HowlingWind1		1668536
-	843081733	Telekinesis	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\TelekinesisExtraHigh_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Telekinesis		1134720
+	835706351	FootStepsBoss	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\FootStepsBoss_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossStep\FootStepsBoss		64052
+	882711798	BossStartRoar	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\BossStartRoar_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossStartRoar		222368
+	902663844	MetalDoorBreakdown2	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\MetalDoorBreakdown2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\MetalDoorBreakdown2		162538
 	906061255	LTG _Ambient_Battle_ [Ambient Loop]	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\LTG _Ambient_Battle_ [Ambient Loop]_8956FC97.wem		\Actor-Mixer Hierarchy\Default Work Unit\LTG _Ambient_Battle_ [Ambient Loop]		11546376
+	947491894	BossStep1	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\BossStep1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossStep\BossStep1		32792
 	948046825	UI_JournalClose	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\UI_JournalClose_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI_JournalClose		110132
+	954255822	RockSlideRoar	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\RockSlideRoar_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\RockSlideRoar		193704
 	984849189	UI_PageFlip	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\UI_NotePickup2_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI_PageFlip		126304
+	1005188426	CrocLick1	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\CrocLick1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\CrocLick1		108644
 	1010027217	ConcreteFootsteps_010	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\ConcreteFootsteps_010_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\ConcreteFootsteps_010		16456
-	1016008857	PipeFall	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\Pipe Fall_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\PipeFall		237512
 	1025091138	TelekinesisThrow	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\TelekinesisThrow_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TelekinesisThrow		398444
 	1052687345	CrocDeath1	C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Mac\SFX\CrocDeath1_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\CrocDeath1		212976
 

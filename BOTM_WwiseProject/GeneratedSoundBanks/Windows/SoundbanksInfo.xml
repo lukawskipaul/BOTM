@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
 	<RootPaths>
-		<ProjectRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\boysc_000\Documents\GitHub\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\crn22\OneDrive\Desktop\BOTM\BOTM_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -35,6 +35,7 @@
 				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1" MaxAttenuation="15.000000"/>
 				<Event Id="4111079834" Name="Play_CrocFlinch1" ObjectPath="\Events\Default Work Unit\Play_CrocFlinch1" MaxAttenuation="15.000000"/>
 				<Event Id="1291320897" Name="Play_CrocLick1" ObjectPath="\Events\Default Work Unit\Play_CrocLick1"/>
+				<Event Id="3003923414" Name="Play_DodgeRoll" ObjectPath="\Events\Default Work Unit\Play_DodgeRoll"/>
 				<Event Id="2387251670" Name="Play_ElectricPassive" ObjectPath="\Events\Default Work Unit\Play_ElectricPassive" MaxAttenuation="15.000000"/>
 				<Event Id="2540781641" Name="Play_GeneratorHum" ObjectPath="\Events\Default Work Unit\Play_GeneratorHum" MaxAttenuation="32.000000"/>
 				<Event Id="3210990662" Name="Play_HowlingWind" ObjectPath="\Events\Default Work Unit\Play_HowlingWind" MaxAttenuation="10.000000"/>
@@ -88,6 +89,10 @@
 				<File Id="259446113" Language="SFX">
 					<ShortName>TelekinesisPickUp03.wav</ShortName>
 					<Path>SFX\TelekinesisPickUp03_56D34C19.wem</Path>
+				</File>
+				<File Id="261545888" Language="SFX">
+					<ShortName>DodgeRoll01 .wav</ShortName>
+					<Path>SFX\DodgeRoll01 _56D34C19.wem</Path>
 				</File>
 				<File Id="266411289" Language="SFX">
 					<ShortName>ConcreteFootsteps_09.wav</ShortName>
@@ -164,6 +169,10 @@
 				<File Id="698697704" Language="SFX">
 					<ShortName>SlidingDoorClose.wav</ShortName>
 					<Path>SFX\SlidingDoorClose_56D34C19.wem</Path>
+				</File>
+				<File Id="715068986" Language="SFX">
+					<ShortName>DodgeRoll02.wav</ShortName>
+					<Path>SFX\DodgeRoll02_56D34C19.wem</Path>
 				</File>
 				<File Id="727135171" Language="SFX">
 					<ShortName>BossBite.wav</ShortName>
