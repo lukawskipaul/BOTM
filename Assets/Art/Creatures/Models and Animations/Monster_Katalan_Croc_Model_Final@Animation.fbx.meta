@@ -446,6 +446,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.69451064
+        functionName: calEvent
+        data: Play_CrocFalling1
+        objectReferenceParameter: {fileID: 100126, guid: f5216f0cc5974cf4f96cbdd9e8addbbd,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -501,7 +509,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.22673032
+        functionName: callEvent
+        data: Play_CrocAggro1
+        objectReferenceParameter: {fileID: 7736037114856792328, guid: 0e5c7dcbaf72d9d4db8af52048822e14,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
