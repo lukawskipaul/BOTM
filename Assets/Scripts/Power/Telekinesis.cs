@@ -68,7 +68,7 @@ public class Telekinesis : MonoBehaviour
     private const string telekinesisButtonName = "UseTele";
     private const string tkThrowButtonName = "Throw";
     private const string telekinesisBooleanName = "isUsingTelekinesis";
-    private const string telekinesisThrowTriggerName = "TelekinesisThrow";
+    private const string telekinesisThrowBooleanName = "isDoingTKThrow";
 
     #endregion
 
@@ -160,8 +160,7 @@ public class Telekinesis : MonoBehaviour
         /* Play telekinesis throw animation when throw button is pressed */
         if (!journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
         {
-            anim.SetTrigger(telekinesisThrowTriggerName);
-            anim.SetBool(telekinesisBooleanName, false);
+            anim.SetBool(telekinesisThrowBooleanName, true);
 
             //actual code for moving the object is in an animation event
         }
