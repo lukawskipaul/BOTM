@@ -33,10 +33,6 @@ public class Telekinesis : MonoBehaviour
     float maxDistance = 20f;
     [SerializeField]
     float minDistance = 1f;
-    [SerializeField]
-    GameObject TKLight;
-    [SerializeField]
-    GameObject Crosshair;
 
     private float baseLevitateFollowSpeed;
     private float xInput;
@@ -77,9 +73,9 @@ public class Telekinesis : MonoBehaviour
         if (isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
             ThrowObject();
-            AkSoundEngine.PostEvent("Stop_TK", gameObject);
+            //AkSoundEngine.PostEvent("Stop_Tk", gameObject);
             AkSoundEngine.PostEvent("Play_TK_Throw", gameObject);
-            
+
         }
         else if (isLiftingObject == false)
         {
@@ -110,10 +106,7 @@ public class Telekinesis : MonoBehaviour
 
     private void LevitateObject(GameObject objectToLevitate)
     {
-        if (currentEnergy <= 0)
-        {
-            DropObject();
-        }
+        currentEnergy -= (energyDrainRate * Time.deltaTime);
         OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
         GetObjectTKObject(objectToLevitate);
@@ -129,6 +122,10 @@ public class Telekinesis : MonoBehaviour
             MoveObjectToTransform(objectRigidBody, objectTransfrom);
             currentTKObject.SetLevitating();
             CheckDistance();
+            if (currentEnergy <= 0)
+            {
+                DropObject();
+            }
         }
         else
         {
@@ -146,8 +143,6 @@ public class Telekinesis : MonoBehaviour
         isLiftingObject = false;
         currentTKObject.SetThrown();
         levitatableGO = null;
-        TKLight.SetActive(false);
-        Crosshair.SetActive(false);
     }
 
     private void GetObjectRigidBody(GameObject objToLevitate)
@@ -236,13 +231,10 @@ public class Telekinesis : MonoBehaviour
                 if (isLiftingObject)
                 {
                     DropObject();
-                    TKLight.SetActive(false);
                 }
                 else if (!isLiftingObject)
                 {
                     isLiftingObject = true;
-                    TKLight.SetActive(true);
-                    Crosshair.SetActive(true);
                 }
 
             }
@@ -282,8 +274,6 @@ public class Telekinesis : MonoBehaviour
         currentTKObject = null;
         OnTeleStoppedManualMovingObject();
         levitateTransform.localPosition = startingTransform;
-        TKLight.SetActive(false);
-        Crosshair.SetActive(false);
     }
 
     float EnergyPercent()
