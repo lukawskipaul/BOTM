@@ -41,7 +41,9 @@ public class RootMotionMovementController : MonoBehaviour
     private const string tkPullAnimationTriggerName = "TKPull";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
-    Telekinesis telekinesis = new Telekinesis();
+
+    [SerializeField]
+    Telekinesis telekinesis;
 
     #endregion
 

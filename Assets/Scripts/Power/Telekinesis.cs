@@ -105,11 +105,8 @@ public class Telekinesis : MonoBehaviour
     }
 
     private void LevitateObject(GameObject objectToLevitate)
-    {
-        if (currentEnergy <= 0)
-        {
-            DropObject();
-        }
+    {       
+        currentEnergy -= (energyDrainRate * Time.deltaTime);
         OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
         GetObjectTKObject(objectToLevitate);
@@ -125,6 +122,10 @@ public class Telekinesis : MonoBehaviour
             MoveObjectToTransform(objectRigidBody, objectTransfrom);
             currentTKObject.SetLevitating();
             CheckDistance();
+            if (currentEnergy <= 0)
+            {
+                DropObject();
+            }
         }
         else
         {
