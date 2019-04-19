@@ -22,7 +22,7 @@ public class SlowMoGameTime : MonoBehaviour
         {
             Mathf.Lerp(1, scaleToSlowTo, Time.timeScale);
             Time.timeScale -= Time.deltaTime * lerpScale;
-            Debug.Log(Time.timeScale);
+            //Debug.Log(Time.timeScale);
             yield return null;
         }
         Time.timeScale = scaleToSlowTo;

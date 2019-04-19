@@ -35,6 +35,8 @@ public class Telekinesis : MonoBehaviour
     float minDistance = 1f;
     [SerializeField]
     GameObject TKLight;
+    [SerializeField]
+    GameObject Crosshair;
 
     private float baseLevitateFollowSpeed;
     private float xInput;
@@ -145,6 +147,7 @@ public class Telekinesis : MonoBehaviour
         currentTKObject.SetThrown();
         levitatableGO = null;
         TKLight.SetActive(false);
+        Crosshair.SetActive(false);
     }
 
     private void GetObjectRigidBody(GameObject objToLevitate)
@@ -239,6 +242,7 @@ public class Telekinesis : MonoBehaviour
                 {
                     isLiftingObject = true;
                     TKLight.SetActive(true);
+                    Crosshair.SetActive(true);
                 }
 
             }
@@ -279,6 +283,7 @@ public class Telekinesis : MonoBehaviour
         OnTeleStoppedManualMovingObject();
         levitateTransform.localPosition = startingTransform;
         TKLight.SetActive(false);
+        Crosshair.SetActive(false);
     }
 
     float EnergyPercent()
