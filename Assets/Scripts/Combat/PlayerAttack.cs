@@ -71,8 +71,6 @@ public class PlayerAttack : MonoBehaviour
             //    TKPull();
             //}
         }
-
-
     }
 
     private void Attack()
