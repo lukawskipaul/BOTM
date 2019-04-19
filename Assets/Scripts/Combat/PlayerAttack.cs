@@ -122,27 +122,25 @@ public class PlayerAttack : MonoBehaviour
     /* Disables/enables attacking when carrying/dropping with telekenesis */
     private void SetCanAttack()
     {
-        if (canAttack)
-        {
-            canAttack = false;
-        }
-        else
-        {
-            canAttack = true;
-        }
+        canAttack = true;
+    }
+
+    private void SetCannotAttack()
+    {
+        canAttack = false;
     }
 
     /* Subscribe to events */
     private void OnEnable()
     {
-        Telekinesis.TeleManualMovingObject += SetCanAttack;
+        Telekinesis.TeleManualMovingObject += SetCannotAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
     }
 
     /* Unsubscribe from events */
     private void OnDisable()
     {
-        Telekinesis.TeleManualMovingObject -= SetCanAttack;
+        Telekinesis.TeleManualMovingObject -= SetCannotAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
     }
 
