@@ -34,12 +34,18 @@ public class Telekinesis : MonoBehaviour
     [SerializeField]
     float minDistance = 1f;
 
+    [SerializeField]
+    private GameObject journalMenu;
+    [SerializeField]
+    private GameObject pauseMenu;
+
     private float baseLevitateFollowSpeed;
     private float xInput;
     private float yInput;
     private float zInput;
 
-    BoxCollider boxCollider;
+    private Animator anim;
+    private BoxCollider boxCollider;
 
     private Vector3 levDirection;
     private Vector3 startingTransform;
@@ -47,6 +53,11 @@ public class Telekinesis : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     private TKObject currentTKObject;
+
+    private const string telekinesisButtonName = "UseTele";
+    private const string tkThrowButtonName = "Throw";
+    private const string telekinesisBooleanName = "isUsingTelekinesis";
+    private const string telekinesisThrowTriggerName = "TelekinesisThrow";
 
     private float currentEnergy = 100f;
 
@@ -63,13 +74,16 @@ public class Telekinesis : MonoBehaviour
     private void Start()
     {
         startingTransform = levitateTransform.localPosition;
+        
+        anim = this.gameObject.GetComponent<Animator>();
+        
         energySlider.value = EnergyPercent();
     }
 
     private void Update()
     {
-
         TelekinesisInputHandler();
+
         if (isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
             ThrowObject();
@@ -83,8 +97,6 @@ public class Telekinesis : MonoBehaviour
         }
         currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
         energySlider.value = EnergyPercent();
-
-
     }
 
     private void FixedUpdate()
@@ -113,8 +125,15 @@ public class Telekinesis : MonoBehaviour
         OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
         GetObjectTKObject(objectToLevitate);
+
         if (objectRigidBody != null)
         {
+            /* Play telekinesis animation when telekinesis button is pressed */
+            if (Input.GetButtonDown(telekinesisButtonName) && !journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
+            {
+                anim.SetBool(telekinesisBooleanName, true);
+            }
+
             objectRigidBody.useGravity = false;
             //objectToLevitate.layer = 10;
             objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
@@ -136,12 +155,13 @@ public class Telekinesis : MonoBehaviour
 
     private void ThrowObject()
     {
-        objectRigidBody = levitatableGO.GetComponent<Rigidbody>();
-        objectRigidBody.useGravity = true;
-        objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
-        isLiftingObject = false;
-        currentTKObject.SetThrown();
-        levitatableGO = null;
+        /* Play telekinesis animation when telekinesis button is pressed */
+        if (Input.GetButtonDown(telekinesisButtonName) && !journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
+        {
+            anim.SetTrigger(telekinesisThrowTriggerName);
+
+            //actual code for moving the object is in an animation event
+        }
     }
 
     private void GetObjectRigidBody(GameObject objToLevitate)
@@ -190,13 +210,15 @@ public class Telekinesis : MonoBehaviour
         levDirection = new Vector3(0, 0, zInput);
         //levDirection = new Vector3(levitateTransform.position.x, levitateTransform.position.y, zInput);
         levitateTransform.Translate(levDirection * transfromMoveSpeed * Time.deltaTime);
-
     }
 
     public void DropObject()
     {
         if (isLiftingObject)
         {
+            /* Stop playing telekinesis animation when object is dropped */
+            anim.SetBool(telekinesisBooleanName, false);
+
             objectRigidBody.useGravity = true;
             currentTKObject.SetNeutral();
             ResetTK();
@@ -235,7 +257,6 @@ public class Telekinesis : MonoBehaviour
                 {
                     isLiftingObject = true;
                 }
-
             }
         }
     }
@@ -311,5 +332,22 @@ public class Telekinesis : MonoBehaviour
         DetectObject.LevObjectGone -= ResetLevitatableObj;
         PlayerHealth.TakeDamage -= DropObject;
     }
+    #endregion
+
+    #region Animation Events
+
+    /* Remember, changing name of animation event functions requires changing the function in the animation event! */
+
+    /* Called during specific attack animation frame to start doing damage to hit enemies */
+    public void TelekinesisThrow()
+    {
+        objectRigidBody = levitatableGO.GetComponent<Rigidbody>();
+        objectRigidBody.useGravity = true;
+        objectRigidBody.AddForce(Camera.main.transform.forward * throwForce * 10);
+        isLiftingObject = false;
+        currentTKObject.SetThrown();
+        levitatableGO = null;
+    }
+
     #endregion
 }
