@@ -127,7 +127,7 @@ public class Telekinesis : MonoBehaviour
         if (objectRigidBody != null)
         {
             /* Play telekinesis animation when telekinesis button is pressed */
-            if (Input.GetButtonDown(telekinesisButtonName) && !journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
+            if (!journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
             {
                 anim.SetBool(telekinesisBooleanName, true);
             }
@@ -157,10 +157,11 @@ public class Telekinesis : MonoBehaviour
 
     private void ThrowObject()
     {
-        /* Play telekinesis animation when telekinesis button is pressed */
-        if (Input.GetButtonDown(telekinesisButtonName) && !journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
+        /* Play telekinesis throw animation when throw button is pressed */
+        if (!journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
         {
             anim.SetTrigger(telekinesisThrowTriggerName);
+            anim.SetBool(telekinesisBooleanName, false);
 
             //actual code for moving the object is in an animation event
         }
