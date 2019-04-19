@@ -6,6 +6,8 @@ using UnityEngine;
 public class GainTK : MonoBehaviour
 {
     [SerializeField]
+    private RootMotionMovementController movement;
+    [SerializeField]
     private Animator TKObjectFloat;
     [SerializeField]
     private Animator PlayerAnimator;
@@ -13,12 +15,14 @@ public class GainTK : MonoBehaviour
     private Telekinesis thisTK;
     [SerializeField]
     private DetectObject thisDO;
-    //[SerializeField]
-    //private SlowMoGameTime SlowMo;
+    [SerializeField]
+    private SlowMoGameTime SlowMo;
     [SerializeField]
     private Transform PlayerLocation;
     [SerializeField]
     private GameObject ElectricExplosioin;
+    [SerializeField]
+    private float timeToStop;
 
     private void OnEnable()
     {
@@ -28,12 +32,14 @@ public class GainTK : MonoBehaviour
 
     private void GivePlayerTK()
     {
+        TKObjectFloat.enabled = true;
         PlayerAnimator.SetTrigger("TakeDamage");
         TKObjectFloat.SetTrigger("shouldFloat");
         Instantiate(ElectricExplosioin, PlayerLocation.position, PlayerLocation.rotation);
         thisTK.enabled = true;
         thisDO.enabled = true;
-        //SlowMo.SlowMo();
+        SlowMo.SlowMo();
         Destroy(TKObjectFloat);
+        movement.DisableMovement(timeToStop);
     }
 }

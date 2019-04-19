@@ -87,20 +87,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_MetalDoorBreakdown2" ID="{3493D402-0445-4ED4-878F-EBEFEFD17542}">
-					<ChildrenList>
-						<Action Name="" ID="{F8F14FB2-1C0A-4EB9-9451-6A85211C9D8C}" ShortID="607438114">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="MetalDoorBreakdown2" ID="{C254DE37-30D3-4598-BE7D-DCD6B553BAA7}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_CrocDeath1" ID="{E969A57C-DBBB-4A8C-AC0E-BC49C7B8F2EE}">
 					<ChildrenList>
 						<Action Name="" ID="{0E1F36BB-20D6-4044-AD19-804C9A2071A4}" ShortID="36906689">
@@ -530,6 +516,62 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PipeRoar2" ID="{85DC59B2-FFF0-47AD-8E1E-2EB3F03A1AE5}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TK_PickUp" ID="{78ADD615-0071-4B00-9BEE-6F9D1B2F044C}">
+					<ChildrenList>
+						<Action Name="" ID="{E598EBC5-9B2B-40CF-90CB-5A9696DD49E6}" ShortID="104877795">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TelekinesisPickUp" ID="{34B2D0CD-B864-4DCF-9115-982D22EA20F2}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_DodgeRoll" ID="{4B12EEDA-4132-491C-BC37-226CDFD9BD8F}">
+					<ChildrenList>
+						<Action Name="" ID="{EDF3ACA9-0EC6-438A-BF51-B935B9E85051}" ShortID="340645581">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DodgeRoll" ID="{A920AB43-962E-4254-9C95-D41D9289A188}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CrocFalling1" ID="{51CF6759-D400-4123-BF94-132D533A8C67}">
+					<ChildrenList>
+						<Action Name="" ID="{70112370-817D-4BFD-BFB3-AF8C08FEBFEB}" ShortID="1059888939">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocFalling1" ID="{87DA877F-8BBC-430D-BDBB-625418FD5E2D}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_OutdoorAmbientLoop" ID="{61CD126E-1830-41DC-9CAC-33B91EA2ADE2}">
+					<ChildrenList>
+						<Action Name="" ID="{5302CCF7-F4B5-4A45-B2BD-264024399C79}" ShortID="1028547219">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="OutdoorAmbientLoop" ID="{E7CEA258-B63D-47F7-BF5B-D0FF893D01BF}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

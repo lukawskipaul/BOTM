@@ -9,17 +9,18 @@ public class PickupPrompt : MonoBehaviour
     [HideInInspector]
     public bool hasBeenPickedUp = false;
     [SerializeField]
+    private PauseMenuManager pauseMenuManager;
+    [SerializeField]
     private GameObject ObjectToGivePlayer;  //if any
     [SerializeField]
     private GameObject PickupPromptText;
     [SerializeField]
-    private GameObject PickUpObjectCanvas;
+    private bool isJournalPickup;
     private bool isInTrigger;
-    private bool paused;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Pickup")
+        if (other.tag == "Player" && !hasBeenPickedUp)
         {
             isInTrigger = true;
             PickupPromptText.SetActive(true);
@@ -29,7 +30,7 @@ public class PickupPrompt : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Pickup")
+        if (other.tag == "Player" && !hasBeenPickedUp)
         {
             isInTrigger = false;
             PickupPromptText.SetActive(false);
@@ -40,7 +41,7 @@ public class PickupPrompt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInTrigger)
+        if (isInTrigger && !hasBeenPickedUp)
         {
             CheckInput();
         }
@@ -50,25 +51,18 @@ public class PickupPrompt : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact"))
         {
-            if (ObjectToGivePlayer != null)
+            if (ObjectToGivePlayer != null && !isJournalPickup)
                 ObjectToGivePlayer.SetActive(true);
             hasBeenPickedUp = true;
+            AkSoundEngine.PostEvent("Play_TK_PickUp", gameObject);
             PickupPromptText.SetActive(false);
             isInTrigger = false;
+            if (isJournalPickup)
+            {
+                pauseMenuManager.pickupObjectCanvas = ObjectToGivePlayer;
+                pauseMenuManager.JournalPiecePickup();
+            }
             Destroy(this.gameObject);
-            PickUpObjectCanvas.SetActive(true);
-            PauseGame();
         }
     }
-
-    private void PauseGame()
-    {
-        Time.timeScale = 0;
-        //pauseMenu.gameObject.SetActive(true);
-        paused = true;
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
 }

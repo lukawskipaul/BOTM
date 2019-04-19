@@ -16,4 +16,12 @@ public class CheckpointScript : MonoBehaviour
         isActivated = value;
         GetComponent<BoxCollider>().enabled = false;
     }
+
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+            SetIsActivated(true);
+    }
+    */
 }

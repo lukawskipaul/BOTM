@@ -54,10 +54,6 @@ public class Telekinesis : MonoBehaviour
 
     private TKObject currentTKObject;
 
-    private const string telekinesisButtonName = "UseTele";
-    private const string tkThrowButtonName = "Throw";
-    private const string telekinesisBooleanName = "isUsingTelekinesis";
-    private const string telekinesisThrowTriggerName = "TelekinesisThrow";
 
     private float currentEnergy = 100f;
 
@@ -69,15 +65,20 @@ public class Telekinesis : MonoBehaviour
 
     [SerializeField]
     private float energyDrainRate = 1f, energyRechargeRate = 10f;
+    private const string telekinesisButtonName = "UseTele";
+    private const string tkThrowButtonName = "Throw";
+    private const string telekinesisBooleanName = "isUsingTelekinesis";
+    private const string telekinesisThrowTriggerName = "TelekinesisThrow";
+
     #endregion
 
     private void Start()
     {
         startingTransform = levitateTransform.localPosition;
-        
-        anim = this.gameObject.GetComponent<Animator>();
-        
+
         energySlider.value = EnergyPercent();
+
+        anim = this.gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -89,7 +90,7 @@ public class Telekinesis : MonoBehaviour
             ThrowObject();
             //AkSoundEngine.PostEvent("Stop_Tk", gameObject);
             AkSoundEngine.PostEvent("Play_TK_Throw", gameObject);
-            
+
         }
         else if (isLiftingObject == false)
         {
@@ -118,10 +119,7 @@ public class Telekinesis : MonoBehaviour
 
     private void LevitateObject(GameObject objectToLevitate)
     {
-        if (currentEnergy <= 0)
-        {
-            DropObject();
-        }
+        currentEnergy -= (energyDrainRate * Time.deltaTime);
         OnTeleManualMovingObject();
         GetObjectRigidBody(objectToLevitate);
         GetObjectTKObject(objectToLevitate);
@@ -144,6 +142,10 @@ public class Telekinesis : MonoBehaviour
             MoveObjectToTransform(objectRigidBody, objectTransfrom);
             currentTKObject.SetLevitating();
             CheckDistance();
+            if (currentEnergy <= 0)
+            {
+                DropObject();
+            }
         }
         else
         {

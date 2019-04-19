@@ -131,13 +131,6 @@
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="Footsteps" ID="{F62760E5-27E4-47E8-A814-87501CAD1C06}" ShortID="581589718">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-20</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -339,42 +332,14 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
-				<Sound Name="MetalDoorBreakdown1" ID="{FF3FBF1E-0B4C-46CD-A5DE-3ECAEDFED129}" ShortID="195046005">
+				<Sound Name="CrocDeath1" ID="{AE7BD185-B6F9-461E-ADE9-AD3315028927}" ShortID="419795923">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-6</Value>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
-						</Reference>
-						<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
-							<ObjectRef Name="Inside_My_Head" ID="{94B53301-9AA1-468F-8419-92AEDAAE39DF}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="MetalDoorBreakdown1" ID="{8206B967-7A4B-489E-A3CD-ABB9F1EDE954}" ShortID="735080199">
-							<Language>SFX</Language>
-							<AudioFile>MetalDoorBreakdown1.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="MetalDoorBreakdown1" ID="{8206B967-7A4B-489E-A3CD-ABB9F1EDE954}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="CrocDeath1" ID="{AE7BD185-B6F9-461E-ADE9-AD3315028927}" ShortID="419795923">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -529,13 +494,13 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="TelekinesisExtraHigh" ID="{9E463DBD-2253-43C2-8A82-5419E2F2DBD7}" ShortID="843081733">
+						<AudioFileSource Name="TK_Loop_Attempt1" ID="{915F1696-0304-4AA5-86E0-FD77F9C94C24}" ShortID="247798144">
 							<Language>SFX</Language>
-							<AudioFile>TelekinesisExtraHigh.wav</AudioFile>
+							<AudioFile>TK_Loop_Attempt1.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="TelekinesisExtraHigh" ID="{9E463DBD-2253-43C2-8A82-5419E2F2DBD7}" Platform="Linked"/>
+						<ActiveSource Name="TK_Loop_Attempt1" ID="{915F1696-0304-4AA5-86E0-FD77F9C94C24}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="AI_VO_Line1" ID="{E27FD462-989C-4CCE-BD7E-877A866C9C89}" ShortID="51305255">
@@ -577,6 +542,21 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Sword Swing" ID="{A8ECE2AC-20F2-48C7-BA9C-B2E12DE1132D}" ShortID="21309742">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{9A0E3F9A-AA1D-4D75-BD67-5D646190FB18}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="328"/>
+											<Property Name="Min" Type="Real64" Value="-404"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -590,9 +570,13 @@
 							<Language>SFX</Language>
 							<AudioFile>MagicSwordHitShort.wav</AudioFile>
 						</AudioFileSource>
+						<AudioFileSource Name="WHOOSH_Fast_Air_mono" ID="{A79122D7-E236-413C-8731-FE8EEE04B8D4}" ShortID="1042814507">
+							<Language>SFX</Language>
+							<AudioFile>WHOOSH_Fast_Air_mono.wav</AudioFile>
+						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="MagicSwordHitShort" ID="{169A6A32-6E75-41B1-91AD-342A20CB069E}" Platform="Linked"/>
+						<ActiveSource Name="WHOOSH_Fast_Air_mono" ID="{A79122D7-E236-413C-8731-FE8EEE04B8D4}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="TelekinesisThrow" ID="{98BC671B-CDCE-4980-8AA1-DE2A86858BFF}" ShortID="98628407">
@@ -1132,7 +1116,7 @@
 						<ActiveSource Name="PipeRoar" ID="{7EF1B3E3-246B-47E9-8EA8-AE4511027465}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="MetalDoorBreakdown2" ID="{C254DE37-30D3-4598-BE7D-DCD6B553BAA7}" ShortID="636753365">
+				<Sound Name="TelekinesisPickUp" ID="{34B2D0CD-B864-4DCF-9115-982D22EA20F2}" ShortID="731011312">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -1142,13 +1126,112 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="MetalDoorBreakdown2" ID="{1630E002-9202-4D3B-A39F-5F56DF7FCE33}" ShortID="902663844">
+						<AudioFileSource Name="TelekinesisPickUp03" ID="{AADA7C2B-B5D8-4679-AA9F-7DA827BBD5E4}" ShortID="259446113">
 							<Language>SFX</Language>
-							<AudioFile>MetalDoorBreakdown2.wav</AudioFile>
+							<AudioFile>TelekinesisPickUp03.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="MetalDoorBreakdown2" ID="{1630E002-9202-4D3B-A39F-5F56DF7FCE33}" Platform="Linked"/>
+						<ActiveSource Name="TelekinesisPickUp03" ID="{AADA7C2B-B5D8-4679-AA9F-7DA827BBD5E4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="DodgeRoll" ID="{A920AB43-962E-4254-9C95-D41D9289A188}" ShortID="707810578">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="DodgeRoll01 " ID="{B92192E3-C34C-4B92-85D1-843C2D981353}" ShortID="429288525">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="DodgeRoll01 " ID="{FDE47450-499C-4236-AD09-53776F1F75A6}" ShortID="261545888">
+									<Language>SFX</Language>
+									<AudioFile>DodgeRoll01 .wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="DodgeRoll01 " ID="{FDE47450-499C-4236-AD09-53776F1F75A6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="DodgeRoll02" ID="{F8517CF9-FE34-4C1B-B268-FE883D1934B5}" ShortID="135909629">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="DodgeRoll02" ID="{75795DDD-6C15-44BE-A82F-04B13F41BCC3}" ShortID="715068986">
+									<Language>SFX</Language>
+									<AudioFile>DodgeRoll02.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="DodgeRoll02" ID="{75795DDD-6C15-44BE-A82F-04B13F41BCC3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="CrocFalling1" ID="{87DA877F-8BBC-430D-BDBB-625418FD5E2D}" ShortID="709284609">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="CrocFalling1" ID="{35450C33-D575-45A8-9C7B-FC72482536CE}" ShortID="143612164">
+							<Language>SFX</Language>
+							<AudioFile>CrocFalling1.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="CrocFalling1" ID="{35450C33-D575-45A8-9C7B-FC72482536CE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="OutdoorAmbientLoop" ID="{E7CEA258-B63D-47F7-BF5B-D0FF893D01BF}" ShortID="254070177">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Wind" ID="{B04FEF14-9964-4F90-8CD4-52F54BDADA3D}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="OutdoorAmbientLoop" ID="{59454FBE-201E-4725-A0EA-A82541435F4A}" ShortID="170469686">
+							<Language>SFX</Language>
+							<AudioFile>OutdoorAmbientLoop.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="OutdoorAmbientLoop" ID="{59454FBE-201E-4725-A0EA-A82541435F4A}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

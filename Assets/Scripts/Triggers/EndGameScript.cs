@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 public class EndGameScript : MonoBehaviour
 {
     [SerializeField]
+    private RootMotionMovementController movement;
+    [SerializeField]
+    private Animator PlayerAnimator;
+    [SerializeField]
+    private ScreenFade ScreenFade;
+    [SerializeField]
+    private SlowMoGameTime slowMo;
+    [SerializeField]
     private EnemyHealth bossHealth;
     [SerializeField]
     private GameObject endLight;
@@ -30,7 +38,17 @@ public class EndGameScript : MonoBehaviour
     {
         if (other.tag == "Player" && bossHealth.isDead)
         {
-            SceneManager.LoadScene(sceneToLoad);
+            movement.DisableMovement(4f);
+            PlayerAnimator.SetTrigger("TakeDamage");
+            ScreenFade.BeginFade(1);
+            slowMo.SlowMo();
+            StartCoroutine(WaitForFade());
         }
+    }
+
+    private IEnumerator WaitForFade()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

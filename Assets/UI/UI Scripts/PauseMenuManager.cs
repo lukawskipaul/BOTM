@@ -11,15 +11,6 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject controlsCanvas;
     public GameObject pickupObjectCanvas;
 
-    [HideInInspector]
-    public bool hasBeenPickedUp = false;
-    [SerializeField]
-    private GameObject ObjectToGivePlayer;
-    [SerializeField]
-    private GameObject PickupPromptText;
-
-    private bool isInTrigger;
-
     [SerializeField]
     //private PickupPrompt thisPickup;
 
@@ -45,29 +36,24 @@ public class PauseMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInTrigger)
-        {
-            CheckInput();
-        }
-
         if (Input.GetButtonDown(pauseInput))
         {
-            if(paused == false && journalOpen == false && pieceOpen == false)
+            if (paused == false && journalOpen == false && pieceOpen == false)
             {
                 PauseGame();
             }
 
-            else if(paused == true)
+            else if (paused == true)
             {
                 ClosePauseMenu();
             }
 
-            else if(journalOpen == true)
+            else if (journalOpen == true)
             {
                 CloseJournal();
             }
 
-            else if(pieceOpen == true)
+            else if (pieceOpen == true)
             {
                 CloseJournalPiece();
             }
@@ -140,7 +126,7 @@ public class PauseMenuManager : MonoBehaviour
     }
 
 
-    private void JournalPiecePickup()
+    public void JournalPiecePickup()
     {
         Time.timeScale = 0;
         pickupObjectCanvas.gameObject.SetActive(true);
@@ -179,40 +165,6 @@ public class PauseMenuManager : MonoBehaviour
         SceneManager.LoadScene(DemoScene);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Pickup")
-        {
-            isInTrigger = true;
-            PickupPromptText.SetActive(true);
-            //Debug.Log("Player entered pickup zone");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Pickup")
-        {
-            isInTrigger = false;
-            PickupPromptText.SetActive(false);
-            //Debug.Log("Player left pickup zone");
-        }
-    }
-
-    private void CheckInput()
-    {
-        if (Input.GetButtonDown("Interact"))
-        {
-            if (ObjectToGivePlayer != null)
-                ObjectToGivePlayer.SetActive(true);
-            hasBeenPickedUp = true;
-            PickupPromptText.SetActive(false);
-            isInTrigger = false;
-            ObjectToGivePlayer.gameObject.SetActive(false);
-            JournalPiecePickup();
-        }
-    }
-
     //Texture for the screen to fade from.
     public Texture2D fadeOutTexture;
     [Tooltip("Speed of the screen fade. Lower is Slower")]
@@ -243,5 +195,4 @@ public class PauseMenuManager : MonoBehaviour
     {
         BeginFade(-1);
     }
-
 }
