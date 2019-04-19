@@ -67,6 +67,7 @@ public class PlayerRespawnScript : MonoBehaviour
         {
             transform.position = currentCheckpoint.transform.position;
             GetComponent<PlayerHealth>().HealPlayer(100);
+            anim.SetTrigger("Respawn");
         }
     }
 }
