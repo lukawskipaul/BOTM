@@ -7,9 +7,9 @@ public class LightningExplosion : MonoBehaviour
     [SerializeField]
     private float lifeDuration = 4f;
     [SerializeField]
-    private float lightDuration = 2f;
+    private float lightDuration = 1f;
     [SerializeField]
-    private float intensityRate = 4f;
+    private float intensityRate = 2.5f;
     private Light light;
     private void OnEnable()
     {
@@ -28,13 +28,13 @@ public class LightningExplosion : MonoBehaviour
     {
         while(lightDuration > 0)
         {
-            light.intensity += Time.deltaTime * intensityRate;
+            light.intensity = light.intensity * intensityRate*Time.deltaTime+light.intensity;
             lightDuration -= Time.deltaTime;
             yield return null;
         }
         while(light.intensity > 0)
         {
-            light.intensity -= Time.deltaTime * 2 * intensityRate;
+            light.intensity -= Time.deltaTime * 2.8f * intensityRate;
             yield return null;
         }
     }

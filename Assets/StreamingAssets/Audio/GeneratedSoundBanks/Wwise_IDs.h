@@ -30,7 +30,7 @@ namespace AK
         static const AkUniqueID PLAY_ELECTRICPASSIVE = 2387251670U;
         static const AkUniqueID PLAY_GENERATORHUM = 2540781641U;
         static const AkUniqueID PLAY_HOWLINGWIND = 3210990662U;
-        static const AkUniqueID PLAY_METALDOORBREAKDOWN1 = 709837481U;
+        static const AkUniqueID PLAY_METALDOORBREAKDOWN2 = 709837482U;
         static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
         static const AkUniqueID PLAY_PIPEFALL = 726787325U;
         static const AkUniqueID PLAY_PIPEROAR2 = 822967520U;

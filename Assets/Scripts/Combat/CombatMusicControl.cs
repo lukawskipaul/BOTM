@@ -34,14 +34,28 @@ public class CombatMusicControl : MonoBehaviour
         {
             bossCombat.TransitionTo(m_TransitionIn);
         }
-        
+
     }
 
-    void OnTriggerExit (Collider other)
+    void TransitionToOutOfCombat()
     {
-        if (other.CompareTag("CombatZone"))
-        {
-            outOfCombat.TransitionTo(m_TransitionOut);
-        }
+        outOfCombat.TransitionTo(m_TransitionOut);
+    }
+    //void OnTriggerExit (Collider other)
+    //{
+    //    if (other.CompareTag("CombatZone"))
+    //    {
+    //        outOfCombat.TransitionTo(m_TransitionOut);
+    //    }
+    //}
+
+
+    private void OnEnable()
+    {
+        EnemyHealth.EnemyDied += TransitionToOutOfCombat;
+    }
+    private void OnDisable()
+    {
+        EnemyHealth.EnemyDied -= TransitionToOutOfCombat;
     }
 }
