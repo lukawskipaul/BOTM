@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 //Requires components on the GameObject that will be used by the script
 [RequireComponent(typeof(Rigidbody))]
@@ -13,6 +14,8 @@ public class PlayerRespawnScript : MonoBehaviour
     private string sceneToLoad;
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
+    [SerializeField]
+    private Text checkpointObjectiveText;
 
     private void Start()
     {
@@ -59,6 +62,13 @@ public class PlayerRespawnScript : MonoBehaviour
         if (other.CompareTag("Checkpoint"))
         {
             SetCurrentCheckpoint(other.GetComponent<CheckpointScript>());
+        }
+
+        // the plan is to include multiple checkpoints with different tags (checkpoint, checkpoint2, checkpoint3, etc). 
+        // as the player passes each checkpoint, the objective text in the journal will update
+        if (other.CompareTag("Checkpoint"))
+        {
+            checkpointObjectiveText.text = "This is your new objective";
         }
     }
 }
