@@ -89,6 +89,7 @@ public class BossEnemyMono : MonoBehaviour
         ObstacleDetection();
         
     }
+    
     /// <summary>
     /// Stops the boss from attacking if the player's health is 0 or below
     /// </summary>

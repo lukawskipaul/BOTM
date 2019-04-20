@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 //[RequireComponent(typeof(Animator))]
 public class PlayerRespawnScript : MonoBehaviour
 {
+    public GameObject EnemyCroc;
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
     private Animator anim;
@@ -68,6 +69,14 @@ public class PlayerRespawnScript : MonoBehaviour
             transform.position = currentCheckpoint.transform.position;
             GetComponent<PlayerHealth>().HealPlayer(100);
             anim.SetTrigger("Respawn");
+
+            //If croc was already dead... stay dead!
+            if (PlayerPrefs.GetInt("CrocDead") == 1)
+            {
+                //Deactivates croc
+                EnemyCroc.SetActive(false);
+            }
+
         }
     }
 }
