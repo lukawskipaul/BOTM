@@ -119,15 +119,24 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    /* Disables/enables attacking when carrying/dropping with telekenesis */
+    /* Disables attacking when carrying with telekenesis */
+    private void SetCannotAttack()
+    {
+        canAttack = false;
+    }
+
+    /* Enables attacking when dropping with telekenesis */
     private void SetCanAttack()
     {
         canAttack = true;
+<<<<<<< HEAD
     }
 
     private void SetCannotAttack()
     {
         canAttack = false;
+=======
+>>>>>>> remotes/origin/Mechanics
     }
 
     /* Subscribe to events */
@@ -152,14 +161,12 @@ public class PlayerAttack : MonoBehaviour
     public void StartDamageWindow()
     {
         swordAttack.IsAttacking = true;
-        Time.timeScale = 0.5f;
     }
 
     /* Called during specific attack animation frame to stop doing damage to hit enemies */
     public void EndDamageWindow()
     {
         swordAttack.IsAttacking = false;
-        Time.timeScale = 1.0f;
     }
 
     /* Called at specific tk pull animation frame to start tk pull cooldown */
