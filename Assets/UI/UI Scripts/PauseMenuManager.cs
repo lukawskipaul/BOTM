@@ -72,15 +72,14 @@ public class PauseMenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetButton(controlsInput))
-        {
-            controlsCanvas.gameObject.SetActive(true);
-        }
-        else
-        {
-            controlsCanvas.gameObject.SetActive(false);
-        }
-
+        //if (Input.GetButton(controlsInput))   //commented by Caleb because there is no controlsInput button and it keeps throwing exceptions
+        //{
+        //    controlsCanvas.gameObject.SetActive(true);
+        //}
+        //else
+        //{
+        //    controlsCanvas.gameObject.SetActive(false);
+        //}
     }
 
     private void PauseGame()
