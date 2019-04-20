@@ -9,7 +9,12 @@ using UnityEngine;
 public class CheckpointScript : MonoBehaviour
 {
     private bool isActivated;
-
+    private BoxCollider collider;
+    private void Start()
+    {
+        collider = this.GetComponent<BoxCollider>();
+        collider.isTrigger = true;//Sets collider as a trigger automatically at start
+    }
     public void SetIsActivated(bool value)
     {
         Debug.Log(gameObject.name + "is Activated");

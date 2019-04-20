@@ -28,7 +28,6 @@ public class CrocEnemyMono : MonoBehaviour
     [SerializeField, Tooltip("Set to Player layer")]
     private LayerMask ObstacleMask;
     private bool playerDiesTrig = false;//Makes sure the trigger for player's death activates only once
-
     // Start is called before the first frame update
     void Start()
     {
@@ -59,14 +58,6 @@ public class CrocEnemyMono : MonoBehaviour
             {
                 Debug.Log("Linecast no hit");
             }
-
-            /*//Plays the Death Animation for Ai
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetTrigger("Die");
-                anim.SetTrigger("Flinch");
-                
-            }//*/
         }
         CalculateDetectionRange();
         AttackRangeAnimExecution();

@@ -129,14 +129,6 @@ public class PlayerAttack : MonoBehaviour
     private void SetCanAttack()
     {
         canAttack = true;
-<<<<<<< HEAD
-    }
-
-    private void SetCannotAttack()
-    {
-        canAttack = false;
-=======
->>>>>>> remotes/origin/Mechanics
     }
 
     /* Subscribe to events */
