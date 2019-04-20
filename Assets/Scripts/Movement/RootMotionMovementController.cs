@@ -17,6 +17,8 @@ public class RootMotionMovementController : MonoBehaviour
 
     [SerializeField]
     private float dodgeCooldownInSeconds = 2.0f;
+    [SerializeField]
+    Telekinesis telekinesis;
 
     private Animator anim;
     private Rigidbody rb;
@@ -41,7 +43,7 @@ public class RootMotionMovementController : MonoBehaviour
     private const string tkPullAnimationTriggerName = "TKPull";
     private const string freeLookDodgeAnimationTriggerName = "FreeLookDodge";
     private const string lockedOnDodgeAnimationTriggerName = "LockedOnDodge";
-    Telekinesis telekinesis = new Telekinesis();
+    
 
     #endregion
 
