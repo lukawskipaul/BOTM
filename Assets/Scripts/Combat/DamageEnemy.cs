@@ -58,4 +58,5 @@ public class DamageEnemy : MonoBehaviour
             other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(currentAttackDamage);
         }
     }
+
 }
