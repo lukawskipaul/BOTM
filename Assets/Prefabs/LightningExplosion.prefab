@@ -179,9 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d76cb09721b3e4990389bb6ae3bf6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeDuration: 4
-  lightDuration: 2
-  intensityRate: 4
+  lifeDuration: 6
+  lightDuration: 1.3
+  intensityRate: 3
 --- !u!1 &2237200882357239032
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 86bd252e84951e9469b528539344cd65, type: 3}
   m_StartSeed: 0
-  m_ResetSeedOnPlay: 1
+  m_ResetSeedOnPlay: 0
   m_PropertySheet:
     m_Float:
       m_Array: []

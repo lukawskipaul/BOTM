@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 //[RequireComponent(typeof(Animator))]
 public class PlayerRespawnScript : MonoBehaviour
 {
+    public GameObject EnemyCroc;
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
     private Animator anim;
@@ -32,10 +33,13 @@ public class PlayerRespawnScript : MonoBehaviour
         Debug.Log("Set Checkpoint");
     }
 
-    //This should be called at the end of a Player Death Animation
+    //This can be called at the end of a Player Death Animation, for now it's public for the DeathSphereOfDeath script
     public void RespawnPlayer()
     {
         rb.velocity = Vector3.zero;
+
+        //Reset any animation triggers that will be implemented
+        anim.ResetTrigger("TriggerName");
 
         StartCoroutine(RespawnDelay());
     }
@@ -50,8 +54,8 @@ public class PlayerRespawnScript : MonoBehaviour
 
     private IEnumerator RespawnDelay()
     {
-        anim.ResetTrigger("Death");
-        yield return new WaitForSecondsRealtime(2.0f);
+        anim.SetTrigger("Death");
+        yield return new WaitForSecondsRealtime(3.0f);
         if (currentCheckpoint == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -64,6 +68,26 @@ public class PlayerRespawnScript : MonoBehaviour
         {
             transform.position = currentCheckpoint.transform.position;
             GetComponent<PlayerHealth>().HealPlayer(100);
+			anim.SetTrigger("Respawn");
+            //Reset Death animation
+            anim.ResetTrigger("Death");
+            //Reset Telekinesis
+            anim.ResetTrigger("TKPull");
+            anim.SetBool("isUsingTelekinesis",false);
+            anim.SetBool("isDoingTKThrow",false);
+            //Reset Stagger animation
+            anim.ResetTrigger("TakeDamage");
+            //Reset Movement
+            anim.Play("Movement");
+            //anim.SetTrigger("Respawn");
+
+            //If croc was already dead... stay dead!
+            if (PlayerPrefs.GetInt("CrocDead") == 1)
+            {
+                //Deactivates croc
+                EnemyCroc.SetActive(false);
+            }
+
         }
     }
 }

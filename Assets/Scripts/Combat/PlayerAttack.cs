@@ -71,8 +71,6 @@ public class PlayerAttack : MonoBehaviour
             //    TKPull();
             //}
         }
-
-
     }
 
     private void Attack()
@@ -121,30 +119,29 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    /* Disables/enables attacking when carrying/dropping with telekenesis */
+    /* Disables attacking when carrying with telekenesis */
+    private void SetCannotAttack()
+    {
+        canAttack = false;
+    }
+
+    /* Enables attacking when dropping with telekenesis */
     private void SetCanAttack()
     {
-        if (canAttack)
-        {
-            canAttack = false;
-        }
-        else
-        {
-            canAttack = true;
-        }
+        canAttack = true;
     }
 
     /* Subscribe to events */
     private void OnEnable()
     {
-        Telekinesis.TeleManualMovingObject += SetCanAttack;
+        Telekinesis.TeleManualMovingObject += SetCannotAttack;
         Telekinesis.TeleStoppedManualMovingObject += SetCanAttack;
     }
 
     /* Unsubscribe from events */
     private void OnDisable()
     {
-        Telekinesis.TeleManualMovingObject -= SetCanAttack;
+        Telekinesis.TeleManualMovingObject -= SetCannotAttack;
         Telekinesis.TeleStoppedManualMovingObject -= SetCanAttack;
     }
 
@@ -156,14 +153,12 @@ public class PlayerAttack : MonoBehaviour
     public void StartDamageWindow()
     {
         swordAttack.IsAttacking = true;
-        Time.timeScale = 0.5f;
     }
 
     /* Called during specific attack animation frame to stop doing damage to hit enemies */
     public void EndDamageWindow()
     {
         swordAttack.IsAttacking = false;
-        Time.timeScale = 1.0f;
     }
 
     /* Called at specific tk pull animation frame to start tk pull cooldown */

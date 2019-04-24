@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2303a95168b2214f9da13231a5f3bf3
+guid: e520f4d1c2d3131438df0f1d672d5584
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -147,7 +147,41 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'LeftUpLeg'
+      : position error = 108.902672 mm\n\t'LeftLeg' : position error = 448.591797
+      mm\n\t'LeftFoot' : position error = 406.833008 mm\n\t'LeftToeBase' : position
+      error = 234.064545 mm\n\t'RightUpLeg' : position error = 108.902672 mm\n\t'RightLeg'
+      : position error = 448.591797 mm\n\t'RightFoot' : position error = 406.833008
+      mm\n\t'RightToeBase' : position error = 234.061081 mm\n\t'Spine' : position
+      error = 69.969650 mm\n\t'Spine1' : position error = 126.611694 mm\n\t'Spine2'
+      : position error = 126.611603 mm\n\t'LeftShoulder' : position error = 154.659943
+      mm\n\t'LeftArm' : position error = 125.348465 mm\n\t'LeftForeArm' : position
+      error = 175.973022 mm\n\t'LeftHand' : position error = 266.855591 mm\n\t'LeftHandThumb1'
+      : position error = 55.578957 mm\n\t'LeftHandThumb2' : position error = 26.636198
+      mm\n\t'LeftHandThumb3' : position error = 26.097551 mm\n\t'LeftHandIndex1' :
+      position error = 89.337082 mm\n\t'LeftHandIndex2' : position error = 42.234928
+      mm\n\t'LeftHandIndex3' : position error = 26.527803 mm\n\t'LeftHandMiddle1'
+      : position error = 82.572868 mm\n\t'LeftHandMiddle2' : position error = 48.611378
+      mm\n\t'LeftHandMiddle3' : position error = 27.640400 mm\n\t'LeftHandRing1' :
+      position error = 76.447029 mm\n\t'LeftHandRing2' : position error = 45.357960
+      mm\n\t'LeftHandRing3' : position error = 23.035305 mm\n\t'LeftHandPinky1' :
+      position error = 86.933884 mm\n\t'LeftHandPinky2' : position error = 30.427746
+      mm\n\t'LeftHandPinky3' : position error = 19.736446 mm\n\t'RightShoulder' :
+      position error = 179.976151 mm\n\t'RightArm' : position error = 98.335823 mm\n\t'RightForeArm'
+      : position error = 171.312180 mm\n\t'RightHand' : position error = 266.854034
+      mm\n\t'RightHandThumb1' : position error = 58.722538 mm\n\t'RightHandThumb2'
+      : position error = 26.621510 mm\n\t'RightHandThumb3' : position error = 26.763884
+      mm\n\t'RightHandIndex1' : position error = 97.259026 mm\n\t'RightHandIndex2'
+      : position error = 43.393997 mm\n\t'RightHandIndex3' : position error = 26.125429
+      mm\n\t'RightHandMiddle1' : position error = 90.622551 mm\n\t'RightHandMiddle2'
+      : position error = 47.568729 mm\n\t'RightHandMiddle3' : position error = 27.640394
+      mm\n\t'RightHandRing1' : position error = 89.483971 mm\n\t'RightHandRing2' :
+      position error = 41.191002 mm\n\t'RightHandRing3' : position error = 23.035217
+      mm\n\t'RightHandPinky1' : position error = 97.483444 mm\n\t'RightHandPinky2'
+      : position error = 30.664436 mm\n\t'RightHandPinky3' : position error = 19.760336
+      mm\n\t'Neck' : position error = 126.611603 mm\n\t'Head' : position error = 199.913239
+      mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -166,7 +200,7 @@ ModelImporter:
       name: Idle
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 98
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -177,7 +211,7 @@ ModelImporter:
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0

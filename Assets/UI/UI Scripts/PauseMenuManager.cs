@@ -9,9 +9,10 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject journalMenu;
     public GameObject pauseMenu;
     public GameObject controlsCanvas;
+    public GameObject pickupObjectCanvas;
 
     [SerializeField]
-    private PickupPrompt thisPickup;
+    //private PickupPrompt thisPickup;
 
     public string MainMenuScene;
     public string DemoScene;
@@ -19,13 +20,15 @@ public class PauseMenuManager : MonoBehaviour
     public string pauseInput;
     public string controlsInput;
 
-    public bool paused;
-    public bool journalOpen;
+    public bool paused = false;
+    public bool journalOpen = false;
+    public bool pieceOpen = false;
 
     void Start()
     {
         pauseMenu.gameObject.SetActive(false);
         journalMenu.gameObject.SetActive(false);
+        pickupObjectCanvas.gameObject.SetActive(false);
         controlsCanvas.gameObject.SetActive(false);
     }
 
@@ -35,25 +38,30 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetButtonDown(pauseInput))
         {
-            if(paused == false && journalOpen == false)
+            if (paused == false && journalOpen == false && pieceOpen == false)
             {
                 PauseGame();
             }
 
-            else if(paused == true)
+            else if (paused == true)
             {
                 ClosePauseMenu();
             }
 
-            else if(journalOpen == true)
+            else if (journalOpen == true)
             {
                 CloseJournal();
             }
+
+            else if (pieceOpen == true)
+            {
+                CloseJournalPiece();
+            }
         }
 
-        if (Input.GetButtonDown(journalInput) && thisPickup.hasBeenPickedUp)
+        if (Input.GetButtonDown(journalInput))
         {
-            if (paused == false && journalOpen == false)
+            if (paused == false && journalOpen == false && pieceOpen == false)
             {
                 OpenJournal();
             }
@@ -64,15 +72,14 @@ public class PauseMenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetButton(controlsInput))
-        {
-            controlsCanvas.gameObject.SetActive(true);
-        }
-        else
-        {
-            controlsCanvas.gameObject.SetActive(false);
-        }
-
+        //if (Input.GetButton(controlsInput))   //commented by Caleb because there is no controlsInput button and it keeps throwing exceptions
+        //{
+        //    controlsCanvas.gameObject.SetActive(true);
+        //}
+        //else
+        //{
+        //    controlsCanvas.gameObject.SetActive(false);
+        //}
     }
 
     private void PauseGame()
@@ -85,7 +92,6 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
@@ -95,6 +101,7 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
 
     private void OpenJournal()
     {
@@ -116,6 +123,28 @@ public class PauseMenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
     }
+
+
+    public void JournalPiecePickup()
+    {
+        Time.timeScale = 0;
+        pickupObjectCanvas.gameObject.SetActive(true);
+        pieceOpen = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void CloseJournalPiece()
+    {
+        Time.timeScale = 1;
+        pickupObjectCanvas.gameObject.SetActive(false);
+        pieceOpen = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
 
     public void QuitToMainButton()
     {
@@ -165,5 +194,4 @@ public class PauseMenuManager : MonoBehaviour
     {
         BeginFade(-1);
     }
-
 }

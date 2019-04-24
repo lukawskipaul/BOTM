@@ -193,6 +193,19 @@ public class RootMotionMovementController : MonoBehaviour
         }
     }
 
+    public void DisableMovement(float time)
+    {
+        StartCoroutine(DisableMovementTimer(time));
+    }
+
+    private IEnumerator DisableMovementTimer(float time)
+    {
+        canMove = false;
+        yield return new WaitForSecondsRealtime(time);
+        canMove = true;
+        yield return new WaitForSeconds(time/2);
+    }
+
     #region Animation Events
 
     /* Remember, changing name of animation event functions requires changing the function in the animation event! */
