@@ -41,7 +41,31 @@ public class PlayerRespawnScript : MonoBehaviour
         //Reset any animation triggers that will be implemented
         anim.ResetTrigger("TriggerName");
 
-        StartCoroutine(RespawnDelay());
+        //StartCoroutine(RespawnDelay());
+        anim.SetBool("isDying", true);
+
+        if (currentCheckpoint == null)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            //Things that need to be reset to intial value will go under here
+            //
+        }
+        else
+        {
+            transform.position = currentCheckpoint.transform.position;
+            //GetComponent<PlayerHealth>().HealPlayer(100);
+            this.GetComponent<PlayerHealth>().CurrentHealth = 100;
+
+            //anim.SetTrigger("Respawn");
+
+            //If croc was already dead... stay dead!
+            if (PlayerPrefs.GetInt("CrocDead") == 1)
+            {
+                //Deactivates croc
+                EnemyCroc.SetActive(false);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,7 +79,9 @@ public class PlayerRespawnScript : MonoBehaviour
     private IEnumerator RespawnDelay()
     {
         anim.SetTrigger("Death");
-        yield return new WaitForSecondsRealtime(3.0f);
+
+        yield return new WaitForSecondsRealtime(1.0f);
+
         if (currentCheckpoint == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -63,7 +89,6 @@ public class PlayerRespawnScript : MonoBehaviour
             //Things that need to be reset to intial value will go under here
             //
         }
-
         else
         {
             transform.position = currentCheckpoint.transform.position;
@@ -76,7 +101,6 @@ public class PlayerRespawnScript : MonoBehaviour
                 //Deactivates croc
                 EnemyCroc.SetActive(false);
             }
-
         }
     }
 }

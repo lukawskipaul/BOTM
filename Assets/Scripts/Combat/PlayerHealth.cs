@@ -33,6 +33,10 @@ public class PlayerHealth : MonoBehaviour
         {
             return currentHealth;
         }
+        set
+        {
+            currentHealth = value;
+        }
     }
 
     private bool isInvulnerable;
@@ -79,16 +83,15 @@ public class PlayerHealth : MonoBehaviour
             StopCoroutine(DisableHealthRegen());
             StartCoroutine(DisableHealthRegen());
 
+            Debug.Log("Current Health: " + currentHealth);
+
             OnTakeDamage();
         }
 
         /* Player dies when health reaches 0 */
         if (currentHealth <= 0)
         {
-            //TODO: uncomment code
-            //anim.SetTrigger("Die");
-
-            respawn.RespawnPlayer();
+            anim.SetTrigger("Death");
         }
     }
 
