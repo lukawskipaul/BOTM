@@ -38,6 +38,8 @@ public class Telekinesis : MonoBehaviour
     private GameObject journalMenu;
     [SerializeField]
     private GameObject pauseMenu;
+    [SerializeField]
+    private GameObject crosshairPanel;
 
     private float baseLevitateFollowSpeed;
     private float xInput;
@@ -68,7 +70,7 @@ public class Telekinesis : MonoBehaviour
     private const string telekinesisButtonName = "UseTele";
     private const string tkThrowButtonName = "Throw";
     private const string telekinesisBooleanName = "isUsingTelekinesis";
-    private const string telekinesisThrowBooleanName = "isDoingTKThrow";
+    private const string telekinesisThrowName = "isDoingTKThrow";
 
     #endregion
 
@@ -152,6 +154,9 @@ public class Telekinesis : MonoBehaviour
             isLiftingObject = false;
             levitatableGO = null;
             levitateTransform.localPosition = startingTransform;
+            anim.SetBool(telekinesisThrowName, false);
+            anim.SetBool(telekinesisBooleanName, false);
+
         }
     }
 
@@ -160,7 +165,8 @@ public class Telekinesis : MonoBehaviour
         /* Play telekinesis throw animation when throw button is pressed */
         if (!journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
         {
-            anim.SetBool(telekinesisThrowBooleanName, true);
+            anim.SetBool(telekinesisThrowName, true);
+            anim.SetBool(telekinesisBooleanName, false);
 
             //actual code for moving the object is in an animation event
         }
@@ -220,6 +226,7 @@ public class Telekinesis : MonoBehaviour
         {
             /* Stop playing telekinesis animation when object is dropped */
             anim.SetBool(telekinesisBooleanName, false);
+            anim.SetBool(telekinesisThrowName, false);
 
             objectRigidBody.useGravity = true;
             currentTKObject.SetNeutral();
@@ -296,6 +303,8 @@ public class Telekinesis : MonoBehaviour
         currentTKObject = null;
         OnTeleStoppedManualMovingObject();
         levitateTransform.localPosition = startingTransform;
+        anim.SetBool(telekinesisThrowName, false);
+        anim.SetBool(telekinesisBooleanName, false);
     }
 
     float EnergyPercent()
@@ -349,6 +358,7 @@ public class Telekinesis : MonoBehaviour
         isLiftingObject = false;
         currentTKObject.SetThrown();
         levitatableGO = null;
+        anim.SetBool(telekinesisBooleanName, false);
     }
 
     #endregion

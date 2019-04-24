@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 97489249}
   - component: {fileID: 97489253}
   - component: {fileID: 97489252}
+  - component: {fileID: 97489254}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -203,17 +204,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97489248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98dd3b8eb54f8724a85b794e848d8ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingText: {fileID: 1768735833}
-  loadingImage: {fileID: 239937865}
-  continueText: {fileID: 549358644}
-  minAlpha: 0.18
-  alphaScaleValue: 0.8
-  sceneToLoad: VilcaneLabs
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &97489253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +279,21 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 1
       enableBigTilePrepass: 1
       isFptlEnabled: 1
+--- !u!114 &97489254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97489248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3f4de0ae6a08247a8ea9bee9d38f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingText: {fileID: 239937863}
+  continueText: {fileID: 549358642}
+  sceneToLoad: VilcaneLabs
 --- !u!1 &239937863
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 47.80005, y: 38.75}
+  m_AnchoredPosition: {x: 47.800293, y: 38.75}
   m_SizeDelta: {x: 706.4, y: 94.698}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &239937865
@@ -394,7 +406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &549358643
 RectTransform:
   m_ObjectHideFlags: 0
@@ -411,7 +423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -47.80005, y: 38.748047}
+  m_AnchoredPosition: {x: -47.800293, y: 38.748047}
   m_SizeDelta: {x: 560.80005, y: 94.70001}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &549358644

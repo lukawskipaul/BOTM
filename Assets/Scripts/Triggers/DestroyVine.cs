@@ -7,8 +7,7 @@ public class DestroyVine : MonoBehaviour
     [SerializeField]
     GameObject objectToDestroy;
 
-
-
+    /*
     //Update is called once per frame
     void Update()
     {
@@ -23,4 +22,5 @@ public class DestroyVine : MonoBehaviour
 
        
     }
+    */
 }
