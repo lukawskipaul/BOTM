@@ -65,7 +65,6 @@ public class PickupPrompt : MonoBehaviour
     /// </summary>
     private void GameResetSaveInfo()
     {
-        int gog = PlayerPrefs.GetInt("JournalID" + curJournalID);
         if (PlayerPrefs.GetInt("JournalID" + curJournalID) == 1)
         {
             Destroy(this.gameObject);

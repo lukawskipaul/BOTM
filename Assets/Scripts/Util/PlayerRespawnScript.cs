@@ -68,6 +68,7 @@ public class PlayerRespawnScript : MonoBehaviour
         {
             transform.position = currentCheckpoint.transform.position;
             GetComponent<PlayerHealth>().HealPlayer(100);
+			anim.SetTrigger("Respawn");
             //Reset Death animation
             anim.ResetTrigger("Death");
             //Reset Telekinesis
