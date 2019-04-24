@@ -9,18 +9,18 @@ public class DestroyVine : MonoBehaviour
 
 
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         public void DestroyGameObject()
-    {
-        if (Input.GetButton("Attack") && gameObject.tag == "player")
         {
-         Object.Destroy(objectToDestroy);
-            
+            if (Input.GetButton("Attack") && gameObject.tag == "player")
+            {
+                Object.Destroy(objectToDestroy);
+
+            }
         }
+
+       
     }
-
-
-}
 }
