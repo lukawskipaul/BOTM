@@ -11,9 +11,8 @@ public class PlayerHealth : MonoBehaviour
     
     [SerializeField]
     private float regenCooldownInSeconds = 5.0f;
-    [SerializeField]
-    private float healthRegenSpeed = 5.0f;
-
+    [SerializeField]   private float healthRegenSpeed = 5.0f;
+    
     [SerializeField]
     private int maxHealth = 100;
     public int MaxHealth
@@ -43,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
 
     private const string takeDamageTriggerName = "TakeDamage";
 
+    private DamageEnemy damageEnemy;
+
     #endregion
 
     private void Awake()
@@ -56,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
     {
         anim = this.gameObject.GetComponent<Animator>();
         respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
+        damageEnemy = GetComponentInChildren<DamageEnemy>();
     }
 
     private void Update()
@@ -71,7 +73,7 @@ public class PlayerHealth : MonoBehaviour
         if (!isInvulnerable)
         {
             anim.SetTrigger(takeDamageTriggerName);
-
+            damageEnemy.IsAttacking = false;
             currentHealth -= amount;
 
             StopCoroutine(DisableHealthRegen());

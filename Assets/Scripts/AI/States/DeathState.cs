@@ -11,7 +11,7 @@ public class DeathState : StateMachineBehaviour
         NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
         agent.isStopped = true;//stops the agent from moving
         animator.GetComponent<Collider>().enabled = false;
-        PlayerPrefs.SetInt("CrocDead",1);
+        PlayerPrefs.SetInt("CrocDead", 1);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

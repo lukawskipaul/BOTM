@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class CrocEnemyMono : MonoBehaviour
 {
     //Hiding and showing in Inspector
-    [SerializeField,Tooltip("Attack Damage Output")]
+    [SerializeField, Tooltip("Attack Damage Output")]
     private int attackDamage = 10;
     public int AttackDamage
     {
@@ -61,7 +61,7 @@ public class CrocEnemyMono : MonoBehaviour
         }
         CalculateDetectionRange();
         AttackRangeAnimExecution();
-        
+
     }
     /// <summary>
     /// Calculates whether the player is within the sight of the enemy
@@ -69,9 +69,9 @@ public class CrocEnemyMono : MonoBehaviour
     private void CalculateDetectionRange()
     {
         if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
-            
+
         {
-            
+
             anim.SetBool("PlayerDetected", true);
             if (showDebug) Debug.Log("Enemy Detected!");
         }
