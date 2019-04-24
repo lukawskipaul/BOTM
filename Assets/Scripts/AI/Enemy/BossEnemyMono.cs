@@ -29,13 +29,13 @@ public class BossEnemyMono : MonoBehaviour
     #region Damage Modifier Fields
     [Header("Damage Modifiers")]
     [Header("Head")]
-    [SerializeField,Tooltip("Headbutt Damage Output")]
+    [SerializeField, Tooltip("Headbutt Damage Output")]
     private int headbuttDamage = 10;
     public int HeadbuttDamage
     {
         get { return headbuttDamage; }
     }
-    [SerializeField,Tooltip("Bite Damage Output")]
+    [SerializeField, Tooltip("Bite Damage Output")]
     private int biteDamage = 25;
     public int BiteDamage
     {
@@ -77,7 +77,7 @@ public class BossEnemyMono : MonoBehaviour
             // Linecast checks if an obstacle is between the enemy and the player
             // Player layer must be set to "Player" for cast to work(and Enemy if neccessary)
             // This condition is to prevent the enemy from detecting player through walls
-            if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y +0.5f, player.transform.position.z), ObstacleMask))
+            if (Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
             {
                 Debug.Log("Linecast hit");
             }
@@ -87,9 +87,9 @@ public class BossEnemyMono : MonoBehaviour
             }
         }
         ObstacleDetection();
-        
+
     }
-    
+
     /// <summary>
     /// Stops the boss from attacking if the player's health is 0 or below
     /// </summary>
@@ -124,7 +124,7 @@ public class BossEnemyMono : MonoBehaviour
         if (showDebug)
         {
             Debug.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 10, Color.red);
-            Debug.DrawLine(new Vector3(this.transform.position.x,this.transform.position.y+0.5f,this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y +0.5f, player.transform.position.z), Color.cyan); /*player.transform.position + new Vector3(0,this.player.GetComponent<Collider>().bounds.center.y * 2 / 3, 0)*/
+            Debug.DrawLine(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), Color.cyan); /*player.transform.position + new Vector3(0,this.player.GetComponent<Collider>().bounds.center.y * 2 / 3, 0)*/
         }
     }
     public GameObject Player
