@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private Animator anim;
     private PlayerRespawnScript respawn;
 
     private float currentHealth;
@@ -40,6 +41,8 @@ public class PlayerHealth : MonoBehaviour
 
     public static event Action TakeDamage;
 
+    private const string takeDamageTriggerName = "TakeDamage";
+
     #endregion
 
     private void Awake()
@@ -51,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        anim = this.gameObject.GetComponent<Animator>();
         respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
     }
 
@@ -58,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
     {
         CapHealth();
 
-        //HealthRegen();
+        //TODO: HealthRegen();
     }
 
     public void DamagePlayer(int amount)
@@ -66,6 +70,8 @@ public class PlayerHealth : MonoBehaviour
         /* Damages player by enemy attack amount if not during iframe */
         if (!isInvulnerable)
         {
+            anim.SetTrigger(takeDamageTriggerName);
+
             currentHealth -= amount;
 
             StopCoroutine(DisableHealthRegen());

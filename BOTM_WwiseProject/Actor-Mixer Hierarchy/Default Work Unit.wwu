@@ -131,6 +131,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="Footsteps" ID="{F62760E5-27E4-47E8-A814-87501CAD1C06}" ShortID="581589718">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -556,6 +563,11 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -566,10 +578,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="MagicSwordHitShort" ID="{169A6A32-6E75-41B1-91AD-342A20CB069E}" ShortID="385098032">
-							<Language>SFX</Language>
-							<AudioFile>MagicSwordHitShort.wav</AudioFile>
-						</AudioFileSource>
 						<AudioFileSource Name="WHOOSH_Fast_Air_mono" ID="{A79122D7-E236-413C-8731-FE8EEE04B8D4}" ShortID="1042814507">
 							<Language>SFX</Language>
 							<AudioFile>WHOOSH_Fast_Air_mono.wav</AudioFile>
@@ -796,6 +804,9 @@
 				</Sound>
 				<Sound Name="CrocAttack1" ID="{B89D1EA2-85C5-462B-9DD2-3285A4E51F83}" ShortID="199100018">
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -841,11 +852,14 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-5</Value>
+								<Value>6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1145,25 +1159,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="DodgeRoll01 " ID="{B92192E3-C34C-4B92-85D1-843C2D981353}" ShortID="429288525">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="DodgeRoll01 " ID="{FDE47450-499C-4236-AD09-53776F1F75A6}" ShortID="261545888">
-									<Language>SFX</Language>
-									<AudioFile>DodgeRoll01 .wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="DodgeRoll01 " ID="{FDE47450-499C-4236-AD09-53776F1F75A6}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="DodgeRoll02" ID="{F8517CF9-FE34-4C1B-B268-FE883D1934B5}" ShortID="135909629">
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1183,10 +1178,39 @@
 								<ActiveSource Name="DodgeRoll02" ID="{75795DDD-6C15-44BE-A82F-04B13F41BCC3}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="DodgeRoll01" ID="{03642C4B-427F-4A89-809E-ACAA3C597470}" ShortID="772860221">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="DodgeRoll01" ID="{37D0AF20-10CD-4C19-80DD-E311A041169A}" ShortID="1050159223">
+									<Language>SFX</Language>
+									<AudioFile>DodgeRoll01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="DodgeRoll01" ID="{37D0AF20-10CD-4C19-80DD-E311A041169A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<Sound Name="CrocFalling1" ID="{87DA877F-8BBC-430D-BDBB-625418FD5E2D}" ShortID="709284609">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>

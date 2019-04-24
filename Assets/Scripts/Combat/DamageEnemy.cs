@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
 
-//This script goes on the sword joint of the player
+//This script goes on the sword collider of the player
 public class DamageEnemy : MonoBehaviour
 {
     #region Variables
@@ -51,12 +51,12 @@ public class DamageEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         bool isValidTarget = other.tag == "Enemy" && isAttacking == true;
-        //Debug.Log("Sword triggered");
+
         /* Damages the enemy if the player is currently attacking */
         if (isValidTarget)
         {
             other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(currentAttackDamage);
-            //Debug.Log("Enemy takes damage");
         }
     }
+
 }
