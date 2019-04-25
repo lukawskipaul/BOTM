@@ -73,7 +73,17 @@ public class PlayerRespawnScript : MonoBehaviour
             this.GetComponent<PlayerHealth>().CurrentHealth = 100;
 
             //anim.SetTrigger("Respawn");
-
+            //Reset Death animation
+            anim.ResetTrigger("Death");
+            //Reset Telekinesis
+            anim.ResetTrigger("TKPull");
+            anim.SetBool("isUsingTelekinesis", false);
+            anim.SetBool("isDoingTKThrow", false);
+            //Reset Stagger animation
+            anim.ResetTrigger("TakeDamage");
+            //Reset Movement
+            anim.Play("Movement");
+            //anim.SetTrigger("Respawn");
             //If croc was already dead... stay dead!
             if (PlayerPrefs.GetInt("CrocDead") == 1)
             {
