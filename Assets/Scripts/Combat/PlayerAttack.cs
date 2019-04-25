@@ -65,11 +65,6 @@ public class PlayerAttack : MonoBehaviour
         if (canAttack)
         {
             Attack();
-
-            //if (canDoTKPull)
-            //{
-            //    TKPull();
-            //}
         }
     }
 

@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Requires components on the GameObject that will be used by the script
+//GameObjects with this script require the components below, a component will be added if one does not exist
 [RequireComponent(typeof(Rigidbody))]
-//Animator will be required if using any Animation
-//[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator))]
+
+//This script goes on the player
 public class PlayerRespawnScript : MonoBehaviour
 {
+    #region Variables
+
     public GameObject EnemyCroc;
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
     private Animator anim;
 
+    private const string deathBoolName = "isDying";
+
+    #endregion
+
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody>();
         anim = this.gameObject.GetComponent<Animator>();
     }
 
@@ -33,16 +40,24 @@ public class PlayerRespawnScript : MonoBehaviour
         Debug.Log("Set Checkpoint");
     }
 
-    //This can be called at the end of a Player Death Animation, for now it's public for the DeathSphereOfDeath script
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Checkpoint"))
+        {
+            SetCurrentCheckpoint(other.GetComponent<CheckpointScript>());
+        }
+    }
+
+    #region Animation Events
+
+    /* Remember, changing name of animation event functions requires changing the function in the animation event! */
+
+    /* Called during specific death animation frame to activate player respawn */
     public void RespawnPlayer()
     {
+        anim.SetBool(deathBoolName, false);
+
         rb.velocity = Vector3.zero;
-
-        //Reset any animation triggers that will be implemented
-        anim.ResetTrigger("TriggerName");
-
-        //StartCoroutine(RespawnDelay());
-        anim.SetBool("isDying", true);
 
         if (currentCheckpoint == null)
         {
@@ -68,39 +83,5 @@ public class PlayerRespawnScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Checkpoint"))
-        {
-            SetCurrentCheckpoint(other.GetComponent<CheckpointScript>());
-        }
-    }
-
-    private IEnumerator RespawnDelay()
-    {
-        anim.SetTrigger("Death");
-
-        yield return new WaitForSecondsRealtime(1.0f);
-
-        if (currentCheckpoint == null)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-            //Things that need to be reset to intial value will go under here
-            //
-        }
-        else
-        {
-            transform.position = currentCheckpoint.transform.position;
-            GetComponent<PlayerHealth>().HealPlayer(100);
-            anim.SetTrigger("Respawn");
-
-            //If croc was already dead... stay dead!
-            if (PlayerPrefs.GetInt("CrocDead") == 1)
-            {
-                //Deactivates croc
-                EnemyCroc.SetActive(false);
-            }
-        }
-    }
+    #endregion
 }

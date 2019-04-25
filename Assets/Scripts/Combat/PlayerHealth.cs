@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     private Animator anim;
     private PlayerRespawnScript respawn;
+    private DamageEnemy damageEnemy;
 
     private float currentHealth;
     public float CurrentHealth
@@ -45,8 +46,7 @@ public class PlayerHealth : MonoBehaviour
     public static event Action TakeDamage;
 
     private const string takeDamageTriggerName = "TakeDamage";
-
-    private DamageEnemy damageEnemy;
+    private const string deathBoolName = "isDying";
 
     #endregion
 
@@ -76,22 +76,24 @@ public class PlayerHealth : MonoBehaviour
         /* Damages player by enemy attack amount if not during iframe */
         if (!isInvulnerable)
         {
-            anim.SetTrigger(takeDamageTriggerName);
-            damageEnemy.IsAttacking = false;
             currentHealth -= amount;
 
             StopCoroutine(DisableHealthRegen());
             StartCoroutine(DisableHealthRegen());
 
-            Debug.Log("Current Health: " + currentHealth);
+            /* Death animation plays when health reaches 0, otherwise getting hit animation plays */
+            if (currentHealth <= 0)
+            {
+                anim.SetBool(deathBoolName, true);
+                damageEnemy.IsAttacking = false;
+            }
+            else
+            {
+                anim.SetTrigger(takeDamageTriggerName);
+                damageEnemy.IsAttacking = false;
+            }
 
             OnTakeDamage();
-        }
-
-        /* Player dies when health reaches 0 */
-        if (currentHealth <= 0)
-        {
-            anim.SetTrigger("Death");
         }
     }
 
