@@ -67,7 +67,17 @@ ModelImporter:
     4300018: pPipe29
     4300020: pPipe30
     4300022: pPipe31
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 032583269eed1974b8b61311641f90fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 032583269eed1974b8b61311641f90fc, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

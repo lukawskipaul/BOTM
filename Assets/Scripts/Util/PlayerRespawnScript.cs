@@ -13,6 +13,7 @@ public class PlayerRespawnScript : MonoBehaviour
     #region Variables
 
     public GameObject EnemyCroc;
+    public ScreenFade screenFade;
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
     private Animator anim;
@@ -68,6 +69,9 @@ public class PlayerRespawnScript : MonoBehaviour
         }
         else
         {
+            screenFade.BeginFade(1);
+            StopCoroutine(FadeOut());
+            StartCoroutine(FadeOut());
             transform.position = currentCheckpoint.transform.position;
             //GetComponent<PlayerHealth>().HealPlayer(100);
             this.GetComponent<PlayerHealth>().CurrentHealth = 100;
@@ -91,6 +95,12 @@ public class PlayerRespawnScript : MonoBehaviour
                 EnemyCroc.SetActive(false);
             }
         }
+    }
+
+    private IEnumerator FadeOut()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        screenFade.BeginFade(-1);
     }
 
     #endregion
