@@ -115,7 +115,7 @@ public class AIPatrol : MonoBehaviour
         if (movingForward)
         {
             ++currentTargetIndex;
-            
+
             if (currentTargetIndex >= routeSize)
             {
                 movingForward = false;

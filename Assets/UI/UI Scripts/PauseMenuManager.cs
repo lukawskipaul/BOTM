@@ -11,6 +11,10 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject controlsCanvas;
     public GameObject pickupObjectCanvas;
 
+    public GameObject brochureButton;
+    public GameObject memoButton;
+    public GameObject manualButton;
+
     [SerializeField]
     //private PickupPrompt thisPickup;
 
@@ -30,6 +34,9 @@ public class PauseMenuManager : MonoBehaviour
         journalMenu.gameObject.SetActive(false);
         pickupObjectCanvas.gameObject.SetActive(false);
         controlsCanvas.gameObject.SetActive(false);
+        //brochureButton.gameObject.SetActive(false);
+        memoButton.gameObject.SetActive(false);
+        manualButton.gameObject.SetActive(false);
     }
 
 
@@ -72,14 +79,6 @@ public class PauseMenuManager : MonoBehaviour
             }
         }
 
-        //if (Input.GetButton(controlsInput))   //commented by Caleb because there is no controlsInput button and it keeps throwing exceptions
-        //{
-        //    controlsCanvas.gameObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    controlsCanvas.gameObject.SetActive(false);
-        //}
     }
 
     private void PauseGame()
@@ -90,6 +89,7 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        AkSoundEngine.PostEvent("Play_UI_JournalOpen", gameObject);
     }
 
     public void ClosePauseMenu()
@@ -100,6 +100,7 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
     }
 
 
@@ -193,5 +194,18 @@ public class PauseMenuManager : MonoBehaviour
     private void OnLevelWasLoaded()
     {
         BeginFade(-1);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Memo" && Input.GetButtonDown("Interact"))
+        {
+            memoButton.gameObject.SetActive(true);
+        }
+
+        if(other.tag == "Manual" && Input.GetButtonDown("Interact"))
+        {
+            manualButton.gameObject.SetActive(true);
+        }
     }
 }
