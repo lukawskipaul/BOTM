@@ -2069,6 +2069,7 @@ GameObject:
   - component: {fileID: 7736037114856792325}
   - component: {fileID: 7736037114856792327}
   - component: {fileID: 7736037114856792329}
+  - component: {fileID: 3630293813572554219}
   m_Layer: 0
   m_Name: Monster_Katalan_Croc_Model_Final
   m_TagString: Enemy
@@ -2231,6 +2232,27 @@ CapsuleCollider:
   m_Height: 2.1566799
   m_Direction: 1
   m_Center: {x: 0, y: 1.0766464, z: 0.21447754}
+--- !u!114 &3630293813572554219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736037114856792328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0987804cf8afd2b4096a97087eac9002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPatrolling: 0
+  PatrolSpeed: 1
+  PatrolStoppingDistance: 0
+  route: []
+  navMeshAgent: {fileID: 0}
+  currentTargetIndex: 0
+  nextWaypointPosition: {x: 0, y: 0, z: 0}
+  movingForward: 1
+  thresholdDistance: 1
 --- !u!1 &7736037114856792330
 GameObject:
   m_ObjectHideFlags: 0
