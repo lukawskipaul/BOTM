@@ -161,6 +161,7 @@ public class Telekinesis : MonoBehaviour
         if (!journalMenu.gameObject.activeInHierarchy && !pauseMenu.gameObject.activeInHierarchy)
         {
             anim.SetBool(telekinesisThrowBooleanName, true);
+            anim.SetBool(telekinesisBooleanName, false);
 
             //actual code for moving the object is in an animation event
         }
