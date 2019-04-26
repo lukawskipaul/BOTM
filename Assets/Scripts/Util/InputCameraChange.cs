@@ -85,7 +85,7 @@ public class InputCameraChange : MonoBehaviour
         }
         else
         {
-            UnLockCamera();
+            if (LockOnTarget != null) UnLockCamera();
         }
     }
 
