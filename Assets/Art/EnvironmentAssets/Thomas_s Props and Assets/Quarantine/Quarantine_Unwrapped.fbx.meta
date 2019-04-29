@@ -1,20 +1,73 @@
 fileFormatVersion: 2
-guid: a374b0966b1e27c4b82403a44c50b85b
+guid: 30d5c245ef138094d93b4588150e34ce
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: CatWStairCase_Material
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: CatwalkStairCase
+    100000: Arch1
+    100002: Archs
+    100004: Floor
+    100006: Pipe_Bottom1
+    100008: polySurface219
+    100010: //RootNode
+    100012: Roof
+    100014: Wall1
+    100016: Wall1 1
+    100018: Wall1_Frame
+    100020: Wall1_Frame1
+    100022: Wall3
+    400000: Arch1
+    400002: Archs
+    400004: Floor
+    400006: Pipe_Bottom1
+    400008: polySurface219
+    400010: //RootNode
+    400012: Roof
+    400014: Wall1
+    400016: Wall1 1
+    400018: Wall1_Frame
+    400020: Wall1_Frame1
+    400022: Wall3
+    2100000: Walls_and_Floors
+    2100002: Interior_Objects
+    2100004: lambert1
+    2300000: Arch1
+    2300002: Floor
+    2300004: Pipe_Bottom1
+    2300006: polySurface219
+    2300008: Roof
+    2300010: Wall1 1
+    2300012: Wall1_Frame
+    2300014: Wall1_Frame1
+    2300016: Wall3
+    3300000: Arch1
+    3300002: Floor
+    3300004: Pipe_Bottom1
+    3300006: polySurface219
+    3300008: Roof
+    3300010: Wall1 1
+    3300012: Wall1_Frame
+    3300014: Wall1_Frame1
+    3300016: Wall3
+    4300000: Floor
+    4300002: Roof
+    4300004: Arch1
+    4300006: Wall1
+    4300008: Wall1_Frame
+    4300010: Wall3
+    4300012: Wall1_Frame1
+    4300014: Pipe_Bottom1
+    4300016: polySurface219
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CatWStairCase_Material
-    second: {fileID: 2100000, guid: 584d6a99afd899249a0a3dceab137bf0, type: 2}
+      name: Interior_Objects
+    second: {fileID: 2100000, guid: 331dd98c32903be4885fcdb8ceb6573a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls_and_Floors
+    second: {fileID: 2100000, guid: 92dcc9cea3d26eb43b3e591e57249fda, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
