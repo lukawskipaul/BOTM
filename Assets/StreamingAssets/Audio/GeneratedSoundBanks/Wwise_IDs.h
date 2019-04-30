@@ -27,11 +27,13 @@ namespace AK
         static const AkUniqueID PLAY_CROCDEATH1 = 1217506344U;
         static const AkUniqueID PLAY_CROCFALLING1 = 2025256709U;
         static const AkUniqueID PLAY_CROCFLINCH1 = 4111079834U;
+        static const AkUniqueID PLAY_CROCFOOTSTEPS = 4238486732U;
         static const AkUniqueID PLAY_CROCLICK1 = 1291320897U;
         static const AkUniqueID PLAY_DODGEROLL = 3003923414U;
         static const AkUniqueID PLAY_ELECTRICPASSIVE = 2387251670U;
         static const AkUniqueID PLAY_GENERATORHUM = 2540781641U;
         static const AkUniqueID PLAY_HOWLINGWIND = 3210990662U;
+        static const AkUniqueID PLAY_METALDOORBREAKDOWN2 = 709837482U;
         static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
         static const AkUniqueID PLAY_OUTDOORAMBIENTLOOP = 2440573128U;
         static const AkUniqueID PLAY_PIPEFALL = 726787325U;

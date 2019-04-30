@@ -577,6 +577,34 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MetalDoorBreakdown2" ID="{61C0669D-CA3C-4B93-9544-F092DD932195}">
+					<ChildrenList>
+						<Action Name="" ID="{BD2D77AC-C724-43CB-A455-E31C4F777818}" ShortID="634773112">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MetalDoorBreakdown2" ID="{60633390-4C03-4D57-91BA-92B104773B8E}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CrocFootsteps" ID="{39EC60B9-B5DA-4BD7-8089-1ADF869D5349}">
+					<ChildrenList>
+						<Action Name="" ID="{0D586EA5-887A-496F-84AE-4E0B94640360}" ShortID="802950003">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrocFootsteps" ID="{467978F0-B056-42C4-BFB3-D3A84BA6859F}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
