@@ -9,4 +9,10 @@ public class StartCursor : MonoBehaviour
     {
         Cursor.visible = true;
     }
+
+    private void OnEnable()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 }

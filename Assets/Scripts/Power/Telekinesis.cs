@@ -60,7 +60,7 @@ public class Telekinesis : MonoBehaviour
     private float currentEnergy = 100f;
 
     [SerializeField]
-    Slider energySlider;
+    Image energySlider;
 
     [SerializeField]
     float maxEnergy = 100f;
@@ -78,7 +78,7 @@ public class Telekinesis : MonoBehaviour
     {
         startingTransform = levitateTransform.localPosition;
 
-        energySlider.value = EnergyPercent();
+        energySlider.fillAmount = EnergyPercent();
 
         anim = this.gameObject.GetComponent<Animator>();
     }
@@ -99,7 +99,7 @@ public class Telekinesis : MonoBehaviour
             currentEnergy += (energyRechargeRate * Time.deltaTime);
         }
         currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
-        energySlider.value = EnergyPercent();
+        energySlider.fillAmount = EnergyPercent();
     }
 
     private void FixedUpdate()
@@ -261,11 +261,13 @@ public class Telekinesis : MonoBehaviour
                 {
                     DropObject();
                     AkSoundEngine.PostEvent("Stop_TK", gameObject);
+                    crosshairPanel.SetActive(false);
                 }
                 else if (!isLiftingObject)
                 {
                     isLiftingObject = true;
                     AkSoundEngine.PostEvent("Play_TK", gameObject);
+                    crosshairPanel.SetActive(true);
                 }
             }
         }
@@ -294,6 +296,7 @@ public class Telekinesis : MonoBehaviour
         if (!isLiftingObject)
         {
             levitatableGO = null;
+            crosshairPanel.SetActive(false);
         }
     }
 
@@ -306,6 +309,8 @@ public class Telekinesis : MonoBehaviour
         levitateTransform.localPosition = startingTransform;
         anim.SetBool(telekinesisThrowName, false);
         anim.SetBool(telekinesisBooleanName, false);
+
+        crosshairPanel.SetActive(false);
     }
 
     float EnergyPercent()

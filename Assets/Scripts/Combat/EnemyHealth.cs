@@ -54,15 +54,15 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
             isDead = true;
-            OnEnemyDied();
+            healthBar.value = 0;
             Destroy(healthBarObject);
-
+            Debug.Log("Enemy died here");
+            OnEnemyDied();
         }
         else
         {
             anim.SetTrigger("Flinch");
             AkSoundEngine.PostEvent("Play_BodySquish", gameObject);
-
         }
     }
 

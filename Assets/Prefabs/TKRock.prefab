@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2012651106443285995}
   - component: {fileID: 2012651106443285992}
   - component: {fileID: 2058793087098560855}
-  - component: {fileID: 3647337098230859194}
   m_Layer: 10
   m_Name: TKRock
   m_TagString: LevitatableObject
@@ -136,20 +135,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9274738, y: 2.6571114, z: 2.8271108}
   m_Center: {x: 0.0029097798, y: -0.04139197, z: 0.18051638}
---- !u!114 &3647337098230859194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012651106443285993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc0273284e7ea543aa22941da45c3f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyFeedback: {fileID: 1751380401235948437, guid: b4bfec06f4f336a4fba0a12b871d4b4c,
-    type: 3}
 --- !u!1 &2546972866294226538
 GameObject:
   m_ObjectHideFlags: 0
