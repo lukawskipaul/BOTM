@@ -241,8 +241,7 @@ public class Telekinesis : MonoBehaviour
         Vector3 PointOnPlayer = player.GetComponent<Collider>().bounds.ClosestPoint(FacePoint);
         if (Vector3.Distance(FacePoint, PointOnPlayer) < minDistance)
         {
-            objectRigidBody.MovePosition(levitatableGO.transform.position + (levitateTransform.forward * minDistance) * Time.deltaTime);
-            levitateTransform.position = levitatableGO.transform.position;
+            levitateTransform.localPosition = startingTransform;
             zInput = 0;
         }
         if (Vector3.Distance(levitatableGO.transform.position, player.transform.position) >= maxDistance)
