@@ -190,6 +190,7 @@
 						<Action Name="" ID="{600EE7CB-C947-4127-95F3-58272B67F8FB}" ShortID="677090219">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -222,6 +223,16 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="AI_VO_Line2" ID="{06E37D0B-CDAB-4571-963B-DEE164037C2C}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{623A16A2-2054-4E03-8839-4E5B003BAFAD}" ShortID="181878606">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AI_VO_Line1" ID="{E27FD462-989C-4CCE-BD7E-877A866C9C89}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -316,6 +327,7 @@
 						<Action Name="" ID="{ED30EBC4-190B-460D-B38A-39D2BE9369FA}" ShortID="118411415">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -533,6 +545,16 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{FE118776-5D06-4E2D-B3A8-8D7FEB7F0411}" ShortID="775942403">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AI_VO_Line2" ID="{06E37D0B-CDAB-4571-963B-DEE164037C2C}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_DodgeRoll" ID="{4B12EEDA-4132-491C-BC37-226CDFD9BD8F}">
@@ -600,6 +622,64 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="CrocFootsteps" ID="{467978F0-B056-42C4-BFB3-D3A84BA6859F}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerDeathFall" ID="{F651000F-4710-47E5-A79C-24E4EE02AF50}">
+					<ChildrenList>
+						<Action Name="" ID="{55411544-01A6-4F54-BCA1-F7619E654180}" ShortID="80954772">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerDeathFall" ID="{D7236D96-84CB-4100-982A-F578F39FB3BD}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BodySquish" ID="{E6C9B143-135E-44A0-91D9-D1A296AA4849}">
+					<ChildrenList>
+						<Action Name="" ID="{34D5D68E-801B-4D10-97DF-8DC120B4B6D6}" ShortID="638641899">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BodySquishes" ID="{F628D090-6FA0-4E72-BA64-5C5400C9E3CB}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BossVictoryRoar" ID="{7BFBAEBE-4B53-42DC-BEA0-F5F00CF84288}">
+					<ChildrenList>
+						<Action Name="" ID="{8023B301-8F33-450A-B03F-3555F02DE686}" ShortID="154325288">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossVictoryRoar" ID="{AEA3E33C-3AFF-4F56-9398-0D4FC6FD9D0D}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_AI_VO_Line1" ID="{94F2F9B7-15EC-4116-8C2E-7DB3198A84AC}">
+					<ChildrenList>
+						<Action Name="" ID="{715D6244-4C51-4741-89CE-75964AD98BA0}" ShortID="146231331">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AI_VO_Line1" ID="{E27FD462-989C-4CCE-BD7E-877A866C9C89}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
