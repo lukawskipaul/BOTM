@@ -11,9 +11,8 @@ public class PlayerHealth : MonoBehaviour
     
     [SerializeField]
     private float regenCooldownInSeconds = 5.0f;
-    [SerializeField]
-    private float healthRegenSpeed = 5.0f;
-
+    [SerializeField]   private float healthRegenSpeed = 5.0f;
+    
     [SerializeField]
     private int maxHealth = 100;
     public int MaxHealth
@@ -24,7 +23,9 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private Animator anim;
     private PlayerRespawnScript respawn;
+    private DamageEnemy damageEnemy;
 
     private float currentHealth;
     public float CurrentHealth
@@ -33,12 +34,19 @@ public class PlayerHealth : MonoBehaviour
         {
             return currentHealth;
         }
+        set
+        {
+            currentHealth = value;
+        }
     }
 
     private bool isInvulnerable;
     private bool canRegen;
 
     public static event Action TakeDamage;
+
+    private const string takeDamageTriggerName = "TakeDamage";
+    private const string deathBoolName = "isDying";
 
     #endregion
 
@@ -51,14 +59,16 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        anim = this.gameObject.GetComponent<Animator>();
         respawn = this.gameObject.GetComponent<PlayerRespawnScript>();
+        damageEnemy = GetComponentInChildren<DamageEnemy>();
     }
 
     private void Update()
     {
         CapHealth();
 
-        //HealthRegen();
+        //TODO: HealthRegen();
     }
 
     public void DamagePlayer(int amount)
@@ -71,16 +81,19 @@ public class PlayerHealth : MonoBehaviour
             StopCoroutine(DisableHealthRegen());
             StartCoroutine(DisableHealthRegen());
 
+            /* Death animation plays when health reaches 0, otherwise getting hit animation plays */
+            if (currentHealth <= 0)
+            {
+                anim.SetBool(deathBoolName, true);
+                damageEnemy.IsAttacking = false;
+            }
+            else
+            {
+                anim.SetTrigger(takeDamageTriggerName);
+                damageEnemy.IsAttacking = false;
+            }
+
             OnTakeDamage();
-        }
-
-        /* Player dies when health reaches 0 */
-        if (currentHealth <= 0)
-        {
-            //TODO: uncomment code
-            //anim.SetTrigger("Die");
-
-            respawn.RespawnPlayer();
         }
     }
 

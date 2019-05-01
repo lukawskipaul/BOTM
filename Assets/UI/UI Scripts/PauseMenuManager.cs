@@ -11,14 +11,9 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject controlsCanvas;
     public GameObject pickupObjectCanvas;
 
-    [HideInInspector]
-    public bool hasBeenPickedUp = false;
-    [SerializeField]
-    private GameObject ObjectToGivePlayer;
-    [SerializeField]
-    private GameObject PickupPromptText;
-
-    private bool isInTrigger;
+    public GameObject brochureButton;
+    public GameObject memoButton;
+    public GameObject manualButton;
 
     [SerializeField]
     //private PickupPrompt thisPickup;
@@ -39,35 +34,33 @@ public class PauseMenuManager : MonoBehaviour
         journalMenu.gameObject.SetActive(false);
         pickupObjectCanvas.gameObject.SetActive(false);
         controlsCanvas.gameObject.SetActive(false);
+        //brochureButton.gameObject.SetActive(false);
+        memoButton.gameObject.SetActive(false);
+        manualButton.gameObject.SetActive(false);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (isInTrigger)
-        {
-            CheckInput();
-        }
-
         if (Input.GetButtonDown(pauseInput))
         {
-            if(paused == false && journalOpen == false && pieceOpen == false)
+            if (paused == false && journalOpen == false && pieceOpen == false)
             {
                 PauseGame();
             }
 
-            else if(paused == true)
+            else if (paused == true)
             {
                 ClosePauseMenu();
             }
 
-            else if(journalOpen == true)
+            else if (journalOpen == true)
             {
                 CloseJournal();
             }
 
-            else if(pieceOpen == true)
+            else if (pieceOpen == true)
             {
                 CloseJournalPiece();
             }
@@ -86,15 +79,6 @@ public class PauseMenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetButton(controlsInput))
-        {
-            controlsCanvas.gameObject.SetActive(true);
-        }
-        else
-        {
-            controlsCanvas.gameObject.SetActive(false);
-        }
-
     }
 
     private void PauseGame()
@@ -105,6 +89,7 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        AkSoundEngine.PostEvent("Play_UI_JournalOpen", gameObject);
     }
 
     public void ClosePauseMenu()
@@ -115,6 +100,7 @@ public class PauseMenuManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
     }
 
 
@@ -140,7 +126,7 @@ public class PauseMenuManager : MonoBehaviour
     }
 
 
-    private void JournalPiecePickup()
+    public void JournalPiecePickup()
     {
         Time.timeScale = 0;
         pickupObjectCanvas.gameObject.SetActive(true);
@@ -179,40 +165,6 @@ public class PauseMenuManager : MonoBehaviour
         SceneManager.LoadScene(DemoScene);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Pickup")
-        {
-            isInTrigger = true;
-            PickupPromptText.SetActive(true);
-            //Debug.Log("Player entered pickup zone");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Pickup")
-        {
-            isInTrigger = false;
-            PickupPromptText.SetActive(false);
-            //Debug.Log("Player left pickup zone");
-        }
-    }
-
-    private void CheckInput()
-    {
-        if (Input.GetButtonDown("Interact"))
-        {
-            if (ObjectToGivePlayer != null)
-                ObjectToGivePlayer.SetActive(true);
-            hasBeenPickedUp = true;
-            PickupPromptText.SetActive(false);
-            isInTrigger = false;
-            ObjectToGivePlayer.gameObject.SetActive(false);
-            JournalPiecePickup();
-        }
-    }
-
     //Texture for the screen to fade from.
     public Texture2D fadeOutTexture;
     [Tooltip("Speed of the screen fade. Lower is Slower")]
@@ -244,4 +196,16 @@ public class PauseMenuManager : MonoBehaviour
         BeginFade(-1);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Memo" && Input.GetButtonDown("Interact"))
+        {
+            memoButton.gameObject.SetActive(true);
+        }
+
+        if(other.tag == "Manual" && Input.GetButtonDown("Interact"))
+        {
+            manualButton.gameObject.SetActive(true);
+        }
+    }
 }

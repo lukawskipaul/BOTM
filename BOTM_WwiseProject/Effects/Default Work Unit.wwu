@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{35128CAC-044F-4F33-BE8D-1350EC69B1D0}" SchemaVersion="89">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{35128CAC-044F-4F33-BE8D-1350EC69B1D0}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{35128CAC-044F-4F33-BE8D-1350EC69B1D0}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="New_Wwise_Matrix_Reverb" ID="{14D49673-1996-430C-BB5E-8623C587DFCB}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

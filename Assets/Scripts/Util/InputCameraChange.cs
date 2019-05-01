@@ -60,16 +60,18 @@ public class InputCameraChange : MonoBehaviour
                 }
                 if (DistToTarget < 1.5)
                 {
-                    TargetVector = new Vector3(.1f, 2f, 0.1f);
+                    TargetVector = new Vector3(1.5f, 1.6f, -2f);
                 }
 
                 else if (DistToTarget < LockOnRange / 4)
                 {
-                    TargetVector = new Vector3(.25f, 2f, 0.1f);
+                    TargetVector = new Vector3(1.5f, 1.6f, -2f);
                 }
                 else if (DistToTarget < LockOnRange / 2)
                 {
-                    TargetVector = new Vector3(.5f, 2.2f, 0.2f);
+                    //float rotationDirection = -2f;
+                    //if (Vector3.Angle(transform.forward, LockOnTarget.transform.forward) != 0) rotationDirection *= -1;
+                    TargetVector = new Vector3(1.5f, 1.6f, -2f);
                 }
 
                 transposer.m_FollowOffset = Vector3.Lerp(transposer.m_FollowOffset, TargetVector, .25f);
@@ -80,6 +82,10 @@ public class InputCameraChange : MonoBehaviour
                     ResetLockOnTarget();
                 }
             }
+        }
+        else
+        {
+            if (LockOnTarget != null) UnLockCamera();
         }
     }
 

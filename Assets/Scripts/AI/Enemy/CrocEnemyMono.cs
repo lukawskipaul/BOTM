@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class CrocEnemyMono : MonoBehaviour
 {
     //Hiding and showing in Inspector
-    [SerializeField,Tooltip("Attack Damage Output")]
+    [SerializeField, Tooltip("Attack Damage Output")]
     private int attackDamage = 10;
     public int AttackDamage
     {
@@ -27,7 +27,7 @@ public class CrocEnemyMono : MonoBehaviour
     private bool showDebug = false;
     [SerializeField, Tooltip("Set to Player layer")]
     private LayerMask ObstacleMask;
-
+    private bool playerDiesTrig = false;//Makes sure the trigger for player's death activates only once
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +40,7 @@ public class CrocEnemyMono : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DetectPlayerDeath();
         anim.SetFloat("distanceFromPlayerSq", enemyStats.SquaredDistanceToPlayer(this.gameObject, player));//[Square] Distance between the Player and Enemy
 
         if (showDebug)
@@ -57,16 +58,10 @@ public class CrocEnemyMono : MonoBehaviour
             {
                 Debug.Log("Linecast no hit");
             }
-            //Plays the Death Animation for Ai
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetTrigger("Die");
-                anim.SetTrigger("Flinch");
-                
-            }
         }
         CalculateDetectionRange();
         AttackRangeAnimExecution();
+
     }
     /// <summary>
     /// Calculates whether the player is within the sight of the enemy
@@ -74,9 +69,9 @@ public class CrocEnemyMono : MonoBehaviour
     private void CalculateDetectionRange()
     {
         if (anim.GetFloat("distanceFromPlayerSq") <= Mathf.Pow(detectionDistance, 2) && !Physics.Linecast(new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), ObstacleMask))
-            
+
         {
-            
+
             anim.SetBool("PlayerDetected", true);
             if (showDebug) Debug.Log("Enemy Detected!");
         }
@@ -111,5 +106,20 @@ public class CrocEnemyMono : MonoBehaviour
     public GameObject Target()
     {
         return player;
+    }
+    /// <summary>
+    /// Activates an animation trigger if the player dies
+    /// </summary>
+    private void DetectPlayerDeath()
+    {
+        if (player.GetComponent<PlayerHealth>().CurrentHealth <= 0)
+        {
+            if (!playerDiesTrig)
+            {
+                //transition to Victory State
+                anim.SetTrigger("PlayerDies");
+                playerDiesTrig = true;
+            }
+        }
     }
 }
