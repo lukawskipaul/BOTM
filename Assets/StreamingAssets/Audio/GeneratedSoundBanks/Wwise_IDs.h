@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID PLAY_BODYSQUISH = 467055209U;
         static const AkUniqueID PLAY_BOSSBITE = 2729937127U;
         static const AkUniqueID PLAY_BOSSCLAW = 516533412U;
+        static const AkUniqueID PLAY_BOSSDEATHROAR = 1493508053U;
         static const AkUniqueID PLAY_BOSSSTARTROAR = 962646519U;
         static const AkUniqueID PLAY_BOSSSTEP = 545396215U;
         static const AkUniqueID PLAY_BOSSVICTORYROAR = 1829905861U;
@@ -32,6 +33,7 @@ namespace AK
         static const AkUniqueID PLAY_CROCFOOTSTEPS = 4238486732U;
         static const AkUniqueID PLAY_CROCLICK1 = 1291320897U;
         static const AkUniqueID PLAY_DODGEROLL = 3003923414U;
+        static const AkUniqueID PLAY_DOORSQUISH = 2288297897U;
         static const AkUniqueID PLAY_ELECTRICPASSIVE = 2387251670U;
         static const AkUniqueID PLAY_GENERATORHUM = 2540781641U;
         static const AkUniqueID PLAY_HOWLINGWIND = 3210990662U;
@@ -39,6 +41,7 @@ namespace AK
         static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
         static const AkUniqueID PLAY_OUTDOORAMBIENTLOOP = 2440573128U;
         static const AkUniqueID PLAY_PIPEFALL = 726787325U;
+        static const AkUniqueID PLAY_PIPEROAR = 3528088358U;
         static const AkUniqueID PLAY_PIPEROAR2 = 822967520U;
         static const AkUniqueID PLAY_PLAYERDEATHFALL = 3184874734U;
         static const AkUniqueID PLAY_ROCKSLIDE1 = 3618693649U;

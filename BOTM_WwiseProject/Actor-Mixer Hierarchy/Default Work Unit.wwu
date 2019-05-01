@@ -917,7 +917,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>9</Value>
+								<Value>3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -950,6 +950,9 @@
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Phone_Booth" ID="{180A35FE-BF4E-4BCD-8D7F-872B580E55EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
@@ -1039,6 +1042,82 @@
 								<ActiveSource Name="FootStepsBoss" ID="{861345AC-FC1E-4E63-A965-17A965006848}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="BossStep3" ID="{992FA52A-1AF0-4D83-8E17-DDE9C627A382}" ShortID="739637029">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep3" ID="{A82929F0-E830-4009-A2D8-D6EB74F52E45}" ShortID="405334455">
+									<Language>SFX</Language>
+									<AudioFile>BossStep3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep3" ID="{A82929F0-E830-4009-A2D8-D6EB74F52E45}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BossStep4" ID="{CC3D76C6-4786-4943-8DB2-03C7FD84CD1F}" ShortID="583334469">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep4" ID="{929F9387-985C-4C8E-AB16-5DF6B3DE57B0}" ShortID="665213114">
+									<Language>SFX</Language>
+									<AudioFile>BossStep4.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep4" ID="{929F9387-985C-4C8E-AB16-5DF6B3DE57B0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BossStep5" ID="{0269A802-3E38-4A12-9138-DFFDEA4AC65D}" ShortID="207580235">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep5" ID="{F7402303-0B74-4E89-AF12-BEC485FA17EA}" ShortID="550802405">
+									<Language>SFX</Language>
+									<AudioFile>BossStep5.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep5" ID="{F7402303-0B74-4E89-AF12-BEC485FA17EA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BossStep6" ID="{A3D8EA7C-75E8-45A4-81CE-2BE3F124F14C}" ShortID="263032635">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep6" ID="{251C170F-9CBF-4455-99A0-0E3BAEACE6E6}" ShortID="484442735">
+									<Language>SFX</Language>
+									<AudioFile>BossStep6.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep6" ID="{251C170F-9CBF-4455-99A0-0E3BAEACE6E6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<Sound Name="BossClaw" ID="{1E5BE035-0984-4713-9B04-26057ACC1FC0}" ShortID="715161110">
@@ -1052,6 +1131,9 @@
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Phone_Booth" ID="{180A35FE-BF4E-4BCD-8D7F-872B580E55EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
@@ -1119,7 +1201,14 @@
 						<ActiveSource Name="RockSlideRoar" ID="{5BA92880-7053-45AF-9028-1E0D4816E336}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="PipeRoar" ID="{98752968-36CB-441E-B9DE-C7C741B81BB2}" ShortID="893408283">
+				<Sound Name="BossDeathRoar" ID="{98752968-36CB-441E-B9DE-C7C741B81BB2}" ShortID="893408283">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -1518,6 +1607,28 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Creature_Roar_Aggressive_Low_3" ID="{16078089-0194-453C-A25D-C7561B84F3B9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="DoorSquish" ID="{67425517-2C6C-4AC3-B6B9-AEDE0A716762}" ShortID="1052495671">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BodySquish02" ID="{29E00A49-CE88-42E4-BEC1-8DE4D4B52DC6}" ShortID="746898322">
+							<Language>SFX</Language>
+							<AudioFile>BodySquish02.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="787571652"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BodySquish02" ID="{29E00A49-CE88-42E4-BEC1-8DE4D4B52DC6}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
