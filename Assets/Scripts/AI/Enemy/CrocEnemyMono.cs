@@ -29,6 +29,10 @@ public class CrocEnemyMono : MonoBehaviour
     private LayerMask ObstacleMask;
     private bool playerDiesTrig = false;//Makes sure the trigger for player's death activates only once
     // Start is called before the first frame update
+
+    // Checks if the croc is already dead or not
+    // Used for the respawn script
+    private bool isDead = false;
     void Start()
     {
         enemyStats = new CrocEnemy();
@@ -121,5 +125,11 @@ public class CrocEnemyMono : MonoBehaviour
                 playerDiesTrig = true;
             }
         }
+    }
+
+    public bool IsDead
+    {
+        get { return isDead; }
+        set { isDead = value; }
     }
 }
