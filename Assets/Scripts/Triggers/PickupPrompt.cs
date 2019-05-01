@@ -77,13 +77,18 @@ public class PickupPrompt : MonoBehaviour
                 ObjectToGivePlayer.SetActive(true);
             hasBeenPickedUp = true;
             PlayerPrefs.SetInt("JournalID" + curJournalID, 1);//Save the data that this journal has been picked up already
-            AkSoundEngine.PostEvent("Play_TK_PickUp", gameObject);
             PickupPromptText.SetActive(false);
             isInTrigger = false;
             if (isJournalPickup)
             {
                 pauseMenuManager.pickupObjectCanvas = ObjectToGivePlayer;
                 pauseMenuManager.JournalPiecePickup();
+                AkSoundEngine.PostEvent("Play_UI_PageFlip", gameObject);
+            }
+            else
+            {
+                AkSoundEngine.PostEvent("Play_TK_PickUp", gameObject);
+                AkSoundEngine.PostEvent("Stop_AI_VO_Line1", gameObject);
             }
             Destroy(this.gameObject);
         }

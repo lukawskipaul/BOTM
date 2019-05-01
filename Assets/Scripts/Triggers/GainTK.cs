@@ -18,10 +18,6 @@ public class GainTK : MonoBehaviour
     [SerializeField]
     private SlowMoGameTime SlowMo;
     [SerializeField]
-    private Transform PlayerLocation;
-    [SerializeField]
-    private GameObject ElectricExplosioin;
-    [SerializeField]
     private float timeToStop;
 
     private void Update()
@@ -54,7 +50,6 @@ public class GainTK : MonoBehaviour
         TKObjectFloat.enabled = true;
         PlayerAnimator.SetTrigger("TakeDamage");
         TKObjectFloat.SetTrigger("shouldFloat");
-        Instantiate(ElectricExplosioin, PlayerLocation.position, PlayerLocation.rotation);
         thisTK.enabled = true;
         thisDO.enabled = true;
         SlowMo.SlowMo();

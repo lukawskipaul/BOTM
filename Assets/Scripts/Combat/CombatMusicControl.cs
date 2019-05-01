@@ -16,17 +16,30 @@ public class CombatMusicControl : MonoBehaviour
     private float m_TransitionOut;
     private float m_QuarterNote;
 
+    //public EnemyHealth enemyHealthReference;
+
+    [SerializeField]
+    private GameObject musicTriggerObject;
+
+    private Collider musicTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
         m_QuarterNote = 60 / bpm;
         m_TransitionIn = m_QuarterNote;
         m_TransitionOut = m_QuarterNote * 32;
+
+        //musicTrigger = musicTriggerObject.GetComponent<Collider>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("CombatZone"))
+        if (other.CompareTag("CombatZone1"))
+        {
+            inCombat.TransitionTo(m_TransitionIn);
+        }
+        else if (other.CompareTag("CombatZone2"))
         {
             inCombat.TransitionTo(m_TransitionIn);
         }
@@ -40,6 +53,21 @@ public class CombatMusicControl : MonoBehaviour
     void TransitionToOutOfCombat()
     {
         outOfCombat.TransitionTo(m_TransitionOut);
+        Destroy(musicTriggerObject);
+
+        //if (enemyHealthReference.isDead = true && CompareTag("CombatZone1"))
+        //{
+        //    Destroy(GameObject.Find("BattleMusicTrigger1"));
+        //}
+        //else if (enemyHealthReference.isDead = true && CompareTag("CombatZone2"))
+        //{
+        //    Destroy(GameObject.Find("BattleMusicTrigger2"));
+        //}
+        //else if (enemyHealthReference.isDead = true && CompareTag("BossZone"))
+        //{
+        //    Destroy(GameObject.Find("BossMusicTrigger"));
+        //}
+        
     }
     //void OnTriggerExit (Collider other)
     //{
@@ -52,7 +80,7 @@ public class CombatMusicControl : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyHealth.EnemyDied += TransitionToOutOfCombat;
+        EnemyHealth.EnemyDied += TransitionToOutOfCombat;       
     }
     private void OnDisable()
     {

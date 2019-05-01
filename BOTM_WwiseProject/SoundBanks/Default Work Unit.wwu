@@ -6,7 +6,9 @@
 				<SoundBank Name="Level1" ID="{6D44B219-B2C1-4F80-9B32-7C494EF4136D}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_AI_VO_Line1" ID="{6EA8F10E-5AB7-4069-9DC3-5A56FEE8F50B}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Stop_AI_VO_Line1" ID="{94F2F9B7-15EC-4116-8C2E-7DB3198A84AC}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_CrocFalling1" ID="{51CF6759-D400-4123-BF94-132D533A8C67}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_DoorSquish" ID="{26F97463-C926-4133-AD37-3EA43EACD32D}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_UI_JournalOpen" ID="{7CD837F5-E349-4177-8D42-A66006191083}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Static1" ID="{91CF3084-5EC7-41A3-8FDC-61932F133C7F}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_CrocLick1" ID="{99B99B23-25A6-41AB-ADEA-F579C54D351F}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
@@ -15,15 +17,21 @@
 						<ObjectRef Name="Play_CharacterFootsteps" ID="{6E364E86-E962-4253-9589-5909F5B501E6}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_TK" ID="{1C6916B9-BC30-4257-BAE5-C1E2EE19BA20}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Rockslide1" ID="{04DEAF10-85CC-42BE-B832-FC0EB95FAF83}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_BossVictoryRoar" ID="{7BFBAEBE-4B53-42DC-BEA0-F5F00CF84288}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_PipeRoar2" ID="{F69DC46D-6EB2-4370-86D9-8FE47BB474BA}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_BodySquish" ID="{E6C9B143-135E-44A0-91D9-D1A296AA4849}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_WaterDripping" ID="{4847EFE8-8D7B-44B0-B7FD-3FF65474952B}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_CrocFlinch1" ID="{D198BA49-CB6F-44F7-B1A5-754E16E3B380}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_BossStep" ID="{A6E1236D-C03C-4521-9986-A6E5B6AA162D}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Stop_TK" ID="{F5D7CF77-0EE0-4525-ABC1-45FC325731BD}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Room1AmbianceDemo" ID="{53A98C91-60D7-476B-ACE2-1887298164C0}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_MetalDoorSlamCloseNoPower" ID="{1A96DD9D-0E34-478E-A221-1F21C456A616}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_UI_PageFlip" ID="{99EF6F77-50EB-47CC-9824-05EDA9435E28}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_PlayerDeathFall" ID="{F651000F-4710-47E5-A79C-24E4EE02AF50}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_BossStartRoar" ID="{A3E2B0D2-DEC5-4821-9913-02C342B985A8}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_TK_Throw" ID="{EA03671D-FBDB-4899-A88C-A779DB527DD0}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_BossDeathRoar" ID="{C2DEE7AF-701E-48CE-9D42-51058496364B}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_PipeRoar" ID="{8B51D4C9-D48F-4902-BF3A-B26FC59C3354}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_DodgeRoll" ID="{4B12EEDA-4132-491C-BC37-226CDFD9BD8F}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_AmbientMusic" ID="{BE43092E-F6DA-496F-A5BE-DA4854BE22A2}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_BossBite" ID="{23DAE9EE-C60E-4987-92D1-81FFE4CBB246}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
@@ -36,7 +44,9 @@
 						<ObjectRef Name="Play_SlidingDoorClose" ID="{C2D2A303-E165-4AF5-B32B-8EE1CB7EC508}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_TK_PickUp" ID="{78ADD615-0071-4B00-9BEE-6F9D1B2F044C}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_RockSlideRoar" ID="{C165F0E8-DF9C-4B1A-AFA7-FD34FC5548AE}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_MetalDoorBreakdown2" ID="{61C0669D-CA3C-4B93-9544-F092DD932195}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_CrocAttack1" ID="{2C0D7161-98C8-4BB4-9306-A1C07DFF30CF}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_CrocFootsteps" ID="{39EC60B9-B5DA-4BD7-8089-1ADF869D5349}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_BossClaw" ID="{502B51DF-6139-4C13-925A-BC016FB6AD55}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_SwordSwing" ID="{71B5ADBD-6D3A-4DCE-953A-76473C27F95F}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_GeneratorHum" ID="{EA07DF0B-FF26-4DD4-865D-F987D1A88A4E}" WorkUnitID="{1E4C4A16-40C0-46E7-82CD-5252D962469D}" Filter="7" Origin="Manual"/>

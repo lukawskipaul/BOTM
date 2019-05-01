@@ -1,6 +1,345 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{5D9A3332-EB89-47A5-8163-F059745B1FE6}" SchemaVersion="89">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{5D9A3332-EB89-47A5-8163-F059745B1FE6}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{5D9A3332-EB89-47A5-8163-F059745B1FE6}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSegment Name="CrocFootstep1" ID="{2AB96C65-C8C7-485C-9494-5E6981749420}" ShortID="859003039">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="CrocFootstep1" ID="{1805C6E9-D94E-4D6D-95A2-BDF39148E069}" ShortID="894557921">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep1" ID="{7D02C845-66E6-4E70-A430-D5E3382C5F79}" ShortID="537821119">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{AC56A14F-F174-43C3-BA75-985BECA012B2}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{6246EED7-89A1-4BC1-B890-DB1CA5E8BFCC}">
+									<ClipList>
+										<MusicClip Name="CrocFootstep1" ID="{20767D34-A449-4387-8A55-E8BDF41BE707}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="181.541666666667"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="CrocFootstep1" ID="{7D02C845-66E6-4E70-A430-D5E3382C5F79}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{DCB318D2-79F3-41DA-9E00-DA62D959F15D}"/>
+						<MusicCue Name="Exit Cue" ID="{A0AC953B-02B9-4260-B038-80DB6F964FC6}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="CrocFootstep2" ID="{51504734-454C-4ADC-AAE3-1B2C3D262344}" ShortID="811016038">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="CrocFootstep2" ID="{71AF1E20-A5FF-4A6A-9272-9DE191E5612F}" ShortID="903072925">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep2" ID="{467B72E2-3C93-4438-BB32-C4ACC28AAF8D}" ShortID="482344814">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{085051F1-B368-4883-8BDE-825682E1AD04}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{BDD207FE-74AF-45FE-9D08-80FC6A5C72AD}">
+									<ClipList>
+										<MusicClip Name="CrocFootstep2" ID="{6F1FE23B-E2AB-445B-8AE2-1218AB168C02}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="106.791666666667"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="CrocFootstep2" ID="{467B72E2-3C93-4438-BB32-C4ACC28AAF8D}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{B558EA84-D21E-4CBE-878F-2C8585240C35}"/>
+						<MusicCue Name="Exit Cue" ID="{83D50EF3-0D3F-4F11-8581-E0560E5A8FDE}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="CrocFootstep3" ID="{B389A3A4-323B-45AB-AA09-4FD7862F9A97}" ShortID="637081098">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="CrocFootstep3" ID="{8379BD16-A512-40EB-BF17-8E03E07FD6A7}" ShortID="439862042">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep3" ID="{A0CB1352-9981-4BA7-A3AE-BC03BE33C56D}" ShortID="322510439">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{810604EE-E498-46F5-9B1B-6D8501C06920}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{D625362C-51B6-4D71-BA05-A8695ED73C72}">
+									<ClipList>
+										<MusicClip Name="CrocFootstep3" ID="{1CDB7F5C-6EA2-45C5-BB62-CB2E7920B7DB}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="170.875"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="CrocFootstep3" ID="{A0CB1352-9981-4BA7-A3AE-BC03BE33C56D}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{DB6C780B-CAD6-499D-AD08-9319206688DB}"/>
+						<MusicCue Name="Exit Cue" ID="{1E01F695-4D53-4283-972A-A0B0E8AAF70B}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="CrocFootstep4" ID="{38F114DA-D8BA-4939-99BA-F23F89C3F023}" ShortID="565084230">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="CrocFootstep4" ID="{68988B25-455E-4327-9E57-F5B1A55968E4}" ShortID="475526297">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep4" ID="{0C294EC9-B0EA-4B6F-9B5A-72EB76C48C42}" ShortID="773357664">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep4.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{ADBA6B84-E8B1-4620-8494-A7C89892ED40}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{BAEFA6A1-F010-4684-BCC6-8E2B114DE479}">
+									<ClipList>
+										<MusicClip Name="CrocFootstep4" ID="{3D5E92F1-94FE-419E-8139-AE4B457960F4}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="170.875"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="CrocFootstep4" ID="{0C294EC9-B0EA-4B6F-9B5A-72EB76C48C42}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{E56E8403-709B-45FB-9061-4CF6FD146D7C}"/>
+						<MusicCue Name="Exit Cue" ID="{8B202B01-DDEF-4851-AE45-A3BDEAA68226}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="CrocFootstep5" ID="{622557D5-7D0C-46BB-9BA8-FE40459FBAE6}" ShortID="804573767">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="CrocFootstep5" ID="{A3E68ECF-10A7-47CC-83DB-0A3457DF4A11}" ShortID="882042497">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep5" ID="{A1C8D8DB-BD57-46EB-B434-034289C1D4E1}" ShortID="476175180">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep5.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{7B9644DD-EF47-4315-9376-AF95490EB1C1}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{C2A323AA-77D8-40E2-AA7E-FF5D85CF82B9}">
+									<ClipList>
+										<MusicClip Name="CrocFootstep5" ID="{11D9D52C-D71E-4510-B62C-2D1B3C98A86A}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="224.270833333333"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="CrocFootstep5" ID="{A1C8D8DB-BD57-46EB-B434-034289C1D4E1}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{20D79F28-F8BC-48E2-8D80-4750134884C2}"/>
+						<MusicCue Name="Exit Cue" ID="{85B1A76D-96B0-44C1-85F5-386A50A1C675}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="CrocFootstep6" ID="{F8086F13-9459-4EC3-9068-97F2FD3C0A14}" ShortID="282896911">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="CrocFootstep6" ID="{C2AF5A28-6382-4D00-9B19-903ECB328643}" ShortID="868944480">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep6" ID="{7CDC42B1-E172-462F-991C-75F6795D81F4}" ShortID="551083619">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep6.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{21CB57DE-2FDC-4D24-9917-FB0070456118}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{02D3EF9C-D493-4016-BBF0-C0E52201B699}">
+									<ClipList>
+										<MusicClip Name="CrocFootstep6" ID="{FB6C88A2-1F43-47C5-B678-C766EB6B43CD}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="234.958333333333"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="CrocFootstep6" ID="{7CDC42B1-E172-462F-991C-75F6795D81F4}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{E91E7FC4-4D4A-4E3F-8368-A62E98F975F6}"/>
+						<MusicCue Name="Exit Cue" ID="{EEE053D5-BDE0-4CD8-A5BD-4CDA27FAAB58}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>

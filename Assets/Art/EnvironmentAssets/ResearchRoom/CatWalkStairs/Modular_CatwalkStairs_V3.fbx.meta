@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: CatwalkStairCase
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CatWStairCase_Material
+    second: {fileID: 2100000, guid: 584d6a99afd899249a0a3dceab137bf0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

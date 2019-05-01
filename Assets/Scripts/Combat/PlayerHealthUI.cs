@@ -9,7 +9,7 @@ public class PlayerHealthUI : MonoBehaviour
     #region Variables
     //fuck the system again
     [SerializeField]
-    private Slider healthBar;
+    private Image healthBar;
 
     [SerializeField]
     private GameObject playerDamageVignetteLowDamage;
@@ -33,8 +33,8 @@ public class PlayerHealthUI : MonoBehaviour
     {
         health = this.gameObject.GetComponent<PlayerHealth>();
 
-        healthBar.maxValue = health.MaxHealth;
-
+        //healthBar.maxValue = health.MaxHealth;
+        healthBar.fillAmount = 1;
         playerDamageVignetteLowDamage.gameObject.SetActive(false);
         playerDamageVignetteLowMidDamage.gameObject.SetActive(false);
         playerDamageVignetteMidHighDamage.gameObject.SetActive(false);
@@ -42,7 +42,7 @@ public class PlayerHealthUI : MonoBehaviour
 
         UpdateHealthBar();
     }
-
+    /*
     void Update()
     {
         DamageVignetteOneActivate();
@@ -63,6 +63,7 @@ public class PlayerHealthUI : MonoBehaviour
 
         HandleVignette();
     }
+    */
 
     void LateUpdate()
     {
@@ -72,7 +73,7 @@ public class PlayerHealthUI : MonoBehaviour
     void UpdateHealthBar()
     {
         /* Updates health bar with current health */
-        healthBar.value = health.CurrentHealth;
+        healthBar.fillAmount = health.CurrentHealth/health.MaxHealth;
     }
 
     void HandleVignette()

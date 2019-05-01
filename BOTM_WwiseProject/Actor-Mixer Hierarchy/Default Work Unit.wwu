@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<Sound Name="CaveAmbiance1" ID="{C61696FA-729E-4A31-89F1-BCC9E8416718}" ShortID="238602525">
 					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-9</Value>
@@ -68,7 +69,18 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Static" ID="{13C9B0F4-580D-4942-8D7B-BFC1AD29EA81}" ShortID="141936957">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-19</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="EnvironmentEffects" ID="{6CED8FA9-7F49-4D27-AACE-7E88357FAEE4}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -87,7 +99,18 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="WaterDripping" ID="{7A855E2E-E335-419C-8F56-D183FAA91130}" ShortID="463096746">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="EnvironmentEffects" ID="{6CED8FA9-7F49-4D27-AACE-7E88357FAEE4}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -349,9 +372,6 @@
 						</Property>
 					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -374,9 +394,6 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -399,9 +416,6 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -777,7 +791,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-19</Value>
+								<Value>-10</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -804,9 +818,6 @@
 				</Sound>
 				<Sound Name="CrocAttack1" ID="{B89D1EA2-85C5-462B-9DD2-3285A4E51F83}" ShortID="199100018">
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -857,9 +868,6 @@
 						</Property>
 					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -909,7 +917,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>9</Value>
+								<Value>3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -942,6 +950,9 @@
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Phone_Booth" ID="{180A35FE-BF4E-4BCD-8D7F-872B580E55EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
@@ -1031,6 +1042,82 @@
 								<ActiveSource Name="FootStepsBoss" ID="{861345AC-FC1E-4E63-A965-17A965006848}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="BossStep3" ID="{992FA52A-1AF0-4D83-8E17-DDE9C627A382}" ShortID="739637029">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep3" ID="{A82929F0-E830-4009-A2D8-D6EB74F52E45}" ShortID="405334455">
+									<Language>SFX</Language>
+									<AudioFile>BossStep3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep3" ID="{A82929F0-E830-4009-A2D8-D6EB74F52E45}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BossStep4" ID="{CC3D76C6-4786-4943-8DB2-03C7FD84CD1F}" ShortID="583334469">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep4" ID="{929F9387-985C-4C8E-AB16-5DF6B3DE57B0}" ShortID="665213114">
+									<Language>SFX</Language>
+									<AudioFile>BossStep4.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep4" ID="{929F9387-985C-4C8E-AB16-5DF6B3DE57B0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BossStep5" ID="{0269A802-3E38-4A12-9138-DFFDEA4AC65D}" ShortID="207580235">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep5" ID="{F7402303-0B74-4E89-AF12-BEC485FA17EA}" ShortID="550802405">
+									<Language>SFX</Language>
+									<AudioFile>BossStep5.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep5" ID="{F7402303-0B74-4E89-AF12-BEC485FA17EA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BossStep6" ID="{A3D8EA7C-75E8-45A4-81CE-2BE3F124F14C}" ShortID="263032635">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossStep6" ID="{251C170F-9CBF-4455-99A0-0E3BAEACE6E6}" ShortID="484442735">
+									<Language>SFX</Language>
+									<AudioFile>BossStep6.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossStep6" ID="{251C170F-9CBF-4455-99A0-0E3BAEACE6E6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<Sound Name="BossClaw" ID="{1E5BE035-0984-4713-9B04-26057ACC1FC0}" ShortID="715161110">
@@ -1044,6 +1131,9 @@
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Phone_Booth" ID="{180A35FE-BF4E-4BCD-8D7F-872B580E55EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
@@ -1111,7 +1201,14 @@
 						<ActiveSource Name="RockSlideRoar" ID="{5BA92880-7053-45AF-9028-1E0D4816E336}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="PipeRoar" ID="{98752968-36CB-441E-B9DE-C7C741B81BB2}" ShortID="893408283">
+				<Sound Name="BossDeathRoar" ID="{98752968-36CB-441E-B9DE-C7C741B81BB2}" ShortID="893408283">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -1150,6 +1247,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="DodgeRoll" ID="{A920AB43-962E-4254-9C95-D41D9289A188}" ShortID="707810578">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -1169,13 +1273,13 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="DodgeRoll02" ID="{75795DDD-6C15-44BE-A82F-04B13F41BCC3}" ShortID="715068986">
+								<AudioFileSource Name="DodgeRoll04" ID="{6CB4FBD2-4F6D-4BA7-B002-E40CC7C07CA4}" ShortID="525449831">
 									<Language>SFX</Language>
-									<AudioFile>DodgeRoll02.wav</AudioFile>
+									<AudioFile>DodgeRoll04.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="DodgeRoll02" ID="{75795DDD-6C15-44BE-A82F-04B13F41BCC3}" Platform="Linked"/>
+								<ActiveSource Name="DodgeRoll04" ID="{6CB4FBD2-4F6D-4BA7-B002-E40CC7C07CA4}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="DodgeRoll01" ID="{03642C4B-427F-4A89-809E-ACAA3C597470}" ShortID="772860221">
@@ -1188,13 +1292,13 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="DodgeRoll01" ID="{37D0AF20-10CD-4C19-80DD-E311A041169A}" ShortID="1050159223">
+								<AudioFileSource Name="DodgeRoll03" ID="{37625BF3-AD9B-4874-86D6-95CF16F4F67A}" ShortID="754168049">
 									<Language>SFX</Language>
-									<AudioFile>DodgeRoll01.wav</AudioFile>
+									<AudioFile>DodgeRoll03.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="DodgeRoll01" ID="{37D0AF20-10CD-4C19-80DD-E311A041169A}" Platform="Linked"/>
+								<ActiveSource Name="DodgeRoll03" ID="{37625BF3-AD9B-4874-86D6-95CF16F4F67A}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
@@ -1208,9 +1312,6 @@
 						</Property>
 					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1256,6 +1357,278 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="OutdoorAmbientLoop" ID="{59454FBE-201E-4725-A0EA-A82541435F4A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="MetalDoorBreakdown2" ID="{60633390-4C03-4D57-91BA-92B104773B8E}" ShortID="111060529">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="MetalDoorBreakdown2" ID="{AD3E4079-7490-4C9B-A74F-D18BC68C8042}" ShortID="1063069452">
+							<Language>SFX</Language>
+							<AudioFile>MetalDoorBreakdown2.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="MetalDoorBreakdown2" ID="{AD3E4079-7490-4C9B-A74F-D18BC68C8042}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="CrocFootsteps" ID="{467978F0-B056-42C4-BFB3-D3A84BA6859F}" ShortID="129017050">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="CrocFootstep1" ID="{3C4B1C6D-2DDD-460C-9C22-6724DD284836}" ShortID="543349382">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep1" ID="{BBC7BC83-0426-4554-87AF-D43F1C8316C4}" ShortID="470614695">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CrocFootstep1" ID="{BBC7BC83-0426-4554-87AF-D43F1C8316C4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CrocFootstep2" ID="{9DEF0C69-0DDD-44C7-AE70-3B934F0AF665}" ShortID="474176676">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep2" ID="{52E124A7-CC2F-4EA8-8528-35A0C6F554FE}" ShortID="127603613">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CrocFootstep2" ID="{52E124A7-CC2F-4EA8-8528-35A0C6F554FE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CrocFootstep3" ID="{32FCBE17-488D-4265-B14B-BFBD6C87CB73}" ShortID="359200016">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep3" ID="{244C7A40-F99F-4014-ADF7-A35AE35EE810}" ShortID="64001792">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CrocFootstep3" ID="{244C7A40-F99F-4014-ADF7-A35AE35EE810}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CrocFootstep4" ID="{D3EC13F7-4B1F-4CA4-AD2E-28B6CD8BE147}" ShortID="552178801">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep4" ID="{1951EA3F-CC21-4E5A-AB96-FE437E7F41D5}" ShortID="767187560">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep4.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CrocFootstep4" ID="{1951EA3F-CC21-4E5A-AB96-FE437E7F41D5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CrocFootstep5" ID="{1EDB6D42-B112-41B7-9638-97C8ED4BDE28}" ShortID="1054841283">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep5" ID="{F286E6FC-A1FE-4373-9D02-6CD81C34EB30}" ShortID="578631455">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep5.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CrocFootstep5" ID="{F286E6FC-A1FE-4373-9D02-6CD81C34EB30}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CrocFootstep6" ID="{5E2EECDD-7724-4602-B0B1-6E51B73B9239}" ShortID="618832722">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrocFootstep6" ID="{49551C2B-4E09-4405-AF73-ADFC5C5CD31C}" ShortID="593985200">
+									<Language>SFX</Language>
+									<AudioFile>CrocFootstep6.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CrocFootstep6" ID="{49551C2B-4E09-4405-AF73-ADFC5C5CD31C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="PlayerDeathFall" ID="{D7236D96-84CB-4100-982A-F578F39FB3BD}" ShortID="1013635997">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="PlayerDeathFall" ID="{1CD88B4C-5EF8-4D7C-B267-7F4432A870E5}" ShortID="782383168">
+							<Language>SFX</Language>
+							<AudioFile>PlayerDeathFall.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="PlayerDeathFall" ID="{1CD88B4C-5EF8-4D7C-B267-7F4432A870E5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="BodySquishes" ID="{F628D090-6FA0-4E72-BA64-5C5400C9E3CB}" ShortID="155215507">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="BodySquish01" ID="{DFE18667-445B-41EC-B3AC-F55C2F252EEB}" ShortID="844307000">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BodySquish01" ID="{B442A4EA-D440-4234-9DE7-47981ED39655}" ShortID="522515150">
+									<Language>SFX</Language>
+									<AudioFile>BodySquish01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BodySquish01" ID="{B442A4EA-D440-4234-9DE7-47981ED39655}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BodySquish02" ID="{931908A3-6216-4542-8575-CAD4962BC5E0}" ShortID="847787055">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BodySquish02" ID="{8BC26047-0632-441E-8A0D-055A89373169}" ShortID="787571652">
+									<Language>SFX</Language>
+									<AudioFile>BodySquish02.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BodySquish02" ID="{8BC26047-0632-441E-8A0D-055A89373169}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="BossVictoryRoar" ID="{AEA3E33C-3AFF-4F56-9398-0D4FC6FD9D0D}" ShortID="303819216">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Creature_Roar_Aggressive_Low_3" ID="{16078089-0194-453C-A25D-C7561B84F3B9}" ShortID="239723085">
+							<Language>SFX</Language>
+							<AudioFile>Creature_Roar_Aggressive_Low_3.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Creature_Roar_Aggressive_Low_3" ID="{16078089-0194-453C-A25D-C7561B84F3B9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="DoorSquish" ID="{67425517-2C6C-4AC3-B6B9-AEDE0A716762}" ShortID="1052495671">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BodySquish02" ID="{29E00A49-CE88-42E4-BEC1-8DE4D4B52DC6}" ShortID="746898322">
+							<Language>SFX</Language>
+							<AudioFile>BodySquish02.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="787571652"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BodySquish02" ID="{29E00A49-CE88-42E4-BEC1-8DE4D4B52DC6}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

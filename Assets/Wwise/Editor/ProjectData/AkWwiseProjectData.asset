@@ -16,19 +16,19 @@ MonoBehaviour:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 344f631891176143bf2681f6dcc28092
-    m_lastTime: -8586502028434601654
+    m_lastTime: -8586461409242294463
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: b51f7e28bfa4ea418cf5c544eeba0fa7
-    m_lastTime: -8586502028440589399
+    m_lastTime: -8586461409244069996
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5a8f097f5cc9854287bd1d9b5530a435
-    m_lastTime: -8586460071093298196
+    m_lastTime: -8586449639598355140
     List:
     - name: Level1
       guid: 19b2446dc1b2804f9b327c494ef4136d
@@ -43,7 +43,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 164a4c1ec040e74682cd5252d962469d
-    m_lastTime: -8586460071113736974
+    m_lastTime: -8586449639597614851
     List:
     - name: Play_AI_VO_Line1
       guid: 0ef1a86eb75a69409dc35a56fee8f50b
@@ -186,7 +186,7 @@ MonoBehaviour:
       - ElementName: Play_CrocAggro1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocAggro1
-      maxAttenuation: 15
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocAttack1
@@ -210,7 +210,19 @@ MonoBehaviour:
       - ElementName: Play_CrocDeath1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocDeath1
-      maxAttenuation: 15
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_CrocFalling1
+      guid: 5967cf5100d42341bf94132d533a8c67
+      id: 2025256709
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CrocFalling1
+        ObjectType: 3
+      Path: Default Work Unit\Play_CrocFalling1
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocFlinch1
@@ -222,7 +234,19 @@ MonoBehaviour:
       - ElementName: Play_CrocFlinch1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocFlinch1
-      maxAttenuation: 15
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_CrocFootsteps
+      guid: b960ec39dab5d74b80891adf869d5349
+      id: 4238486732
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_CrocFootsteps
+        ObjectType: 3
+      Path: Default Work Unit\Play_CrocFootsteps
+      maxAttenuation: 20
       maxDuration: 0
       minDuration: 0
     - name: Play_CrocLick1
@@ -234,6 +258,18 @@ MonoBehaviour:
       - ElementName: Play_CrocLick1
         ObjectType: 3
       Path: Default Work Unit\Play_CrocLick1
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_DodgeRoll
+      guid: daee124b32411c49bc37226cdfd9bd8f
+      id: 3003923414
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_DodgeRoll
+        ObjectType: 3
+      Path: Default Work Unit\Play_DodgeRoll
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -282,11 +318,11 @@ MonoBehaviour:
       - ElementName: Play_HowlingWind
         ObjectType: 3
       Path: Default Work Unit\Play_HowlingWind
-      maxAttenuation: 10
+      maxAttenuation: 12
       maxDuration: 0
       minDuration: 0
     - name: Play_MetalDoorBreakdown2
-      guid: 02d493344504d44e878febefefd17542
+      guid: 9d66c0613cca934b9544f092dd932195
       id: 709837482
       PathAndIcons:
       - ElementName: Default Work Unit
@@ -307,6 +343,18 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_MetalDoorSlamCloseNoPower
       maxAttenuation: 10
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_OutdoorAmbientLoop
+      guid: 6e12cd613018dc419cac33b91ea2ade2
+      id: 2440573128
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_OutdoorAmbientLoop
+        ObjectType: 3
+      Path: Default Work Unit\Play_OutdoorAmbientLoop
+      maxAttenuation: 12
       maxDuration: 0
       minDuration: 0
     - name: Play_PipeFall
@@ -402,7 +450,7 @@ MonoBehaviour:
       - ElementName: Play_Static1
         ObjectType: 3
       Path: Default Work Unit\Play_Static1
-      maxAttenuation: 0
+      maxAttenuation: 10
       maxDuration: 0
       minDuration: 0
     - name: Play_SwordSwing
@@ -498,7 +546,7 @@ MonoBehaviour:
       - ElementName: Play_WaterDripping
         ObjectType: 3
       Path: Default Work Unit\Play_WaterDripping
-      maxAttenuation: 0
+      maxAttenuation: 10
       maxDuration: 0
       minDuration: 0
     - name: Stop_TK
@@ -517,31 +565,29 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 79e8b6069079954b9ba023e00388c12d
-    m_lastTime: -8586502028445716457
+    m_lastTime: -8586461409255992408
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e750412bc076fe4b8598869bdedf6226
-    m_lastTime: -8586502028434626448
+    m_lastTime: -8586461409242623589
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 61dbc9d14a01ac4a9f9f8fd5d842e2b9
-    m_lastTime: -8586502028434616474
+    m_lastTime: -8586461409242613625
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 25cd57fb3f7ad04898a4395d19f13034
-    m_lastTime: -8586502028434606501
+    m_lastTime: -8586461409242304449
     List: []
   ExpandedItems:
   - /BOTM_WwiseProject
   - /BOTM_WwiseProject/Events
   - /BOTM_WwiseProject/Events/Default Work Unit
-  - /BOTM_WwiseProject/SoundBanks
-  - /BOTM_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
