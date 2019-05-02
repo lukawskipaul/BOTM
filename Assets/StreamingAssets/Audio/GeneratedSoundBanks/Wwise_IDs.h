@@ -38,6 +38,7 @@ namespace AK
         static const AkUniqueID PLAY_GENERATORHUM = 2540781641U;
         static const AkUniqueID PLAY_HOWLINGWIND = 3210990662U;
         static const AkUniqueID PLAY_METALDOORBREAKDOWN2 = 709837482U;
+        static const AkUniqueID PLAY_METALDOOROPEN = 1177938167U;
         static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
         static const AkUniqueID PLAY_OUTDOORAMBIENTLOOP = 2440573128U;
         static const AkUniqueID PLAY_PIPEFALL = 726787325U;

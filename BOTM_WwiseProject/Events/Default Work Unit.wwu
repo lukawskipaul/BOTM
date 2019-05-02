@@ -727,6 +727,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MetalDoorOpen" ID="{72275412-6EEB-4566-81D2-D18F925C3B2C}">
+					<ChildrenList>
+						<Action Name="" ID="{6AB217F3-89D5-479D-A5FA-CAA5EFFF34F7}" ShortID="238078653">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MetalDoorOpenNoPower" ID="{30E777C3-D48C-4C1E-862F-C87ACA320B7A}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
