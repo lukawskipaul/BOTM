@@ -50,6 +50,13 @@ public class InputCameraChange : MonoBehaviour
                 DistToTarget = Vector3.Distance(LockOnTarget.transform.position, transform.position);
                 Cinemachine.CinemachineVirtualCamera CM_vcam = CM_LockOnCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
                 var transposer = CM_vcam.GetCinemachineComponent<Cinemachine.CinemachineTransposer>();
+                float AngleBetweenPlayerForwardAndLockOnTarget = Vector3.Angle(transform.forward, LockOnTarget.transform.position);
+                Vector3 directionToLockOnTarget = (LockOnTarget.transform.position - transform.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(directionToLockOnTarget);
+                if (Mathf.Abs(AngleBetweenPlayerForwardAndLockOnTarget) > 20f)
+                {
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
+                }
                 if (DistToTarget > LockOnRange)
                 {
                     transposer.m_FollowOffset = new Vector3(0, 1.8f, 0);
