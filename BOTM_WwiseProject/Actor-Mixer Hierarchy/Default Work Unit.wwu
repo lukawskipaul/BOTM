@@ -525,7 +525,18 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="AI_VO_Line1" ID="{E27FD462-989C-4CCE-BD7E-877A866C9C89}" ShortID="51305255">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="AI_VO_Line1_Atten" ID="{0DBFCD1F-A9EE-4706-9992-6B0928550798}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -544,7 +555,18 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="AI_VO_Line2" ID="{06E37D0B-CDAB-4571-963B-DEE164037C2C}" ShortID="1012653007">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="AI_VO_Attenuation" ID="{9ABCEDC1-E727-46BC-B465-A589D42E95DE}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -558,6 +580,9 @@
 							<AudioFile>AI VO Line 2.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{881EBBE1-0206-4A50-BCE7-9813C70FDF2D}"/>
+					</PositioningInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="AI VO Line 2" ID="{6E6DB496-F8F1-4E50-BFE6-8FEDBA43A895}" Platform="Linked"/>
 					</ActiveSourceList>
@@ -888,6 +913,11 @@
 				<Sound Name="MetalDoorSlamCloseNoPower" ID="{D765C3CF-EFA1-4761-92B4-DAFB8CD70573}" ShortID="75470344">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2.7</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
