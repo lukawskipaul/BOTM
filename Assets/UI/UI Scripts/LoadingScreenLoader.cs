@@ -75,7 +75,7 @@ public class LoadingScreenLoader : MonoBehaviour
             else
             {
                 loadingImage.fillAmount = asyncOperation.progress;
-                Debug.Log(loadingImage.fillAmount);
+                //Debug.Log(loadingImage.fillAmount);
             }
             yield return null;
         }
