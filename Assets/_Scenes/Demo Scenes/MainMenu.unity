@@ -17214,6 +17214,7 @@ GameObject:
   - component: {fileID: 4514649912112780574}
   - component: {fileID: 1764515386163272812}
   - component: {fileID: 473446546}
+  - component: {fileID: 473446576}
   m_Layer: 0
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -17221,6 +17222,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &473446576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473446575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89d5048e0907334c94b78e94169e5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenuCanvas: {fileID: 7836739266483620657}
+  CreditsCanvas: {fileID: 1113410625293164105}
 --- !u!1 &476005617
 GameObject:
   m_ObjectHideFlags: 0

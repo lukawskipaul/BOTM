@@ -10,7 +10,7 @@ public class StartButton : MonoBehaviour
     private void OnEnable()
     {
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void OnStartButtonPress()
