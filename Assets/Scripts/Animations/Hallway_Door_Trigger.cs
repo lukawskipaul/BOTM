@@ -9,6 +9,8 @@ public class Hallway_Door_Trigger : MonoBehaviour
     [SerializeField] private Animator playerController;
     [SerializeField] private GameObject playerLight;
     [SerializeField] private GameObject dustClouds;
+    [SerializeField] private GameObject oldDustClouds;
+    [SerializeField] private GameObject SkyClouds;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -16,6 +18,8 @@ public class Hallway_Door_Trigger : MonoBehaviour
             myAnimatorController.SetBool("Front_Door", true);
             playerController.SetTrigger("TakeDamage");
             dustClouds.SetActive(true);
+            oldDustClouds.SetActive(false);
+            //SkyClouds.SetActive(false);  // Anthony comment this line out when you put the clouds in
             SlowMo.SlowMo();
             playerLight.SetActive(true);
 

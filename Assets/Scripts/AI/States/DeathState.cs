@@ -10,7 +10,7 @@ public class DeathState : StateMachineBehaviour
     {
         NavMeshAgent agent = animator.GetComponent<NavMeshAgent>();
         agent.isStopped = true;//stops the agent from moving
-        animator.GetComponent<Collider>().enabled = false;
+        //animator.GetComponent<Collider>().enabled = false;
         animator.GetComponent<CrocEnemyMono>().IsDead = true;
         PlayerPrefs.SetInt("CrocDead", 1);
     }
