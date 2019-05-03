@@ -5,11 +5,6 @@ using UnityEngine.UI;
 using System;
 using XInputDotNetPure;
 
-// IMPORTANT!
-/* XInput.NET is not transferred correctly when Unity builds a project.
-After building the project, you must copy XInputInterface.dll into
-your directory containing the built EXE for your project. */
-
 //This script goes on the player
 public class PlayerHealth : MonoBehaviour
 {
