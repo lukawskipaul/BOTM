@@ -12,7 +12,7 @@ public class PlayerRespawnScript : MonoBehaviour
 {
     #region Variables
 
-    public GameObject EnemyCroc;
+    public List<GameObject> EnemyCrocs;
     public ScreenFade screenFade;
     private CheckpointScript currentCheckpoint;
     private Rigidbody rb;
@@ -87,12 +87,25 @@ public class PlayerRespawnScript : MonoBehaviour
             anim.ResetTrigger("TakeDamage");
             //Reset Movement
             anim.Play("Movement");
+            
             //anim.SetTrigger("Respawn");
             //If croc was already dead... stay dead!
-            if (PlayerPrefs.GetInt("CrocDead") == 1)
+            /*if (PlayerPrefs.GetInt("CrocDead") == 1)
             {
                 //Deactivates croc
-                EnemyCroc.SetActive(false);
+                foreach (GameObject Croc in EnemyCrocs)
+                {
+                    Croc.SetActive(false);
+                }
+            }//*/
+
+            //Deactivates croc
+            foreach (GameObject Croc in EnemyCrocs)
+            {
+                if (Croc.GetComponent<CrocEnemyMono>().IsDead)
+                {
+                    Croc.SetActive(false);
+                }
             }
         }
     }

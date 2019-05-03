@@ -16,10 +16,13 @@ namespace AK
         static const AkUniqueID PLAY_AI_VO_LINE1 = 3091365192U;
         static const AkUniqueID PLAY_AI_VO_LINE2 = 3091365195U;
         static const AkUniqueID PLAY_AMBIENTMUSIC = 275338611U;
+        static const AkUniqueID PLAY_BODYSQUISH = 467055209U;
         static const AkUniqueID PLAY_BOSSBITE = 2729937127U;
         static const AkUniqueID PLAY_BOSSCLAW = 516533412U;
+        static const AkUniqueID PLAY_BOSSDEATHROAR = 1493508053U;
         static const AkUniqueID PLAY_BOSSSTARTROAR = 962646519U;
         static const AkUniqueID PLAY_BOSSSTEP = 545396215U;
+        static const AkUniqueID PLAY_BOSSVICTORYROAR = 1829905861U;
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
         static const AkUniqueID PLAY_CHARACTERFOOTSTEPS = 2603299628U;
         static const AkUniqueID PLAY_CROCAGGRO1 = 149344824U;
@@ -30,14 +33,18 @@ namespace AK
         static const AkUniqueID PLAY_CROCFOOTSTEPS = 4238486732U;
         static const AkUniqueID PLAY_CROCLICK1 = 1291320897U;
         static const AkUniqueID PLAY_DODGEROLL = 3003923414U;
+        static const AkUniqueID PLAY_DOORSQUISH = 2288297897U;
         static const AkUniqueID PLAY_ELECTRICPASSIVE = 2387251670U;
         static const AkUniqueID PLAY_GENERATORHUM = 2540781641U;
         static const AkUniqueID PLAY_HOWLINGWIND = 3210990662U;
         static const AkUniqueID PLAY_METALDOORBREAKDOWN2 = 709837482U;
+        static const AkUniqueID PLAY_METALDOOROPEN = 1177938167U;
         static const AkUniqueID PLAY_METALDOORSLAMCLOSENOPOWER = 2724618676U;
         static const AkUniqueID PLAY_OUTDOORAMBIENTLOOP = 2440573128U;
         static const AkUniqueID PLAY_PIPEFALL = 726787325U;
+        static const AkUniqueID PLAY_PIPEROAR = 3528088358U;
         static const AkUniqueID PLAY_PIPEROAR2 = 822967520U;
+        static const AkUniqueID PLAY_PLAYERDEATHFALL = 3184874734U;
         static const AkUniqueID PLAY_ROCKSLIDE1 = 3618693649U;
         static const AkUniqueID PLAY_ROCKSLIDEROAR = 1655857564U;
         static const AkUniqueID PLAY_ROOM1AMBIANCEDEMO = 1605460501U;
@@ -52,6 +59,8 @@ namespace AK
         static const AkUniqueID PLAY_UI_JOURNALOPEN = 2407564056U;
         static const AkUniqueID PLAY_UI_PAGEFLIP = 3236627135U;
         static const AkUniqueID PLAY_WATERDRIPPING = 1308308546U;
+        static const AkUniqueID STOP_AI_VO_LINE1 = 3895020902U;
+        static const AkUniqueID STOP_TK = 2893389503U;
     } // namespace EVENTS
 
     namespace BANKS

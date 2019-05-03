@@ -8,6 +8,9 @@ public class FlashingLight : MonoBehaviour
     private Light ThisLight;
     [SerializeField]
     private float rateChange = 1f;
+    [SerializeField]
+    private float minimumValue = 0f;
+
     private float baseIntensity;
 
     private bool shouldSwitch = true;
@@ -28,7 +31,7 @@ public class FlashingLight : MonoBehaviour
         {
             ThisLight.intensity -= (Time.deltaTime * rateChange);
             CheckFirstTake();
-            if (ThisLight.intensity <= 0)
+            if (ThisLight.intensity <= minimumValue)
                 shouldSwitch = false;
         }
         else

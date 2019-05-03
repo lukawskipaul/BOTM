@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2012651106443285995}
   - component: {fileID: 2012651106443285992}
   - component: {fileID: 2058793087098560855}
-  - component: {fileID: 3647337098230859194}
   m_Layer: 10
   m_Name: TKRock
   m_TagString: LevitatableObject
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2012651106443285993}
   m_LocalRotation: {x: 0.00000005268356, y: -0.9349925, z: -0.000000073756986, w: 0.35466754}
   m_LocalPosition: {x: -0.17300034, y: -1.017, z: 0.6370001}
-  m_LocalScale: {x: 0.26355556, y: 0.26355553, z: 0.26355556}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 3337492434004512802}
   - {fileID: 8537711758181587580}
@@ -136,20 +135,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9274738, y: 2.6571114, z: 2.8271108}
   m_Center: {x: 0.0029097798, y: -0.04139197, z: 0.18051638}
---- !u!114 &3647337098230859194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012651106443285993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc0273284e7ea543aa22941da45c3f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyFeedback: {fileID: 1751380401235948437, guid: b4bfec06f4f336a4fba0a12b871d4b4c,
-    type: 3}
 --- !u!1 &2546972866294226538
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +175,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2546972866294226538}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.4509804, g: 0.7775461, b: 0.8490566, a: 1}
@@ -252,8 +237,8 @@ MonoBehaviour:
   nonLightmappedOnly: 0
   lightTypeExtent: 0
   spotLightShape: 2
-  shapeWidth: 1.1617023
-  shapeHeight: 1.1784401
+  shapeWidth: 2.5207098
+  shapeHeight: 1.848805
   aspectRatio: 1
   shapeRadius: 0
   maxSmoothness: 0.99
@@ -322,14 +307,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.85
@@ -386,6 +363,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987373
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -405,14 +390,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.0799999
@@ -469,6 +446,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01498737
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -488,14 +473,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.97684
@@ -552,6 +529,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.015
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -571,14 +556,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.94000006
@@ -635,6 +612,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01498738
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -654,14 +639,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.72999746
@@ -718,6 +695,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987361
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -737,14 +722,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.25219917
@@ -801,6 +778,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987366
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -820,14 +805,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.3100001
@@ -884,6 +861,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987372
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -903,14 +888,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.05999997
@@ -967,6 +944,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987377
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -986,14 +971,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.70182043
@@ -1050,6 +1027,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987366
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -1069,14 +1054,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -1133,6 +1110,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01498737
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -1152,14 +1137,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2080001
@@ -1216,6 +1193,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987383
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -1235,14 +1220,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8272862
@@ -1299,6 +1276,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.014987372
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 129
@@ -1318,14 +1303,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2012651106443643337}
     m_Modifications:
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_Name
-      value: Props_Crystal_V01 (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8105913
@@ -1381,6 +1358,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.014987363
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_Name
+      value: Props_Crystal_V01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3d548e42fc8750440a41b57d3c711fff, type: 3}
       propertyPath: m_RenderingLayerMask

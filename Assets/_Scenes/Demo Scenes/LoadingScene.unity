@@ -455,7 +455,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d14b558d388571b489d6b90f17ccc047, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f2cb6c5865de94b489e13ad4e3c090fc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -736,6 +736,26 @@ PrefabInstance:
     - target: {fileID: 5065881120624797628, guid: 0b2dc4626217aec4393bb8806d14d43b,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737637457762175944, guid: 0b2dc4626217aec4393bb8806d14d43b,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737637457762175944, guid: 0b2dc4626217aec4393bb8806d14d43b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737637457762175944, guid: 0b2dc4626217aec4393bb8806d14d43b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737637457762175944, guid: 0b2dc4626217aec4393bb8806d14d43b,
+        type: 3}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

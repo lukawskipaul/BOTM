@@ -50,32 +50,13 @@ public class InputCameraChange : MonoBehaviour
                 DistToTarget = Vector3.Distance(LockOnTarget.transform.position, transform.position);
                 Cinemachine.CinemachineVirtualCamera CM_vcam = CM_LockOnCamera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
                 var transposer = CM_vcam.GetCinemachineComponent<Cinemachine.CinemachineTransposer>();
-                Vector3 TargetVector = new Vector3(.5f, 2.5f, .5f);
-                if (Input.GetButtonDown("LockOnSwitch"))
+                float AngleBetweenPlayerForwardAndLockOnTarget = Vector3.Angle(transform.forward, LockOnTarget.transform.position);
+                Vector3 directionToLockOnTarget = (LockOnTarget.transform.position - transform.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(directionToLockOnTarget);
+                if (Mathf.Abs(AngleBetweenPlayerForwardAndLockOnTarget) > 20f)
                 {
-                    LockOnTarget.layer = LayerMask.NameToLayer("Ignore Raycast");
-                    DetectObject.SearchDirection = Input.GetAxis("LockOnSwitch");
-                    DetectObject.EnemySearchNeeded = true;
-
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
                 }
-                if (DistToTarget < 1.5)
-                {
-                    TargetVector = new Vector3(1.5f, 1.6f, -2f);
-                }
-
-                else if (DistToTarget < LockOnRange / 4)
-                {
-                    TargetVector = new Vector3(1.5f, 1.6f, -2f);
-                }
-                else if (DistToTarget < LockOnRange / 2)
-                {
-                    //float rotationDirection = -2f;
-                    //if (Vector3.Angle(transform.forward, LockOnTarget.transform.forward) != 0) rotationDirection *= -1;
-                    TargetVector = new Vector3(1.5f, 1.6f, -2f);
-                }
-
-                transposer.m_FollowOffset = Vector3.Lerp(transposer.m_FollowOffset, TargetVector, .25f);
-
                 if (DistToTarget > LockOnRange)
                 {
                     transposer.m_FollowOffset = new Vector3(0, 1.8f, 0);
@@ -128,7 +109,7 @@ public class InputCameraChange : MonoBehaviour
         //we found our LockOn Target, set it as what to target in the cinemachine object
         Cinemachine.CinemachineTargetGroup CM_TargetGroup = CM_LookAtTargetObject.GetComponent<Cinemachine.CinemachineTargetGroup>();
         CM_TargetGroup.m_Targets[1] = new Cinemachine.CinemachineTargetGroup.Target();
-        CM_TargetGroup.m_Targets[1].weight = 2;
+        CM_TargetGroup.m_Targets[1].weight = 1;
         CM_TargetGroup.m_Targets[1].radius = 1;
         CM_TargetGroup.m_Targets[1].target = gameObject.transform;
         LockOnTarget = gameObject;

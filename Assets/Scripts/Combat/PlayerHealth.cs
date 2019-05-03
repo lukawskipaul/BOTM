@@ -64,12 +64,14 @@ public class PlayerHealth : MonoBehaviour
         damageEnemy = GetComponentInChildren<DamageEnemy>();
     }
 
+    /*
     private void Update()
     {
         CapHealth();
 
         //TODO: HealthRegen();
     }
+    */
 
     public void DamagePlayer(int amount)
     {
@@ -101,6 +103,10 @@ public class PlayerHealth : MonoBehaviour
     {
         /* Heals player by pickup amount */
         currentHealth += amount;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 
     private void CapHealth()

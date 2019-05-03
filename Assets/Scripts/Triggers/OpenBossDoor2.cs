@@ -10,7 +10,16 @@ public class OpenBossDoor2 : MonoBehaviour
         if(other.tag == "Player")
         {
             bossDoor.SetBool("Boss_Door_Set_Open", true);
+            //isInTrigger = true;
             Destroy(this.gameObject);
         }
     }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if(other.tag == "Player" && isInTrigger)
+    //    {
+    //        bossDoor.SetBool("Boss_Door_Set_Open", false);
+    //        isInTrigger = false;
+    //    }
+    //}
 }

@@ -28,7 +28,17 @@ ModelImporter:
     4300002: Quill
     4300004: Documents
     4300006: Journal
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book
+    second: {fileID: 2100000, guid: 4c97d8606032a2940bf4cad50d94b6d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paper
+    second: {fileID: 2100000, guid: fa47209416a789a4582fcef7306fc7be, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
