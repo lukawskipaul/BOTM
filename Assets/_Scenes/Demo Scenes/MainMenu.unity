@@ -7070,7 +7070,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 232327498}
-  - component: {fileID: 232327497}
   - component: {fileID: 232327496}
   m_Layer: 0
   m_Name: Clouds
@@ -7095,18 +7094,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &232327497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232327495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3728d6870d1e2754b83883e0aad4655a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &232327498
 Transform:
   m_ObjectHideFlags: 0
@@ -24694,7 +24681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &765786484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39481,6 +39468,8 @@ MonoBehaviour:
   playerController: {fileID: 1210974678}
   playerLight: {fileID: 1210974681}
   dustClouds: {fileID: 1014339682}
+  oldDustClouds: {fileID: 0}
+  SkyClouds: {fileID: 0}
 --- !u!65 &1202873417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39828,6 +39817,11 @@ PrefabInstance:
       propertyPath: shapeHeight
       value: 1.6056387
       objectReference: {fileID: 0}
+    - target: {fileID: 6392331747180453865, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 148724101, guid: 08a9ee8adc681964a902fa5438dcf7ea, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.03375996
@@ -39868,6 +39862,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.0000026524067
       objectReference: {fileID: 0}
+    - target: {fileID: 6392331747180453861, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6392331747180453856, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6392331747180453864, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6392331747180453870, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6392331747180453871, guid: 08a9ee8adc681964a902fa5438dcf7ea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 148724104, guid: 08a9ee8adc681964a902fa5438dcf7ea, type: 3}
       propertyPath: m_Intensity
       value: 143.23944
@@ -39887,36 +39906,6 @@ PrefabInstance:
     - target: {fileID: 148724104, guid: 08a9ee8adc681964a902fa5438dcf7ea, type: 3}
       propertyPath: m_Color.b
       value: 0.5518868
-      objectReference: {fileID: 0}
-    - target: {fileID: 6392331747180453861, guid: 08a9ee8adc681964a902fa5438dcf7ea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6392331747180453856, guid: 08a9ee8adc681964a902fa5438dcf7ea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6392331747180453864, guid: 08a9ee8adc681964a902fa5438dcf7ea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6392331747180453865, guid: 08a9ee8adc681964a902fa5438dcf7ea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6392331747180453870, guid: 08a9ee8adc681964a902fa5438dcf7ea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6392331747180453871, guid: 08a9ee8adc681964a902fa5438dcf7ea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08a9ee8adc681964a902fa5438dcf7ea, type: 3}
@@ -49530,7 +49519,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Narrative Designers
+  m_Text: 'Narrative Designer
+
+'
 --- !u!222 &1525000033
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -69220,7 +69211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -69555,6 +69546,8 @@ GameObject:
   - component: {fileID: 1113410625293164100}
   - component: {fileID: 1113410625293164103}
   - component: {fileID: 1113410625293164102}
+  - component: {fileID: 1113410625293164107}
+  - component: {fileID: 1113410625293164106}
   m_Layer: 5
   m_Name: Credits Canvas
   m_TagString: Untagged
@@ -69562,6 +69555,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &1113410625293164106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113410625293164105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1113410625293164107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113410625293164105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 7565119662771771231}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!222 &1113410625953325142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -69806,9 +69833,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 8151106978418760947}
+    m_SelectOnDown: {fileID: 7760437253640766410}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -70210,7 +70237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -72179,9 +72206,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 1764515386163272812}
+    m_SelectOnDown: {fileID: 8151106978418760947}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -72232,6 +72259,8 @@ GameObject:
   - component: {fileID: 4665602010362716185}
   - component: {fileID: 8801485422088402688}
   - component: {fileID: 2958697783122422998}
+  - component: {fileID: 7836739266483620659}
+  - component: {fileID: 7836739266483620658}
   m_Layer: 5
   m_Name: Main Menu Canvas 1
   m_TagString: Untagged
@@ -72239,6 +72268,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7836739266483620658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836739266483620657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &7836739266483620659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836739266483620657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 1840526278}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!222 &7857447388823968135
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -72312,9 +72375,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 7760437253640766410}
+    m_SelectOnDown: {fileID: 1764515386163272812}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2

@@ -45,7 +45,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetButtonDown(pauseInput))
         {
-            if (paused == false && journalOpen == false && pieceOpen == false)
+            if (paused == false /*&& journalOpen == false*/ && pieceOpen == false)
             {
                 PauseGame();
             }
@@ -55,10 +55,10 @@ public class PauseMenuManager : MonoBehaviour
                 ClosePauseMenu();
             }
 
-            else if (journalOpen == true)
-            {
-                CloseJournal();
-            }
+            //else if (journalOpen == true)
+            //{
+            //    CloseJournal();
+            //}
 
             else if (pieceOpen == true)
             {
@@ -66,18 +66,18 @@ public class PauseMenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown(journalInput))
-        {
-            if (paused == false && journalOpen == false && pieceOpen == false)
-            {
-                OpenJournal();
-            }
+        //if (Input.GetButtonDown(journalInput))
+        //{
+        //    if (paused == false && journalOpen == false && pieceOpen == false)
+        //    {
+        //        OpenJournal();
+        //    }
 
-            else if (journalOpen == true)
-            {
-                CloseJournal();
-            }
-        }
+        //    else if (journalOpen == true)
+        //    {
+        //        CloseJournal();
+        //    }
+        //}
 
     }
 
@@ -104,26 +104,26 @@ public class PauseMenuManager : MonoBehaviour
     }
 
 
-    private void OpenJournal()
-    {
-        Time.timeScale = 0;
-        journalMenu.gameObject.SetActive(true);
-        journalOpen = true;
+    //private void OpenJournal()
+    //{
+    //    Time.timeScale = 0;
+    //    journalMenu.gameObject.SetActive(true);
+    //    journalOpen = true;
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        AkSoundEngine.PostEvent("Play_UI_JournalOpen", gameObject);
-    }
-    private void CloseJournal()
-    {
-        Time.timeScale = 1;
-        journalMenu.gameObject.SetActive(false);
-        journalOpen = false;
+    //    Cursor.visible = true;
+    //    Cursor.lockState = CursorLockMode.None;
+    //    AkSoundEngine.PostEvent("Play_UI_JournalOpen", gameObject);
+    //}
+    //private void CloseJournal()
+    //{
+    //    Time.timeScale = 1;
+    //    journalMenu.gameObject.SetActive(false);
+    //    journalOpen = false;
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
-    }
+    //    Cursor.visible = false;
+    //    Cursor.lockState = CursorLockMode.Locked;
+    //    AkSoundEngine.PostEvent("Play_UI_JournalClose", gameObject);
+    //}
 
 
     public void JournalPiecePickup()
