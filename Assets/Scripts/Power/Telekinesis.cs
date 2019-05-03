@@ -23,7 +23,6 @@ public class Telekinesis : MonoBehaviour
     [SerializeField]
     float transfromMoveSpeed = 3f;
     [SerializeField]
-    [Range(.5f, 2f)]
     float telePushPullSpeed = 1f;
     [SerializeField]
     float maxSpeed = 1f;
@@ -243,6 +242,10 @@ public class Telekinesis : MonoBehaviour
         {
             levitateTransform.localPosition = startingTransform;
             zInput = 0;
+            if (levitatableGO.transform.position.y <  player.transform.position.y)
+            {
+                DropObject();
+            }
         }
         if (Vector3.Distance(levitatableGO.transform.position, player.transform.position) >= maxDistance)
         {
