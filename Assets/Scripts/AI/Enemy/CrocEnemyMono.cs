@@ -132,4 +132,9 @@ public class CrocEnemyMono : MonoBehaviour
         get { return isDead; }
         set { isDead = value; }
     }
+
+    public bool PlayerLockOn
+    {
+        set { player.GetComponent<InputCameraChange>().lockOn = value; }
+    }
 }

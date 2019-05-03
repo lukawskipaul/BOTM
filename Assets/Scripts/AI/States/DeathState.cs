@@ -12,6 +12,7 @@ public class DeathState : StateMachineBehaviour
         agent.isStopped = true;//stops the agent from moving
         //animator.GetComponent<Collider>().enabled = false;
         animator.GetComponent<CrocEnemyMono>().IsDead = true;
+        animator.GetComponent<CrocEnemyMono>().PlayerLockOn = false;
         PlayerPrefs.SetInt("CrocDead", 1);
     }
 
