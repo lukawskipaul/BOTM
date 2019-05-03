@@ -15,6 +15,8 @@ public class Hallway_Door_Trigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            GameObject CM_DollyCam = GameObject.Find("CM_DollyCam");
+            CM_DollyCam.SetActive(false);
             myAnimatorController.SetBool("Front_Door", true);
             playerController.SetTrigger("TakeDamage");
             dustClouds.SetActive(true);

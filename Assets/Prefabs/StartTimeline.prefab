@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5017032024902092848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5017032024902092861}
+  - component: {fileID: 5017032024902092850}
+  - component: {fileID: 5017032024902092851}
+  m_Layer: 0
+  m_Name: StartTimeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5017032024902092861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017032024902092848}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -86.68026, y: -61.34428, z: 23.350513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &5017032024902092850
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017032024902092848}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c63fb6ed579ba8d4b90f2bfc45ebb6df, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 114251329582965614, guid: c63fb6ed579ba8d4b90f2bfc45ebb6df, type: 2}
+    value: {fileID: 5017032024902092851}
+  - key: {fileID: 114961218493197968, guid: c63fb6ed579ba8d4b90f2bfc45ebb6df, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114691082547109740, guid: c63fb6ed579ba8d4b90f2bfc45ebb6df, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114470712446787634, guid: c63fb6ed579ba8d4b90f2bfc45ebb6df, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 114441635523206744, guid: c63fb6ed579ba8d4b90f2bfc45ebb6df, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References:
+    - e96db9003d84bbb4f982f7717594a751: {fileID: 0}
+    - b2fb64b311d8ebd4f8e5937d8f0a5dbc: {fileID: 0}
+    - b5ff6e6b2020a84458970c4405902d15: {fileID: 0}
+    - 882b7f306eb68e944aa3626efb6a5246: {fileID: 0}
+    - bc4ce04848af6f344a00d42dc9f49fb6: {fileID: 0}
+    - b3f95fd2aaa069c41997dfc74fe6041b: {fileID: 0}
+    - e607d982e65a6a34ba4bb3f60af28c41: {fileID: 0}
+    - edd6ca15a5619674bba40939e17ded1e: {fileID: 0}
+    - 82613bd15cd13da4b899c1b24efcf6f6: {fileID: 0}
+    - 7680bd01ec6702e4f9c93a54f1a0a329: {fileID: 0}
+--- !u!95 &5017032024902092851
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017032024902092848}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
