@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using XInputDotNetPure;
+
+// IMPORTANT!
+/* XInput.NET is not transferred correctly when Unity builds a project.
+After building the project, you must copy XInputInterface.dll into
+your directory containing the built EXE for your project. */
 
 //This script goes on the player
 public class PlayerHealth : MonoBehaviour
@@ -168,6 +174,18 @@ public class PlayerHealth : MonoBehaviour
     public void Respawn()
     {
         respawn.RespawnPlayer();
+    }
+
+    /* Called at specific flinch animation frame to make controller start vibrating */
+    public void StartRumble()
+    {
+        GamePad.SetVibration(0, 1.0f, 1.0f);
+    }
+
+    /* Called at specific flinch animation frame to make controller stop vibrating */
+    public void StopRumble()
+    {
+        GamePad.SetVibration(0, 0.0f, 0.0f);
     }
 
     #endregion
