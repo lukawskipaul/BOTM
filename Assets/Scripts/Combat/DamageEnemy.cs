@@ -56,6 +56,7 @@ public class DamageEnemy : MonoBehaviour
         if (isValidTarget)
         {
             other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(currentAttackDamage);
+            
             AkSoundEngine.PostEvent("Play_BodySquish", gameObject);
         }
 
@@ -64,5 +65,4 @@ public class DamageEnemy : MonoBehaviour
             AkSoundEngine.PostEvent("Play_BodySquish", gameObject);
         }
     }
-
 }
