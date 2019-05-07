@@ -7,7 +7,7 @@ public class CrystalCollectibleText : MonoBehaviour
 {
     [SerializeField]
     private Text crystalCountText;
-    private static int totalNumOfCrystals = 0;
+    private int totalNumOfCrystals = 0;
     private int numOfCrystals = 0;
 
     public void GainedCrystal()
@@ -19,5 +19,15 @@ public class CrystalCollectibleText : MonoBehaviour
     public void AddInGameCrystal()
     {
         totalNumOfCrystals++;
+    }
+
+    private void OnEnable()
+    {
+        CrystalText();
+    }
+
+    private void CrystalText()
+    {
+        crystalCountText.text = "Crystals: " + numOfCrystals + "/" + totalNumOfCrystals;
     }
 }

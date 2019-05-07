@@ -208,6 +208,14 @@ public class RootMotionMovementController : MonoBehaviour
         yield return new WaitForSeconds(time/2);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "DeadEnemy")
+        {
+            Physics.IgnoreCollision(collision.collider, this.GetComponent<Collider>());
+        }
+    }
+
     #region Animation Events
 
     /* Remember, changing name of animation event functions requires changing the function in the animation event! */

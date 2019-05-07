@@ -23,7 +23,7 @@ public class BugPatrol : MonoBehaviour
     // This list must contain at least two Waypoints
     // in order to work.
     [SerializeField]
-    private List<WaypointBug> route;
+    private List<Waypoint> route;
 
     // The NavMesh agent of the Game Object using this script.
     [SerializeField]
