@@ -18,6 +18,8 @@ public class GainTK : MonoBehaviour
     [SerializeField]
     private SlowMoGameTime SlowMo;
     [SerializeField]
+    private GameObject ThrowTKToolTip;
+    [SerializeField]
     private float timeToStop;
 
     private void Update()
@@ -52,6 +54,7 @@ public class GainTK : MonoBehaviour
         TKObjectFloat.SetTrigger("shouldFloat");
         thisTK.enabled = true;
         thisDO.enabled = true;
+        ThrowTKToolTip.SetActive(true);
         SlowMo.SlowMo();
         Destroy(TKObjectFloat);
         movement.DisableMovement(timeToStop);

@@ -10,7 +10,6 @@ using UnityEngine;
 public class DamageEnemy : MonoBehaviour
 {
     #region Variables
-
     [SerializeField]
     private int baseAttackDamage = 25;
     [SerializeField]
@@ -56,7 +55,7 @@ public class DamageEnemy : MonoBehaviour
         if (isValidTarget)
         {
             other.gameObject.GetComponent<EnemyHealth>().DamageEnemy(currentAttackDamage);
-            
+            //other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
             AkSoundEngine.PostEvent("Play_BodySquish", gameObject);
         }
 

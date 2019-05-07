@@ -89,7 +89,7 @@ public class Telekinesis : MonoBehaviour
         if (isLiftingObject == true && Input.GetButtonDown("Throw"))
         {
             ThrowObject();
-            AkSoundEngine.PostEvent("Stop_TK", gameObject);
+            //AkSoundEngine.PostEvent("Stop_TK", gameObject);
             //AkSoundEngine.PostEvent("Play_TK_Throw", gameObject);
 
         }
@@ -299,6 +299,7 @@ public class Telekinesis : MonoBehaviour
         {
             levitatableGO = null;
             crosshairPanel.SetActive(false);
+            AkSoundEngine.PostEvent("Stop_TK", gameObject);
         }
     }
 
@@ -313,6 +314,7 @@ public class Telekinesis : MonoBehaviour
         anim.SetBool(telekinesisBooleanName, false);
 
         crosshairPanel.SetActive(false);
+        AkSoundEngine.PostEvent("Stop_TK", gameObject);
     }
 
     float EnergyPercent()
