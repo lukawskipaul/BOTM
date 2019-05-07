@@ -1000,13 +1000,31 @@
 				</Sound>
 				<RandomSequenceContainer Name="BossStep" ID="{8CEAD52A-422C-477B-845E-CFE37876213D}" ShortID="293391994">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{39C88380-E75A-44E1-BFBB-852A7491DC04}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="177"/>
+											<Property Name="Min" Type="Real64" Value="-126"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>8</Value>
+								<Value>6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="BossStepsAtten" ID="{30909A24-471E-41F7-94B5-33B030BC2087}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1111,6 +1129,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="BossStep5" ID="{0269A802-3E38-4A12-9138-DFFDEA4AC65D}" ShortID="207580235">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -1130,6 +1155,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="BossStep6" ID="{A3D8EA7C-75E8-45A4-81CE-2BE3F124F14C}" ShortID="263032635">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
@@ -1258,7 +1290,18 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="TelekinesisPickUp" ID="{34B2D0CD-B864-4DCF-9115-982D22EA20F2}" ShortID="731011312">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-830</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1267,20 +1310,20 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="TelekinesisPickUp03" ID="{AADA7C2B-B5D8-4679-AA9F-7DA827BBD5E4}" ShortID="259446113">
+						<AudioFileSource Name="TelekinesisPickUp04New" ID="{D91890FB-3BD2-48E9-A9F5-F49F8CDC1B52}" ShortID="992862959">
 							<Language>SFX</Language>
-							<AudioFile>TelekinesisPickUp03.wav</AudioFile>
+							<AudioFile>TelekinesisPickUp04New.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="TelekinesisPickUp03" ID="{AADA7C2B-B5D8-4679-AA9F-7DA827BBD5E4}" Platform="Linked"/>
+						<ActiveSource Name="TelekinesisPickUp04New" ID="{D91890FB-3BD2-48E9-A9F5-F49F8CDC1B52}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="DodgeRoll" ID="{A920AB43-962E-4254-9C95-D41D9289A188}" ShortID="707810578">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-6</Value>
+								<Value>-10</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1663,6 +1706,9 @@
 				</Sound>
 				<Sound Name="MetalDoorOpenNoPower" ID="{30E777C3-D48C-4C1E-862F-C87ACA320B7A}" ShortID="100669468">
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Doors" ID="{9923D571-839A-4958-AFB1-C5878645E410}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1678,6 +1724,37 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="MetalDoorOpen2NoPower" ID="{66E71A2A-1F3C-4A16-973D-82880C2585B2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="BugsBuzzing" ID="{0F528456-C5D8-49AC-9C6E-7900E0CCFAAB}" ShortID="210556644">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="BugsAttenuation" ID="{7649444C-2A74-47D7-ACEC-4864BC0AD6E9}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BugsBuzzing" ID="{FBED5E27-86F3-4C88-B821-26D98477F0E1}" ShortID="634875587">
+							<Language>SFX</Language>
+							<AudioFile>BugsBuzzing.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BugsBuzzing" ID="{FBED5E27-86F3-4C88-B821-26D98477F0E1}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

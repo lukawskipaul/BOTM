@@ -23,6 +23,7 @@ namespace AK
         static const AkUniqueID PLAY_BOSSSTARTROAR = 962646519U;
         static const AkUniqueID PLAY_BOSSSTEP = 545396215U;
         static const AkUniqueID PLAY_BOSSVICTORYROAR = 1829905861U;
+        static const AkUniqueID PLAY_BUGSBUZZING = 3166073332U;
         static const AkUniqueID PLAY_CAVEAMBIANCE1 = 934217562U;
         static const AkUniqueID PLAY_CHARACTERFOOTSTEPS = 2603299628U;
         static const AkUniqueID PLAY_CROCAGGRO1 = 149344824U;

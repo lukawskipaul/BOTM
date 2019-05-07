@@ -741,6 +741,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_BugsBuzzing" ID="{14FBC23C-F5D0-44B7-8E11-6F4C249D38FF}">
+					<ChildrenList>
+						<Action Name="" ID="{D6DCB8F5-2DF4-4D8D-A63D-DBB638AD4DAC}" ShortID="433102439">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BugsBuzzing" ID="{0F528456-C5D8-49AC-9C6E-7900E0CCFAAB}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
