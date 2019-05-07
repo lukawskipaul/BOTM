@@ -21,10 +21,10 @@
 			<ShortName>Level1</ShortName>
 			<Path>Level1.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3091365192" Name="Play_AI_VO_Line1" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line1" MaxAttenuation="100.000000"/>
+				<Event Id="3091365192" Name="Play_AI_VO_Line1" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line1" MaxAttenuation="55.000000"/>
 				<Event Id="3091365195" Name="Play_AI_VO_Line2" ObjectPath="\Events\Default Work Unit\Play_AI_VO_Line2" MaxAttenuation="35.000000"/>
 				<Event Id="275338611" Name="Play_AmbientMusic" ObjectPath="\Events\Default Work Unit\Play_AmbientMusic"/>
-				<Event Id="467055209" Name="Play_BodySquish" ObjectPath="\Events\Default Work Unit\Play_BodySquish"/>
+				<Event Id="467055209" Name="Play_BodySquish" ObjectPath="\Events\Default Work Unit\Play_BodySquish" MaxAttenuation="10.000000"/>
 				<Event Id="2729937127" Name="Play_BossBite" ObjectPath="\Events\Default Work Unit\Play_BossBite"/>
 				<Event Id="516533412" Name="Play_BossClaw" ObjectPath="\Events\Default Work Unit\Play_BossClaw"/>
 				<Event Id="1493508053" Name="Play_BossDeathRoar" ObjectPath="\Events\Default Work Unit\Play_BossDeathRoar"/>
@@ -34,7 +34,7 @@
 				<Event Id="3166073332" Name="Play_BugsBuzzing" ObjectPath="\Events\Default Work Unit\Play_BugsBuzzing" MaxAttenuation="15.000000"/>
 				<Event Id="934217562" Name="Play_CaveAmbiance1" ObjectPath="\Events\Default Work Unit\Play_CaveAmbiance1"/>
 				<Event Id="2603299628" Name="Play_CharacterFootsteps" ObjectPath="\Events\Default Work Unit\Play_CharacterFootsteps"/>
-				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1"/>
+				<Event Id="149344824" Name="Play_CrocAggro1" ObjectPath="\Events\Default Work Unit\Play_CrocAggro1" MaxAttenuation="20.000000"/>
 				<Event Id="1952116840" Name="Play_CrocAttack1" ObjectPath="\Events\Default Work Unit\Play_CrocAttack1"/>
 				<Event Id="1217506344" Name="Play_CrocDeath1" ObjectPath="\Events\Default Work Unit\Play_CrocDeath1"/>
 				<Event Id="2025256709" Name="Play_CrocFalling1" ObjectPath="\Events\Default Work Unit\Play_CrocFalling1"/>
@@ -46,7 +46,7 @@
 				<Event Id="2387251670" Name="Play_ElectricPassive" ObjectPath="\Events\Default Work Unit\Play_ElectricPassive" MaxAttenuation="15.000000"/>
 				<Event Id="2540781641" Name="Play_GeneratorHum" ObjectPath="\Events\Default Work Unit\Play_GeneratorHum" MaxAttenuation="32.000000"/>
 				<Event Id="3210990662" Name="Play_HowlingWind" ObjectPath="\Events\Default Work Unit\Play_HowlingWind" MaxAttenuation="12.000000"/>
-				<Event Id="709837482" Name="Play_MetalDoorBreakdown2" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown2"/>
+				<Event Id="709837482" Name="Play_MetalDoorBreakdown2" ObjectPath="\Events\Default Work Unit\Play_MetalDoorBreakdown2" MaxAttenuation="15.000000"/>
 				<Event Id="1177938167" Name="Play_MetalDoorOpen" ObjectPath="\Events\Default Work Unit\Play_MetalDoorOpen" MaxAttenuation="12.000000"/>
 				<Event Id="2724618676" Name="Play_MetalDoorSlamCloseNoPower" ObjectPath="\Events\Default Work Unit\Play_MetalDoorSlamCloseNoPower" MaxAttenuation="12.000000"/>
 				<Event Id="2440573128" Name="Play_OutdoorAmbientLoop" ObjectPath="\Events\Default Work Unit\Play_OutdoorAmbientLoop" MaxAttenuation="12.000000"/>
@@ -80,6 +80,10 @@
 					<ShortName>CrocFootstep3.wav</ShortName>
 					<Path>SFX\CrocFootstep3_56D34C19.wem</Path>
 				</File>
+				<File Id="71237208" Language="SFX">
+					<ShortName>Effort4.wav</ShortName>
+					<Path>SFX\Effort4_56D34C19.wem</Path>
+				</File>
 				<File Id="127603613" Language="SFX">
 					<ShortName>CrocFootstep2.wav</ShortName>
 					<Path>SFX\CrocFootstep2_56D34C19.wem</Path>
@@ -87,6 +91,10 @@
 				<File Id="143612164" Language="SFX">
 					<ShortName>CrocFalling1.wav</ShortName>
 					<Path>SFX\CrocFalling1_56D34C19.wem</Path>
+				</File>
+				<File Id="160875457" Language="SFX">
+					<ShortName>Effort1.wav</ShortName>
+					<Path>SFX\Effort1_56D34C19.wem</Path>
 				</File>
 				<File Id="167009388" Language="SFX">
 					<ShortName>Room1AmbianceDemo.wav</ShortName>
@@ -143,6 +151,10 @@
 				<File Id="340536415" Language="SFX">
 					<ShortName>CaveAmbiance1.wav</ShortName>
 					<Path>SFX\CaveAmbiance1_8956FC97.wem</Path>
+				</File>
+				<File Id="376652357" Language="SFX">
+					<ShortName>Effort3.wav</ShortName>
+					<Path>SFX\Effort3_56D34C19.wem</Path>
 				</File>
 				<File Id="380205007" Language="SFX">
 					<ShortName>ConcreteFootsteps_003.wav</ShortName>
@@ -239,6 +251,10 @@
 				<File Id="698697704" Language="SFX">
 					<ShortName>SlidingDoorClose.wav</ShortName>
 					<Path>SFX\SlidingDoorClose_56D34C19.wem</Path>
+				</File>
+				<File Id="708897513" Language="SFX">
+					<ShortName>Effort2.wav</ShortName>
+					<Path>SFX\Effort2_56D34C19.wem</Path>
 				</File>
 				<File Id="710008348" Language="SFX">
 					<ShortName>PipeRoar.wav</ShortName>

@@ -416,6 +416,9 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="CrocSounds" ID="{4696F33A-2D1E-49D6-8522-F8D1B0AE6288}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1441,6 +1444,9 @@
 						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="BugsAttenuation" ID="{7649444C-2A74-47D7-ACEC-4864BC0AD6E9}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1614,7 +1620,28 @@
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="BodySquishes" ID="{F628D090-6FA0-4E72-BA64-5C5400C9E3CB}" ShortID="155215507">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-330</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{33ACA570-CB9E-4D7E-9FA6-82EA3EB1B480}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="278"/>
+											<Property Name="Min" Type="Real64" Value="-101"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="EffortsAttenuation" ID="{341E49EA-3990-4740-9FCC-010DDE1EA353}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
 						</Reference>
@@ -1757,6 +1784,124 @@
 						<ActiveSource Name="BugsBuzzing" ID="{FBED5E27-86F3-4C88-B821-26D98477F0E1}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<RandomSequenceContainer Name="CharacterEfforts" ID="{D6E3DC6E-06B1-4AE1-BBF3-7C376B81E325}" ShortID="195419603">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-150</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{183EDE36-A810-4F86-82C9-35DD3FF85F3B}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="51"/>
+											<Property Name="Min" Type="Real64" Value="-51"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="EffortsAttenuation" ID="{341E49EA-3990-4740-9FCC-010DDE1EA353}" WorkUnitID="{444AEA0E-1624-4B43-A4C6-E71894596528}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+							<ObjectRef Name="Tunnel1" ID="{CC44B890-9865-4157-965F-86FED27BC4C6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Effort1" ID="{048CC207-247B-4F79-A8A9-0C69767A88B1}" ShortID="836619204">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Effort1" ID="{DDC5BE2F-476A-48DB-9E11-9B111D7ED6EC}" ShortID="160875457">
+									<Language>SFX</Language>
+									<AudioFile>Effort1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Effort1" ID="{DDC5BE2F-476A-48DB-9E11-9B111D7ED6EC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Effort2" ID="{500BE1F1-1625-40A6-98D4-CF9631D76C2B}" ShortID="113554148">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Effort2" ID="{D391BBC2-CC09-4D88-B166-26760E8FA472}" ShortID="708897513">
+									<Language>SFX</Language>
+									<AudioFile>Effort2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Effort2" ID="{D391BBC2-CC09-4D88-B166-26760E8FA472}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Effort3" ID="{D562BF89-F9C9-4015-AC03-69BCE19C0502}" ShortID="81109616">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Effort3" ID="{38D7DF82-DB65-4A86-9BB4-BFC634CFAB2A}" ShortID="376652357">
+									<Language>SFX</Language>
+									<AudioFile>Effort3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Effort3" ID="{38D7DF82-DB65-4A86-9BB4-BFC634CFAB2A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Effort4" ID="{D2F7D554-17C7-495E-A43F-B385C5CD6A71}" ShortID="1046465920">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8BCD3BF3-5261-495E-885C-C782BFA82FA1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{287E1FB5-A4BF-41EA-8CF5-C544EEBA0FA7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Effort4" ID="{C4C07326-6303-49EE-A5A3-3787839C9C23}" ShortID="71237208">
+									<Language>SFX</Language>
+									<AudioFile>Effort4.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Effort4" ID="{C4C07326-6303-49EE-A5A3-3787839C9C23}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

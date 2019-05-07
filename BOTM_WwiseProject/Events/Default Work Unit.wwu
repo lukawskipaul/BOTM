@@ -250,6 +250,16 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{15394165-E247-4CC7-A284-84A43584C86F}" ShortID="610852589">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CharacterEfforts" ID="{D6E3DC6E-06B1-4AE1-BBF3-7C376B81E325}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_TK_Throw" ID="{EA03671D-FBDB-4899-A88C-A779DB527DD0}">
