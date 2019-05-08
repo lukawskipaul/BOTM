@@ -13,6 +13,7 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     private GameObject player;
     [Tooltip("The amount of time to be stunned. 0 = duration of animation")]
+    [SerializeField]
     private float StunDuration = 1.25f;
 
     [Tooltip("A target object used for visualization and debugging\nDeactivate or replace with empty object in release")]
