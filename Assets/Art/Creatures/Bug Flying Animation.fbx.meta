@@ -186,7 +186,12 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     13700000: polySurface3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 9af4de2e1b44ad9478e1770705b83888, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
