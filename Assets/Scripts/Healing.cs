@@ -20,7 +20,7 @@ public class Healing : MonoBehaviour
     private void Heal()
     {
         thePlayerHealth.HealPlayer(healAmount);
-        AkSoundEngine.PostEvent("Play_TK_PickUp", gameObject);
+        AkSoundEngine.PostEvent("Play_UI_PageFlip", gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -62,7 +62,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            anim.SetTrigger("Flinch");
+            //anim.SetTrigger("Stun");
             //AkSoundEngine.PostEvent("Play_BodySquish", gameObject);
         }
     }
