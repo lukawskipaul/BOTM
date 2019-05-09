@@ -33,6 +33,7 @@ namespace AK
         static const AkUniqueID PLAY_CROCFLINCH1 = 4111079834U;
         static const AkUniqueID PLAY_CROCFOOTSTEPS = 4238486732U;
         static const AkUniqueID PLAY_CROCLICK1 = 1291320897U;
+        static const AkUniqueID PLAY_CRYSTALWHISPERS = 1567388385U;
         static const AkUniqueID PLAY_DODGEROLL = 3003923414U;
         static const AkUniqueID PLAY_DOORSQUISH = 2288297897U;
         static const AkUniqueID PLAY_ELECTRICPASSIVE = 2387251670U;

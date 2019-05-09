@@ -765,6 +765,21 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_CrystalWhispers" ID="{254E5DDF-DAD5-4801-9288-63CA6B2E87F3}">
+					<ChildrenList>
+						<Action Name="" ID="{6F6FEDA6-C33F-4E74-BF09-A9FB87B30E8D}" ShortID="899708867">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="FadeInCurve" Type="int16" Value="6"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CrystalWhispers" ID="{1ABC48FA-BEC2-4E13-884F-56E9E9639867}" WorkUnitID="{2B3EB138-1BA0-4BDB-A218-D404F3D72A43}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
